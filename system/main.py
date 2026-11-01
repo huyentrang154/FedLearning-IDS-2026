@@ -28,6 +28,7 @@ from flcore.servers.serverAE import FedAE
 from flcore.trainmodel.models import *
 from flcore.servers.serverNoRo import FedNoRo # LyVT
 from flcore.servers.serverFedCorr import FedCorr
+from flcore.centralized.centralizedAE import CentralizedAE
 
 torch.set_num_threads(1)
 torch.set_num_interop_threads(1)
@@ -141,6 +142,8 @@ def run(args):
             server = FedNoRo(args, i)
         elif algorithm == 'fedcorr':
             server = FedCorr(args, i)
+        elif algorithm == 'centralized':
+            server = CentralizedAE(args, i)
         else:
             raise NotImplementedError
 
