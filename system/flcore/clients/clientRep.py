@@ -34,7 +34,6 @@ class ClientRep(object):
         self.optimizer_per = torch.optim.SGD(self.model.predictor.parameters(), lr=self.learning_rate)
 
         # Load dữ liệu
-        full_train_data = read_client_data(self.dataset, self.id, self.num_clients, data_type='train')
         full_train_data = read_client_data(
             self.dataset, self.id, self.num_clients, data_type='train', type=self.data_type
         )
@@ -79,32 +78,41 @@ class ClientRep(object):
 
     def train(self):
         self.model.train()
-        # Phase 1: Train Predictor (Head) - Đóng băng Encoder
-        for param in self.model.encoder.parameters(): param.requires_grad = False
-        for param in self.model.predictor.parameters(): param.requires_grad = True
+        for param in self.model.encoder.parameters():
+            param.requires_grad = False
+        for param in self.model.predictor.parameters():
+            param.requires_grad = True
 
-        for _ in range(self.local_steps - 1):
-            for x, y in self.train_loader:
-                x, y = x.to(self.device), y.to(self.device)
-                out = self.model(x)
-                if isinstance(out, tuple): out = out[0]
-                loss = self.loss(out, y.long())
+        for epoch in range(self.local_steps-1):
+            for i, (x, y) in enumerate(self.train_loader):
+                if type(x) == type([]):
+                    x[0] = x[0].to(self.device)
+                else:
+                    x = x.to(self.device)
+                y = y.to(self.device)
+                output, x_reconstruction = self.model(x)
+                loss = self.loss(output, y)
                 self.optimizer_per.zero_grad()
                 loss.backward()
                 self.optimizer_per.step()
 
-        # Phase 2: Train Encoder - Đóng băng Predictor
-        for param in self.model.encoder.parameters(): param.requires_grad = True
-        for param in self.model.predictor.parameters(): param.requires_grad = False
+        for param in self.model.encoder.parameters():
+            param.requires_grad = True
+        for param in self.model.predictor.parameters():
+            param.requires_grad = False
 
-        for x, y in self.train_loader:
-            x, y = x.to(self.device), y.to(self.device)
-            out = self.model(x)
-            if isinstance(out, tuple): out = out[0]
-            loss = self.loss(out, y.long())
-            self.optimizer.zero_grad()
-            loss.backward()
-            self.optimizer.step()
+        for epoch in range(1):
+            for i, (x, y) in enumerate(self.train_loader):
+                if type(x) == type([]):
+                    x[0] = x[0].to(self.device)
+                else:
+                    x = x.to(self.device)
+                y = y.to(self.device)
+                output, x_reconstruction = self.model(x)
+                loss = self.loss(output, y)
+                self.optimizer.zero_grad()
+                loss.backward()
+                self.optimizer.step()
 
     def test_metrics(self, model=None):
         if model is None:
