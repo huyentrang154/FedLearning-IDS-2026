@@ -91,13 +91,14 @@ fi
 # 2. Cấu hình chung (Parallel Scheduler)
 #########################################
 MAX_JOBS=8
+DEVICE_ID="1"
+export CUDA_VISIBLE_DEVICES="$DEVICE_ID"
 
-if "$PYTHON_BIN" -c "import torch; sys.exit(0 if torch.cuda.is_available() else 1)" >/dev/null 2>&1; then
+if "$PYTHON_BIN" -c "import sys, torch; sys.exit(0 if torch.cuda.is_available() else 1)" >/dev/null 2>&1; then
     DEVICE="cuda"
 else
     DEVICE="cpu"
 fi
-DEVICE_ID="1"
 EXP_NAME=$(date +"%Y%m%d-%H%M%S")
 
 mkdir -p logs
