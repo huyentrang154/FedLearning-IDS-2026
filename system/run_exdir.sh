@@ -72,7 +72,7 @@ fi
 
 echo "Using Python: $PYTHON_BIN ($("$PYTHON_BIN" --version 2>&1))"
 
-if ! "$PYTHON_BIN" -c "import torch, numpy, scipy, sklearn, pandas, matplotlib, h5py" >/dev/null 2>&1; then
+if ! "$PYTHON_BIN" -c "import torch, numpy, scipy, sklearn, pandas, matplotlib" >/dev/null 2>&1; then
     echo "================================================="
     echo "Môi trường chưa đủ thư viện. Đang cài đặt từ requirements.txt ..."
     echo "================================================="
@@ -81,7 +81,7 @@ if ! "$PYTHON_BIN" -c "import torch, numpy, scipy, sklearn, pandas, matplotlib, 
     "$PYTHON_BIN" -m pip install torch torchvision torchaudio
     "$PYTHON_BIN" -m pip install -r requirements.txt
 
-    if ! "$PYTHON_BIN" -c "import torch, numpy, scipy, sklearn, pandas, matplotlib, h5py" >/dev/null 2>&1; then
+    if ! "$PYTHON_BIN" -c "import torch, numpy, scipy, sklearn, pandas, matplotlib" >/dev/null 2>&1; then
         echo "[ERROR] Cài đặt thư viện thất bại trên $PYTHON_BIN!"
         exit 1
     fi
@@ -90,14 +90,14 @@ fi
 #########################################
 # 2. Cấu hình chung (Parallel Scheduler)
 #########################################
-MAX_JOBS=4
+MAX_JOBS=8
 
 if "$PYTHON_BIN" -c "import torch; sys.exit(0 if torch.cuda.is_available() else 1)" >/dev/null 2>&1; then
     DEVICE="cuda"
 else
     DEVICE="cpu"
 fi
-DEVICE_ID="0"
+DEVICE_ID="1"
 EXP_NAME=$(date +"%Y%m%d-%H%M%S")
 
 mkdir -p logs
