@@ -44,7 +44,11 @@ def normalize_noise_type(noise_type):
 
 
 def select_poisoned_workers(num_clients, noise_type, num_of_poisoned_workers):
-    """Chọn danh sách client bị nhiễu thống nhất cho tất cả các thuật toán."""
+    """Chọn danh sách client bị nhiễu cố định (không random) để thống nhất giữa các thuật toán và các seed.
+    Ví dụ với 20 clients:
+      - num_of_poisoned_workers = 0.3 -> [0, 1, 2, 3, 4, 5]
+      - num_of_poisoned_workers = 0.5 -> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    """
     norm_noise = normalize_noise_type(noise_type)
     if (
         norm_noise in ("label_flipping", "gaussian_noise", "Asymmetric", "Symmetric")
@@ -53,11 +57,7 @@ def select_poisoned_workers(num_clients, noise_type, num_of_poisoned_workers):
     ):
         num_poisoned = int(num_clients * num_of_poisoned_workers)
         if num_poisoned > 0:
-            return np.random.choice(
-                range(num_clients),
-                size=num_poisoned,
-                replace=False,
-            ).tolist()
+            return list(range(num_poisoned))
     return []
 
 

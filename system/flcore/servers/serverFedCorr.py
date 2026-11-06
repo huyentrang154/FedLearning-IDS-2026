@@ -707,13 +707,14 @@ class FedCorr(object):
 
     def initialize_poisoned_workers(self):
         """
-        Xác định các client bị tấn công.
+        Xác định cố định các client bị tấn công (không random) theo tỷ lệ num_of_poisoned_workers:
+        list(range(int(self.num_clients * self.num_of_poisoned_workers)))
         """
         self.poisoned_worker_ids = select_poisoned_workers(
             self.num_clients, self.noise_type, self.num_of_poisoned_workers
         )
         print(f"Noise Type: {self.noise_type}")
-        print(f"Poisoned Worker IDs: {self.poisoned_worker_ids}")
+        print(f"Poisoned Worker IDs (fixed): {self.poisoned_worker_ids}")
     
     # ==================================================================
     # Main training loop
