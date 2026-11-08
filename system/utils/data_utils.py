@@ -41,7 +41,7 @@ from torch.utils.data import DataLoader, TensorDataset
 
 NORMAL_LABEL = {
     'nslkdd': 0,
-    'cic_ids': 0,
+    'cic_ids': 6,   # BENIGN = 6 (xem mapping trong dataset/generate_cic_ids.py)
     'ctu13_13': 0,
     'ctu13_08': 0,
     'ctu13_09': 0,
@@ -52,7 +52,7 @@ NORMAL_LABEL = {
     'bot_iot': 0,
     'crawl': 0,
     'cifar10': 0,
-    'toniot': 0,
+    'toniot': 5,    # LabelEncoder alphabet: backdoor,ddos,dos,injection,mitm,normal=5,...
 }
 
 
