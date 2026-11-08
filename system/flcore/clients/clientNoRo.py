@@ -84,7 +84,7 @@ class ClientNoRo(object):
             self._train_standard()
 
     def _train_standard(self):
-        """Standard BCE training used for warm-up and for clean clients in Stage 2."""
+        """Standard CE training used for warm-up and for clean clients in Stage 2."""
         for epoch in range(self.local_steps):
             for x, y in self.train_loader:
                 if type(x) == type([]):
@@ -92,14 +92,9 @@ class ClientNoRo(object):
                 else:
                     x = x.to(self.device)
                 y = y.to(self.device)
-                # y_binary = torch.where(
-                #     y == self.normal_label,
-                #     torch.tensor(0, device=self.device),
-                #     torch.tensor(1, device=self.device)
-                # ).unsqueeze(1).float()
-                # output = torch.sigmoid(self.model(x))
-                # loss = self.loss(output, y_binary)
                 output = self.model(x)          # logits [B,C]
+                if isinstance(output, (list, tuple)):
+                    output = output[0]
                 loss = self.loss(output, y.long())
                 self.optimizer.zero_grad()
                 loss.backward()
@@ -108,10 +103,9 @@ class ClientNoRo(object):
     def _train_kd(self):
         """Knowledge-distillation training for noisy clients in Stage 2.
 
-        Combines soft BCE against the teacher's predictions (KD term) and
-        hard BCE against the (potentially noisy) local labels, weighted by w_kd.
-        This matches the LA_KD objective from the FedNoRo paper (Eq. 8), adapted
-        for the binary sigmoid output used throughout this framework.
+        Combines soft KL-divergence against the teacher's predictions (KD term)
+        and hard Cross-Entropy against the (potentially noisy) local labels,
+        weighted by w_kd.
         """
         self.teacher_model.eval()
 
@@ -122,8 +116,13 @@ class ClientNoRo(object):
                 else:
                     x = x.to(self.device)
                 y = y.to(self.device)
-                teacher_logits = self.teacher_model(x)
+                with torch.no_grad():
+                    teacher_logits = self.teacher_model(x)
+                    if isinstance(teacher_logits, (list, tuple)):
+                        teacher_logits = teacher_logits[0]
                 student_logits = self.model(x)
+                if isinstance(student_logits, (list, tuple)):
+                    student_logits = student_logits[0]
                 hard_loss = self.loss(student_logits, y.long())
                 temperature = 2.0
 
@@ -131,7 +130,7 @@ class ClientNoRo(object):
                     F.log_softmax(student_logits / temperature, dim=1),
                     F.softmax(teacher_logits / temperature, dim=1),
                     reduction='batchmean'
-                ) * temperature * temperature
+                ) * (temperature * temperature)
 
                 loss = self.w_kd * kd_loss + (1 - self.w_kd) * hard_loss
 
@@ -140,18 +139,16 @@ class ClientNoRo(object):
                 self.optimizer.step()
 
     def compute_per_class_losses(self, model=None):
-        """Return per-class mean BCE loss used by the server for GMM identification.
+        """Return per-class mean CE loss used by the server for GMM identification.
 
-        Returns a list [mean_loss_class0, mean_loss_class1] computed on this
-        client's training data using the provided model (typically the stage-1
-        global model snapshot).  NaN is returned as 0 when a class is absent.
+        Returns a list of length `num_classes` computed on this client's training
+        data using the provided model (typically the stage-1 global model snapshot).
+        NaN is returned when a class is absent so the server can impute with column min.
         """
         if model is None:
             model = self.model
         model.eval()
 
-        loss_fn = nn.BCELoss(reduction='none')
-        # class_losses = {0: [], 1: []}
         class_losses = {c: [] for c in range(self.num_classes)}
 
         with torch.no_grad():
@@ -161,14 +158,9 @@ class ClientNoRo(object):
                 else:
                     x = x.to(self.device)
                 y = y.to(self.device)
-                y_binary = torch.where(
-                    y == self.normal_label,
-                    torch.tensor(0, device=self.device),
-                    torch.tensor(1, device=self.device)
-                ).unsqueeze(1).float()
-                # output = torch.sigmoid(model(x))
-                # sample_losses = loss_fn(output, y_binary).squeeze(1)
                 logits = model(x)
+                if isinstance(logits, (list, tuple)):
+                    logits = logits[0]
                 sample_losses = F.cross_entropy(
                     logits,
                     y.long(),
@@ -176,15 +168,15 @@ class ClientNoRo(object):
                 )
                 labels = y.long()
                 for cls in range(self.num_classes):
-                    mask = labels==cls
-                    if mask.sum()>0:
+                    mask = labels == cls
+                    if mask.sum() > 0:
                         class_losses[cls].extend(
                             sample_losses[mask].cpu().numpy().tolist()
                         )
         return [
-                np.mean(class_losses[c]) if len(class_losses[c])>0 else 0
-                for c in range(self.num_classes)
-            ]
+            float(np.mean(class_losses[c])) if len(class_losses[c]) > 0 else float('nan')
+            for c in range(self.num_classes)
+        ]
 
     def load_train_data(self, batch_size=None):
         if batch_size is None:
@@ -195,20 +187,22 @@ class ClientNoRo(object):
         )
         if self.id in self.poisoned_worker_ids:
             train_data = self.apply_poisoning(train_data, self.noise_type, self.poisoned_sample_ratio, self.attack_noise_std)
-        return DataLoader(train_data, batch_size, drop_last=True, shuffle=False)
+        batch_size = min(batch_size, len(train_data)) if len(train_data) > 0 else batch_size
+        return DataLoader(train_data, batch_size, drop_last=True, shuffle=True)
 
-    def load_test_data(self, batch_size=1):
+    def load_test_data(self, batch_size=None):
         if batch_size is None:
             batch_size = self.batch_size
         test_data = read_client_data(
             self.dataset, self.id, self.num_clients, partition=self.pat, alpha=self.alpha,
             data_type='test', type=self.data_type, poison_attack=self.poison_attack
         )
-        return DataLoader(test_data, batch_size, drop_last=True, shuffle=False)
+        return DataLoader(test_data, batch_size, drop_last=False, shuffle=False)
 
     def test_metrics(self, model=None):
         if model is None:
             model = self.model
+        model.eval()
 
         y_true = []
         y_predict = []
@@ -220,17 +214,19 @@ class ClientNoRo(object):
                 else:
                     x = x.to(self.device)
                 y = y.to(self.device)
-                logits = self.model(x)
-                pred = torch.argmax(logits,dim=1)
+                logits = model(x)
+                if isinstance(logits, (list, tuple)):
+                    logits = logits[0]
+                pred = torch.argmax(logits, dim=1)
                 y_predict.append(pred.cpu().numpy())
                 y_true.append(y.cpu().numpy())
         y_predict = np.concatenate(y_predict, axis=0)
         y_true = np.concatenate(y_true, axis=0)
 
         acc = metrics.accuracy_score(y_true, y_predict)
-        precision = metrics.precision_score(y_true, y_predict, average='weighted')
-        recall = metrics.recall_score(y_true, y_predict, average='weighted')
-        f1 = metrics.f1_score(y_true, y_predict, average='weighted')
+        precision = metrics.precision_score(y_true, y_predict, average='macro', zero_division=0)
+        recall = metrics.recall_score(y_true, y_predict, average='macro', zero_division=0)
+        f1 = metrics.f1_score(y_true, y_predict, average='macro', zero_division=0)
         test_num = len(y_predict)
 
         return acc, precision, recall, f1, test_num
@@ -247,8 +243,10 @@ class ClientNoRo(object):
                 else:
                     x = x.to(self.device)
                 y = y.to(self.device)
-                logits=self.model(x)
-                loss=self.loss(logits,y.long())
+                logits = model(x)
+                if isinstance(logits, (list, tuple)):
+                    logits = logits[0]
+                loss = self.loss(logits, y.long())
                 list_loss.append(loss.item())
         return list_loss
 
