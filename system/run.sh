@@ -115,9 +115,7 @@ mkdir -p logs
 # 3. Datasets & Data Type
 #########################################
 DATASETS=(
-    "nslkdd"
     "unsw"
-    "cic_ids"
 )
 
 # "noniid" (tự động map sang noniid20) hoặc "exdir" (tự động map sang noniidexdir20)
@@ -127,7 +125,6 @@ DATA_TYPE="noniid20"
 # 4. 8 Thuật toán FL
 #########################################
 ALGOS=(
-    "fednoro"
     "fedcorr"
 )
 
