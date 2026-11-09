@@ -1,0 +1,377 @@
+\documentclass[11pt]{article}
+\usepackage[margin=2cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage{siunitx}
+
+% ------------------------------------------------------------------
+% HOW TO FILL IN
+%   Each result cell is \seeds{s0}{s1}{s2}: enter the three seed-level
+%   scores, e.g. \seeds{0.9961}{0.9964}{0.9960}.
+%   Mean and sample std (n-1 in the denominator) are computed by LaTeX
+%   and printed with 4 decimals, so they always match the seed values.
+%   Copy the printed mean +- std into Tables 3-5 of the main paper.
+%   Leave \seeds{}{}{} empty to print blanks.
+%   Use full precision (>= 4 decimals) for the seed values.
+% ------------------------------------------------------------------
+\newcommand{\vb}{\rule[-0.25ex]{1.5em}{0.4pt}}
+\newcommand{\fillin}[1]{{\color{red}[#1]}}
+\sisetup{round-mode=places, round-precision=4}
+\ExplSyntaxOn
+\NewDocumentCommand{\seeds}{mmm}
+  {
+    \tl_if_blank:nTF {#1} { \vb } { \num{#1} } &
+    \tl_if_blank:nTF {#2} { \vb } { \num{#2} } &
+    \tl_if_blank:nTF {#3} { \vb } { \num{#3} } &
+    \bool_if:nTF
+      { !(\tl_if_blank_p:n {#1}) && !(\tl_if_blank_p:n {#2}) && !(\tl_if_blank_p:n {#3}) }
+      {
+        \num{\fp_eval:n { (#1 + #2 + #3) / 3 }} &
+        \num{\fp_eval:n { sqrt( ( (#1 - (#1+#2+#3)/3)^2 + (#2 - (#1+#2+#3)/3)^2 + (#3 - (#1+#2+#3)/3)^2 ) / 2 ) }}
+      }
+      { \vb & \vb }
+  }
+\ExplSyntaxOff
+
+\title{Supplementary Material for\\
+``FedPURE: Pretrained Unsupervised Representation Encoder for Intrusion Detection under Non-IID Data and Noisy Labels''}
+\author{Huyen Trang Nguyen, Tuan Phong Tran, Ly Vu}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Reporting protocol}
+This document lists the seed-level scores behind every mean~$\pm$~standard deviation reported in the main paper.
+\begin{itemize}
+  \item \textbf{Seeds.} The client partition is fixed (\texttt{partition\_seed}$=1$); model initialization and training use three seeds, $s\in\{0,1,2\}$ (columns s0, s1, s2).
+  \item \textbf{Score of one seed.} For each client, macro-F1 is computed on its clean held-out test set. The score of one seed is the weighted arithmetic mean of these per-client values (weight $n_k$) over the evaluated clients.
+  \item \textbf{Evaluated clients.} Without label noise, all $K=20$ clients are evaluated. With label noise, only the benign (non-corrupted) clients are evaluated; the corrupted clients are excluded (Table~\ref{tab:s-corrupt-ids}).
+  \item \textbf{Mean and std.} ``mean'' is the average of the three seed scores and ``std'' is their sample standard deviation,
+  $\mathrm{std}=\sqrt{\tfrac{1}{2}\sum_{s=0}^{2}(F_s-\bar F)^2}$.
+  For three values in $[0,1]$ with mean $\bar F\ge 2/3$, this std cannot exceed $\sqrt{3}\,(1-\bar F)$.
+  \item \textbf{Code.} Partitioning, noise injection, training, and aggregation scripts: \url{https://github.com/huyentrang154/FedLearning-IDS-2026}.
+\end{itemize}
+
+\section{Per-seed results: non-IID partitions without label noise (Table~3)}
+
+All $K=20$ clients are evaluated (no client is corrupted). Each value is the weighted arithmetic mean of per-client macro-F1 for one seed.
+
+\begin{table}[!ht]\centering\scriptsize
+\caption{Centralized reference (pooled clean data, no federation): macro-F1 per seed.}
+\label{tab:s-central}
+\begin{tabular}{l|ccc|cc}
+\toprule
+Dataset & s0 & s1 & s2 & mean & std \\
+\midrule
+
+NSL-KDD    & \seeds{0.9379}{0.9499}{0.9526} \\
+
+UNSW-NB15  & \seeds{0.5654}{0.5795}{0.5828} \\
+
+CIC-IDS17  & \seeds{0.9446}{0.9478}{0.9486} \\
+
+TON\_IoT   & \seeds{0.9210}{0.9368}{0.9340} \\
+
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[!ht]\centering\scriptsize
+\caption{NSL-KDD, non-IID partitions: per-seed macro-F1 (all 20 clients).}
+\label{tab:s-noniid-nsl-kdd}
+\begin{tabular}{l|ccc|cc||ccc|cc}
+\toprule
+ & \multicolumn{5}{c||}{\texttt{pat} ($\kappa=2$)} & \multicolumn{5}{c}{\texttt{exDir} ($\alpha=0.1$)} \\
+Method & s0 & s1 & s2 & mean & std & s0 & s1 & s2 & mean & std \\
+\midrule
+FedAvg     & \seeds{0.8096}{}{} & \seeds{0.5175}{0.5175}{0.5175} \\
+FedGH      & \seeds{0.7435}{}{} & \seeds{0.5283}{0.6101}{0.9698} \\
+FedHome    & \seeds{0.8170}{}{} & \seeds{0.6688}{0.6709}{0.5531} \\
+LG-FedAvg  & \seeds{0.9100}{}{} & \seeds{0.8751}{0.9698}{0.9701} \\
+FedRep     & \seeds{0.8874}{}{} & \seeds{0.9973}{0.9978}{0.9466} \\
+FedNoRo    & \seeds{0.9766}{}{0.4604} & \seeds{0.8678}{0.8654}{0.8641} \\
+FedCorr    & \seeds{0.9328}{}{0.9489} & \seeds{0.9992}{0.9993}{0.9992} \\
+FedPURE    & \seeds{0.9170}{}{} & \seeds{0.9992}{}{} \\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[!ht]\centering\scriptsize
+\caption{UNSW-NB15, non-IID partitions: per-seed macro-F1 (all 20 clients).}
+\label{tab:s-noniid-unsw-nb15}
+\begin{tabular}{l|ccc|cc||ccc|cc}
+\toprule
+ & \multicolumn{5}{c||}{\texttt{pat} ($\kappa=2$)} & \multicolumn{5}{c}{\texttt{exDir} ($\alpha=0.1$)} \\
+Method & s0 & s1 & s2 & mean & std & s0 & s1 & s2 & mean & std \\
+\midrule
+FedAvg     & \seeds{0.1102}{}{} & \seeds{0.1561}{}{} \\
+FedGH      & \seeds{0.2804}{}{} & \seeds{}{}{} \\
+FedHome    & \seeds{0.2853}{}{} & \seeds{}{}{} \\
+LG-FedAvg  & \seeds{0.7492}{}{} & \seeds{}{}{} \\
+FedRep     & \seeds{0.8229}{}{} & \seeds{}{}{} \\
+FedNoRo    & \seeds{0.5943}{}{0.3163} & \seeds{}{}{} \\
+FedCorr    & \seeds{}{}{} & \seeds{}{}{} \\
+FedPURE    & \seeds{}{}{} & \seeds{}{}{} \\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[!ht]\centering\scriptsize
+\caption{CIC-IDS17, non-IID partitions: per-seed macro-F1 (all 20 clients).}
+\label{tab:s-noniid-cic-ids17}
+\begin{tabular}{l|ccc|cc||ccc|cc}
+\toprule
+ & \multicolumn{5}{c||}{\texttt{pat} ($\kappa=2$)} & \multicolumn{5}{c}{\texttt{exDir} ($\alpha=0.1$)} \\
+Method & s0 & s1 & s2 & mean & std & s0 & s1 & s2 & mean & std \\
+\midrule
+FedAvg     & \seeds{}{}{} & \seeds{}{}{} \\
+FedGH      & \seeds{}{}{} & \seeds{}{}{} \\
+FedHome    & \seeds{}{}{} & \seeds{}{}{} \\
+LG-FedAvg  & \seeds{}{}{} & \seeds{}{}{} \\
+FedRep     & \seeds{}{}{} & \seeds{}{}{} \\
+FedNoRo    & \seeds{}{}{0.7176} & \seeds{}{}{} \\
+FedCorr    & \seeds{}{}{} & \seeds{}{}{} \\
+FedPURE    & \seeds{}{}{} & \seeds{}{}{} \\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[!ht]\centering\scriptsize
+\caption{TON\_IoT, non-IID partitions: per-seed macro-F1 (all 20 clients).}
+\label{tab:s-noniid-toniot}
+\begin{tabular}{l|ccc|cc||ccc|cc}
+\toprule
+ & \multicolumn{5}{c||}{\texttt{pat} ($\kappa=2$)} & \multicolumn{5}{c}{\texttt{exDir} ($\alpha=0.1$)} \\
+Method & s0 & s1 & s2 & mean & std & s0 & s1 & s2 & mean & std \\
+\midrule
+FedAvg     & \seeds{0.1566}{}{0.1198} & \seeds{0.2369}{0.0915}{0.0940} \\
+FedGH      & \seeds{0.2089}{}{0.1198} & \seeds{0.2369}{0.4255}{0.0940} \\
+FedHome    & \seeds{0.1198}{}{0.1198} & \seeds{0.2369}{0.2369}{0.2369} \\
+LG-FedAvg  & \seeds{0.2814}{}{0.1198} & \seeds{0.5792}{0.3900}{0.2369} \\
+FedRep     & \seeds{0.9487}{}{0.3961} & \seeds{0.9696}{0.9730}{0.9622} \\
+FedNoRo    & \seeds{0.5046}{}{0.5869} & \seeds{0.2369}{0.2369}{0.2369} \\
+FedCorr    & \seeds{0.9877}{}{0.9879} & \seeds{0.9860}{0.9866}{0.9833} \\
+FedPURE    & \seeds{}{}{} & \seeds{}{}{} \\
+\bottomrule\end{tabular}\end{table}
+
+\clearpage
+
+\section{Per-seed results: per-client label noise (Table~4)}
+
+Benign clients only: $14$ clients at $r_c=0.3$ and $10$ clients at $r_c=0.5$. The IDs of the corrupted clients are listed in Table~\ref{tab:s-corrupt-ids}.
+
+\begin{table}[!ht]\centering\scriptsize
+\caption{NSL-KDD, per-client full label flip: per-seed macro-F1 on benign clients.}
+\label{tab:s-flip-nsl-kdd}
+\begin{tabular}{l|ccc|cc||ccc|cc}
+\toprule
+ & \multicolumn{5}{c||}{$r_c=0.3$ (14 benign clients)} & \multicolumn{5}{c}{$r_c=0.5$ (10 benign clients)} \\
+Method & s0 & s1 & s2 & mean & std & s0 & s1 & s2 & mean & std \\
+\midrule
+FedAvg     & \seeds{0.7460}{0.7727}{0.7899} & \seeds{0.5450}{0.6227}{0.6231} \\
+FedGH      & \seeds{0.7740}{0.8203}{0.7626} & \seeds{0.8250}{0.5114}{0.6699} \\
+FedHome    & \seeds{0.5030}{0.7431}{0.7113} & \seeds{0.5770}{0.5237}{0.4837} \\
+LG-FedAvg  & \seeds{0.8710}{0.8995}{0.9118} & \seeds{0.9150}{0.8738}{0.8976} \\
+FedRep     & \seeds{0.8820}{0.8758}{0.8982} & \seeds{0.8550}{0.8618}{0.8867} \\
+FedNoRo    & \seeds{0.9010}{0.9175}{0.8887} & \seeds{0.4418}{0.4349}{0.7387} \\
+FedCorr    & \seeds{0.9246}{0.9324}{0.9325} & \seeds{0.9181}{0.9015}{0.9094} \\
+FedPURE    & \seeds{0.9195}{0.9253}{0.9159} & \seeds{0.9071}{0.9065}{0.9226} \\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[!ht]\centering\scriptsize
+\caption{UNSW-NB15, per-client full label flip: per-seed macro-F1 on benign clients.}
+\label{tab:s-flip-unsw-nb15}
+\begin{tabular}{l|ccc|cc||ccc|cc}
+\toprule
+ & \multicolumn{5}{c||}{$r_c=0.3$ (14 benign clients)} & \multicolumn{5}{c}{$r_c=0.5$ (10 benign clients)} \\
+Method & s0 & s1 & s2 & mean & std & s0 & s1 & s2 & mean & std \\
+\midrule
+FedAvg     & \seeds{0.4320}{0.3157}{0.2191} & \seeds{0.4220}{0.2157}{0.2885} \\
+FedGH      & \seeds{0.6140}{0.3572}{0.4267} & \seeds{0.7750}{0.4970}{0.5594} \\
+FedHome    & \seeds{0.3430}{0.2920}{0.1973} & \seeds{0.3060}{0.2663}{0.2641} \\
+LG-FedAvg  & \seeds{0.7480}{0.7476}{0.8256} & \seeds{0.8640}{0.8280}{0.8268} \\
+FedRep     & \seeds{0.7670}{0.8407}{0.8559} & \seeds{0.9350}{0.8316}{0.8316} \\
+FedNoRo    & \seeds{0.5493}{0.6304}{0.5493} & \seeds{0.6170}{0.7084}{0.6506} \\
+FedCorr    & \seeds{0.8440}{0.8572}{0.8296} & \seeds{0.8319}{0.8477}{0.8609} \\
+FedPURE    & \seeds{0.8551}{0.8358}{0.8252} & \seeds{0.8445}{0.8614}{0.7398} \\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[!ht]\centering\scriptsize
+\caption{CIC-IDS17, per-client full label flip: per-seed macro-F1 on benign clients.}
+\label{tab:s-flip-cic-ids17}
+\begin{tabular}{l|ccc|cc||ccc|cc}
+\toprule
+ & \multicolumn{5}{c||}{$r_c=0.3$ (14 benign clients)} & \multicolumn{5}{c}{$r_c=0.5$ (10 benign clients)} \\
+Method & s0 & s1 & s2 & mean & std & s0 & s1 & s2 & mean & std \\
+\midrule
+FedAvg     & \seeds{0.1390}{0.2832}{0.2040} & \seeds{0.0220}{0.4970}{0.3971} \\
+FedGH      & \seeds{0.3480}{0.2834}{0.3469} & \seeds{0.2520}{0.5720}{0.3906} \\
+FedHome    & \seeds{0.3300}{0.3886}{0.2106} & \seeds{0.1080}{0.2687}{0.3700} \\
+LG-FedAvg  & \seeds{0.6040}{0.7490}{0.5976} & \seeds{0.7500}{0.6666}{0.7713} \\
+FedRep     & \seeds{0.7110}{0.8675}{0.7216} & \seeds{0.8430}{0.7198}{0.8599} \\
+FedNoRo    & \seeds{0.9535}{0.9535}{0.9541} & \seeds{0.9160}{0.9729}{0.9374} \\
+FedCorr    & \seeds{0.8111}{0.9093}{0.8054} & \seeds{0.7608}{0.8946}{0.6660} \\
+FedPURE    & \seeds{0.9563}{0.8489}{0.8957} & \seeds{0.9550}{0.7470}{0.9426} \\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[!ht]\centering\scriptsize
+\caption{TON\_IoT, per-client full label flip: per-seed macro-F1 on benign clients.}
+\label{tab:s-flip-toniot}
+\begin{tabular}{l|ccc|cc||ccc|cc}
+\toprule
+ & \multicolumn{5}{c||}{$r_c=0.3$ (14 benign clients)} & \multicolumn{5}{c}{$r_c=0.5$ (10 benign clients)} \\
+Method & s0 & s1 & s2 & mean & std & s0 & s1 & s2 & mean & std \\
+\midrule
+FedAvg     & \seeds{0.1065}{0.1720}{0.0896} & \seeds{0.2046}{0.2407}{0.1788} \\
+FedGH      & \seeds{0.8732}{0.9793}{0.8273} & \seeds{0.3391}{0.3553}{0.2163} \\
+FedHome    & \seeds{0.0854}{0.1436}{0.8448} & \seeds{0.1473}{0.1915}{0.1481} \\
+LG-FedAvg  & \seeds{0.7546}{0.0630}{0.1761} & \seeds{0.4331}{0.4504}{0.3135} \\
+FedRep     & \seeds{0.5760}{0.8732}{0.7743} & \seeds{0.9277}{0.9037}{0.8693} \\
+FedNoRo    & \seeds{0.6213}{0.5545}{0.6213} & \seeds{0.5550}{0.6448}{0.5693} \\
+FedCorr    & \seeds{0.9938}{0.9922}{0.9740} & \seeds{0.9929}{0.9928}{0.9915} \\
+FedPURE    & \seeds{0.9957}{0.9961}{0.9953} & \seeds{0.9954}{0.9786}{0.9953} \\
+\bottomrule\end{tabular}\end{table}
+
+\clearpage
+
+\section{Per-seed results: sample-level label noise (Table~5)}
+
+Corruption probability $0.4$ on $r_c=0.3$ of the clients; benign clients only ($14$ clients). Non-IID partition used in this experiment: \texttt{pat} ($\kappa=2$).
+
+\begin{table}[!ht]\centering\scriptsize
+\caption{NSL-KDD, sample-level noise: per-seed macro-F1 on benign clients.}
+\label{tab:s-sample-nsl-kdd}
+\begin{tabular}{l|ccc|cc||ccc|cc}
+\toprule
+ & \multicolumn{5}{c||}{Asymmetric ($\varepsilon_a=0.4$)} & \multicolumn{5}{c}{Symmetric ($\varepsilon=0.4$)} \\
+Method & s0 & s1 & s2 & mean & std & s0 & s1 & s2 & mean & std \\
+\midrule
+FedAvg     & \seeds{}{}{} & \seeds{}{}{} \\
+FedGH      & \seeds{}{}{} & \seeds{}{}{} \\
+FedHome    & \seeds{}{}{} & \seeds{}{}{} \\
+LG-FedAvg  & \seeds{}{}{} & \seeds{}{}{} \\
+FedRep     & \seeds{}{}{} & \seeds{}{}{} \\
+FedNoRo    & \seeds{}{}{} & \seeds{}{}{} \\
+FedCorr    & \seeds{}{}{} & \seeds{}{}{} \\
+FedPURE    & \seeds{}{}{} & \seeds{}{}{} \\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[!ht]\centering\scriptsize
+\caption{UNSW-NB15, sample-level noise: per-seed macro-F1 on benign clients.}
+\label{tab:s-sample-unsw-nb15}
+\begin{tabular}{l|ccc|cc||ccc|cc}
+\toprule
+ & \multicolumn{5}{c||}{Asymmetric ($\varepsilon_a=0.4$)} & \multicolumn{5}{c}{Symmetric ($\varepsilon=0.4$)} \\
+Method & s0 & s1 & s2 & mean & std & s0 & s1 & s2 & mean & std \\
+\midrule
+FedAvg     & \seeds{}{}{} & \seeds{}{}{} \\
+FedGH      & \seeds{}{}{} & \seeds{}{}{} \\
+FedHome    & \seeds{}{}{} & \seeds{}{}{} \\
+LG-FedAvg  & \seeds{}{}{} & \seeds{}{}{} \\
+FedRep     & \seeds{}{}{} & \seeds{}{}{} \\
+FedNoRo    & \seeds{}{}{} & \seeds{}{}{} \\
+FedCorr    & \seeds{}{}{} & \seeds{}{}{} \\
+FedPURE    & \seeds{}{}{} & \seeds{}{}{} \\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[!ht]\centering\scriptsize
+\caption{CIC-IDS17, sample-level noise: per-seed macro-F1 on benign clients.}
+\label{tab:s-sample-cic-ids17}
+\begin{tabular}{l|ccc|cc||ccc|cc}
+\toprule
+ & \multicolumn{5}{c||}{Asymmetric ($\varepsilon_a=0.4$)} & \multicolumn{5}{c}{Symmetric ($\varepsilon=0.4$)} \\
+Method & s0 & s1 & s2 & mean & std & s0 & s1 & s2 & mean & std \\
+\midrule
+FedAvg     & \seeds{}{}{} & \seeds{}{}{} \\
+FedGH      & \seeds{}{}{} & \seeds{}{}{} \\
+FedHome    & \seeds{}{}{} & \seeds{}{}{} \\
+LG-FedAvg  & \seeds{}{}{} & \seeds{}{}{} \\
+FedRep     & \seeds{}{}{} & \seeds{}{}{} \\
+FedNoRo    & \seeds{}{}{} & \seeds{}{}{} \\
+FedCorr    & \seeds{}{}{} & \seeds{}{}{} \\
+FedPURE    & \seeds{}{}{} & \seeds{}{}{} \\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[!ht]\centering\scriptsize
+\caption{TON\_IoT, sample-level noise: per-seed macro-F1 on benign clients.}
+\label{tab:s-sample-toniot}
+\begin{tabular}{l|ccc|cc||ccc|cc}
+\toprule
+ & \multicolumn{5}{c||}{Asymmetric ($\varepsilon_a=0.4$)} & \multicolumn{5}{c}{Symmetric ($\varepsilon=0.4$)} \\
+Method & s0 & s1 & s2 & mean & std & s0 & s1 & s2 & mean & std \\
+\midrule
+FedAvg     & \seeds{}{0.1192}{0.1617} & \seeds{}{}{} \\
+FedGH      & \seeds{}{0.2229}{0.1617} & \seeds{}{}{} \\
+FedHome    & \seeds{}{0.1092}{0.1617} & \seeds{}{}{} \\
+LG-FedAvg  & \seeds{}{0.2815}{0.1618} & \seeds{}{}{} \\
+FedRep     & \seeds{}{}{} & \seeds{}{}{} \\
+FedNoRo    & \seeds{}{}{} & \seeds{}{}{} \\
+FedCorr    & \seeds{}{}{} & \seeds{}{}{} \\
+FedPURE    & \seeds{}{}{} & \seeds{}{}{} \\
+\bottomrule\end{tabular}\end{table}
+
+\clearpage
+
+\section{Per-seed results: late-joining client (Figure~4)}
+
+Dataset: NSL-KDD; partition \texttt{pat}, clean labels; FedPURE only.
+
+\begin{table}[!ht]\centering\scriptsize
+\caption{Late-joining client: per-seed macro-F1.}
+\label{tab:s-late}
+\begin{tabular}{l|ccc|cc}
+\toprule
+& s0 & s1 & s2 & mean & std \\
+\midrule
+Late-joining client (single client)         & 0.7700 & 1.0000 & 1.0000 & 0.9233 & 0.1328 \\
+Original clients (weighted mean, 19 clients) & 0.9294 & 0.9958 & 0.9974 & 0.9742 & 0.0388 \\
+\bottomrule\end{tabular}\end{table}
+
+\section{Evaluation cohorts and per-client results}
+
+\begin{table}[!ht]\centering\scriptsize
+\caption{IDs of the corrupted clients (excluded from evaluation) for each noise setting and seed. If the corrupted set does not depend on the seed, fill the same IDs in all three columns.}
+\label{tab:s-corrupt-ids}
+\begin{tabular}{l|ccc}
+\toprule
+Setting & s0 & s1 & s2 \\
+\midrule
+Full flip, $r_c=0.3$ & 18, 1, 19, 8, 10, 17 & 3, 16, 6, 10, 2, 14 & 12, 4, 18, 0, 9, 5 \\
+Full flip, $r_c=0.5$ & 3, 7, 12, 15, 0, 18, 4, 9, 11, 2 & 1, 5, 8, 14, 19, 6, 10, 13, 17, 0 & 2, 4, 9, 11, 16, 1, 7, 12, 15, 18 \\
+Asymmetric, $r_c=0.3$ & 5, 11, 3, 14, 0, 8 & 2, 17, 9, 12, 6, 15 & 1, 10, 16, 7, 13, 19 \\
+Symmetric, $r_c=0.3$ & 4, 13, 1, 16, 9, 2 & 0, 11, 5, 18, 7, 14 & 3, 8, 12, 15, 6, 19 \\
+\bottomrule\end{tabular}\end{table}
+
+The per-client macro-F1 of every method, setting, and seed is released as CSV files in the code repository (https://github.com/huyentrang154/FedLearning-IDS-2026), together with the aggregation script (summarize\_results.py) that produces every mean~$\pm$~std in the main paper and in this document. Table~\ref{tab:s-perclient} shows the format for one (method, dataset, setting) combination.
+
+\begin{table}[!ht]\centering\scriptsize
+\caption{Per-client macro-F1 for \fillin{method}, \fillin{dataset}, \fillin{setting}. Status: B = benign (evaluated), C = corrupted (excluded). $n_k$ is the number of test samples used as the aggregation weight.}
+\label{tab:s-perclient}
+\begin{tabular}{c|c|c|ccc}
+\toprule
+Client & Status & $n_k$ & s0 & s1 & s2 \\
+\midrule
+0 & \fillin{} & \fillin{} & \vb & \vb & \vb \\
+1 & \fillin{} & \fillin{} & \vb & \vb & \vb \\
+2 & \fillin{} & \fillin{} & \vb & \vb & \vb \\
+3 & \fillin{} & \fillin{} & \vb & \vb & \vb \\
+4 & \fillin{} & \fillin{} & \vb & \vb & \vb \\
+5 & \fillin{} & \fillin{} & \vb & \vb & \vb \\
+6 & \fillin{} & \fillin{} & \vb & \vb & \vb \\
+7 & \fillin{} & \fillin{} & \vb & \vb & \vb \\
+8 & \fillin{} & \fillin{} & \vb & \vb & \vb \\
+9 & \fillin{} & \fillin{} & \vb & \vb & \vb \\
+10 & \fillin{} & \fillin{} & \vb & \vb & \vb \\
+11 & \fillin{} & \fillin{} & \vb & \vb & \vb \\
+12 & \fillin{} & \fillin{} & \vb & \vb & \vb \\
+13 & \fillin{} & \fillin{} & \vb & \vb & \vb \\
+14 & \fillin{} & \fillin{} & \vb & \vb & \vb \\
+15 & \fillin{} & \fillin{} & \vb & \vb & \vb \\
+16 & \fillin{} & \fillin{} & \vb & \vb & \vb \\
+17 & \fillin{} & \fillin{} & \vb & \vb & \vb \\
+18 & \fillin{} & \fillin{} & \vb & \vb & \vb \\
+19 & \fillin{} & \fillin{} & \vb & \vb & \vb \\
+\midrule
+\multicolumn{3}{l|}{Weighted mean over benign clients} & \vb & \vb & \vb \\
+\bottomrule\end{tabular}\end{table}
+
+
+
+
+
+\end{document}

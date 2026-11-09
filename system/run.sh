@@ -115,18 +115,7 @@ mkdir -p logs
 # 3. Datasets & Data Type
 #########################################
 DATASETS=(
-<<<<<<< HEAD
     "unsw"
-=======
-<<<<<<< HEAD
-    "unsw"
-    "toniot"
-=======
-    "nslkdd"
-    "unsw"
-    "cic_ids"
->>>>>>> 8f944b04eb5e51dcc7fb0c44ca0214dfb93ffd44
->>>>>>> 54f231895163cc1cfd58cff51a440f1ca8792371
 )
 
 # "noniid" (tự động map sang noniid20) hoặc "exdir" (tự động map sang noniidexdir20)

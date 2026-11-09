@@ -1,0 +1,40 @@
+============================================================
+Dataset                : unsw (noniid20)
+Algorithm              : fedcorr
+Random Seed            : 2
+Noise Type             : None
+Poisoned Workers Ratio : 0.0
+Poisoned Sample Ratio  : 0.0
+============================================================
+
+============= Running 1/1 =============
+Creating server and clients ...
+Noise Type: None
+Poisoned Worker IDs (fixed): []
+
+Join ratio / total clients: 1.0 / 20
+Algorithm: fedcorr | Dataset: unsw | Data type: noniid20
+FedCorr | iteration1=5, rounds1=10, rounds2=40
+         beta=0.0, relabel_ratio=0.5, confidence_thres=0.5
+         clean_set_thres=0.1, correction=False, fine_tuning=False
+Finished creating server and clients.
+Algorithm fedcorr
+
+===== Stage 1: Noise Detection =====
+
+--- Stage 1  iter 1/5 ---
+Traceback (most recent call last):
+  File "C:\Users\BTL86\Desktop\HuyenTrang\FedLearning-IDS-2026-master\FedLearning-IDS-2026-master\system\main.py", line 310, in <module>
+    run(args)
+  File "C:\Users\BTL86\Desktop\HuyenTrang\FedLearning-IDS-2026-master\FedLearning-IDS-2026-master\system\main.py", line 153, in run
+    server.train()
+  File "C:\Users\BTL86\Desktop\HuyenTrang\FedLearning-IDS-2026-master\FedLearning-IDS-2026-master\system\flcore\servers\serverFedCorr.py", line 780, in train
+    lids = _lid_term(outputs)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BTL86\Desktop\HuyenTrang\FedLearning-IDS-2026-master\FedLearning-IDS-2026-master\system\flcore\servers\serverFedCorr.py", line 562, in _lid_term
+    distances = cdist(X, X)
+                ^^^^^^^^^^^
+  File "C:\Users\BTL86\Desktop\HuyenTrang\FedLearning-IDS-2026-master\FedLearning-IDS-2026-master\system\.venv\Lib\site-packages\scipy\spatial\distance.py", line 2926, in cdist
+    return cdist_fn(XA, XB, out=out, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+numpy._core._exceptions._ArrayMemoryError: Unable to allocate 33.9 GiB for an array with shape (67432, 67432) and data type float64
