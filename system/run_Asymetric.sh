@@ -106,7 +106,7 @@ mkdir -p logs
 # 3. Datasets & Data Type
 #########################################
 DATASETS=(
-    "nslkdd"
+    "toniot"
 )
 
 DATA_TYPE="noniid20"
@@ -115,14 +115,7 @@ DATA_TYPE="noniid20"
 # 4. 8 Thuật toán FL
 #########################################
 ALGOS=(
-    "fedavg"
-    "fedgh"
-    "fedhome"
-    "lg_fedavg"
-    "fednoro"
-    "fedrep"
     "fedus"
-    "fedcorr"
 )
 
 #########################################

@@ -1,0 +1,30 @@
+============================================================
+Dataset                : toniot (noniid20)
+Algorithm              : fedus
+Random Seed            : 0
+Noise Type             : Asymmetric
+Poisoned Workers Ratio : 0.3
+Poisoned Sample Ratio  : 0.4
+============================================================
+
+============= Running 1/1 =============
+Creating server and clients ...
+Noise Type: Asymmetric
+Poisoned Worker IDs (fixed): [0, 1, 2, 3, 4, 5]
+Traceback (most recent call last):
+  File "C:\Users\BTL86\Desktop\HuyenTrang\FedLearning-IDS-2026-master\FedLearning-IDS-2026-master\system\main.py", line 310, in <module>
+    run(args)
+  File "C:\Users\BTL86\Desktop\HuyenTrang\FedLearning-IDS-2026-master\FedLearning-IDS-2026-master\system\main.py", line 132, in run
+    server = FedUS(args, i)
+             ^^^^^^^^^^^^^^
+  File "C:\Users\BTL86\Desktop\HuyenTrang\FedLearning-IDS-2026-master\FedLearning-IDS-2026-master\system\flcore\servers\serverUS.py", line 63, in __init__
+    self.set_clients(args, ClientUS)
+  File "C:\Users\BTL86\Desktop\HuyenTrang\FedLearning-IDS-2026-master\FedLearning-IDS-2026-master\system\flcore\servers\serverUS.py", line 133, in set_clients
+    client = clientObj(args=args,
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BTL86\Desktop\HuyenTrang\FedLearning-IDS-2026-master\FedLearning-IDS-2026-master\system\flcore\clients\clientUS.py", line 50, in __init__
+    print("client này b\u1ecb label flipping")
+  File "C:\Users\BTL86\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u1ecb' in position 12: character maps to <undefined>

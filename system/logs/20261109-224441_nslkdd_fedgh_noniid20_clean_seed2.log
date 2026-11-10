@@ -1,0 +1,96 @@
+============================================================
+Dataset                : nslkdd (noniid20)
+Algorithm              : fedgh
+Random Seed            : 2
+Noise Type             : None
+Poisoned Workers Ratio : 0.0
+Poisoned Sample Ratio  : 0.0
+============================================================
+
+============= Running 1/1 =============
+Creating server and clients ...
+Noise Type: None
+Poisoned Worker IDs (fixed): []
+
+Join ratio / total clients: 1.0 / 20
+
+Algorithm:  fedgh Dataset:  nslkdd Data type:  noniid20
+Algorithm fedgh
+
+-------------Round number: 0-------------
+Performance Metrics
+	Client 12: acc 1.0, precision: 0.5, recall: 0.5, f1: 0.5
+	Client 4: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 18: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 0: acc 0.85, precision: 0.43, recall: 0.5, f1: 0.46
+	Client 9: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 5: acc 0.84, precision: 0.42, recall: 0.5, f1: 0.46
+	Client 3: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 10: acc 0.86, precision: 0.43, recall: 0.5, f1: 0.46
+	Client 1: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 17: acc 1.0, precision: 0.5, recall: 0.5, f1: 0.5
+	Client 7: acc 1.0, precision: 0.5, recall: 0.5, f1: 0.5
+	Client 16: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 14: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 2: acc 1.0, precision: 0.5, recall: 0.5, f1: 0.5
+	Client 11: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 6: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 19: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 13: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 15: acc 0.84, precision: 0.42, recall: 0.5, f1: 0.46
+	Client 8: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+
+Algorithm:  fedgh Dataset:  nslkdd
+Overall Performance Metrics
+	train loss avg: 1.4522
+	test acc normal avg: 0.5191 | f1 normal avg: 0.2704
+	test acc flipping avg: 0.0000 | f1 flipping avg: 0.0000
+Time: 159.58
+
+-------------Round number: 1-------------
+Performance Metrics
+	Client 13: acc 0.35, precision: 0.5, recall: 0.3, f1: 0.33
+	Client 14: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 2: acc 1.0, precision: 0.5, recall: 0.5, f1: 0.5
+	Client 9: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 8: acc 0.34, precision: 0.5, recall: 0.29, f1: 0.32
+	Client 15: acc 0.97, precision: 0.66, recall: 0.61, f1: 0.63
+	Client 0: acc 0.96, precision: 0.65, recall: 0.58, f1: 0.61
+	Client 19: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 12: acc 1.0, precision: 0.5, recall: 0.5, f1: 0.5
+	Client 1: acc 0.01, precision: 0.03, recall: 0.06, f1: 0.04
+	Client 16: acc 0.02, precision: 0.03, recall: 0.08, f1: 0.04
+	Client 18: acc 0.99, precision: 0.65, recall: 0.66, f1: 0.66
+	Client 17: acc 1.0, precision: 0.5, recall: 0.5, f1: 0.5
+	Client 11: acc 0.02, precision: 0.03, recall: 0.07, f1: 0.05
+	Client 10: acc 0.99, precision: 0.66, recall: 0.64, f1: 0.65
+	Client 4: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 6: acc 0.07, precision: 0.09, recall: 0.33, f1: 0.14
+	Client 3: acc 0.37, precision: 0.5, recall: 0.3, f1: 0.33
+	Client 7: acc 1.0, precision: 0.5, recall: 0.5, f1: 0.5
+	Client 5: acc 0.95, precision: 0.65, recall: 0.57, f1: 0.6
+
+Algorithm:  fedgh Dataset:  nslkdd
+Overall Performance Metrics
+	train loss avg: 1.0386
+	test acc normal avg: 0.6789 | f1 normal avg: 0.4267
+	test acc flipping avg: 0.0000 | f1 flipping avg: 0.0000
+Traceback (most recent call last):
+  File "C:\Users\BTL86\Desktop\HuyenTrang\FedLearning-IDS-2026-master\FedLearning-IDS-2026-master\system\main.py", line 310, in <module>
+    run(args)
+  File "C:\Users\BTL86\Desktop\HuyenTrang\FedLearning-IDS-2026-master\FedLearning-IDS-2026-master\system\main.py", line 153, in run
+    server.train()
+  File "C:\Users\BTL86\Desktop\HuyenTrang\FedLearning-IDS-2026-master\FedLearning-IDS-2026-master\system\flcore\servers\serverGH.py", line 114, in train
+    client.train()
+  File "C:\Users\BTL86\Desktop\HuyenTrang\FedLearning-IDS-2026-master\FedLearning-IDS-2026-master\system\flcore\clients\clientGH.py", line 82, in train
+    self.optimizer.step()
+  File "C:\Users\BTL86\Desktop\HuyenTrang\FedLearning-IDS-2026-master\FedLearning-IDS-2026-master\system\.venv\Lib\site-packages\torch\optim\optimizer.py", line 567, in wrapper
+    out = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BTL86\Desktop\HuyenTrang\FedLearning-IDS-2026-master\FedLearning-IDS-2026-master\system\.venv\Lib\site-packages\torch\optim\optimizer.py", line 62, in _use_grad
+    self = cast(Optimizer, args[0])  # assume first positional arg is `self`
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BTL86\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\typing.py", line 2287, in cast
+    def cast(typ, val):
+    
+KeyboardInterrupt
