@@ -1,0 +1,103 @@
+============================================================
+Dataset                : toniot (noniid20)
+Algorithm              : fednoro
+Random Seed            : 2
+Noise Type             : Asymmetric
+Poisoned Workers Ratio : 0.3
+Poisoned Sample Ratio  : 0.4
+============================================================
+
+============= Running 1/1 =============
+Creating server and clients ...
+Noise Type: Asymmetric
+Poisoned Worker IDs (fixed): [0, 1, 2, 3, 4, 5]
+Poisoned Asymmetric
+Poisoned Asymmetric
+Poisoned Asymmetric
+Poisoned Asymmetric
+Poisoned Asymmetric
+Poisoned Asymmetric
+
+Join ratio / total clients: 1.0 / 20
+
+Algorithm:  fednoro Dataset:  toniot Data type:  noniid20
+FedNoRo: warmup_rounds=10, kd_begin=10, kd_end=49, kd_a=0.8
+Finished creating server and clients.
+Algorithm fednoro
+
+-------------Round number: 0-------------
+[Stage 1 - Warm-up] 0/9
+
+Evaluate global model
+Train Loss
+	Client 3: Train loss: 2.24
+	Client 8: Train loss: 2.23
+	Client 6: Train loss: 2.38
+	Client 1: Train loss: 2.24
+	Client 7: Train loss: 2.35
+	Client 18: Train loss: 2.33
+	Client 14: Train loss: 2.4
+	Client 13: Train loss: 2.38
+	Client 11: Train loss: 2.23
+	Client 10: Train loss: 2.24
+	Client 0: Train loss: 2.22
+	Client 2: Train loss: 2.24
+	Client 16: Train loss: 2.24
+	Client 5: Train loss: 2.29
+	Client 4: Train loss: 2.35
+	Client 12: Train loss: 2.35
+	Client 19: Train loss: 2.29
+	Client 9: Train loss: 2.23
+	Client 15: Train loss: 2.37
+	Client 17: Train loss: 2.23
+Performance Metrics
+	Client 3: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 8: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 6: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 1: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 7: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 18: acc 0.27, precision: 0.13, recall: 0.5, f1: 0.21
+	Client 14: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 13: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 11: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 10: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 0: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 2: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 16: acc 0.68, precision: 0.34, recall: 0.5, f1: 0.4
+	Client 5: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 4: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 12: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 19: acc 0.46, precision: 0.23, recall: 0.5, f1: 0.32
+	Client 9: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 15: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 17: acc 0.73, precision: 0.36, recall: 0.5, f1: 0.42
+
+Algorithm:  fednoro Dataset:  toniot
+Overall Performance Metrics
+	train loss avg: 2.2879
+	test acc normal avg: 0.1261 | f1 normal avg: 0.0828
+	test acc flipping avg: 0.0000 | f1 flipping avg: 0.0000
+Traceback (most recent call last):
+  File "C:\Users\BTL86\Desktop\HuyenTrang\FedLearning-IDS-2026-master\FedLearning-IDS-2026-master\system\main.py", line 310, in <module>
+    run(args)
+  File "C:\Users\BTL86\Desktop\HuyenTrang\FedLearning-IDS-2026-master\FedLearning-IDS-2026-master\system\main.py", line 153, in run
+    server.train()
+  File "C:\Users\BTL86\Desktop\HuyenTrang\FedLearning-IDS-2026-master\FedLearning-IDS-2026-master\system\flcore\servers\serverNoRo.py", line 173, in train
+    client.train()
+  File "C:\Users\BTL86\Desktop\HuyenTrang\FedLearning-IDS-2026-master\FedLearning-IDS-2026-master\system\flcore\clients\clientNoRo.py", line 84, in train
+    self._train_standard()
+  File "C:\Users\BTL86\Desktop\HuyenTrang\FedLearning-IDS-2026-master\FedLearning-IDS-2026-master\system\flcore\clients\clientNoRo.py", line 101, in _train_standard
+    self.optimizer.step()
+  File "C:\Users\BTL86\Desktop\HuyenTrang\FedLearning-IDS-2026-master\FedLearning-IDS-2026-master\system\.venv\Lib\site-packages\torch\optim\optimizer.py", line 567, in wrapper
+    out = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BTL86\Desktop\HuyenTrang\FedLearning-IDS-2026-master\FedLearning-IDS-2026-master\system\.venv\Lib\site-packages\torch\optim\optimizer.py", line 79, in _use_grad
+    ret = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BTL86\Desktop\HuyenTrang\FedLearning-IDS-2026-master\FedLearning-IDS-2026-master\system\.venv\Lib\site-packages\torch\optim\sgd.py", line 128, in step
+    sgd(
+  File "C:\Users\BTL86\Desktop\HuyenTrang\FedLearning-IDS-2026-master\FedLearning-IDS-2026-master\system\.venv\Lib\site-packages\torch\optim\sgd.py", line 303, in sgd
+    func(
+  File "C:\Users\BTL86\Desktop\HuyenTrang\FedLearning-IDS-2026-master\FedLearning-IDS-2026-master\system\.venv\Lib\site-packages\torch\optim\sgd.py", line 379, in _single_tensor_sgd
+    param.add_(grad, alpha=-lr)
+KeyboardInterrupt

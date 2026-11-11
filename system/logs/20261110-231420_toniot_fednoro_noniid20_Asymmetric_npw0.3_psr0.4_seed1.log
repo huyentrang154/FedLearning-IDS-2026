@@ -1,0 +1,107 @@
+============================================================
+Dataset                : toniot (noniid20)
+Algorithm              : fednoro
+Random Seed            : 1
+Noise Type             : Asymmetric
+Poisoned Workers Ratio : 0.3
+Poisoned Sample Ratio  : 0.4
+============================================================
+
+============= Running 1/1 =============
+Creating server and clients ...
+Noise Type: Asymmetric
+Poisoned Worker IDs (fixed): [0, 1, 2, 3, 4, 5]
+Poisoned Asymmetric
+Poisoned Asymmetric
+Poisoned Asymmetric
+Poisoned Asymmetric
+Poisoned Asymmetric
+Poisoned Asymmetric
+
+Join ratio / total clients: 1.0 / 20
+
+Algorithm:  fednoro Dataset:  toniot Data type:  noniid20
+FedNoRo: warmup_rounds=10, kd_begin=10, kd_end=49, kd_a=0.8
+Finished creating server and clients.
+Algorithm fednoro
+
+-------------Round number: 0-------------
+[Stage 1 - Warm-up] 0/9
+
+Evaluate global model
+Train Loss
+	Client 16: Train loss: 2.36
+	Client 10: Train loss: 2.26
+	Client 9: Train loss: 2.25
+	Client 3: Train loss: 2.36
+	Client 7: Train loss: 2.21
+	Client 0: Train loss: 2.37
+	Client 15: Train loss: 2.28
+	Client 11: Train loss: 2.25
+	Client 5: Train loss: 2.26
+	Client 1: Train loss: 2.36
+	Client 14: Train loss: 2.31
+	Client 18: Train loss: 2.26
+	Client 8: Train loss: 2.26
+	Client 6: Train loss: 2.22
+	Client 12: Train loss: 2.25
+	Client 13: Train loss: 2.29
+	Client 17: Train loss: 2.38
+	Client 19: Train loss: 2.31
+	Client 2: Train loss: 2.35
+	Client 4: Train loss: 2.29
+Performance Metrics
+	Client 16: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 10: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 9: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 3: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 7: acc 0.55, precision: 0.27, recall: 0.5, f1: 0.35
+	Client 0: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 15: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 11: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 5: acc 0.59, precision: 0.3, recall: 0.5, f1: 0.37
+	Client 1: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 14: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 18: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 8: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 6: acc 0.47, precision: 0.23, recall: 0.5, f1: 0.32
+	Client 12: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 13: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 17: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 19: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 2: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 4: acc 0.25, precision: 0.12, recall: 0.5, f1: 0.2
+
+Algorithm:  fednoro Dataset:  toniot
+Overall Performance Metrics
+	train loss avg: 2.2867
+	test acc normal avg: 0.0848 | f1 normal avg: 0.0556
+	test acc flipping avg: 0.1189 | f1 flipping avg: 0.0796
+Traceback (most recent call last):
+  File "C:\Users\BTL86\Desktop\HuyenTrang\FedLearning-IDS-2026-master\FedLearning-IDS-2026-master\system\main.py", line 310, in <module>
+    run(args)
+  File "C:\Users\BTL86\Desktop\HuyenTrang\FedLearning-IDS-2026-master\FedLearning-IDS-2026-master\system\main.py", line 153, in run
+    server.train()
+  File "C:\Users\BTL86\Desktop\HuyenTrang\FedLearning-IDS-2026-master\FedLearning-IDS-2026-master\system\flcore\servers\serverNoRo.py", line 173, in train
+    client.train()
+  File "C:\Users\BTL86\Desktop\HuyenTrang\FedLearning-IDS-2026-master\FedLearning-IDS-2026-master\system\flcore\clients\clientNoRo.py", line 84, in train
+    self._train_standard()
+  File "C:\Users\BTL86\Desktop\HuyenTrang\FedLearning-IDS-2026-master\FedLearning-IDS-2026-master\system\flcore\clients\clientNoRo.py", line 89, in _train_standard
+    for x, y in self.train_loader:
+  File "C:\Users\BTL86\Desktop\HuyenTrang\FedLearning-IDS-2026-master\FedLearning-IDS-2026-master\system\.venv\Lib\site-packages\torch\utils\data\dataloader.py", line 725, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\BTL86\Desktop\HuyenTrang\FedLearning-IDS-2026-master\FedLearning-IDS-2026-master\system\.venv\Lib\site-packages\torch\utils\data\dataloader.py", line 785, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BTL86\Desktop\HuyenTrang\FedLearning-IDS-2026-master\FedLearning-IDS-2026-master\system\.venv\Lib\site-packages\torch\utils\data\_utils\fetch.py", line 57, in fetch
+    return self.collate_fn(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BTL86\Desktop\HuyenTrang\FedLearning-IDS-2026-master\FedLearning-IDS-2026-master\system\.venv\Lib\site-packages\torch\utils\data\_utils\collate.py", line 401, in default_collate
+    return collate(batch, collate_fn_map=default_collate_fn_map)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BTL86\Desktop\HuyenTrang\FedLearning-IDS-2026-master\FedLearning-IDS-2026-master\system\.venv\Lib\site-packages\torch\utils\data\_utils\collate.py", line 202, in collate
+    elif isinstance(elem, collections.abc.Sequence):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen abc>", line 117, in __instancecheck__
+KeyboardInterrupt
