@@ -546,12 +546,17 @@ def _lid_term(outputs, k=20):
     applies the MLE estimator:  LID_i = -k / sum_j log(d_j / d_k)
     where d_1 ≤ … ≤ d_k are the k nearest-neighbour distances.
     Matches Algorithm 1 of the FedCorr paper (arXiv:2204.04677).
+
+    Distances are computed in row blocks. Each row keeps only its k + 1
+    smallest values (self, then the k neighbours), which is all the
+    estimator reads. The neighbour distances match a full pairwise matrix.
     """
     eps = 1e-6
     X = np.asarray(outputs, dtype=np.float32)
-    k = min(k, len(X) - 1)
+    n_samples = len(X)
+    k = min(k, n_samples - 1)
     if k <= 0:
-        return np.zeros(len(X))
+        return np.zeros(n_samples)
 
     def f(v):
         d_max = v[-1] + eps
@@ -559,13 +564,19 @@ def _lid_term(outputs, k=20):
         denom = np.sum(log_ratios) + eps
         return -k / denom
 
-    distances = cdist(X, X)
-    sort_indices = np.apply_along_axis(np.argsort, axis=1, arr=distances)[:, 1:k + 1]
-    m, n = sort_indices.shape
-    idx = list(np.ogrid[:m, :n])
-    idx[1] = sort_indices
-    distances_ = distances[tuple(idx)]
-    lids = np.apply_along_axis(f, axis=1, arr=distances_)
+    knn = np.empty((n_samples, k), dtype=np.float64)
+    block = 1024
+    for start in range(0, n_samples, block):
+        end = min(start + block, n_samples)
+        dist = cdist(X[start:end], X)
+        # k + 1 smallest: the self-distance, then the k neighbours.
+        chosen = np.argpartition(dist, k, axis=1)[:, :k + 1]
+        rows = np.arange(end - start)[:, None]
+        smallest = dist[rows, chosen]
+        smallest.sort(axis=1)
+        knn[start:end] = smallest[:, 1:]
+
+    lids = np.apply_along_axis(f, axis=1, arr=knn)
     # Guard against any residual NaN/inf
     lids = np.where(np.isfinite(lids), lids, 0.0)
     return lids
