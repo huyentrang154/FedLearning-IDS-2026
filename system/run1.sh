@@ -115,23 +115,27 @@ DATA_TYPE="noniid20"
 # 4. 8 Thuật toán FL
 #########################################
 ALGOS=(
+    "fedavg"
     "fedrep"
-    "fednoro"
+    "fedgh"
     "fedcorr"
+    "fedhome"
+    "lg_fedavg"
+    "fedrep"
 )
 
 #########################################
 # 5. Seeds (có thể thêm nhiều seed: (0 1 2))
 #########################################
 SEEDS=(
-    1 2
+    0 1 2
 )
 
 #########################################
-# 6. Kịch bản Asymmetric (num_of_poisoned_workers = 0.3, poisoned_sample_ratio = 0.4)
+# 6. Kịch bản Flipping (num_of_poisoned_workers = 0.3, poisoned_sample_ratio = 0.4)
 #########################################
 SCENARIOS=(
-    "Asymmetric|0.3|0.4"
+    "label_flipping|0.3|1.0"
 )
 
 #########################################
@@ -196,6 +200,6 @@ wait
 
 echo
 echo "==========================================="
-echo "All Asymmetric experiments finished! (EXP_NAME: $EXP_NAME)"
+echo "All Flipping experiments finished! (EXP_NAME: $EXP_NAME)"
 echo "==========================================="
 
