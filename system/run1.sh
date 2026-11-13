@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Di chuyển vào thư mục chứa file run.sh (system/) để gọi main.py chính xác
 cd "$(dirname "$0")"
 
 export OMP_NUM_THREADS=1
@@ -13,7 +12,7 @@ export NUMEXPR_NUM_THREADS=1
 #########################################
 PYTHON_BIN=""
 
-# Danh sách các đường dẫn Python tiềm năng (ưu tiên .venv, Conda envs, và Python cài trên máy)
+
 CANDIDATES=(
     "../.venv/Scripts/python.exe"
     ".venv/Scripts/python.exe"
@@ -23,7 +22,6 @@ CANDIDATES=(
     "python3"
 )
 
-# Bổ sung tự động các môi trường Conda và Python chuẩn trên Windows/Linux
 for p in \
     "$HOME"/anaconda3/envs/*/python.exe \
     "$HOME"/miniconda3/envs/*/python.exe \
@@ -50,7 +48,7 @@ done
 
 echo "Đang kiểm tra môi trường Python..."
 
-# Bước 1: Ưu tiên tìm Python ĐÃ CÓ SẴN thư viện torch
+
 for candidate in "${CANDIDATES[@]}"; do
     if "$candidate" -c "import torch" >/dev/null 2>&1; then
         PYTHON_BIN="$candidate"
@@ -59,7 +57,7 @@ for candidate in "${CANDIDATES[@]}"; do
     fi
 done
 
-# Bước 2: Nếu chưa môi trường nào có torch, chọn Python hợp lệ (bỏ qua MSYS/GitBash python không cài được wheel) để cài đặt
+
 if [ -z "$PYTHON_BIN" ]; then
     for candidate in "${CANDIDATES[@]}"; do
         if "$candidate" -c "import sys; sys.exit(0 if 'msys' not in sys.platform.lower() else 1)" >/dev/null 2>&1; then
@@ -76,7 +74,7 @@ fi
 
 echo "Using Python: $PYTHON_BIN ($("$PYTHON_BIN" --version 2>&1))"
 
-# Kiểm tra và cài đặt các thư viện cần thiết nếu chưa có
+
 if ! "$PYTHON_BIN" -c "import torch, numpy, scipy, sklearn, pandas, matplotlib, h5py" >/dev/null 2>&1; then
     echo "================================================="
     echo "Môi trường chưa đủ thư viện. Đang cài đặt từ requirements.txt ..."
@@ -85,6 +83,7 @@ if ! "$PYTHON_BIN" -c "import torch, numpy, scipy, sklearn, pandas, matplotlib, 
     "$PYTHON_BIN" -m pip install --upgrade pip
     "$PYTHON_BIN" -m pip install torch torchvision torchaudio
     "$PYTHON_BIN" -m pip install -r requirements.txt
+
 
     # Kiểm tra lại sau khi cài đặt
     if ! "$PYTHON_BIN" -c "import torch, numpy, scipy, sklearn, pandas, matplotlib, h5py" >/dev/null 2>&1; then
@@ -101,6 +100,7 @@ fi
 MAX_JOBS=4
 
 # Tự động kiểm tra GPU CUDA, nếu không có CUDA sẽ chuyển sang cpu
+
 if "$PYTHON_BIN" -c "import torch; sys.exit(0 if torch.cuda.is_available() else 1)" >/dev/null 2>&1; then
     DEVICE="cuda"
 else
@@ -115,16 +115,21 @@ mkdir -p logs
 # 3. Datasets & Data Type
 #########################################
 DATASETS=(
-    "toniot"
+    "unsw"
 )
 
-# "noniid" (tự động map sang noniid20) hoặc "exdir" (tự động map sang noniidexdir20)
 DATA_TYPE="noniid20"
 
 #########################################
 # 4. 8 Thuật toán FL
 #########################################
 ALGOS=(
+    "fedavg"
+    "fedrep"
+    "fedgh"
+    "fedhome"
+    "lg_fedavg"
+    "fednoro"
     "fedus"
 )
 
@@ -132,8 +137,9 @@ ALGOS=(
 # 5. Seeds (có thể thêm nhiều seed: (0 1 2))
 #########################################
 SEEDS=(
-    2
+    0 1 2
 )
+
 
 #########################################
 # 6. Các kịch bản chạy với noniid (Định dạng: "NOISE_TYPE|NPW|PSR")
@@ -141,11 +147,7 @@ SEEDS=(
 # Bỏ comment các dòng bên dưới nếu muốn chạy luôn các kịch bản Poisoning trên noniid.
 #########################################
 SCENARIOS=(
-    "None|0.0|0.0"                  # Kịch bản 1: Clean với noniid (noniid20)
-    # "label_flipping|0.3|1.0"      # Kịch bản 2a: Label flipping (npw=0.3, psr=1.0)
-    # "label_flipping|0.5|1.0"      # Kịch bản 2b: Label flipping (npw=0.5, psr=1.0)
-    # "Asymmetric|0.3|0.4"          # Kịch bản 3a: Asymmetric (npw=0.3, psr=0.4)
-    # "Symmetric|0.3|0.4"           # Kịch bản 3b: Symmetric (npw=0.3, psr=0.4)
+     "label_flipping|0.3|1.0"      # Kịch bản 2a: Label flipping (npw=0.3, psr=1.0)
 )
 
 #########################################

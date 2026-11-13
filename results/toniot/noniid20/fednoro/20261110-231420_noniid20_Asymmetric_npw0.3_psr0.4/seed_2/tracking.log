@@ -1,0 +1,64 @@
+============================================================
+Timestamp: 2026-11-10 23:14:45
+Experiment: 20261110-231420_noniid20_Asymmetric_npw0.3_psr0.4
+Scenario: noniid20_Asymmetric_npw0.3_psr0.4
+Algorithm: fednoro
+Dataset: toniot
+Data type: noniid20
+Seed: 2
+Num clients: 20 | Join ratio: 1.0
+Global rounds: 50 | Local steps: 5 | Batch size: 4 | LR: 0.01
+Noise type: Asymmetric | num_of_poisoned_workers: 0.3 | ratio: 0.4
+Poisoned Worker IDs: [0, 1, 2, 3, 4, 5]
+Result path: ..\results\toniot\noniid20\fednoro\20261110-231420_noniid20_Asymmetric_npw0.3_psr0.4\seed_2
+FedNoRo params: warmup_rounds=10, kd_begin=10, kd_end=49, kd_a=0.8
+============================================================
+-------------Round number: 0-------------
+Train Loss
+	Client 3: Train loss: 2.24
+	Client 8: Train loss: 2.23
+	Client 6: Train loss: 2.38
+	Client 1: Train loss: 2.24
+	Client 7: Train loss: 2.35
+	Client 18: Train loss: 2.33
+	Client 14: Train loss: 2.4
+	Client 13: Train loss: 2.38
+	Client 11: Train loss: 2.23
+	Client 10: Train loss: 2.24
+	Client 0: Train loss: 2.22
+	Client 2: Train loss: 2.24
+	Client 16: Train loss: 2.24
+	Client 5: Train loss: 2.29
+	Client 4: Train loss: 2.35
+	Client 12: Train loss: 2.35
+	Client 19: Train loss: 2.29
+	Client 9: Train loss: 2.23
+	Client 15: Train loss: 2.37
+	Client 17: Train loss: 2.23
+Performance Metrics
+	Client 3: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 8: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 6: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 1: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 7: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 18: acc 0.27, precision: 0.13, recall: 0.5, f1: 0.21
+	Client 14: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 13: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 11: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 10: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 0: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 2: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 16: acc 0.68, precision: 0.34, recall: 0.5, f1: 0.4
+	Client 5: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 4: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 12: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 19: acc 0.46, precision: 0.23, recall: 0.5, f1: 0.32
+	Client 9: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 15: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 17: acc 0.73, precision: 0.36, recall: 0.5, f1: 0.42
+
+Algorithm: fednoro, Dataset: toniot
+Overall Performance Metrics
+	train loss avg: 2.2879
+	test acc normal avg: 0.1261 | f1 normal avg: 0.0828
+	test acc flipping avg: 0.0000 | f1 flipping avg: 0.0000

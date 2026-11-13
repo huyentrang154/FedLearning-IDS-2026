@@ -47,7 +47,7 @@ class ClientUS(object):
         self.layer_idx = args.layer_idx
         self.train_data = read_client_data(self.dataset, self.id, self.num_clients,data_type='train', type=self.data_type)
         if self.id in self.poisoned_worker_ids:
-            print("client này bị label flipping")
+            print("client nay bi label flipping")
             self.train_data = self.apply_poisoning(train_data=self.train_data,
                         noise_type=self.noise_type,
                         poisoned_sample_ratio=self.poisoned_sample_ratio,
