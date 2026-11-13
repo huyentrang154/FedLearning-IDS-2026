@@ -226,22 +226,23 @@ if __name__ == "__main__":
                         help="Stage 2: fine-tuning rounds on clean clients")
     parser.add_argument('--rounds2', type=int, default=40,
                         help="Stage 3: final FedAvg rounds (all clients)")
-    parser.add_argument('--frac1', type=float, default=1.0,
-                        help="Client fraction per sub-round in Stage 1")
+    parser.add_argument('--frac1', type=float, default=0.0,
+                        help="Client fraction per sub-round in Stage 1; 0 = 1/num_clients, i.e. one client "
+                             "per sub-round, clients visited sequentially (as in the original FedCorr)")
     parser.add_argument('--frac2', type=float, default=1.0,
-                        help="Client fraction in Stage 2 / Stage 3")
-    parser.add_argument('--beta_fedcorr', type=float, default=0.0,
-                        help="Proximal term coefficient (original default=0, i.e. disabled)")
+                        help="Client fraction in Stage 2 / Stage 3 (kept equal to the other methods' join ratio)")
+    parser.add_argument('--beta_fedcorr', type=float, default=5.0,
+                        help="Adaptive local proximal coefficient beta (FedCorr paper / README: 5 for noisy FL)")
     parser.add_argument('--relabel_ratio', type=float, default=0.5,
                         help="Fraction of estimated noisy samples to relabel")
     parser.add_argument('--confidence_thres', type=float, default=0.5,
                         help="Min softmax confidence required to accept a relabelling")
     parser.add_argument('--clean_set_thres', type=float, default=0.1,
                         help="Max noise level to classify a client as clean in Stage 2")
-    parser.add_argument('--correction', type=int, default=0,
-                        help="1 = enable label correction; 0 = disable (original default=0)")
-    parser.add_argument('--fine_tuning', type=int, default=0,
-                        help="1 = enable Stage 2 fine-tuning; 0 = skip (original default=0)")
+    parser.add_argument('--correction', type=int, default=1,
+                        help="1 = enable label correction (original default: on, argparse store_false); 0 = ablation")
+    parser.add_argument('--fine_tuning', type=int, default=1,
+                        help="1 = enable Stage 2 fine-tuning (original default: on, argparse store_false); 0 = ablation")
 
     # FedNoRo data / result path args
     parser.add_argument('--patition', type=str, default='noniid',
