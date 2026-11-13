@@ -150,7 +150,16 @@ def run(args):
             raise NotImplementedError
 
         print('Algorithm', algorithm)
+        timer = None
+        if args.timing_out:  # measurement only: wall-clock as if clients ran in parallel (utils/timing.py)
+            from utils.timing import install
+            timer = install(server)
         server.train()
+        if timer is not None:
+            t = timer.dump(args.timing_out, extra={'algorithm': algorithm, 'dataset': args.dataset,
+                                                   'data_type': args.data_type, 'seed': args.seed})
+            print(f"[timing] sequential {t['sequential_s']:.1f}s, parallel {t['parallel_s']:.1f}s, "
+                  f"eval {t['eval_s']:.1f}s, bookkeeping {t['bookkeeping_s']:.1f}s, groups {t['n_groups']} -> {args.timing_out}")
         server.save_results()
         time_list.append(time.time() - start)
 
@@ -277,6 +286,10 @@ if __name__ == "__main__":
     parser.add_argument('-ans', '--attack_noise_std', type=float, default=0,
                         help="Standard deviation for Gaussian noise.")
     parser.add_argument("--exp_name", type=str, default="", help="Experiment name")
+    parser.add_argument("--timing_out", type=str, default="",
+                        help="write a JSON with the run's wall-clock time (sequential and as if clients "
+                             "ran in parallel, evaluation excluded); measurement only")
+
     args = parser.parse_args()
 
     # Chuẩn hóa algorithm, data_type (noniid -> noniid20, exdir -> noniidexdir20) và noise_type
