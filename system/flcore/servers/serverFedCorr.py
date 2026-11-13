@@ -546,37 +546,33 @@ def _lid_term(outputs, k=20):
     applies the MLE estimator:  LID_i = -k / sum_j log(d_j / d_k)
     where d_1 ≤ … ≤ d_k are the k nearest-neighbour distances.
     Matches Algorithm 1 of the FedCorr paper (arXiv:2204.04677).
-
-    Distances are computed in row blocks. Each row keeps only its k + 1
-    smallest values (self, then the k neighbours), which is all the
-    estimator reads. The neighbour distances match a full pairwise matrix.
     """
     eps = 1e-6
     X = np.asarray(outputs, dtype=np.float32)
-    n_samples = len(X)
-    k = min(k, n_samples - 1)
+    k = min(k, len(X) - 1)
     if k <= 0:
-        return np.zeros(n_samples)
+        return np.zeros(len(X))
 
+    # original: f = lambda v: - k / (np.sum(np.log(v / (v[-1] + eps))) + eps)
+    # (a zero distance gives log(0) = -inf and hence LID = 0, as in the original)
     def f(v):
-        d_max = v[-1] + eps
-        log_ratios = np.log(np.maximum(v / d_max, eps))
-        denom = np.sum(log_ratios) + eps
-        return -k / denom
+        with np.errstate(divide='ignore'):
+            return -k / (np.sum(np.log(v / (v[-1] + eps))) + eps)
 
-    knn = np.empty((n_samples, k), dtype=np.float64)
-    block = 1024
-    for start in range(0, n_samples, block):
-        end = min(start + block, n_samples)
-        dist = cdist(X[start:end], X)
-        # k + 1 smallest: the self-distance, then the k neighbours.
-        chosen = np.argpartition(dist, k, axis=1)[:, :k + 1]
-        rows = np.arange(end - start)[:, None]
-        smallest = dist[rows, chosen]
-        smallest.sort(axis=1)
-        knn[start:end] = smallest[:, 1:]
-
-    lids = np.apply_along_axis(f, axis=1, arr=knn)
+    # k nearest-neighbour distances, computed in row blocks so memory stays
+    # O(block * N) instead of the full N x N matrix (which needs tens of GB on
+    # large clients, e.g. UNSW-NB15). Same values as sorting the full row and
+    # taking positions 1..k (position 0 is the point itself).
+    # The block height is chosen from N so that each float64 block stays ~64 MB
+    # (np.partition makes one more copy). A fixed 1024-row block needed ~6 GB per
+    # job on the 358k-sample CIC-IDS exDir client and froze the machine.
+    block = max(1, min(1024, 8_000_000 // max(1, len(X))))
+    distances_ = np.empty((len(X), k), dtype=np.float64)
+    for start in range(0, len(X), block):
+        d = cdist(X[start:start + block], X)
+        d = np.partition(d, k, axis=1)[:, :k + 1]
+        distances_[start:start + block] = np.sort(d, axis=1)[:, 1:k + 1]
+    lids = np.apply_along_axis(f, axis=1, arr=distances_)
     # Guard against any residual NaN/inf
     lids = np.where(np.isfinite(lids), lids, 0.0)
     return lids
@@ -653,7 +649,7 @@ class FedCorr(object):
         self.iteration1 = args.iteration1          # Stage 1 outer iterations
         self.rounds1 = args.rounds1                # Stage 2 fine-tuning rounds
         self.rounds2 = args.rounds2                # Stage 3 final rounds
-        self.frac1 = args.frac1                    # client fraction per sub-round (Stage 1)
+        self.frac1 = args.frac1 if args.frac1 > 0 else 1.0 / self.num_clients  # Stage 1: 1 client per sub-round
         self.frac2 = args.frac2                    # client fraction (Stage 2 / 3)
         self.beta = args.beta_fedcorr              # proximal term coefficient
         self.relabel_ratio = args.relabel_ratio    # fraction of noisy samples to relabel
@@ -801,12 +797,14 @@ class FedCorr(object):
 
             # ── Accumulate LID and losses ─────────────────────────────
             LID_accumulative += LID_client
+            # the original re-initialises loss_accumulative_whole at the start of every
+            # iteration, so only the current iteration's losses are used below
             for i in range(self.num_clients):
-                loss_accumulative[i] += loss_iter[i]
+                loss_accumulative[i] = loss_iter[i].copy()
 
             # ── GMM on cumulative LID to identify clean / noisy clients
             lid_for_gmm = np.nan_to_num(LID_accumulative, nan=0.0, posinf=0.0, neginf=0.0)
-            gmm_lid = GaussianMixture(n_components=2, random_state=0, max_iter=200).fit(
+            gmm_lid = GaussianMixture(n_components=2, random_state=self.seed).fit(
                 lid_for_gmm.reshape(-1, 1)
             )
             lid_pred = gmm_lid.predict(lid_for_gmm.reshape(-1, 1))
@@ -821,7 +819,7 @@ class FedCorr(object):
                 loss_c = loss_accumulative[cid]
                 if len(loss_c) < 2:
                     continue
-                gmm_loss = GaussianMixture(n_components=2, random_state=0, max_iter=200).fit(
+                gmm_loss = GaussianMixture(n_components=2, random_state=self.seed).fit(
                     loss_c.reshape(-1, 1)
                 )
                 loss_pred = gmm_loss.predict(loss_c.reshape(-1, 1))
@@ -881,12 +879,13 @@ class FedCorr(object):
                 w_glob = _fedavg(w_locals, w_sizes)
                 self.global_model.load_state_dict(w_glob)
 
-                # Second correction pass: relabel noisy clients with fine-tuned model
-                if self.correction:
-                    self._correct_labels_stage2()
-
                 self._evaluate_and_log(f"[Stage 2 rnd {rnd + 1}]")
                 self.budget.append(time.time() - s_t)
+
+            # Second correction pass (original): once, after all fine-tuning rounds,
+            # relabel the noisy clients with the fine-tuned global model
+            if self.correction:
+                self._correct_labels_stage2()
 
         # ==============================================================
         # Stage 3 – Final training (all clients, standard FedAvg)

@@ -150,7 +150,16 @@ def run(args):
             raise NotImplementedError
 
         print('Algorithm', algorithm)
+        timer = None
+        if args.timing_out:  # measurement only: wall-clock as if clients ran in parallel (utils/timing.py)
+            from utils.timing import install
+            timer = install(server)
         server.train()
+        if timer is not None:
+            t = timer.dump(args.timing_out, extra={'algorithm': algorithm, 'dataset': args.dataset,
+                                                   'data_type': args.data_type, 'seed': args.seed})
+            print(f"[timing] sequential {t['sequential_s']:.1f}s, parallel {t['parallel_s']:.1f}s, "
+                  f"eval {t['eval_s']:.1f}s, bookkeeping {t['bookkeeping_s']:.1f}s, groups {t['n_groups']} -> {args.timing_out}")
         server.save_results()
         time_list.append(time.time() - start)
 
@@ -226,22 +235,23 @@ if __name__ == "__main__":
                         help="Stage 2: fine-tuning rounds on clean clients")
     parser.add_argument('--rounds2', type=int, default=40,
                         help="Stage 3: final FedAvg rounds (all clients)")
-    parser.add_argument('--frac1', type=float, default=1.0,
-                        help="Client fraction per sub-round in Stage 1")
+    parser.add_argument('--frac1', type=float, default=0.0,
+                        help="Client fraction per sub-round in Stage 1; 0 = 1/num_clients, i.e. one client "
+                             "per sub-round, clients visited sequentially (as in the original FedCorr)")
     parser.add_argument('--frac2', type=float, default=1.0,
-                        help="Client fraction in Stage 2 / Stage 3")
-    parser.add_argument('--beta_fedcorr', type=float, default=0.0,
-                        help="Proximal term coefficient (original default=0, i.e. disabled)")
+                        help="Client fraction in Stage 2 / Stage 3 (kept equal to the other methods' join ratio)")
+    parser.add_argument('--beta_fedcorr', type=float, default=5.0,
+                        help="Adaptive local proximal coefficient beta (FedCorr paper / README: 5 for noisy FL)")
     parser.add_argument('--relabel_ratio', type=float, default=0.5,
                         help="Fraction of estimated noisy samples to relabel")
     parser.add_argument('--confidence_thres', type=float, default=0.5,
                         help="Min softmax confidence required to accept a relabelling")
     parser.add_argument('--clean_set_thres', type=float, default=0.1,
                         help="Max noise level to classify a client as clean in Stage 2")
-    parser.add_argument('--correction', type=int, default=0,
-                        help="1 = enable label correction; 0 = disable (original default=0)")
-    parser.add_argument('--fine_tuning', type=int, default=0,
-                        help="1 = enable Stage 2 fine-tuning; 0 = skip (original default=0)")
+    parser.add_argument('--correction', type=int, default=1,
+                        help="1 = enable label correction (original default: on, argparse store_false); 0 = ablation")
+    parser.add_argument('--fine_tuning', type=int, default=1,
+                        help="1 = enable Stage 2 fine-tuning (original default: on, argparse store_false); 0 = ablation")
 
     # FedNoRo data / result path args
     parser.add_argument('--patition', type=str, default='noniid',
@@ -276,6 +286,10 @@ if __name__ == "__main__":
     parser.add_argument('-ans', '--attack_noise_std', type=float, default=0,
                         help="Standard deviation for Gaussian noise.")
     parser.add_argument("--exp_name", type=str, default="", help="Experiment name")
+    parser.add_argument("--timing_out", type=str, default="",
+                        help="write a JSON with the run's wall-clock time (sequential and as if clients "
+                             "ran in parallel, evaluation excluded); measurement only")
+
     args = parser.parse_args()
 
     # Chuẩn hóa algorithm, data_type (noniid -> noniid20, exdir -> noniidexdir20) và noise_type
