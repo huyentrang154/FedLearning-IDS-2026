@@ -115,7 +115,9 @@ mkdir -p logs
 # 3. Datasets & Data Type
 #########################################
 DATASETS=(
-    "toniot"
+    "cic_ids"
+    "unsư"
+
 )
 
 # "noniid" (tự động map sang noniid20) hoặc "exdir" (tự động map sang noniidexdir20)
@@ -125,7 +127,16 @@ DATA_TYPexdird20"
 # 4. 8 Thuật toán FL
 #########################################
 ALGOS=(
+<<<<<<< HEAD
     "fedrep"
+=======
+    "fedus"
+    "fedavg"
+    "fedrep"
+    "lg_fedavg"
+    "fedgh"
+    "fedhome"
+>>>>>>> 15d875d0e935e4c4ed34fc42278501cc26b08df7
     "fednoro"
 )
 
@@ -133,7 +144,11 @@ ALGOS=(
 # 5. Seeds (có thể thêm nhiều seed: (0 1 2))
 #########################################
 SEEDS=(
+<<<<<<< HEAD
 1 2
+=======
+0
+>>>>>>> 15d875d0e935e4c4ed34fc42278501cc26b08df7
 )
 
 #########################################

@@ -96,7 +96,10 @@ class ClientFedCorr(object):
         - eps inside sqrt as extra safety
         """
         self.model.train()
-        loader = DataLoader(self.train_data, self.batch_size, shuffle=True, drop_last=True)
+        # original LocalUpdate: shuffled loader without drop_last, and a fresh SGD optimizer
+        # (momentum 0.5) for every local update, so no momentum is carried between rounds
+        loader = DataLoader(self.train_data, self.batch_size, shuffle=True, drop_last=False)
+        self.optimizer = torch.optim.SGD(self.model.parameters(), lr=self.learning_rate, momentum=0.5)
 
         for _ in range(self.local_steps):
             for batch_idx, (x, y) in enumerate(loader):
@@ -149,7 +152,9 @@ class ClientFedCorr(object):
                 if isinstance(out, tuple):
                     out = out[0]
                 probs = F.softmax(out, dim=1)
-                losses = loss_fn(out, y)
+                # as in the original get_output(): the per-sample loss is the cross-entropy
+                # applied to the softmax outputs (not to the logits)
+                losses = loss_fn(probs, y)
                 all_outputs.append(probs.cpu().numpy())
                 all_losses.append(losses.cpu().numpy())
         return (
