@@ -106,7 +106,7 @@ mkdir -p logs
 # 3. Datasets & Data Type
 #########################################
 DATASETS=(
-    "nslkdd"
+    "toniot"
 )
 
 DATA_TYPE="noniid20"
@@ -129,7 +129,7 @@ ALGOS=(
 # 5. Seeds (có thể thêm nhiều seed: (0 1 2))
 #########################################
 SEEDS=(
-    2
+    1 2
 )
 
 #########################################
