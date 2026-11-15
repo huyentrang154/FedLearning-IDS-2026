@@ -1,0 +1,2569 @@
+============================================================
+Dataset                : cic_ids (noniid20)
+Algorithm              : lg_fedavg
+Random Seed            : 1
+Noise Type             : label_flipping
+Poisoned Workers Ratio : 0.3
+Poisoned Sample Ratio  : 1.0
+============================================================
+
+============= Running 1/1 =============
+Creating server and clients ...
+Noise Type: label_flipping
+Poisoned Worker IDs (fixed): [0, 1, 2, 3, 4, 5]
+
+Join ratio / total clients: 1.0 / 20
+
+Algorithm:  lg_fedavg Dataset:  cic_ids Data type:  noniid20
+Finished creating server and clients.
+Algorithm lg_fedavg
+
+-------------Round number: 0-------------
+
+Evaluate global model
+Train Loss
+	Client 3: Train loss: 2.49
+	Client 1: Train loss: 2.54
+	Client 10: Train loss: 2.22
+	Client 16: Train loss: 2.22
+	Client 2: Train loss: 2.52
+	Client 13: Train loss: 2.48
+	Client 14: Train loss: 2.16
+	Client 15: Train loss: 2.87
+	Client 18: Train loss: 2.82
+	Client 12: Train loss: 2.82
+	Client 11: Train loss: 2.38
+	Client 8: Train loss: 2.14
+	Client 17: Train loss: 2.37
+	Client 19: Train loss: 2.49
+	Client 7: Train loss: 2.46
+	Client 6: Train loss: 2.82
+	Client 9: Train loss: 2.87
+	Client 5: Train loss: 2.54
+	Client 4: Train loss: 2.54
+	Client 0: Train loss: 2.5
+Performance Metrics
+	Client 3: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 1: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 10: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 16: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 2: acc 1.0, precision: 1.0, recall: 1.0, f1: 1.0
+	Client 13: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 14: acc 1.0, precision: 1.0, recall: 1.0, f1: 1.0
+	Client 15: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 18: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 12: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 11: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 8: acc 1.0, precision: 1.0, recall: 1.0, f1: 1.0
+	Client 17: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 19: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 7: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 6: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 9: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 5: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 4: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 0: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+
+Algorithm:  lg_fedavg Dataset:  cic_ids Epoch:  0
+Overall Performance Metrics (Local)
+	train loss avg: 2.7145
+	test acc normal avg: 0.0008
+	test acc flipping avg: 0.0008
+Global Performance Metrics (Whole Test Set)
+	Global Acc avg: 0.0008
+	All Clients Global Acc: [0.0008, 0.0008, 0.0008, 0.0008, 0.0008, 0.0008, 0.0008, 0.0008, 0.0008, 0.0008, 0.0008, 0.0008, 0.0008, 0.0008, 0.0008, 0.0008, 0.0008, 0.0008, 0.0008, 0.0008]
+	All Clients Global F1:  [0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001]
+[Client 3] Epoch 1/5 | TrainLoss=2.4140 | ValLoss=2.409000 | ValF1=0.0135
+[Client 3] Epoch 2/5 | TrainLoss=2.4081 | ValLoss=2.410844 | ValF1=0.0136
+[Client 3] Epoch 3/5 | TrainLoss=2.4080 | ValLoss=2.409187 | ValF1=0.0135
+[Client 3] Epoch 4/5 | TrainLoss=2.4080 | ValLoss=2.408489 | ValF1=0.0136
+[Client 3] Epoch 5/5 | TrainLoss=2.4081 | ValLoss=2.410235 | ValF1=0.0135
+[Client 1] Epoch 1/5 | TrainLoss=2.5336 | ValLoss=2.563924 | ValF1=0.0130
+[Client 1] Epoch 2/5 | TrainLoss=2.5213 | ValLoss=2.548704 | ValF1=0.0130
+[Client 1] Epoch 3/5 | TrainLoss=2.5114 | ValLoss=2.534810 | ValF1=0.0130
+[Client 1] Epoch 4/5 | TrainLoss=2.5023 | ValLoss=2.522701 | ValF1=0.0130
+[Client 1] Epoch 5/5 | TrainLoss=2.4935 | ValLoss=2.511530 | ValF1=0.0130
+[Client 10] Epoch 1/5 | TrainLoss=1.9275 | ValLoss=1.698066 | ValF1=0.4898
+[Client 10] Epoch 2/5 | TrainLoss=1.4249 | ValLoss=1.241232 | ValF1=0.4898
+[Client 10] Epoch 3/5 | TrainLoss=0.9686 | ValLoss=0.847275 | ValF1=0.4898
+[Client 10] Epoch 4/5 | TrainLoss=0.6031 | ValLoss=0.572950 | ValF1=0.4898
+[Client 10] Epoch 5/5 | TrainLoss=0.3672 | ValLoss=0.421527 | ValF1=0.4898
+[Client 16] Epoch 1/5 | TrainLoss=1.9317 | ValLoss=1.662793 | ValF1=1.0000
+[Client 16] Epoch 2/5 | TrainLoss=1.4279 | ValLoss=1.178593 | ValF1=1.0000
+[Client 16] Epoch 3/5 | TrainLoss=0.9821 | ValLoss=0.757497 | ValF1=1.0000
+[Client 16] Epoch 4/5 | TrainLoss=0.6213 | ValLoss=0.453779 | ValF1=1.0000
+[Client 16] Epoch 5/5 | TrainLoss=0.3884 | ValLoss=0.276300 | ValF1=1.0000
+[Client 2] Epoch 1/5 | TrainLoss=2.5187 | ValLoss=2.658712 | ValF1=0.0000
+[Client 2] Epoch 2/5 | TrainLoss=2.5120 | ValLoss=2.658778 | ValF1=0.0317
+[Client 2] Epoch 3/5 | TrainLoss=2.5056 | ValLoss=2.658973 | ValF1=0.0317
+[Client 2] Epoch 4/5 | TrainLoss=2.4996 | ValLoss=2.659317 | ValF1=0.0317
+[Client 2] Epoch 5/5 | TrainLoss=2.4934 | ValLoss=2.659771 | ValF1=0.0317
+[Client 13] Epoch 1/5 | TrainLoss=2.2827 | ValLoss=2.120912 | ValF1=0.3036
+[Client 13] Epoch 2/5 | TrainLoss=1.9535 | ValLoss=1.839379 | ValF1=0.3036
+[Client 13] Epoch 3/5 | TrainLoss=1.7089 | ValLoss=1.617289 | ValF1=0.3036
+[Client 13] Epoch 4/5 | TrainLoss=1.5150 | ValLoss=1.444212 | ValF1=0.3036
+[Client 13] Epoch 5/5 | TrainLoss=1.3661 | ValLoss=1.310553 | ValF1=0.3036
+[Client 14] Epoch 1/5 | TrainLoss=2.0637 | ValLoss=1.955957 | ValF1=1.0000
+[Client 14] Epoch 2/5 | TrainLoss=1.8954 | ValLoss=1.775216 | ValF1=1.0000
+[Client 14] Epoch 3/5 | TrainLoss=1.7207 | ValLoss=1.596167 | ValF1=1.0000
+[Client 14] Epoch 4/5 | TrainLoss=1.5478 | ValLoss=1.419051 | ValF1=1.0000
+[Client 14] Epoch 5/5 | TrainLoss=1.3780 | ValLoss=1.246350 | ValF1=1.0000
+[Client 15] Epoch 1/5 | TrainLoss=0.0486 | ValLoss=0.009811 | ValF1=0.9759
+[Client 15] Epoch 2/5 | TrainLoss=0.0096 | ValLoss=0.007650 | ValF1=0.9762
+[Client 15] Epoch 3/5 | TrainLoss=0.0083 | ValLoss=0.008718 | ValF1=0.9644
+[Client 15] Epoch 4/5 | TrainLoss=0.0078 | ValLoss=0.005449 | ValF1=0.9761
+[Client 15] Epoch 5/5 | TrainLoss=0.0074 | ValLoss=0.005731 | ValF1=0.9787
+[Client 18] Epoch 1/5 | TrainLoss=0.6313 | ValLoss=0.240541 | ValF1=0.4861
+[Client 18] Epoch 2/5 | TrainLoss=0.2484 | ValLoss=0.213929 | ValF1=0.4861
+[Client 18] Epoch 3/5 | TrainLoss=0.2353 | ValLoss=0.218384 | ValF1=0.4861
+[Client 18] Epoch 4/5 | TrainLoss=0.2314 | ValLoss=0.206000 | ValF1=0.4861
+[Client 18] Epoch 5/5 | TrainLoss=0.2184 | ValLoss=0.188165 | ValF1=0.4861
+[Client 12] Epoch 1/5 | TrainLoss=0.6240 | ValLoss=0.277490 | ValF1=0.4834
+[Client 12] Epoch 2/5 | TrainLoss=0.2420 | ValLoss=0.244230 | ValF1=0.4834
+[Client 12] Epoch 3/5 | TrainLoss=0.2302 | ValLoss=0.239620 | ValF1=0.4834
+[Client 12] Epoch 4/5 | TrainLoss=0.2273 | ValLoss=0.239004 | ValF1=0.4834
+[Client 12] Epoch 5/5 | TrainLoss=0.2251 | ValLoss=0.233979 | ValF1=0.4834
+[Client 11] Epoch 1/5 | TrainLoss=0.2971 | ValLoss=0.160364 | ValF1=0.4915
+[Client 11] Epoch 2/5 | TrainLoss=0.1593 | ValLoss=0.149443 | ValF1=0.4915
+[Client 11] Epoch 3/5 | TrainLoss=0.1532 | ValLoss=0.144786 | ValF1=0.4915
+[Client 11] Epoch 4/5 | TrainLoss=0.1425 | ValLoss=0.122920 | ValF1=0.4915
+[Client 11] Epoch 5/5 | TrainLoss=0.0870 | ValLoss=0.057211 | ValF1=0.4915
+[Client 8] Epoch 1/5 | TrainLoss=2.0529 | ValLoss=1.954614 | ValF1=1.0000
+[Client 8] Epoch 2/5 | TrainLoss=1.8664 | ValLoss=1.769128 | ValF1=1.0000
+[Client 8] Epoch 3/5 | TrainLoss=1.6817 | ValLoss=1.585369 | ValF1=1.0000
+[Client 8] Epoch 4/5 | TrainLoss=1.4988 | ValLoss=1.403425 | ValF1=1.0000
+[Client 8] Epoch 5/5 | TrainLoss=1.3187 | ValLoss=1.225673 | ValF1=1.0000
+[Client 17] Epoch 1/5 | TrainLoss=0.2882 | ValLoss=0.193794 | ValF1=0.4894
+[Client 17] Epoch 2/5 | TrainLoss=0.1521 | ValLoss=0.179158 | ValF1=0.4894
+[Client 17] Epoch 3/5 | TrainLoss=0.1460 | ValLoss=0.172703 | ValF1=0.4894
+[Client 17] Epoch 4/5 | TrainLoss=0.1394 | ValLoss=0.159679 | ValF1=0.4894
+[Client 17] Epoch 5/5 | TrainLoss=0.0977 | ValLoss=0.079803 | ValF1=0.4894
+[Client 19] Epoch 1/5 | TrainLoss=2.2858 | ValLoss=2.059483 | ValF1=0.3548
+[Client 19] Epoch 2/5 | TrainLoss=1.9532 | ValLoss=1.785609 | ValF1=0.3548
+[Client 19] Epoch 3/5 | TrainLoss=1.7037 | ValLoss=1.573756 | ValF1=0.3548
+[Client 19] Epoch 4/5 | TrainLoss=1.5080 | ValLoss=1.411166 | ValF1=0.3548
+[Client 19] Epoch 5/5 | TrainLoss=1.3579 | ValLoss=1.287532 | ValF1=0.3548
+[Client 7] Epoch 1/5 | TrainLoss=2.2631 | ValLoss=2.126639 | ValF1=0.3036
+[Client 7] Epoch 2/5 | TrainLoss=1.9397 | ValLoss=1.851796 | ValF1=0.3036
+[Client 7] Epoch 3/5 | TrainLoss=1.7009 | ValLoss=1.634624 | ValF1=0.3036
+[Client 7] Epoch 4/5 | TrainLoss=1.5114 | ValLoss=1.464681 | ValF1=0.3036
+[Client 7] Epoch 5/5 | TrainLoss=1.3657 | ValLoss=1.332904 | ValF1=0.3036
+[Client 6] Epoch 1/5 | TrainLoss=0.6227 | ValLoss=0.277641 | ValF1=0.4834
+[Client 6] Epoch 2/5 | TrainLoss=0.2419 | ValLoss=0.244398 | ValF1=0.4834
+[Client 6] Epoch 3/5 | TrainLoss=0.2294 | ValLoss=0.239005 | ValF1=0.4834
+[Client 6] Epoch 4/5 | TrainLoss=0.2245 | ValLoss=0.242180 | ValF1=0.4834
+[Client 6] Epoch 5/5 | TrainLoss=0.2192 | ValLoss=0.223870 | ValF1=0.4834
+[Client 9] Epoch 1/5 | TrainLoss=0.0686 | ValLoss=0.030746 | ValF1=0.8711
+[Client 9] Epoch 2/5 | TrainLoss=0.0238 | ValLoss=0.021420 | ValF1=0.9149
+[Client 9] Epoch 3/5 | TrainLoss=0.0220 | ValLoss=0.018600 | ValF1=0.9377
+[Client 9] Epoch 4/5 | TrainLoss=0.0209 | ValLoss=0.018664 | ValF1=0.9241
+[Client 9] Epoch 5/5 | TrainLoss=0.0202 | ValLoss=0.019834 | ValF1=0.8952
+[Client 5] Epoch 1/5 | TrainLoss=2.4593 | ValLoss=2.424765 | ValF1=0.0158
+[Client 5] Epoch 2/5 | TrainLoss=2.4234 | ValLoss=2.413873 | ValF1=0.0150
+[Client 5] Epoch 3/5 | TrainLoss=2.4167 | ValLoss=2.409448 | ValF1=0.0150
+[Client 5] Epoch 4/5 | TrainLoss=2.4137 | ValLoss=2.407153 | ValF1=0.0165
+[Client 5] Epoch 5/5 | TrainLoss=2.4122 | ValLoss=2.404968 | ValF1=0.0165
+[Client 4] Epoch 1/5 | TrainLoss=2.5306 | ValLoss=2.511189 | ValF1=0.0251
+[Client 4] Epoch 2/5 | TrainLoss=2.5166 | ValLoss=2.498972 | ValF1=0.0251
+[Client 4] Epoch 3/5 | TrainLoss=2.5033 | ValLoss=2.488198 | ValF1=0.0251
+[Client 4] Epoch 4/5 | TrainLoss=2.4904 | ValLoss=2.478354 | ValF1=0.0251
+[Client 4] Epoch 5/5 | TrainLoss=2.4776 | ValLoss=2.469605 | ValF1=0.0251
+[Client 0] Epoch 1/5 | TrainLoss=2.4596 | ValLoss=2.447668 | ValF1=0.0214
+[Client 0] Epoch 2/5 | TrainLoss=2.4294 | ValLoss=2.439017 | ValF1=0.0133
+[Client 0] Epoch 3/5 | TrainLoss=2.4233 | ValLoss=2.436874 | ValF1=0.0133
+[Client 0] Epoch 4/5 | TrainLoss=2.4209 | ValLoss=2.437962 | ValF1=0.0133
+[Client 0] Epoch 5/5 | TrainLoss=2.4191 | ValLoss=2.435902 | ValF1=0.0160
+Time: 2447.455867290497
+
+-------------Round number: 1-------------
+
+Evaluate global model
+Train Loss
+	Client 11: Train loss: 2.97
+	Client 17: Train loss: 2.97
+	Client 3: Train loss: 3.35
+	Client 14: Train loss: 3.39
+	Client 8: Train loss: 3.39
+	Client 4: Train loss: 3.34
+	Client 5: Train loss: 3.33
+	Client 15: Train loss: 0.04
+	Client 2: Train loss: 3.24
+	Client 12: Train loss: 3.98
+	Client 7: Train loss: 3.87
+	Client 18: Train loss: 3.98
+	Client 19: Train loss: 3.87
+	Client 10: Train loss: 3.56
+	Client 16: Train loss: 3.56
+	Client 1: Train loss: 3.27
+	Client 9: Train loss: 0.07
+	Client 13: Train loss: 3.87
+	Client 6: Train loss: 3.98
+	Client 0: Train loss: 3.22
+Performance Metrics
+	Client 11: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 17: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 3: acc 0.02, precision: 0.01, recall: 0.5, f1: 0.02
+	Client 14: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 8: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 4: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 5: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 15: acc 1.0, precision: 0.98, recall: 0.96, f1: 0.97
+	Client 2: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 12: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 7: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 18: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 19: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 10: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 16: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 1: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 9: acc 0.98, precision: 0.72, recall: 0.94, f1: 0.79
+	Client 13: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 6: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 0: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+
+Algorithm:  lg_fedavg Dataset:  cic_ids Epoch:  1
+Overall Performance Metrics (Local)
+	train loss avg: 1.5124
+	test acc normal avg: 0.8219
+	test acc flipping avg: 0.0166
+Global Performance Metrics (Whole Test Set)
+	Global Acc avg: 0.0877
+	All Clients Global Acc: [0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.7106, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.7597, 0.0157, 0.0157, 0.0157]
+	All Clients Global F1:  [0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0895, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0942, 0.0028, 0.0028, 0.0028]
+[Client 11] Epoch 1/5 | TrainLoss=0.1632 | ValLoss=0.067260 | ValF1=0.4915
+[Client 11] Epoch 2/5 | TrainLoss=0.0366 | ValLoss=0.015821 | ValF1=1.0000
+[Client 11] Epoch 3/5 | TrainLoss=0.0095 | ValLoss=0.005102 | ValF1=1.0000
+[Client 11] Epoch 4/5 | TrainLoss=0.0037 | ValLoss=0.002478 | ValF1=1.0000
+[Client 11] Epoch 5/5 | TrainLoss=0.0020 | ValLoss=0.001499 | ValF1=1.0000
+[Client 17] Epoch 1/5 | TrainLoss=0.1575 | ValLoss=0.082247 | ValF1=0.4894
+[Client 17] Epoch 2/5 | TrainLoss=0.0375 | ValLoss=0.022156 | ValF1=1.0000
+[Client 17] Epoch 3/5 | TrainLoss=0.0106 | ValLoss=0.007246 | ValF1=1.0000
+[Client 17] Epoch 4/5 | TrainLoss=0.0043 | ValLoss=0.003509 | ValF1=1.0000
+[Client 17] Epoch 5/5 | TrainLoss=0.0025 | ValLoss=0.002116 | ValF1=1.0000
+[Client 3] Epoch 1/5 | TrainLoss=2.4129 | ValLoss=2.409908 | ValF1=0.0135
+[Client 3] Epoch 2/5 | TrainLoss=2.4086 | ValLoss=2.410736 | ValF1=0.0132
+[Client 3] Epoch 3/5 | TrainLoss=2.4084 | ValLoss=2.409525 | ValF1=0.0143
+[Client 3] Epoch 4/5 | TrainLoss=2.4082 | ValLoss=2.409269 | ValF1=0.0135
+[Client 3] Epoch 5/5 | TrainLoss=2.4082 | ValLoss=2.409884 | ValF1=0.0137
+[Client 14] Epoch 1/5 | TrainLoss=2.8611 | ValLoss=2.385881 | ValF1=0.0000
+[Client 14] Epoch 2/5 | TrainLoss=2.1116 | ValLoss=1.782258 | ValF1=0.0000
+[Client 14] Epoch 3/5 | TrainLoss=1.5871 | ValLoss=1.289624 | ValF1=0.0000
+[Client 14] Epoch 4/5 | TrainLoss=1.1425 | ValLoss=0.865362 | ValF1=1.0000
+[Client 14] Epoch 5/5 | TrainLoss=0.7781 | ValLoss=0.538768 | ValF1=1.0000
+[Client 8] Epoch 1/5 | TrainLoss=2.8383 | ValLoss=2.368457 | ValF1=0.0000
+[Client 8] Epoch 2/5 | TrainLoss=2.0623 | ValLoss=1.754300 | ValF1=0.0000
+[Client 8] Epoch 3/5 | TrainLoss=1.5079 | ValLoss=1.246293 | ValF1=0.0000
+[Client 8] Epoch 4/5 | TrainLoss=1.0315 | ValLoss=0.808312 | ValF1=1.0000
+[Client 8] Epoch 5/5 | TrainLoss=0.6427 | ValLoss=0.482147 | ValF1=1.0000
+[Client 4] Epoch 1/5 | TrainLoss=2.9362 | ValLoss=2.693350 | ValF1=0.0135
+[Client 4] Epoch 2/5 | TrainLoss=2.6440 | ValLoss=2.570381 | ValF1=0.0135
+[Client 4] Epoch 3/5 | TrainLoss=2.5529 | ValLoss=2.513175 | ValF1=0.0135
+[Client 4] Epoch 4/5 | TrainLoss=2.5046 | ValLoss=2.480160 | ValF1=0.0135
+[Client 4] Epoch 5/5 | TrainLoss=2.4730 | ValLoss=2.458276 | ValF1=0.0135
+[Client 5] Epoch 1/5 | TrainLoss=2.4605 | ValLoss=2.416760 | ValF1=0.0150
+[Client 5] Epoch 2/5 | TrainLoss=2.4156 | ValLoss=2.405283 | ValF1=0.0165
+[Client 5] Epoch 3/5 | TrainLoss=2.4122 | ValLoss=2.404710 | ValF1=0.0140
+[Client 5] Epoch 4/5 | TrainLoss=2.4110 | ValLoss=2.402110 | ValF1=0.0165
+[Client 5] Epoch 5/5 | TrainLoss=2.4109 | ValLoss=2.400600 | ValF1=0.0165
+[Client 15] Epoch 1/5 | TrainLoss=0.0087 | ValLoss=0.006121 | ValF1=0.9787
+[Client 15] Epoch 2/5 | TrainLoss=0.0071 | ValLoss=0.005589 | ValF1=0.9759
+[Client 15] Epoch 3/5 | TrainLoss=0.0070 | ValLoss=0.004712 | ValF1=0.9774
+[Client 15] Epoch 4/5 | TrainLoss=0.0068 | ValLoss=0.005828 | ValF1=0.9759
+[Client 15] Epoch 5/5 | TrainLoss=0.0066 | ValLoss=0.004695 | ValF1=0.9787
+[Client 2] Epoch 1/5 | TrainLoss=3.0571 | ValLoss=2.941444 | ValF1=0.0317
+[Client 2] Epoch 2/5 | TrainLoss=2.8140 | ValLoss=2.808380 | ValF1=0.0317
+[Client 2] Epoch 3/5 | TrainLoss=2.6867 | ValLoss=2.737713 | ValF1=0.0317
+[Client 2] Epoch 4/5 | TrainLoss=2.6111 | ValLoss=2.696794 | ValF1=0.0317
+[Client 2] Epoch 5/5 | TrainLoss=2.5595 | ValLoss=2.671160 | ValF1=0.0317
+[Client 12] Epoch 1/5 | TrainLoss=0.4277 | ValLoss=0.241436 | ValF1=0.4834
+[Client 12] Epoch 2/5 | TrainLoss=0.2213 | ValLoss=0.214127 | ValF1=0.4834
+[Client 12] Epoch 3/5 | TrainLoss=0.1065 | ValLoss=0.014022 | ValF1=1.0000
+[Client 12] Epoch 4/5 | TrainLoss=0.0051 | ValLoss=0.002033 | ValF1=1.0000
+[Client 12] Epoch 5/5 | TrainLoss=0.0013 | ValLoss=0.000867 | ValF1=1.0000
+[Client 7] Epoch 1/5 | TrainLoss=2.6618 | ValLoss=2.034942 | ValF1=0.0000
+[Client 7] Epoch 2/5 | TrainLoss=1.6007 | ValLoss=1.202038 | ValF1=0.3036
+[Client 7] Epoch 3/5 | TrainLoss=0.9583 | ValLoss=0.813341 | ValF1=0.3036
+[Client 7] Epoch 4/5 | TrainLoss=0.7498 | ValLoss=0.689569 | ValF1=0.3607
+[Client 7] Epoch 5/5 | TrainLoss=0.6914 | ValLoss=0.659934 | ValF1=0.8375
+[Client 18] Epoch 1/5 | TrainLoss=0.4351 | ValLoss=0.210654 | ValF1=0.4861
+[Client 18] Epoch 2/5 | TrainLoss=0.2151 | ValLoss=0.156501 | ValF1=0.4861
+[Client 18] Epoch 3/5 | TrainLoss=0.0575 | ValLoss=0.009354 | ValF1=1.0000
+[Client 18] Epoch 4/5 | TrainLoss=0.0037 | ValLoss=0.001869 | ValF1=1.0000
+[Client 18] Epoch 5/5 | TrainLoss=0.0012 | ValLoss=0.000883 | ValF1=1.0000
+[Client 19] Epoch 1/5 | TrainLoss=2.6546 | ValLoss=1.987446 | ValF1=0.0000
+[Client 19] Epoch 2/5 | TrainLoss=1.5364 | ValLoss=1.161903 | ValF1=0.3103
+[Client 19] Epoch 3/5 | TrainLoss=0.9137 | ValLoss=0.798775 | ValF1=0.3103
+[Client 19] Epoch 4/5 | TrainLoss=0.7392 | ValLoss=0.719998 | ValF1=0.3103
+[Client 19] Epoch 5/5 | TrainLoss=0.6951 | ValLoss=0.699114 | ValF1=0.3103
+[Client 10] Epoch 1/5 | TrainLoss=2.1161 | ValLoss=1.016326 | ValF1=0.4898
+[Client 10] Epoch 2/5 | TrainLoss=0.3660 | ValLoss=0.369889 | ValF1=0.4898
+[Client 10] Epoch 3/5 | TrainLoss=0.0915 | ValLoss=0.355917 | ValF1=0.4898
+[Client 10] Epoch 4/5 | TrainLoss=0.0647 | ValLoss=0.363615 | ValF1=0.4898
+[Client 10] Epoch 5/5 | TrainLoss=0.0574 | ValLoss=0.369019 | ValF1=0.4898
+[Client 16] Epoch 1/5 | TrainLoss=2.1286 | ValLoss=0.884039 | ValF1=1.0000
+[Client 16] Epoch 2/5 | TrainLoss=0.3994 | ValLoss=0.103986 | ValF1=1.0000
+[Client 16] Epoch 3/5 | TrainLoss=0.1283 | ValLoss=0.037496 | ValF1=1.0000
+[Client 16] Epoch 4/5 | TrainLoss=0.1018 | ValLoss=0.022886 | ValF1=1.0000
+[Client 16] Epoch 5/5 | TrainLoss=0.0943 | ValLoss=0.016915 | ValF1=1.0000
+[Client 1] Epoch 1/5 | TrainLoss=2.8170 | ValLoss=2.677116 | ValF1=0.0045
+[Client 1] Epoch 2/5 | TrainLoss=2.5682 | ValLoss=2.542755 | ValF1=0.0045
+[Client 1] Epoch 3/5 | TrainLoss=2.5112 | ValLoss=2.494383 | ValF1=0.0045
+[Client 1] Epoch 4/5 | TrainLoss=2.4888 | ValLoss=2.468419 | ValF1=0.0045
+[Client 1] Epoch 5/5 | TrainLoss=2.4754 | ValLoss=2.450278 | ValF1=0.0045
+[Client 9] Epoch 1/5 | TrainLoss=0.0221 | ValLoss=0.018800 | ValF1=0.9339
+[Client 9] Epoch 2/5 | TrainLoss=0.0205 | ValLoss=0.019191 | ValF1=0.9153
+[Client 9] Epoch 3/5 | TrainLoss=0.0198 | ValLoss=0.019181 | ValF1=0.9162
+[Client 9] Epoch 4/5 | TrainLoss=0.0195 | ValLoss=0.018430 | ValF1=0.9160
+[Client 9] Epoch 5/5 | TrainLoss=0.0191 | ValLoss=0.020074 | ValF1=0.8929
+[Client 13] Epoch 1/5 | TrainLoss=2.6661 | ValLoss=2.015074 | ValF1=0.0000
+[Client 13] Epoch 2/5 | TrainLoss=1.5782 | ValLoss=1.150027 | ValF1=0.3607
+[Client 13] Epoch 3/5 | TrainLoss=0.9396 | ValLoss=0.780719 | ValF1=0.3607
+[Client 13] Epoch 4/5 | TrainLoss=0.7489 | ValLoss=0.733907 | ValF1=0.3036
+[Client 13] Epoch 5/5 | TrainLoss=0.7155 | ValLoss=0.681361 | ValF1=0.3607
+[Client 6] Epoch 1/5 | TrainLoss=0.4305 | ValLoss=0.243536 | ValF1=0.4834
+[Client 6] Epoch 2/5 | TrainLoss=0.2223 | ValLoss=0.220318 | ValF1=0.4834
+[Client 6] Epoch 3/5 | TrainLoss=0.1171 | ValLoss=0.021678 | ValF1=0.9696
+[Client 6] Epoch 4/5 | TrainLoss=0.0088 | ValLoss=0.002298 | ValF1=1.0000
+[Client 6] Epoch 5/5 | TrainLoss=0.0021 | ValLoss=0.000937 | ValF1=1.0000
+[Client 0] Epoch 1/5 | TrainLoss=2.4749 | ValLoss=2.441612 | ValF1=0.0133
+[Client 0] Epoch 2/5 | TrainLoss=2.4241 | ValLoss=2.436947 | ValF1=0.0220
+[Client 0] Epoch 3/5 | TrainLoss=2.4214 | ValLoss=2.445097 | ValF1=0.0108
+[Client 0] Epoch 4/5 | TrainLoss=2.4206 | ValLoss=2.441907 | ValF1=0.0106
+[Client 0] Epoch 5/5 | TrainLoss=2.4209 | ValLoss=2.438455 | ValF1=0.0134
+Time: 2510.7065999507904
+
+-------------Round number: 2-------------
+
+Evaluate global model
+Train Loss
+	Client 14: Train loss: 3.16
+	Client 15: Train loss: 0.01
+	Client 7: Train loss: 4.23
+	Client 5: Train loss: 3.02
+	Client 19: Train loss: 3.65
+	Client 11: Train loss: 7.07
+	Client 13: Train loss: 3.61
+	Client 4: Train loss: 3.01
+	Client 0: Train loss: 3.0
+	Client 1: Train loss: 3.02
+	Client 9: Train loss: 0.03
+	Client 10: Train loss: 3.39
+	Client 6: Train loss: 3.55
+	Client 18: Train loss: 3.46
+	Client 2: Train loss: 2.97
+	Client 17: Train loss: 7.83
+	Client 8: Train loss: 3.18
+	Client 12: Train loss: 3.45
+	Client 3: Train loss: 2.94
+	Client 16: Train loss: 3.39
+Performance Metrics
+	Client 14: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 15: acc 1.0, precision: 1.0, recall: 0.96, f1: 0.98
+	Client 7: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 5: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 19: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 11: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 13: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 4: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 0: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 1: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 9: acc 1.0, precision: 0.99, recall: 0.89, f1: 0.93
+	Client 10: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 6: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 18: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 2: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 17: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 8: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 12: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 3: acc 0.02, precision: 0.01, recall: 0.5, f1: 0.02
+	Client 16: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+
+Algorithm:  lg_fedavg Dataset:  cic_ids Epoch:  2
+Overall Performance Metrics (Local)
+	train loss avg: 1.6090
+	test acc normal avg: 0.8298
+	test acc flipping avg: 0.0166
+Global Performance Metrics (Whole Test Set)
+	Global Acc avg: 0.2179
+	All Clients Global Acc: [0.0157, 0.7151, 0.6808, 0.0157, 0.0157, 0.5573, 0.0157, 0.0157, 0.0157, 0.0157, 0.7967, 0.0157, 0.2345, 0.1989, 0.0157, 0.69, 0.0157, 0.2949, 0.0157, 0.0157]
+	All Clients Global F1:  [0.0028, 0.089, 0.0777, 0.0028, 0.0028, 0.068, 0.0028, 0.0028, 0.0028, 0.0028, 0.0992, 0.0028, 0.0377, 0.033, 0.0028, 0.0773, 0.0028, 0.045, 0.0028, 0.0028]
+[Client 14] Epoch 1/5 | TrainLoss=2.6832 | ValLoss=2.241577 | ValF1=0.0000
+[Client 14] Epoch 2/5 | TrainLoss=1.9664 | ValLoss=1.626584 | ValF1=0.0000
+[Client 14] Epoch 3/5 | TrainLoss=1.4156 | ValLoss=1.094092 | ValF1=1.0000
+[Client 14] Epoch 4/5 | TrainLoss=0.9374 | ValLoss=0.645931 | ValF1=1.0000
+[Client 14] Epoch 5/5 | TrainLoss=0.5788 | ValLoss=0.354666 | ValF1=1.0000
+[Client 15] Epoch 1/5 | TrainLoss=0.0080 | ValLoss=0.006131 | ValF1=0.9759
+[Client 15] Epoch 2/5 | TrainLoss=0.0073 | ValLoss=0.005946 | ValF1=0.9787
+[Client 15] Epoch 3/5 | TrainLoss=0.0069 | ValLoss=0.006114 | ValF1=0.9789
+[Client 15] Epoch 4/5 | TrainLoss=0.0067 | ValLoss=0.004685 | ValF1=0.9787
+[Client 15] Epoch 5/5 | TrainLoss=0.0066 | ValLoss=0.005277 | ValF1=0.9759
+[Client 7] Epoch 1/5 | TrainLoss=2.0225 | ValLoss=0.959725 | ValF1=0.3607
+[Client 7] Epoch 2/5 | TrainLoss=0.7771 | ValLoss=0.703791 | ValF1=0.3036
+[Client 7] Epoch 3/5 | TrainLoss=0.6602 | ValLoss=0.604519 | ValF1=0.8375
+[Client 7] Epoch 4/5 | TrainLoss=0.5930 | ValLoss=0.555211 | ValF1=0.7111
+[Client 7] Epoch 5/5 | TrainLoss=0.5150 | ValLoss=0.462138 | ValF1=0.8375
+[Client 5] Epoch 1/5 | TrainLoss=2.4569 | ValLoss=2.411717 | ValF1=0.0165
+[Client 5] Epoch 2/5 | TrainLoss=2.4143 | ValLoss=2.404704 | ValF1=0.0172
+[Client 5] Epoch 3/5 | TrainLoss=2.4113 | ValLoss=2.403387 | ValF1=0.0165
+[Client 5] Epoch 4/5 | TrainLoss=2.4109 | ValLoss=2.400816 | ValF1=0.0150
+[Client 5] Epoch 5/5 | TrainLoss=2.4100 | ValLoss=2.402469 | ValF1=0.0150
+[Client 19] Epoch 1/5 | TrainLoss=2.1788 | ValLoss=1.269331 | ValF1=0.3103
+[Client 19] Epoch 2/5 | TrainLoss=0.8957 | ValLoss=0.759698 | ValF1=0.3103
+[Client 19] Epoch 3/5 | TrainLoss=0.7209 | ValLoss=0.707086 | ValF1=0.3103
+[Client 19] Epoch 4/5 | TrainLoss=0.6858 | ValLoss=0.696904 | ValF1=0.3103
+[Client 19] Epoch 5/5 | TrainLoss=0.6557 | ValLoss=0.707351 | ValF1=0.3103
+[Client 11] Epoch 1/5 | TrainLoss=0.0664 | ValLoss=0.019935 | ValF1=1.0000
+[Client 11] Epoch 2/5 | TrainLoss=0.0111 | ValLoss=0.005370 | ValF1=1.0000
+[Client 11] Epoch 3/5 | TrainLoss=0.0037 | ValLoss=0.002370 | ValF1=1.0000
+[Client 11] Epoch 4/5 | TrainLoss=0.0019 | ValLoss=0.001361 | ValF1=1.0000
+[Client 11] Epoch 5/5 | TrainLoss=0.0012 | ValLoss=0.000897 | ValF1=1.0000
+[Client 13] Epoch 1/5 | TrainLoss=2.2308 | ValLoss=1.311420 | ValF1=0.3607
+[Client 13] Epoch 2/5 | TrainLoss=0.9487 | ValLoss=0.754483 | ValF1=0.6991
+[Client 13] Epoch 3/5 | TrainLoss=0.7353 | ValLoss=0.706427 | ValF1=0.7421
+[Client 13] Epoch 4/5 | TrainLoss=0.7057 | ValLoss=0.705758 | ValF1=0.3036
+[Client 13] Epoch 5/5 | TrainLoss=0.6907 | ValLoss=0.664633 | ValF1=0.7421
+[Client 4] Epoch 1/5 | TrainLoss=2.8022 | ValLoss=2.636806 | ValF1=0.0135
+[Client 4] Epoch 2/5 | TrainLoss=2.6148 | ValLoss=2.539820 | ValF1=0.0135
+[Client 4] Epoch 3/5 | TrainLoss=2.5415 | ValLoss=2.491586 | ValF1=0.0135
+[Client 4] Epoch 4/5 | TrainLoss=2.5003 | ValLoss=2.463316 | ValF1=0.0135
+[Client 4] Epoch 5/5 | TrainLoss=2.4758 | ValLoss=2.444301 | ValF1=0.0135
+[Client 0] Epoch 1/5 | TrainLoss=2.4590 | ValLoss=2.437927 | ValF1=0.0127
+[Client 0] Epoch 2/5 | TrainLoss=2.4245 | ValLoss=2.443594 | ValF1=0.0174
+[Client 0] Epoch 3/5 | TrainLoss=2.4231 | ValLoss=2.439713 | ValF1=0.0148
+[Client 0] Epoch 4/5 | TrainLoss=2.4212 | ValLoss=2.435420 | ValF1=0.0186
+[Client 0] Epoch 5/5 | TrainLoss=2.4208 | ValLoss=2.444968 | ValF1=0.0159
+[Client 1] Epoch 1/5 | TrainLoss=2.7219 | ValLoss=2.572973 | ValF1=0.0045
+[Client 1] Epoch 2/5 | TrainLoss=2.5327 | ValLoss=2.490440 | ValF1=0.0045
+[Client 1] Epoch 3/5 | TrainLoss=2.4916 | ValLoss=2.473829 | ValF1=0.0045
+[Client 1] Epoch 4/5 | TrainLoss=2.4756 | ValLoss=2.471308 | ValF1=0.0045
+[Client 1] Epoch 5/5 | TrainLoss=2.4680 | ValLoss=2.441193 | ValF1=0.0045
+[Client 9] Epoch 1/5 | TrainLoss=0.0214 | ValLoss=0.019377 | ValF1=0.9131
+[Client 9] Epoch 2/5 | TrainLoss=0.0201 | ValLoss=0.017932 | ValF1=0.9389
+[Client 9] Epoch 3/5 | TrainLoss=0.0197 | ValLoss=0.034098 | ValF1=0.8439
+[Client 9] Epoch 4/5 | TrainLoss=0.0193 | ValLoss=0.018779 | ValF1=0.9140
+[Client 9] Epoch 5/5 | TrainLoss=0.0189 | ValLoss=0.018884 | ValF1=0.9222
+[Client 10] Epoch 1/5 | TrainLoss=1.5332 | ValLoss=0.532388 | ValF1=0.4898
+[Client 10] Epoch 2/5 | TrainLoss=0.1541 | ValLoss=0.358336 | ValF1=0.4898
+[Client 10] Epoch 3/5 | TrainLoss=0.0686 | ValLoss=0.367368 | ValF1=0.4898
+[Client 10] Epoch 4/5 | TrainLoss=0.0581 | ValLoss=0.373251 | ValF1=0.4898
+[Client 10] Epoch 5/5 | TrainLoss=0.0543 | ValLoss=0.373090 | ValF1=0.4898
+[Client 6] Epoch 1/5 | TrainLoss=0.1276 | ValLoss=0.007325 | ValF1=1.0000
+[Client 6] Epoch 2/5 | TrainLoss=0.0033 | ValLoss=0.001601 | ValF1=1.0000
+[Client 6] Epoch 3/5 | TrainLoss=0.0010 | ValLoss=0.000762 | ValF1=1.0000
+[Client 6] Epoch 4/5 | TrainLoss=0.0006 | ValLoss=0.000477 | ValF1=1.0000
+[Client 6] Epoch 5/5 | TrainLoss=0.0004 | ValLoss=0.000338 | ValF1=1.0000
+[Client 18] Epoch 1/5 | TrainLoss=0.1203 | ValLoss=0.007235 | ValF1=1.0000
+[Client 18] Epoch 2/5 | TrainLoss=0.0030 | ValLoss=0.001764 | ValF1=1.0000
+[Client 18] Epoch 3/5 | TrainLoss=0.0010 | ValLoss=0.000898 | ValF1=1.0000
+[Client 18] Epoch 4/5 | TrainLoss=0.0006 | ValLoss=0.000581 | ValF1=1.0000
+[Client 18] Epoch 5/5 | TrainLoss=0.0004 | ValLoss=0.000411 | ValF1=1.0000
+[Client 2] Epoch 1/5 | TrainLoss=2.8577 | ValLoss=2.791774 | ValF1=0.0317
+[Client 2] Epoch 2/5 | TrainLoss=2.6874 | ValLoss=2.699985 | ValF1=0.0317
+[Client 2] Epoch 3/5 | TrainLoss=2.5902 | ValLoss=2.649124 | ValF1=0.0317
+[Client 2] Epoch 4/5 | TrainLoss=2.5298 | ValLoss=2.624541 | ValF1=0.0317
+[Client 2] Epoch 5/5 | TrainLoss=2.4908 | ValLoss=2.613630 | ValF1=0.0317
+[Client 17] Epoch 1/5 | TrainLoss=0.0650 | ValLoss=0.027149 | ValF1=1.0000
+[Client 17] Epoch 2/5 | TrainLoss=0.0122 | ValLoss=0.007686 | ValF1=1.0000
+[Client 17] Epoch 3/5 | TrainLoss=0.0044 | ValLoss=0.003417 | ValF1=1.0000
+[Client 17] Epoch 4/5 | TrainLoss=0.0025 | ValLoss=0.001999 | ValF1=1.0000
+[Client 17] Epoch 5/5 | TrainLoss=0.0017 | ValLoss=0.001353 | ValF1=1.0000
+[Client 8] Epoch 1/5 | TrainLoss=2.6667 | ValLoss=2.215137 | ValF1=0.0000
+[Client 8] Epoch 2/5 | TrainLoss=1.8984 | ValLoss=1.567120 | ValF1=0.0000
+[Client 8] Epoch 3/5 | TrainLoss=1.2871 | ValLoss=0.987207 | ValF1=1.0000
+[Client 8] Epoch 4/5 | TrainLoss=0.7529 | ValLoss=0.525575 | ValF1=1.0000
+[Client 8] Epoch 5/5 | TrainLoss=0.3871 | ValLoss=0.266848 | ValF1=1.0000
+[Client 12] Epoch 1/5 | TrainLoss=0.1253 | ValLoss=0.006674 | ValF1=1.0000
+[Client 12] Epoch 2/5 | TrainLoss=0.0031 | ValLoss=0.001505 | ValF1=1.0000
+[Client 12] Epoch 3/5 | TrainLoss=0.0010 | ValLoss=0.000717 | ValF1=1.0000
+[Client 12] Epoch 4/5 | TrainLoss=0.0006 | ValLoss=0.000445 | ValF1=1.0000
+[Client 12] Epoch 5/5 | TrainLoss=0.0004 | ValLoss=0.000324 | ValF1=1.0000
+[Client 3] Epoch 1/5 | TrainLoss=2.4110 | ValLoss=2.410490 | ValF1=0.0137
+[Client 3] Epoch 2/5 | TrainLoss=2.4084 | ValLoss=2.409475 | ValF1=0.0143
+[Client 3] Epoch 3/5 | TrainLoss=2.4084 | ValLoss=2.409116 | ValF1=0.0135
+[Client 3] Epoch 4/5 | TrainLoss=2.4080 | ValLoss=2.408147 | ValF1=0.0142
+[Client 3] Epoch 5/5 | TrainLoss=2.4081 | ValLoss=2.408334 | ValF1=0.0225
+[Client 16] Epoch 1/5 | TrainLoss=1.5568 | ValLoss=0.326129 | ValF1=1.0000
+[Client 16] Epoch 2/5 | TrainLoss=0.1930 | ValLoss=0.056805 | ValF1=1.0000
+[Client 16] Epoch 3/5 | TrainLoss=0.1092 | ValLoss=0.026777 | ValF1=1.0000
+[Client 16] Epoch 4/5 | TrainLoss=0.0979 | ValLoss=0.017859 | ValF1=1.0000
+[Client 16] Epoch 5/5 | TrainLoss=0.0900 | ValLoss=0.014769 | ValF1=1.0000
+Time: 2473.923440217972
+
+-------------Round number: 3-------------
+
+Evaluate global model
+Train Loss
+	Client 17: Train loss: 13.35
+	Client 5: Train loss: 3.01
+	Client 8: Train loss: 3.29
+	Client 3: Train loss: 2.88
+	Client 13: Train loss: 4.98
+	Client 7: Train loss: 6.15
+	Client 18: Train loss: 3.05
+	Client 10: Train loss: 3.96
+	Client 11: Train loss: 12.59
+	Client 16: Train loss: 3.99
+	Client 2: Train loss: 3.01
+	Client 15: Train loss: 0.01
+	Client 1: Train loss: 3.07
+	Client 14: Train loss: 3.22
+	Client 4: Train loss: 3.03
+	Client 0: Train loss: 3.08
+	Client 6: Train loss: 2.93
+	Client 9: Train loss: 0.03
+	Client 12: Train loss: 3.03
+	Client 19: Train loss: 3.88
+Performance Metrics
+	Client 17: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 5: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 8: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 3: acc 0.02, precision: 0.01, recall: 0.5, f1: 0.02
+	Client 13: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 7: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 18: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 10: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 11: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 16: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 2: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 15: acc 1.0, precision: 0.99, recall: 0.96, f1: 0.97
+	Client 1: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 14: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 4: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 0: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 6: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 9: acc 0.99, precision: 0.99, recall: 0.84, f1: 0.9
+	Client 12: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 19: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+
+Algorithm:  lg_fedavg Dataset:  cic_ids Epoch:  3
+Overall Performance Metrics (Local)
+	train loss avg: 1.9058
+	test acc normal avg: 0.8290
+	test acc flipping avg: 0.0166
+Global Performance Metrics (Whole Test Set)
+	Global Acc avg: 0.2947
+	All Clients Global Acc: [0.764, 0.0157, 0.0157, 0.0157, 0.8169, 0.8204, 0.2329, 0.0683, 0.7851, 0.074, 0.0157, 0.7086, 0.0157, 0.0157, 0.0157, 0.0157, 0.2239, 0.7997, 0.458, 0.0157]
+	All Clients Global F1:  [0.0818, 0.0028, 0.0028, 0.0028, 0.0823, 0.0825, 0.0375, 0.0136, 0.083, 0.0147, 0.0028, 0.0894, 0.0028, 0.0028, 0.0028, 0.0028, 0.0363, 0.0993, 0.0598, 0.0028]
+[Client 17] Epoch 1/5 | TrainLoss=0.0601 | ValLoss=0.022473 | ValF1=1.0000
+[Client 17] Epoch 2/5 | TrainLoss=0.0098 | ValLoss=0.006283 | ValF1=1.0000
+[Client 17] Epoch 3/5 | TrainLoss=0.0034 | ValLoss=0.002443 | ValF1=1.0000
+[Client 17] Epoch 4/5 | TrainLoss=0.0019 | ValLoss=0.001373 | ValF1=1.0000
+[Client 17] Epoch 5/5 | TrainLoss=0.0013 | ValLoss=0.000902 | ValF1=1.0000
+[Client 5] Epoch 1/5 | TrainLoss=2.4588 | ValLoss=2.408993 | ValF1=0.0311
+[Client 5] Epoch 2/5 | TrainLoss=2.4155 | ValLoss=2.405655 | ValF1=0.0158
+[Client 5] Epoch 3/5 | TrainLoss=2.4129 | ValLoss=2.403248 | ValF1=0.0150
+[Client 5] Epoch 4/5 | TrainLoss=2.4121 | ValLoss=2.401195 | ValF1=0.0165
+[Client 5] Epoch 5/5 | TrainLoss=2.4121 | ValLoss=2.400058 | ValF1=0.0236
+[Client 8] Epoch 1/5 | TrainLoss=2.7069 | ValLoss=2.233445 | ValF1=0.0000
+[Client 8] Epoch 2/5 | TrainLoss=1.9271 | ValLoss=1.612851 | ValF1=0.0000
+[Client 8] Epoch 3/5 | TrainLoss=1.3504 | ValLoss=1.066685 | ValF1=1.0000
+[Client 8] Epoch 4/5 | TrainLoss=0.8326 | ValLoss=0.595631 | ValF1=1.0000
+[Client 8] Epoch 5/5 | TrainLoss=0.4394 | ValLoss=0.300716 | ValF1=1.0000
+[Client 3] Epoch 1/5 | TrainLoss=2.4102 | ValLoss=2.408683 | ValF1=0.0147
+[Client 3] Epoch 2/5 | TrainLoss=2.4083 | ValLoss=2.408801 | ValF1=0.0197
+[Client 3] Epoch 3/5 | TrainLoss=2.4081 | ValLoss=2.408018 | ValF1=0.0251
+[Client 3] Epoch 4/5 | TrainLoss=2.4080 | ValLoss=2.408612 | ValF1=0.0238
+[Client 3] Epoch 5/5 | TrainLoss=2.4074 | ValLoss=2.408415 | ValF1=0.0226
+[Client 13] Epoch 1/5 | TrainLoss=1.8033 | ValLoss=0.832960 | ValF1=0.3607
+[Client 13] Epoch 2/5 | TrainLoss=0.7513 | ValLoss=0.705668 | ValF1=0.7421
+[Client 13] Epoch 3/5 | TrainLoss=0.7067 | ValLoss=0.667962 | ValF1=0.3607
+[Client 13] Epoch 4/5 | TrainLoss=0.6932 | ValLoss=0.651933 | ValF1=0.6991
+[Client 13] Epoch 5/5 | TrainLoss=0.6620 | ValLoss=0.747907 | ValF1=0.3036
+[Client 7] Epoch 1/5 | TrainLoss=1.7843 | ValLoss=0.746110 | ValF1=0.5293
+[Client 7] Epoch 2/5 | TrainLoss=0.6786 | ValLoss=0.589915 | ValF1=0.8375
+[Client 7] Epoch 3/5 | TrainLoss=0.5495 | ValLoss=0.494484 | ValF1=0.7111
+[Client 7] Epoch 4/5 | TrainLoss=0.4453 | ValLoss=0.386455 | ValF1=0.8375
+[Client 7] Epoch 5/5 | TrainLoss=0.4080 | ValLoss=0.356902 | ValF1=0.8375
+[Client 18] Epoch 1/5 | TrainLoss=0.0614 | ValLoss=0.004920 | ValF1=1.0000
+[Client 18] Epoch 2/5 | TrainLoss=0.0021 | ValLoss=0.001568 | ValF1=1.0000
+[Client 18] Epoch 3/5 | TrainLoss=0.0009 | ValLoss=0.000795 | ValF1=1.0000
+[Client 18] Epoch 4/5 | TrainLoss=0.0005 | ValLoss=0.000529 | ValF1=1.0000
+[Client 18] Epoch 5/5 | TrainLoss=0.0003 | ValLoss=0.000381 | ValF1=1.0000
+[Client 10] Epoch 1/5 | TrainLoss=1.3840 | ValLoss=0.457665 | ValF1=0.4898
+[Client 10] Epoch 2/5 | TrainLoss=0.1319 | ValLoss=0.345541 | ValF1=0.4898
+[Client 10] Epoch 3/5 | TrainLoss=0.0683 | ValLoss=0.349821 | ValF1=0.4898
+[Client 10] Epoch 4/5 | TrainLoss=0.0563 | ValLoss=0.359540 | ValF1=0.4898
+[Client 10] Epoch 5/5 | TrainLoss=0.0525 | ValLoss=0.359722 | ValF1=0.4898
+[Client 11] Epoch 1/5 | TrainLoss=0.0613 | ValLoss=0.016214 | ValF1=1.0000
+[Client 11] Epoch 2/5 | TrainLoss=0.0085 | ValLoss=0.003903 | ValF1=1.0000
+[Client 11] Epoch 3/5 | TrainLoss=0.0026 | ValLoss=0.001616 | ValF1=1.0000
+[Client 11] Epoch 4/5 | TrainLoss=0.0012 | ValLoss=0.000897 | ValF1=1.0000
+[Client 11] Epoch 5/5 | TrainLoss=0.0007 | ValLoss=0.000582 | ValF1=1.0000
+[Client 16] Epoch 1/5 | TrainLoss=1.4057 | ValLoss=0.242339 | ValF1=1.0000
+[Client 16] Epoch 2/5 | TrainLoss=0.1664 | ValLoss=0.047050 | ValF1=1.0000
+[Client 16] Epoch 3/5 | TrainLoss=0.1024 | ValLoss=0.023573 | ValF1=1.0000
+[Client 16] Epoch 4/5 | TrainLoss=0.0914 | ValLoss=0.017681 | ValF1=1.0000
+[Client 16] Epoch 5/5 | TrainLoss=0.0855 | ValLoss=0.013857 | ValF1=1.0000
+[Client 2] Epoch 1/5 | TrainLoss=2.8799 | ValLoss=2.818868 | ValF1=0.0317
+[Client 2] Epoch 2/5 | TrainLoss=2.6955 | ValLoss=2.719082 | ValF1=0.0317
+[Client 2] Epoch 3/5 | TrainLoss=2.5904 | ValLoss=2.659993 | ValF1=0.0317
+[Client 2] Epoch 4/5 | TrainLoss=2.5266 | ValLoss=2.631995 | ValF1=0.0317
+[Client 2] Epoch 5/5 | TrainLoss=2.4850 | ValLoss=2.616207 | ValF1=0.0317
+[Client 15] Epoch 1/5 | TrainLoss=0.0073 | ValLoss=0.006352 | ValF1=0.9759
+[Client 15] Epoch 2/5 | TrainLoss=0.0068 | ValLoss=0.004893 | ValF1=0.9787
+[Client 15] Epoch 3/5 | TrainLoss=0.0066 | ValLoss=0.005531 | ValF1=0.9759
+[Client 15] Epoch 4/5 | TrainLoss=0.0063 | ValLoss=0.005929 | ValF1=0.9869
+[Client 15] Epoch 5/5 | TrainLoss=0.0061 | ValLoss=0.003357 | ValF1=0.9895
+[Client 1] Epoch 1/5 | TrainLoss=2.7078 | ValLoss=2.599618 | ValF1=0.0045
+[Client 1] Epoch 2/5 | TrainLoss=2.5196 | ValLoss=2.456738 | ValF1=0.0045
+[Client 1] Epoch 3/5 | TrainLoss=2.4847 | ValLoss=2.503568 | ValF1=0.0045
+[Client 1] Epoch 4/5 | TrainLoss=2.4754 | ValLoss=2.458638 | ValF1=0.0045
+[Client 1] Epoch 5/5 | TrainLoss=2.4672 | ValLoss=2.394623 | ValF1=0.0310
+[Client 14] Epoch 1/5 | TrainLoss=2.7038 | ValLoss=2.257018 | ValF1=0.0000
+[Client 14] Epoch 2/5 | TrainLoss=1.9899 | ValLoss=1.689947 | ValF1=0.0000
+[Client 14] Epoch 3/5 | TrainLoss=1.5056 | ValLoss=1.239546 | ValF1=1.0000
+[Client 14] Epoch 4/5 | TrainLoss=1.1066 | ValLoss=0.872310 | ValF1=1.0000
+[Client 14] Epoch 5/5 | TrainLoss=0.7965 | ValLoss=0.599575 | ValF1=1.0000
+[Client 4] Epoch 1/5 | TrainLoss=2.8147 | ValLoss=2.640148 | ValF1=0.0135
+[Client 4] Epoch 2/5 | TrainLoss=2.6334 | ValLoss=2.546794 | ValF1=0.0135
+[Client 4] Epoch 3/5 | TrainLoss=2.5615 | ValLoss=2.501156 | ValF1=0.0135
+[Client 4] Epoch 4/5 | TrainLoss=2.5212 | ValLoss=2.474016 | ValF1=0.0135
+[Client 4] Epoch 5/5 | TrainLoss=2.4973 | ValLoss=2.455449 | ValF1=0.0135
+[Client 0] Epoch 1/5 | TrainLoss=2.4556 | ValLoss=2.441660 | ValF1=0.0155
+[Client 0] Epoch 2/5 | TrainLoss=2.4241 | ValLoss=2.441864 | ValF1=0.0106
+[Client 0] Epoch 3/5 | TrainLoss=2.4232 | ValLoss=2.441754 | ValF1=0.0179
+[Client 0] Epoch 4/5 | TrainLoss=2.4222 | ValLoss=2.439623 | ValF1=0.0167
+[Client 0] Epoch 5/5 | TrainLoss=2.4226 | ValLoss=2.437179 | ValF1=0.0181
+[Client 6] Epoch 1/5 | TrainLoss=0.0634 | ValLoss=0.004693 | ValF1=1.0000
+[Client 6] Epoch 2/5 | TrainLoss=0.0021 | ValLoss=0.001434 | ValF1=1.0000
+[Client 6] Epoch 3/5 | TrainLoss=0.0008 | ValLoss=0.000760 | ValF1=1.0000
+[Client 6] Epoch 4/5 | TrainLoss=0.0005 | ValLoss=0.000488 | ValF1=1.0000
+[Client 6] Epoch 5/5 | TrainLoss=0.0003 | ValLoss=0.000355 | ValF1=1.0000
+[Client 9] Epoch 1/5 | TrainLoss=0.0208 | ValLoss=0.018074 | ValF1=0.9384
+[Client 9] Epoch 2/5 | TrainLoss=0.0199 | ValLoss=0.023869 | ValF1=0.8690
+[Client 9] Epoch 3/5 | TrainLoss=0.0193 | ValLoss=0.018959 | ValF1=0.9148
+[Client 9] Epoch 4/5 | TrainLoss=0.0191 | ValLoss=0.016866 | ValF1=0.9438
+[Client 9] Epoch 5/5 | TrainLoss=0.0185 | ValLoss=0.019450 | ValF1=0.9058
+[Client 12] Epoch 1/5 | TrainLoss=0.0626 | ValLoss=0.004051 | ValF1=1.0000
+[Client 12] Epoch 2/5 | TrainLoss=0.0022 | ValLoss=0.001226 | ValF1=1.0000
+[Client 12] Epoch 3/5 | TrainLoss=0.0009 | ValLoss=0.000624 | ValF1=1.0000
+[Client 12] Epoch 4/5 | TrainLoss=0.0005 | ValLoss=0.000401 | ValF1=1.0000
+[Client 12] Epoch 5/5 | TrainLoss=0.0003 | ValLoss=0.000305 | ValF1=1.0000
+[Client 19] Epoch 1/5 | TrainLoss=1.9957 | ValLoss=1.041996 | ValF1=0.3103
+[Client 19] Epoch 2/5 | TrainLoss=0.8021 | ValLoss=0.711013 | ValF1=0.7484
+[Client 19] Epoch 3/5 | TrainLoss=0.7009 | ValLoss=0.677598 | ValF1=0.6267
+[Client 19] Epoch 4/5 | TrainLoss=0.6662 | ValLoss=0.685924 | ValF1=0.3103
+[Client 19] Epoch 5/5 | TrainLoss=0.6090 | ValLoss=0.583362 | ValF1=0.6267
+Time: 2511.52290058136
+
+-------------Round number: 4-------------
+
+Evaluate global model
+Train Loss
+	Client 14: Train loss: 3.01
+	Client 13: Train loss: 6.76
+	Client 4: Train loss: 2.99
+	Client 11: Train loss: 16.63
+	Client 16: Train loss: 4.69
+	Client 9: Train loss: 0.03
+	Client 17: Train loss: 17.21
+	Client 5: Train loss: 3.04
+	Client 8: Train loss: 3.21
+	Client 15: Train loss: 0.01
+	Client 7: Train loss: 7.14
+	Client 19: Train loss: 5.24
+	Client 3: Train loss: 2.82
+	Client 12: Train loss: 2.56
+	Client 1: Train loss: 3.05
+	Client 2: Train loss: 2.97
+	Client 0: Train loss: 3.1
+	Client 18: Train loss: 2.61
+	Client 6: Train loss: 2.45
+	Client 10: Train loss: 4.72
+Performance Metrics
+	Client 14: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 13: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 4: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 11: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 16: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 9: acc 1.0, precision: 0.99, recall: 0.87, f1: 0.92
+	Client 17: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 5: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 8: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 15: acc 1.0, precision: 1.0, recall: 0.98, f1: 0.99
+	Client 7: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 19: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 3: acc 0.02, precision: 0.01, recall: 0.5, f1: 0.02
+	Client 12: acc 0.0, precision: 0.25, recall: 0.0, f1: 0.0
+	Client 1: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 2: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 0: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 18: acc 0.0, precision: 0.25, recall: 0.0, f1: 0.0
+	Client 6: acc 0.0, precision: 0.25, recall: 0.0, f1: 0.0
+	Client 10: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+
+Algorithm:  lg_fedavg Dataset:  cic_ids Epoch:  4
+Overall Performance Metrics (Local)
+	train loss avg: 2.1073
+	test acc normal avg: 0.8299
+	test acc flipping avg: 0.0166
+Global Performance Metrics (Whole Test Set)
+	Global Acc avg: 0.4161
+	All Clients Global Acc: [0.0157, 0.8236, 0.0157, 0.7958, 0.8203, 0.7926, 0.7794, 0.0157, 0.0157, 0.6968, 0.8236, 0.8236, 0.0157, 0.4834, 0.0157, 0.0157, 0.0157, 0.2573, 0.2772, 0.8236]
+	All Clients Global F1:  [0.0028, 0.0821, 0.0028, 0.0822, 0.0819, 0.0984, 0.0826, 0.0028, 0.0028, 0.0885, 0.0821, 0.0822, 0.0028, 0.062, 0.0028, 0.0028, 0.0028, 0.0407, 0.0432, 0.0821]
+[Client 14] Epoch 1/5 | TrainLoss=2.5748 | ValLoss=2.200586 | ValF1=0.0000
+[Client 14] Epoch 2/5 | TrainLoss=1.9566 | ValLoss=1.658138 | ValF1=0.0000
+[Client 14] Epoch 3/5 | TrainLoss=1.4688 | ValLoss=1.198886 | ValF1=1.0000
+[Client 14] Epoch 4/5 | TrainLoss=1.0607 | ValLoss=0.822617 | ValF1=1.0000
+[Client 14] Epoch 5/5 | TrainLoss=0.7112 | ValLoss=0.541652 | ValF1=1.0000
+[Client 13] Epoch 1/5 | TrainLoss=1.5925 | ValLoss=0.741900 | ValF1=0.4222
+[Client 13] Epoch 2/5 | TrainLoss=0.7201 | ValLoss=0.657331 | ValF1=0.6991
+[Client 13] Epoch 3/5 | TrainLoss=0.6771 | ValLoss=0.624900 | ValF1=0.7421
+[Client 13] Epoch 4/5 | TrainLoss=0.6276 | ValLoss=0.550868 | ValF1=0.6991
+[Client 13] Epoch 5/5 | TrainLoss=0.5683 | ValLoss=0.494026 | ValF1=0.6991
+[Client 4] Epoch 1/5 | TrainLoss=2.7844 | ValLoss=2.621511 | ValF1=0.0135
+[Client 4] Epoch 2/5 | TrainLoss=2.6235 | ValLoss=2.539840 | ValF1=0.0135
+[Client 4] Epoch 3/5 | TrainLoss=2.5617 | ValLoss=2.500868 | ValF1=0.0135
+[Client 4] Epoch 4/5 | TrainLoss=2.5261 | ValLoss=2.476785 | ValF1=0.0135
+[Client 4] Epoch 5/5 | TrainLoss=2.5005 | ValLoss=2.460343 | ValF1=0.0135
+[Client 11] Epoch 1/5 | TrainLoss=0.0546 | ValLoss=0.008857 | ValF1=1.0000
+[Client 11] Epoch 2/5 | TrainLoss=0.0040 | ValLoss=0.001715 | ValF1=1.0000
+[Client 11] Epoch 3/5 | TrainLoss=0.0011 | ValLoss=0.000749 | ValF1=1.0000
+[Client 11] Epoch 4/5 | TrainLoss=0.0006 | ValLoss=0.000442 | ValF1=1.0000
+[Client 11] Epoch 5/5 | TrainLoss=0.0004 | ValLoss=0.000303 | ValF1=1.0000
+[Client 16] Epoch 1/5 | TrainLoss=1.4969 | ValLoss=0.284610 | ValF1=1.0000
+[Client 16] Epoch 2/5 | TrainLoss=0.1763 | ValLoss=0.050009 | ValF1=1.0000
+[Client 16] Epoch 3/5 | TrainLoss=0.1021 | ValLoss=0.026425 | ValF1=1.0000
+[Client 16] Epoch 4/5 | TrainLoss=0.0899 | ValLoss=0.018483 | ValF1=1.0000
+[Client 16] Epoch 5/5 | TrainLoss=0.0840 | ValLoss=0.015109 | ValF1=1.0000
+[Client 9] Epoch 1/5 | TrainLoss=0.0197 | ValLoss=0.017616 | ValF1=0.9340
+[Client 9] Epoch 2/5 | TrainLoss=0.0190 | ValLoss=0.016918 | ValF1=0.9412
+[Client 9] Epoch 3/5 | TrainLoss=0.0183 | ValLoss=0.022157 | ValF1=0.8904
+[Client 9] Epoch 4/5 | TrainLoss=0.0176 | ValLoss=0.015270 | ValF1=0.9425
+[Client 9] Epoch 5/5 | TrainLoss=0.0173 | ValLoss=0.016754 | ValF1=0.9235
+[Client 17] Epoch 1/5 | TrainLoss=0.0554 | ValLoss=0.014185 | ValF1=1.0000
+[Client 17] Epoch 2/5 | TrainLoss=0.0055 | ValLoss=0.002727 | ValF1=1.0000
+[Client 17] Epoch 3/5 | TrainLoss=0.0019 | ValLoss=0.001178 | ValF1=1.0000
+[Client 17] Epoch 4/5 | TrainLoss=0.0012 | ValLoss=0.000684 | ValF1=1.0000
+[Client 17] Epoch 5/5 | TrainLoss=0.0010 | ValLoss=0.000471 | ValF1=1.0000
+[Client 5] Epoch 1/5 | TrainLoss=2.4455 | ValLoss=2.413842 | ValF1=0.0140
+[Client 5] Epoch 2/5 | TrainLoss=2.4156 | ValLoss=2.407498 | ValF1=0.0140
+[Client 5] Epoch 3/5 | TrainLoss=2.4143 | ValLoss=2.403806 | ValF1=0.0322
+[Client 5] Epoch 4/5 | TrainLoss=2.4136 | ValLoss=2.404440 | ValF1=0.0301
+[Client 5] Epoch 5/5 | TrainLoss=2.4136 | ValLoss=2.399069 | ValF1=0.0158
+[Client 8] Epoch 1/5 | TrainLoss=2.6407 | ValLoss=2.186270 | ValF1=0.0000
+[Client 8] Epoch 2/5 | TrainLoss=1.8969 | ValLoss=1.609680 | ValF1=0.0000
+[Client 8] Epoch 3/5 | TrainLoss=1.3775 | ValLoss=1.131014 | ValF1=1.0000
+[Client 8] Epoch 4/5 | TrainLoss=0.9321 | ValLoss=0.729705 | ValF1=1.0000
+[Client 8] Epoch 5/5 | TrainLoss=0.5840 | ValLoss=0.444971 | ValF1=1.0000
+[Client 15] Epoch 1/5 | TrainLoss=0.0062 | ValLoss=0.004729 | ValF1=0.9759
+[Client 15] Epoch 2/5 | TrainLoss=0.0055 | ValLoss=0.003397 | ValF1=0.9828
+[Client 15] Epoch 3/5 | TrainLoss=0.0051 | ValLoss=0.003985 | ValF1=0.9800
+[Client 15] Epoch 4/5 | TrainLoss=0.0047 | ValLoss=0.003104 | ValF1=0.9855
+[Client 15] Epoch 5/5 | TrainLoss=0.0044 | ValLoss=0.002324 | ValF1=0.9895
+[Client 7] Epoch 1/5 | TrainLoss=1.5113 | ValLoss=0.605413 | ValF1=0.8375
+[Client 7] Epoch 2/5 | TrainLoss=0.5474 | ValLoss=0.436585 | ValF1=0.8375
+[Client 7] Epoch 3/5 | TrainLoss=0.4422 | ValLoss=0.403375 | ValF1=0.7111
+[Client 7] Epoch 4/5 | TrainLoss=0.4001 | ValLoss=0.356486 | ValF1=0.8375
+[Client 7] Epoch 5/5 | TrainLoss=0.3767 | ValLoss=0.506256 | ValF1=0.7111
+[Client 19] Epoch 1/5 | TrainLoss=1.6776 | ValLoss=0.812855 | ValF1=0.3103
+[Client 19] Epoch 2/5 | TrainLoss=0.6980 | ValLoss=0.665915 | ValF1=0.6267
+[Client 19] Epoch 3/5 | TrainLoss=0.6240 | ValLoss=0.587913 | ValF1=0.6267
+[Client 19] Epoch 4/5 | TrainLoss=0.5300 | ValLoss=0.491919 | ValF1=0.7484
+[Client 19] Epoch 5/5 | TrainLoss=0.4671 | ValLoss=0.450729 | ValF1=0.7484
+[Client 3] Epoch 1/5 | TrainLoss=2.4094 | ValLoss=2.409785 | ValF1=0.0191
+[Client 3] Epoch 2/5 | TrainLoss=2.4082 | ValLoss=2.407904 | ValF1=0.0257
+[Client 3] Epoch 3/5 | TrainLoss=2.4079 | ValLoss=2.408549 | ValF1=0.0355
+[Client 3] Epoch 4/5 | TrainLoss=2.4075 | ValLoss=2.409033 | ValF1=0.0246
+[Client 3] Epoch 5/5 | TrainLoss=2.4069 | ValLoss=2.407658 | ValF1=0.0135
+[Client 12] Epoch 1/5 | TrainLoss=0.0439 | ValLoss=0.003859 | ValF1=1.0000
+[Client 12] Epoch 2/5 | TrainLoss=0.0018 | ValLoss=0.001051 | ValF1=1.0000
+[Client 12] Epoch 3/5 | TrainLoss=0.0007 | ValLoss=0.000597 | ValF1=1.0000
+[Client 12] Epoch 4/5 | TrainLoss=0.0005 | ValLoss=0.000380 | ValF1=1.0000
+[Client 12] Epoch 5/5 | TrainLoss=0.0003 | ValLoss=0.000280 | ValF1=1.0000
+[Client 1] Epoch 1/5 | TrainLoss=2.6826 | ValLoss=2.518195 | ValF1=0.0045
+[Client 1] Epoch 2/5 | TrainLoss=2.5253 | ValLoss=2.456965 | ValF1=0.0045
+[Client 1] Epoch 3/5 | TrainLoss=2.4901 | ValLoss=2.458863 | ValF1=0.0045
+[Client 1] Epoch 4/5 | TrainLoss=2.4733 | ValLoss=2.440408 | ValF1=0.0073
+[Client 1] Epoch 5/5 | TrainLoss=2.4689 | ValLoss=2.432812 | ValF1=0.0096
+[Client 2] Epoch 1/5 | TrainLoss=2.8431 | ValLoss=2.799211 | ValF1=0.0317
+[Client 2] Epoch 2/5 | TrainLoss=2.6713 | ValLoss=2.712963 | ValF1=0.0317
+[Client 2] Epoch 3/5 | TrainLoss=2.5795 | ValLoss=2.662859 | ValF1=0.0317
+[Client 2] Epoch 4/5 | TrainLoss=2.5204 | ValLoss=2.633606 | ValF1=0.0317
+[Client 2] Epoch 5/5 | TrainLoss=2.4812 | ValLoss=2.621465 | ValF1=0.0317
+[Client 0] Epoch 1/5 | TrainLoss=2.4533 | ValLoss=2.440516 | ValF1=0.0229
+[Client 0] Epoch 2/5 | TrainLoss=2.4250 | ValLoss=2.434709 | ValF1=0.0187
+[Client 0] Epoch 3/5 | TrainLoss=2.4225 | ValLoss=2.442037 | ValF1=0.0132
+[Client 0] Epoch 4/5 | TrainLoss=2.4228 | ValLoss=2.436125 | ValF1=0.0193
+[Client 0] Epoch 5/5 | TrainLoss=2.4221 | ValLoss=2.443885 | ValF1=0.0193
+[Client 18] Epoch 1/5 | TrainLoss=0.0447 | ValLoss=0.004148 | ValF1=1.0000
+[Client 18] Epoch 2/5 | TrainLoss=0.0017 | ValLoss=0.001409 | ValF1=1.0000
+[Client 18] Epoch 3/5 | TrainLoss=0.0007 | ValLoss=0.000704 | ValF1=1.0000
+[Client 18] Epoch 4/5 | TrainLoss=0.0005 | ValLoss=0.000475 | ValF1=1.0000
+[Client 18] Epoch 5/5 | TrainLoss=0.0003 | ValLoss=0.000352 | ValF1=1.0000
+[Client 6] Epoch 1/5 | TrainLoss=0.0425 | ValLoss=0.003738 | ValF1=1.0000
+[Client 6] Epoch 2/5 | TrainLoss=0.0017 | ValLoss=0.001248 | ValF1=1.0000
+[Client 6] Epoch 3/5 | TrainLoss=0.0007 | ValLoss=0.000671 | ValF1=1.0000
+[Client 6] Epoch 4/5 | TrainLoss=0.0004 | ValLoss=0.000453 | ValF1=1.0000
+[Client 6] Epoch 5/5 | TrainLoss=0.0003 | ValLoss=0.000335 | ValF1=1.0000
+[Client 10] Epoch 1/5 | TrainLoss=1.4696 | ValLoss=0.479511 | ValF1=0.4898
+[Client 10] Epoch 2/5 | TrainLoss=0.1405 | ValLoss=0.340717 | ValF1=0.4898
+[Client 10] Epoch 3/5 | TrainLoss=0.0671 | ValLoss=0.342989 | ValF1=0.4898
+[Client 10] Epoch 4/5 | TrainLoss=0.0562 | ValLoss=0.346123 | ValF1=0.4898
+[Client 10] Epoch 5/5 | TrainLoss=0.0520 | ValLoss=0.348654 | ValF1=0.4898
+Time: 2451.6681780815125
+
+-------------Round number: 5-------------
+
+Evaluate global model
+Train Loss
+	Client 9: Train loss: 0.02
+	Client 17: Train loss: 18.72
+	Client 8: Train loss: 2.86
+	Client 18: Train loss: 2.08
+	Client 13: Train loss: 6.8
+	Client 3: Train loss: 2.65
+	Client 12: Train loss: 2.13
+	Client 0: Train loss: 2.94
+	Client 16: Train loss: 4.76
+	Client 7: Train loss: 5.74
+	Client 5: Train loss: 2.95
+	Client 2: Train loss: 2.84
+	Client 14: Train loss: 2.81
+	Client 10: Train loss: 4.84
+	Client 6: Train loss: 2.02
+	Client 11: Train loss: 18.13
+	Client 15: Train loss: 0.0
+	Client 4: Train loss: 2.86
+	Client 19: Train loss: 5.89
+	Client 1: Train loss: 2.86
+Performance Metrics
+	Client 9: acc 1.0, precision: 0.98, recall: 0.9, f1: 0.94
+	Client 17: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 8: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 18: acc 0.84, precision: 0.25, recall: 0.22, f1: 0.24
+	Client 13: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 3: acc 0.02, precision: 0.01, recall: 0.5, f1: 0.02
+	Client 12: acc 0.81, precision: 0.25, recall: 0.21, f1: 0.23
+	Client 0: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 16: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 7: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 5: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 2: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 14: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 10: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 6: acc 0.94, precision: 0.33, recall: 0.33, f1: 0.33
+	Client 11: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 15: acc 1.0, precision: 1.0, recall: 0.98, f1: 0.99
+	Client 4: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 19: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 1: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+
+Algorithm:  lg_fedavg Dataset:  cic_ids Epoch:  5
+Overall Performance Metrics (Local)
+	train loss avg: 2.1173
+	test acc normal avg: 0.8913
+	test acc flipping avg: 0.0166
+Global Performance Metrics (Whole Test Set)
+	Global Acc avg: 0.4299
+	All Clients Global Acc: [0.7806, 0.7834, 0.0157, 0.3111, 0.8236, 0.0157, 0.5633, 0.0157, 0.8236, 0.8234, 0.0157, 0.0157, 0.0157, 0.8236, 0.433, 0.7988, 0.6947, 0.0157, 0.8131, 0.0157]
+	All Clients Global F1:  [0.0963, 0.0805, 0.0028, 0.096, 0.0821, 0.0028, 0.1481, 0.0028, 0.0821, 0.0825, 0.0028, 0.0028, 0.0028, 0.0821, 0.1392, 0.0818, 0.0881, 0.0028, 0.0821, 0.0028]
+[Client 9] Epoch 1/5 | TrainLoss=0.0178 | ValLoss=0.017068 | ValF1=0.9235
+[Client 9] Epoch 2/5 | TrainLoss=0.0169 | ValLoss=0.015550 | ValF1=0.9286
+[Client 9] Epoch 3/5 | TrainLoss=0.0161 | ValLoss=0.017331 | ValF1=0.9058
+[Client 9] Epoch 4/5 | TrainLoss=0.0147 | ValLoss=0.013654 | ValF1=0.9225
+[Client 9] Epoch 5/5 | TrainLoss=0.0130 | ValLoss=0.006472 | ValF1=0.9467
+[Client 17] Epoch 1/5 | TrainLoss=0.0455 | ValLoss=0.006448 | ValF1=1.0000
+[Client 17] Epoch 2/5 | TrainLoss=0.0029 | ValLoss=0.001511 | ValF1=1.0000
+[Client 17] Epoch 3/5 | TrainLoss=0.0013 | ValLoss=0.000729 | ValF1=1.0000
+[Client 17] Epoch 4/5 | TrainLoss=0.0010 | ValLoss=0.000463 | ValF1=1.0000
+[Client 17] Epoch 5/5 | TrainLoss=0.0008 | ValLoss=0.000339 | ValF1=1.0000
+[Client 8] Epoch 1/5 | TrainLoss=2.4607 | ValLoss=2.126447 | ValF1=0.0000
+[Client 8] Epoch 2/5 | TrainLoss=1.8798 | ValLoss=1.618134 | ValF1=0.0000
+[Client 8] Epoch 3/5 | TrainLoss=1.3952 | ValLoss=1.156838 | ValF1=1.0000
+[Client 8] Epoch 4/5 | TrainLoss=0.9594 | ValLoss=0.756462 | ValF1=1.0000
+[Client 8] Epoch 5/5 | TrainLoss=0.6053 | ValLoss=0.459492 | ValF1=1.0000
+[Client 18] Epoch 1/5 | TrainLoss=0.0339 | ValLoss=0.002889 | ValF1=1.0000
+[Client 18] Epoch 2/5 | TrainLoss=0.0014 | ValLoss=0.001082 | ValF1=1.0000
+[Client 18] Epoch 3/5 | TrainLoss=0.0006 | ValLoss=0.000664 | ValF1=1.0000
+[Client 18] Epoch 4/5 | TrainLoss=0.0004 | ValLoss=0.000441 | ValF1=1.0000
+[Client 18] Epoch 5/5 | TrainLoss=0.0003 | ValLoss=0.000322 | ValF1=1.0000
+[Client 13] Epoch 1/5 | TrainLoss=1.3583 | ValLoss=0.673813 | ValF1=0.7421
+[Client 13] Epoch 2/5 | TrainLoss=0.6526 | ValLoss=0.701651 | ValF1=0.3036
+[Client 13] Epoch 3/5 | TrainLoss=0.5956 | ValLoss=0.501940 | ValF1=0.7421
+[Client 13] Epoch 4/5 | TrainLoss=0.5412 | ValLoss=0.536060 | ValF1=0.6991
+[Client 13] Epoch 5/5 | TrainLoss=0.5079 | ValLoss=0.457178 | ValF1=0.6991
+[Client 3] Epoch 1/5 | TrainLoss=2.4089 | ValLoss=2.408384 | ValF1=0.0235
+[Client 3] Epoch 2/5 | TrainLoss=2.4080 | ValLoss=2.408359 | ValF1=0.0265
+[Client 3] Epoch 3/5 | TrainLoss=2.4073 | ValLoss=2.407849 | ValF1=0.0250
+[Client 3] Epoch 4/5 | TrainLoss=2.4069 | ValLoss=2.407525 | ValF1=0.0225
+[Client 3] Epoch 5/5 | TrainLoss=2.4067 | ValLoss=2.406703 | ValF1=0.0385
+[Client 12] Epoch 1/5 | TrainLoss=0.0367 | ValLoss=0.002541 | ValF1=1.0000
+[Client 12] Epoch 2/5 | TrainLoss=0.0014 | ValLoss=0.000932 | ValF1=1.0000
+[Client 12] Epoch 3/5 | TrainLoss=0.0006 | ValLoss=0.000517 | ValF1=1.0000
+[Client 12] Epoch 4/5 | TrainLoss=0.0004 | ValLoss=0.000348 | ValF1=1.0000
+[Client 12] Epoch 5/5 | TrainLoss=0.0003 | ValLoss=0.000276 | ValF1=1.0000
+[Client 0] Epoch 1/5 | TrainLoss=2.4527 | ValLoss=2.440627 | ValF1=0.0229
+[Client 0] Epoch 2/5 | TrainLoss=2.4255 | ValLoss=2.444577 | ValF1=0.0238
+[Client 0] Epoch 3/5 | TrainLoss=2.4234 | ValLoss=2.436385 | ValF1=0.0250
+[Client 0] Epoch 4/5 | TrainLoss=2.4231 | ValLoss=2.438174 | ValF1=0.0184
+[Client 0] Epoch 5/5 | TrainLoss=2.4222 | ValLoss=2.440341 | ValF1=0.0253
+[Client 16] Epoch 1/5 | TrainLoss=1.5765 | ValLoss=0.372971 | ValF1=1.0000
+[Client 16] Epoch 2/5 | TrainLoss=0.1940 | ValLoss=0.052487 | ValF1=1.0000
+[Client 16] Epoch 3/5 | TrainLoss=0.1011 | ValLoss=0.027217 | ValF1=1.0000
+[Client 16] Epoch 4/5 | TrainLoss=0.0886 | ValLoss=0.019627 | ValF1=1.0000
+[Client 16] Epoch 5/5 | TrainLoss=0.0826 | ValLoss=0.017111 | ValF1=1.0000
+[Client 7] Epoch 1/5 | TrainLoss=1.3245 | ValLoss=0.587314 | ValF1=0.7111
+[Client 7] Epoch 2/5 | TrainLoss=0.5104 | ValLoss=0.417499 | ValF1=0.8375
+[Client 7] Epoch 3/5 | TrainLoss=0.4343 | ValLoss=0.362630 | ValF1=0.8375
+[Client 7] Epoch 4/5 | TrainLoss=0.3873 | ValLoss=0.354030 | ValF1=0.8375
+[Client 7] Epoch 5/5 | TrainLoss=0.3943 | ValLoss=0.490570 | ValF1=0.7111
+[Client 5] Epoch 1/5 | TrainLoss=2.4431 | ValLoss=2.407163 | ValF1=0.0323
+[Client 5] Epoch 2/5 | TrainLoss=2.4154 | ValLoss=2.408342 | ValF1=0.0153
+[Client 5] Epoch 3/5 | TrainLoss=2.4145 | ValLoss=2.401720 | ValF1=0.0165
+[Client 5] Epoch 4/5 | TrainLoss=2.4130 | ValLoss=2.404121 | ValF1=0.0150
+[Client 5] Epoch 5/5 | TrainLoss=2.4132 | ValLoss=2.405568 | ValF1=0.0218
+[Client 2] Epoch 1/5 | TrainLoss=2.7367 | ValLoss=2.741086 | ValF1=0.0317
+[Client 2] Epoch 2/5 | TrainLoss=2.6127 | ValLoss=2.688985 | ValF1=0.0317
+[Client 2] Epoch 3/5 | TrainLoss=2.5448 | ValLoss=2.660765 | ValF1=0.0317
+[Client 2] Epoch 4/5 | TrainLoss=2.5011 | ValLoss=2.638760 | ValF1=0.0317
+[Client 2] Epoch 5/5 | TrainLoss=2.4689 | ValLoss=2.625431 | ValF1=0.0317
+[Client 14] Epoch 1/5 | TrainLoss=2.4684 | ValLoss=2.149267 | ValF1=0.0000
+[Client 14] Epoch 2/5 | TrainLoss=1.9280 | ValLoss=1.652928 | ValF1=0.0000
+[Client 14] Epoch 3/5 | TrainLoss=1.4686 | ValLoss=1.203470 | ValF1=1.0000
+[Client 14] Epoch 4/5 | TrainLoss=1.0568 | ValLoss=0.810458 | ValF1=1.0000
+[Client 14] Epoch 5/5 | TrainLoss=0.7203 | ValLoss=0.511771 | ValF1=1.0000
+[Client 10] Epoch 1/5 | TrainLoss=1.5476 | ValLoss=0.536224 | ValF1=0.4898
+[Client 10] Epoch 2/5 | TrainLoss=0.1586 | ValLoss=0.333873 | ValF1=0.4898
+[Client 10] Epoch 3/5 | TrainLoss=0.0669 | ValLoss=0.336782 | ValF1=0.4898
+[Client 10] Epoch 4/5 | TrainLoss=0.0552 | ValLoss=0.343697 | ValF1=0.4898
+[Client 10] Epoch 5/5 | TrainLoss=0.0510 | ValLoss=0.344440 | ValF1=0.4898
+[Client 6] Epoch 1/5 | TrainLoss=0.0340 | ValLoss=0.002661 | ValF1=1.0000
+[Client 6] Epoch 2/5 | TrainLoss=0.0013 | ValLoss=0.000976 | ValF1=1.0000
+[Client 6] Epoch 3/5 | TrainLoss=0.0006 | ValLoss=0.000553 | ValF1=1.0000
+[Client 6] Epoch 4/5 | TrainLoss=0.0004 | ValLoss=0.000380 | ValF1=1.0000
+[Client 6] Epoch 5/5 | TrainLoss=0.0003 | ValLoss=0.000284 | ValF1=1.0000
+[Client 11] Epoch 1/5 | TrainLoss=0.0435 | ValLoss=0.004036 | ValF1=1.0000
+[Client 11] Epoch 2/5 | TrainLoss=0.0020 | ValLoss=0.001010 | ValF1=1.0000
+[Client 11] Epoch 3/5 | TrainLoss=0.0007 | ValLoss=0.000499 | ValF1=1.0000
+[Client 11] Epoch 4/5 | TrainLoss=0.0004 | ValLoss=0.000313 | ValF1=1.0000
+[Client 11] Epoch 5/5 | TrainLoss=0.0003 | ValLoss=0.000222 | ValF1=1.0000
+[Client 15] Epoch 1/5 | TrainLoss=0.0044 | ValLoss=0.002684 | ValF1=0.9895
+[Client 15] Epoch 2/5 | TrainLoss=0.0043 | ValLoss=0.002039 | ValF1=0.9922
+[Client 15] Epoch 3/5 | TrainLoss=0.0040 | ValLoss=0.002010 | ValF1=0.9895
+[Client 15] Epoch 4/5 | TrainLoss=0.0038 | ValLoss=0.002508 | ValF1=0.9935
+[Client 15] Epoch 5/5 | TrainLoss=0.0036 | ValLoss=0.002073 | ValF1=0.9883
+[Client 4] Epoch 1/5 | TrainLoss=2.7207 | ValLoss=2.591429 | ValF1=0.0135
+[Client 4] Epoch 2/5 | TrainLoss=2.6113 | ValLoss=2.533032 | ValF1=0.0135
+[Client 4] Epoch 3/5 | TrainLoss=2.5537 | ValLoss=2.501256 | ValF1=0.0135
+[Client 4] Epoch 4/5 | TrainLoss=2.5336 | ValLoss=2.480508 | ValF1=0.0135
+[Client 4] Epoch 5/5 | TrainLoss=2.5111 | ValLoss=2.464962 | ValF1=0.0135
+[Client 19] Epoch 1/5 | TrainLoss=1.4040 | ValLoss=0.633167 | ValF1=0.6050
+[Client 19] Epoch 2/5 | TrainLoss=0.5462 | ValLoss=0.489905 | ValF1=0.7484
+[Client 19] Epoch 3/5 | TrainLoss=0.4767 | ValLoss=0.443649 | ValF1=0.7484
+[Client 19] Epoch 4/5 | TrainLoss=0.4485 | ValLoss=0.433929 | ValF1=0.7484
+[Client 19] Epoch 5/5 | TrainLoss=0.4416 | ValLoss=0.510242 | ValF1=0.7484
+[Client 1] Epoch 1/5 | TrainLoss=2.6181 | ValLoss=2.627398 | ValF1=0.0045
+[Client 1] Epoch 2/5 | TrainLoss=2.5150 | ValLoss=2.577720 | ValF1=0.0045
+[Client 1] Epoch 3/5 | TrainLoss=2.4905 | ValLoss=2.448762 | ValF1=0.0070
+[Client 1] Epoch 4/5 | TrainLoss=2.4783 | ValLoss=2.468988 | ValF1=0.0067
+[Client 1] Epoch 5/5 | TrainLoss=2.4690 | ValLoss=2.435059 | ValF1=0.0329
+Time: 2485.35177898407
+
+-------------Round number: 6-------------
+
+Evaluate global model
+Train Loss
+	Client 5: Train loss: 2.77
+	Client 1: Train loss: 2.69
+	Client 0: Train loss: 2.76
+	Client 8: Train loss: 2.62
+	Client 16: Train loss: 3.97
+	Client 7: Train loss: 4.72
+	Client 14: Train loss: 2.61
+	Client 11: Train loss: 16.68
+	Client 19: Train loss: 4.77
+	Client 2: Train loss: 2.69
+	Client 18: Train loss: 2.02
+	Client 9: Train loss: 0.03
+	Client 3: Train loss: 2.51
+	Client 15: Train loss: 0.0
+	Client 6: Train loss: 1.99
+	Client 17: Train loss: 17.12
+	Client 12: Train loss: 2.03
+	Client 10: Train loss: 4.07
+	Client 4: Train loss: 2.75
+	Client 13: Train loss: 4.92
+Performance Metrics
+	Client 5: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 1: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 0: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 8: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 16: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 7: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 14: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 11: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 19: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 2: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 18: acc 0.58, precision: 0.25, recall: 0.15, f1: 0.19
+	Client 9: acc 0.99, precision: 0.87, recall: 0.9, f1: 0.89
+	Client 3: acc 0.02, precision: 0.01, recall: 0.5, f1: 0.02
+	Client 15: acc 1.0, precision: 1.0, recall: 0.98, f1: 0.99
+	Client 6: acc 0.63, precision: 0.25, recall: 0.17, f1: 0.2
+	Client 17: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 12: acc 0.15, precision: 0.25, recall: 0.04, f1: 0.07
+	Client 10: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 4: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 13: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+
+Algorithm:  lg_fedavg Dataset:  cic_ids Epoch:  6
+Overall Performance Metrics (Local)
+	train loss avg: 1.9730
+	test acc normal avg: 0.8607
+	test acc flipping avg: 0.0166
+Global Performance Metrics (Whole Test Set)
+	Global Acc avg: 0.4169
+	All Clients Global Acc: [0.0157, 0.0157, 0.0157, 0.0157, 0.8236, 0.8106, 0.0157, 0.7966, 0.7853, 0.0157, 0.262, 0.7831, 0.0157, 0.6827, 0.364, 0.7798, 0.4763, 0.8236, 0.0157, 0.8236]
+	All Clients Global F1:  [0.0028, 0.0028, 0.0028, 0.0028, 0.0821, 0.0821, 0.0028, 0.0815, 0.0806, 0.0028, 0.0984, 0.0979, 0.0028, 0.0869, 0.122, 0.0799, 0.0885, 0.0821, 0.0028, 0.0821]
+[Client 5] Epoch 1/5 | TrainLoss=2.4455 | ValLoss=2.409508 | ValF1=0.0288
+[Client 5] Epoch 2/5 | TrainLoss=2.4183 | ValLoss=2.416698 | ValF1=0.0140
+[Client 5] Epoch 3/5 | TrainLoss=2.4153 | ValLoss=2.414264 | ValF1=0.0140
+[Client 5] Epoch 4/5 | TrainLoss=2.4136 | ValLoss=2.404696 | ValF1=0.0165
+[Client 5] Epoch 5/5 | TrainLoss=2.4127 | ValLoss=2.401708 | ValF1=0.0165
+[Client 1] Epoch 1/5 | TrainLoss=2.5855 | ValLoss=2.514204 | ValF1=0.0045
+[Client 1] Epoch 2/5 | TrainLoss=2.5133 | ValLoss=2.506332 | ValF1=0.0070
+[Client 1] Epoch 3/5 | TrainLoss=2.5031 | ValLoss=2.440871 | ValF1=0.0278
+[Client 1] Epoch 4/5 | TrainLoss=2.4811 | ValLoss=2.446810 | ValF1=0.0070
+[Client 1] Epoch 5/5 | TrainLoss=2.4689 | ValLoss=2.419775 | ValF1=0.0269
+[Client 0] Epoch 1/5 | TrainLoss=2.4499 | ValLoss=2.436862 | ValF1=0.0155
+[Client 0] Epoch 2/5 | TrainLoss=2.4257 | ValLoss=2.433519 | ValF1=0.0139
+[Client 0] Epoch 3/5 | TrainLoss=2.4237 | ValLoss=2.443949 | ValF1=0.0190
+[Client 0] Epoch 4/5 | TrainLoss=2.4216 | ValLoss=2.440269 | ValF1=0.0190
+[Client 0] Epoch 5/5 | TrainLoss=2.4205 | ValLoss=2.450709 | ValF1=0.0214
+[Client 8] Epoch 1/5 | TrainLoss=2.3506 | ValLoss=2.077761 | ValF1=0.0000
+[Client 8] Epoch 2/5 | TrainLoss=1.8455 | ValLoss=1.591550 | ValF1=1.0000
+[Client 8] Epoch 3/5 | TrainLoss=1.3594 | ValLoss=1.102426 | ValF1=1.0000
+[Client 8] Epoch 4/5 | TrainLoss=0.8767 | ValLoss=0.641620 | ValF1=1.0000
+[Client 8] Epoch 5/5 | TrainLoss=0.4545 | ValLoss=0.290915 | ValF1=1.0000
+[Client 16] Epoch 1/5 | TrainLoss=1.5084 | ValLoss=0.318763 | ValF1=1.0000
+[Client 16] Epoch 2/5 | TrainLoss=0.1618 | ValLoss=0.036108 | ValF1=1.0000
+[Client 16] Epoch 3/5 | TrainLoss=0.0931 | ValLoss=0.019346 | ValF1=1.0000
+[Client 16] Epoch 4/5 | TrainLoss=0.0848 | ValLoss=0.016589 | ValF1=1.0000
+[Client 16] Epoch 5/5 | TrainLoss=0.0806 | ValLoss=0.013766 | ValF1=1.0000
+[Client 7] Epoch 1/5 | TrainLoss=1.0893 | ValLoss=0.597853 | ValF1=0.7111
+[Client 7] Epoch 2/5 | TrainLoss=0.4842 | ValLoss=0.410660 | ValF1=0.8079
+[Client 7] Epoch 3/5 | TrainLoss=0.4282 | ValLoss=0.394003 | ValF1=0.7111
+[Client 7] Epoch 4/5 | TrainLoss=0.4008 | ValLoss=0.518788 | ValF1=0.7111
+[Client 7] Epoch 5/5 | TrainLoss=0.3891 | ValLoss=0.425225 | ValF1=0.7111
+[Client 14] Epoch 1/5 | TrainLoss=2.3666 | ValLoss=2.095975 | ValF1=0.0000
+[Client 14] Epoch 2/5 | TrainLoss=1.8912 | ValLoss=1.627817 | ValF1=1.0000
+[Client 14] Epoch 3/5 | TrainLoss=1.4388 | ValLoss=1.161452 | ValF1=1.0000
+[Client 14] Epoch 4/5 | TrainLoss=0.9929 | ValLoss=0.716004 | ValF1=1.0000
+[Client 14] Epoch 5/5 | TrainLoss=0.6032 | ValLoss=0.359687 | ValF1=1.0000
+[Client 11] Epoch 1/5 | TrainLoss=0.0330 | ValLoss=0.002084 | ValF1=1.0000
+[Client 11] Epoch 2/5 | TrainLoss=0.0011 | ValLoss=0.000626 | ValF1=1.0000
+[Client 11] Epoch 3/5 | TrainLoss=0.0005 | ValLoss=0.000334 | ValF1=1.0000
+[Client 11] Epoch 4/5 | TrainLoss=0.0003 | ValLoss=0.000219 | ValF1=1.0000
+[Client 11] Epoch 5/5 | TrainLoss=0.0002 | ValLoss=0.000160 | ValF1=1.0000
+[Client 19] Epoch 1/5 | TrainLoss=1.1052 | ValLoss=0.583431 | ValF1=0.6267
+[Client 19] Epoch 2/5 | TrainLoss=0.5215 | ValLoss=0.484092 | ValF1=0.7484
+[Client 19] Epoch 3/5 | TrainLoss=0.4651 | ValLoss=0.554005 | ValF1=0.6267
+[Client 19] Epoch 4/5 | TrainLoss=0.4327 | ValLoss=0.610739 | ValF1=0.6267
+[Client 19] Epoch 5/5 | TrainLoss=0.4347 | ValLoss=0.422207 | ValF1=0.7484
+[Client 2] Epoch 1/5 | TrainLoss=2.6432 | ValLoss=2.709972 | ValF1=0.0317
+[Client 2] Epoch 2/5 | TrainLoss=2.5640 | ValLoss=2.655584 | ValF1=0.0317
+[Client 2] Epoch 3/5 | TrainLoss=2.5107 | ValLoss=2.630358 | ValF1=0.0317
+[Client 2] Epoch 4/5 | TrainLoss=2.4791 | ValLoss=2.623091 | ValF1=0.0317
+[Client 2] Epoch 5/5 | TrainLoss=2.4477 | ValLoss=2.607129 | ValF1=0.0317
+[Client 18] Epoch 1/5 | TrainLoss=0.0286 | ValLoss=0.002863 | ValF1=1.0000
+[Client 18] Epoch 2/5 | TrainLoss=0.0014 | ValLoss=0.001012 | ValF1=1.0000
+[Client 18] Epoch 3/5 | TrainLoss=0.0006 | ValLoss=0.000596 | ValF1=1.0000
+[Client 18] Epoch 4/5 | TrainLoss=0.0004 | ValLoss=0.000413 | ValF1=1.0000
+[Client 18] Epoch 5/5 | TrainLoss=0.0003 | ValLoss=0.000308 | ValF1=1.0000
+[Client 9] Epoch 1/5 | TrainLoss=0.0116 | ValLoss=0.007286 | ValF1=0.9622
+[Client 9] Epoch 2/5 | TrainLoss=0.0105 | ValLoss=0.004532 | ValF1=0.9828
+[Client 9] Epoch 3/5 | TrainLoss=0.0195 | ValLoss=0.020172 | ValF1=0.9160
+[Client 9] Epoch 4/5 | TrainLoss=0.0205 | ValLoss=0.018269 | ValF1=0.9396
+[Client 9] Epoch 5/5 | TrainLoss=0.0196 | ValLoss=0.017952 | ValF1=0.9313
+[Client 3] Epoch 1/5 | TrainLoss=2.4079 | ValLoss=2.407630 | ValF1=0.0303
+[Client 3] Epoch 2/5 | TrainLoss=2.4068 | ValLoss=2.407733 | ValF1=0.0235
+[Client 3] Epoch 3/5 | TrainLoss=2.4064 | ValLoss=2.406593 | ValF1=0.0278
+[Client 3] Epoch 4/5 | TrainLoss=2.4065 | ValLoss=2.406782 | ValF1=0.0244
+[Client 3] Epoch 5/5 | TrainLoss=2.4064 | ValLoss=2.408072 | ValF1=0.0336
+[Client 15] Epoch 1/5 | TrainLoss=0.0036 | ValLoss=0.001850 | ValF1=0.9909
+[Client 15] Epoch 2/5 | TrainLoss=0.0036 | ValLoss=0.001614 | ValF1=0.9922
+[Client 15] Epoch 3/5 | TrainLoss=0.0033 | ValLoss=0.001749 | ValF1=0.9935
+[Client 15] Epoch 4/5 | TrainLoss=0.0032 | ValLoss=0.003136 | ValF1=0.9949
+[Client 15] Epoch 5/5 | TrainLoss=0.0032 | ValLoss=0.001737 | ValF1=0.9909
+[Client 6] Epoch 1/5 | TrainLoss=0.0273 | ValLoss=0.002574 | ValF1=1.0000
+[Client 6] Epoch 2/5 | TrainLoss=0.0012 | ValLoss=0.000904 | ValF1=1.0000
+[Client 6] Epoch 3/5 | TrainLoss=0.0005 | ValLoss=0.000521 | ValF1=1.0000
+[Client 6] Epoch 4/5 | TrainLoss=0.0003 | ValLoss=0.000359 | ValF1=1.0000
+[Client 6] Epoch 5/5 | TrainLoss=0.0002 | ValLoss=0.000277 | ValF1=1.0000
+[Client 17] Epoch 1/5 | TrainLoss=0.0357 | ValLoss=0.004191 | ValF1=1.0000
+[Client 17] Epoch 2/5 | TrainLoss=0.0018 | ValLoss=0.000915 | ValF1=1.0000
+[Client 17] Epoch 3/5 | TrainLoss=0.0010 | ValLoss=0.000511 | ValF1=1.0000
+[Client 17] Epoch 4/5 | TrainLoss=0.0009 | ValLoss=0.000335 | ValF1=1.0000
+[Client 17] Epoch 5/5 | TrainLoss=0.0008 | ValLoss=0.000288 | ValF1=1.0000
+[Client 12] Epoch 1/5 | TrainLoss=0.0292 | ValLoss=0.002717 | ValF1=1.0000
+[Client 12] Epoch 2/5 | TrainLoss=0.0013 | ValLoss=0.000855 | ValF1=1.0000
+[Client 12] Epoch 3/5 | TrainLoss=0.0006 | ValLoss=0.000507 | ValF1=1.0000
+[Client 12] Epoch 4/5 | TrainLoss=0.0004 | ValLoss=0.000335 | ValF1=1.0000
+[Client 12] Epoch 5/5 | TrainLoss=0.0003 | ValLoss=0.000249 | ValF1=1.0000
+[Client 10] Epoch 1/5 | TrainLoss=1.4804 | ValLoss=0.490104 | ValF1=0.4898
+[Client 10] Epoch 2/5 | TrainLoss=0.1330 | ValLoss=0.324324 | ValF1=0.4898
+[Client 10] Epoch 3/5 | TrainLoss=0.0603 | ValLoss=0.333255 | ValF1=0.4898
+[Client 10] Epoch 4/5 | TrainLoss=0.0521 | ValLoss=0.339672 | ValF1=0.4898
+[Client 10] Epoch 5/5 | TrainLoss=0.0494 | ValLoss=0.338537 | ValF1=0.4898
+[Client 4] Epoch 1/5 | TrainLoss=2.6874 | ValLoss=2.575974 | ValF1=0.0135
+[Client 4] Epoch 2/5 | TrainLoss=2.6106 | ValLoss=2.532406 | ValF1=0.0135
+[Client 4] Epoch 3/5 | TrainLoss=2.5695 | ValLoss=2.506574 | ValF1=0.0135
+[Client 4] Epoch 4/5 | TrainLoss=2.5424 | ValLoss=2.493331 | ValF1=0.0135
+[Client 4] Epoch 5/5 | TrainLoss=2.5231 | ValLoss=2.474453 | ValF1=0.0135
+[Client 13] Epoch 1/5 | TrainLoss=1.1753 | ValLoss=0.658604 | ValF1=0.3607
+[Client 13] Epoch 2/5 | TrainLoss=0.6559 | ValLoss=0.588513 | ValF1=0.4222
+[Client 13] Epoch 3/5 | TrainLoss=0.5889 | ValLoss=0.492059 | ValF1=0.6991
+[Client 13] Epoch 4/5 | TrainLoss=0.5647 | ValLoss=0.493836 | ValF1=0.6991
+[Client 13] Epoch 5/5 | TrainLoss=0.5360 | ValLoss=0.505361 | ValF1=0.6991
+Time: 2583.1651878356934
+
+-------------Round number: 7-------------
+
+Evaluate global model
+Train Loss
+	Client 12: Train loss: 2.12
+	Client 0: Train loss: 2.64
+	Client 3: Train loss: 2.45
+	Client 19: Train loss: 3.89
+	Client 17: Train loss: 15.39
+	Client 10: Train loss: 3.82
+	Client 15: Train loss: 0.01
+	Client 14: Train loss: 2.54
+	Client 6: Train loss: 2.04
+	Client 8: Train loss: 2.53
+	Client 2: Train loss: 2.61
+	Client 5: Train loss: 2.68
+	Client 4: Train loss: 2.7
+	Client 9: Train loss: 0.03
+	Client 16: Train loss: 3.75
+	Client 7: Train loss: 4.5
+	Client 11: Train loss: 14.63
+	Client 18: Train loss: 2.06
+	Client 1: Train loss: 2.61
+	Client 13: Train loss: 4.17
+Performance Metrics
+	Client 12: acc 0.03, precision: 0.25, recall: 0.01, f1: 0.01
+	Client 0: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 3: acc 0.02, precision: 0.01, recall: 0.5, f1: 0.02
+	Client 19: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 17: acc 0.03, precision: 0.33, recall: 0.33, f1: 0.33
+	Client 10: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 15: acc 1.0, precision: 1.0, recall: 0.99, f1: 0.99
+	Client 14: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 6: acc 0.08, precision: 0.33, recall: 0.03, f1: 0.05
+	Client 8: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 2: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 5: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 4: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 9: acc 0.99, precision: 0.87, recall: 0.9, f1: 0.88
+	Client 16: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 7: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 11: acc 0.03, precision: 0.33, recall: 0.33, f1: 0.33
+	Client 18: acc 0.13, precision: 0.25, recall: 0.03, f1: 0.06
+	Client 1: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 13: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+
+Algorithm:  lg_fedavg Dataset:  cic_ids Epoch:  7
+Overall Performance Metrics (Local)
+	train loss avg: 1.8411
+	test acc normal avg: 0.8367
+	test acc flipping avg: 0.0166
+Global Performance Metrics (Whole Test Set)
+	Global Acc avg: 0.3982
+	All Clients Global Acc: [0.4675, 0.0157, 0.0157, 0.6884, 0.741, 0.8236, 0.6722, 0.0157, 0.3173, 0.0157, 0.0157, 0.0157, 0.0157, 0.7747, 0.8236, 0.7762, 0.7522, 0.2286, 0.0157, 0.7726]
+	All Clients Global F1:  [0.0668, 0.0028, 0.0028, 0.0778, 0.0836, 0.0821, 0.0861, 0.0028, 0.062, 0.0028, 0.0028, 0.0028, 0.0028, 0.0962, 0.0821, 0.0803, 0.0845, 0.0501, 0.0028, 0.0799]
+[Client 12] Epoch 1/5 | TrainLoss=0.0259 | ValLoss=0.002125 | ValF1=1.0000
+[Client 12] Epoch 2/5 | TrainLoss=0.0012 | ValLoss=0.000841 | ValF1=1.0000
+[Client 12] Epoch 3/5 | TrainLoss=0.0006 | ValLoss=0.000505 | ValF1=1.0000
+[Client 12] Epoch 4/5 | TrainLoss=0.0004 | ValLoss=0.000340 | ValF1=1.0000
+[Client 12] Epoch 5/5 | TrainLoss=0.0003 | ValLoss=0.000250 | ValF1=1.0000
+[Client 0] Epoch 1/5 | TrainLoss=2.4463 | ValLoss=2.433673 | ValF1=0.0210
+[Client 0] Epoch 2/5 | TrainLoss=2.4237 | ValLoss=2.434077 | ValF1=0.0204
+[Client 0] Epoch 3/5 | TrainLoss=2.4202 | ValLoss=2.437641 | ValF1=0.0129
+[Client 0] Epoch 4/5 | TrainLoss=2.4205 | ValLoss=2.434188 | ValF1=0.0217
+[Client 0] Epoch 5/5 | TrainLoss=2.4193 | ValLoss=2.442041 | ValF1=0.0190
+[Client 3] Epoch 1/5 | TrainLoss=2.4073 | ValLoss=2.407615 | ValF1=0.0246
+[Client 3] Epoch 2/5 | TrainLoss=2.4065 | ValLoss=2.406882 | ValF1=0.0135
+[Client 3] Epoch 3/5 | TrainLoss=2.4064 | ValLoss=2.407126 | ValF1=0.0316
+[Client 3] Epoch 4/5 | TrainLoss=2.4064 | ValLoss=2.406053 | ValF1=0.0147
+[Client 3] Epoch 5/5 | TrainLoss=2.4064 | ValLoss=2.406583 | ValF1=0.0218
+[Client 19] Epoch 1/5 | TrainLoss=0.9931 | ValLoss=0.604802 | ValF1=0.6267
+[Client 19] Epoch 2/5 | TrainLoss=0.4839 | ValLoss=0.623454 | ValF1=0.6267
+[Client 19] Epoch 3/5 | TrainLoss=0.4521 | ValLoss=0.426545 | ValF1=0.7484
+[Client 19] Epoch 4/5 | TrainLoss=0.4512 | ValLoss=0.481407 | ValF1=0.7484
+[Client 19] Epoch 5/5 | TrainLoss=0.4568 | ValLoss=0.406073 | ValF1=0.7484
+[Client 17] Epoch 1/5 | TrainLoss=0.0270 | ValLoss=0.002288 | ValF1=1.0000
+[Client 17] Epoch 2/5 | TrainLoss=0.0015 | ValLoss=0.000730 | ValF1=1.0000
+[Client 17] Epoch 3/5 | TrainLoss=0.0010 | ValLoss=0.000414 | ValF1=1.0000
+[Client 17] Epoch 4/5 | TrainLoss=0.0008 | ValLoss=0.000285 | ValF1=1.0000
+[Client 17] Epoch 5/5 | TrainLoss=0.0008 | ValLoss=0.000244 | ValF1=1.0000
+[Client 10] Epoch 1/5 | TrainLoss=1.2111 | ValLoss=0.362911 | ValF1=0.4898
+[Client 10] Epoch 2/5 | TrainLoss=0.0852 | ValLoss=0.321425 | ValF1=0.4898
+[Client 10] Epoch 3/5 | TrainLoss=0.0546 | ValLoss=0.323494 | ValF1=0.4898
+[Client 10] Epoch 4/5 | TrainLoss=0.0496 | ValLoss=0.333238 | ValF1=0.4898
+[Client 10] Epoch 5/5 | TrainLoss=0.0480 | ValLoss=0.328942 | ValF1=0.4898
+[Client 15] Epoch 1/5 | TrainLoss=0.0035 | ValLoss=0.001861 | ValF1=0.9935
+[Client 15] Epoch 2/5 | TrainLoss=0.0031 | ValLoss=0.001922 | ValF1=0.9895
+[Client 15] Epoch 3/5 | TrainLoss=0.0031 | ValLoss=0.001242 | ValF1=0.9935
+[Client 15] Epoch 4/5 | TrainLoss=0.0028 | ValLoss=0.001501 | ValF1=0.9935
+[Client 15] Epoch 5/5 | TrainLoss=0.0028 | ValLoss=0.001218 | ValF1=0.9948
+[Client 14] Epoch 1/5 | TrainLoss=2.3054 | ValLoss=2.047271 | ValF1=0.0000
+[Client 14] Epoch 2/5 | TrainLoss=1.8438 | ValLoss=1.575515 | ValF1=1.0000
+[Client 14] Epoch 3/5 | TrainLoss=1.3740 | ValLoss=1.076539 | ValF1=1.0000
+[Client 14] Epoch 4/5 | TrainLoss=0.8897 | ValLoss=0.568199 | ValF1=1.0000
+[Client 14] Epoch 5/5 | TrainLoss=0.4709 | ValLoss=0.247114 | ValF1=1.0000
+[Client 6] Epoch 1/5 | TrainLoss=0.0217 | ValLoss=0.002902 | ValF1=1.0000
+[Client 6] Epoch 2/5 | TrainLoss=0.0010 | ValLoss=0.000782 | ValF1=1.0000
+[Client 6] Epoch 3/5 | TrainLoss=0.0005 | ValLoss=0.000475 | ValF1=1.0000
+[Client 6] Epoch 4/5 | TrainLoss=0.0003 | ValLoss=0.000346 | ValF1=1.0000
+[Client 6] Epoch 5/5 | TrainLoss=0.0002 | ValLoss=0.000262 | ValF1=1.0000
+[Client 8] Epoch 1/5 | TrainLoss=2.2885 | ValLoss=2.028223 | ValF1=0.0000
+[Client 8] Epoch 2/5 | TrainLoss=1.7953 | ValLoss=1.533608 | ValF1=1.0000
+[Client 8] Epoch 3/5 | TrainLoss=1.2843 | ValLoss=1.006364 | ValF1=1.0000
+[Client 8] Epoch 4/5 | TrainLoss=0.7424 | ValLoss=0.468232 | ValF1=1.0000
+[Client 8] Epoch 5/5 | TrainLoss=0.3120 | ValLoss=0.189503 | ValF1=1.0000
+[Client 2] Epoch 1/5 | TrainLoss=2.5877 | ValLoss=2.669786 | ValF1=0.0317
+[Client 2] Epoch 2/5 | TrainLoss=2.5191 | ValLoss=2.646132 | ValF1=0.0317
+[Client 2] Epoch 3/5 | TrainLoss=2.4855 | ValLoss=2.616615 | ValF1=0.0317
+[Client 2] Epoch 4/5 | TrainLoss=2.4516 | ValLoss=2.595390 | ValF1=0.0317
+[Client 2] Epoch 5/5 | TrainLoss=2.4351 | ValLoss=2.609934 | ValF1=0.0317
+[Client 5] Epoch 1/5 | TrainLoss=2.4435 | ValLoss=2.421286 | ValF1=0.0222
+[Client 5] Epoch 2/5 | TrainLoss=2.4152 | ValLoss=2.407043 | ValF1=0.0172
+[Client 5] Epoch 3/5 | TrainLoss=2.4125 | ValLoss=2.400450 | ValF1=0.0172
+[Client 5] Epoch 4/5 | TrainLoss=2.4129 | ValLoss=2.400420 | ValF1=0.0307
+[Client 5] Epoch 5/5 | TrainLoss=2.4120 | ValLoss=2.400346 | ValF1=0.0172
+[Client 4] Epoch 1/5 | TrainLoss=2.6621 | ValLoss=2.560451 | ValF1=0.0135
+[Client 4] Epoch 2/5 | TrainLoss=2.5971 | ValLoss=2.522119 | ValF1=0.0135
+[Client 4] Epoch 3/5 | TrainLoss=2.5553 | ValLoss=2.502072 | ValF1=0.0135
+[Client 4] Epoch 4/5 | TrainLoss=2.5271 | ValLoss=2.478148 | ValF1=0.0135
+[Client 4] Epoch 5/5 | TrainLoss=2.5045 | ValLoss=2.466085 | ValF1=0.0135
+[Client 9] Epoch 1/5 | TrainLoss=0.0097 | ValLoss=0.005306 | ValF1=0.9591
+[Client 9] Epoch 2/5 | TrainLoss=0.0093 | ValLoss=0.004899 | ValF1=0.9818
+[Client 9] Epoch 3/5 | TrainLoss=0.0087 | ValLoss=0.006819 | ValF1=0.9403
+[Client 9] Epoch 4/5 | TrainLoss=0.0076 | ValLoss=0.004285 | ValF1=0.9712
+[Client 9] Epoch 5/5 | TrainLoss=0.0071 | ValLoss=0.003198 | ValF1=0.9896
+[Client 16] Epoch 1/5 | TrainLoss=1.2142 | ValLoss=0.138928 | ValF1=1.0000
+[Client 16] Epoch 2/5 | TrainLoss=0.1127 | ValLoss=0.022997 | ValF1=1.0000
+[Client 16] Epoch 3/5 | TrainLoss=0.0868 | ValLoss=0.015776 | ValF1=1.0000
+[Client 16] Epoch 4/5 | TrainLoss=0.0815 | ValLoss=0.013133 | ValF1=1.0000
+[Client 16] Epoch 5/5 | TrainLoss=0.0776 | ValLoss=0.010933 | ValF1=1.0000
+[Client 7] Epoch 1/5 | TrainLoss=0.9528 | ValLoss=0.464931 | ValF1=0.8126
+[Client 7] Epoch 2/5 | TrainLoss=0.4622 | ValLoss=0.375281 | ValF1=0.8375
+[Client 7] Epoch 3/5 | TrainLoss=0.3854 | ValLoss=0.493222 | ValF1=0.7111
+[Client 7] Epoch 4/5 | TrainLoss=0.3889 | ValLoss=0.455640 | ValF1=0.7111
+[Client 7] Epoch 5/5 | TrainLoss=0.3721 | ValLoss=0.337284 | ValF1=0.8375
+[Client 11] Epoch 1/5 | TrainLoss=0.0257 | ValLoss=0.001442 | ValF1=1.0000
+[Client 11] Epoch 2/5 | TrainLoss=0.0008 | ValLoss=0.000493 | ValF1=1.0000
+[Client 11] Epoch 3/5 | TrainLoss=0.0004 | ValLoss=0.000276 | ValF1=1.0000
+[Client 11] Epoch 4/5 | TrainLoss=0.0002 | ValLoss=0.000185 | ValF1=1.0000
+[Client 11] Epoch 5/5 | TrainLoss=0.0002 | ValLoss=0.000137 | ValF1=1.0000
+[Client 18] Epoch 1/5 | TrainLoss=0.0233 | ValLoss=0.002549 | ValF1=1.0000
+[Client 18] Epoch 2/5 | TrainLoss=0.0012 | ValLoss=0.000916 | ValF1=1.0000
+[Client 18] Epoch 3/5 | TrainLoss=0.0005 | ValLoss=0.000544 | ValF1=1.0000
+[Client 18] Epoch 4/5 | TrainLoss=0.0003 | ValLoss=0.000374 | ValF1=1.0000
+[Client 18] Epoch 5/5 | TrainLoss=0.0003 | ValLoss=0.000279 | ValF1=1.0000
+[Client 1] Epoch 1/5 | TrainLoss=2.5554 | ValLoss=2.588172 | ValF1=0.0045
+[Client 1] Epoch 2/5 | TrainLoss=2.4953 | ValLoss=2.430398 | ValF1=0.0318
+[Client 1] Epoch 3/5 | TrainLoss=2.4964 | ValLoss=2.404820 | ValF1=0.0277
+[Client 1] Epoch 4/5 | TrainLoss=2.4892 | ValLoss=2.443546 | ValF1=0.0176
+[Client 1] Epoch 5/5 | TrainLoss=2.4724 | ValLoss=2.379378 | ValF1=0.0512
+[Client 13] Epoch 1/5 | TrainLoss=1.0409 | ValLoss=0.655670 | ValF1=0.7421
+[Client 13] Epoch 2/5 | TrainLoss=0.5990 | ValLoss=0.509834 | ValF1=0.7421
+[Client 13] Epoch 3/5 | TrainLoss=0.5454 | ValLoss=0.495521 | ValF1=0.7421
+[Client 13] Epoch 4/5 | TrainLoss=0.5660 | ValLoss=0.477041 | ValF1=0.6991
+[Client 13] Epoch 5/5 | TrainLoss=0.5352 | ValLoss=0.462954 | ValF1=0.7421
+Time: 2575.9387278556824
+
+-------------Round number: 8-------------
+
+Evaluate global model
+Train Loss
+	Client 15: Train loss: 0.01
+	Client 5: Train loss: 2.69
+	Client 4: Train loss: 2.67
+	Client 0: Train loss: 2.66
+	Client 12: Train loss: 2.13
+	Client 3: Train loss: 2.44
+	Client 9: Train loss: 0.02
+	Client 16: Train loss: 4.05
+	Client 18: Train loss: 2.14
+	Client 14: Train loss: 2.51
+	Client 2: Train loss: 2.58
+	Client 10: Train loss: 4.01
+	Client 19: Train loss: 4.09
+	Client 11: Train loss: 14.29
+	Client 17: Train loss: 14.5
+	Client 1: Train loss: 2.57
+	Client 7: Train loss: 4.12
+	Client 8: Train loss: 2.51
+	Client 13: Train loss: 3.7
+	Client 6: Train loss: 2.19
+Performance Metrics
+	Client 15: acc 1.0, precision: 0.99, recall: 0.99, f1: 0.99
+	Client 5: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 4: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 0: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 12: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 3: acc 0.02, precision: 0.01, recall: 0.5, f1: 0.02
+	Client 9: acc 0.99, precision: 0.89, recall: 0.91, f1: 0.9
+	Client 16: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 18: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 14: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 2: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 10: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 19: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 11: acc 0.03, precision: 0.33, recall: 0.33, f1: 0.33
+	Client 17: acc 0.03, precision: 0.33, recall: 0.33, f1: 0.33
+	Client 1: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 7: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 8: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 13: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 6: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+
+Algorithm:  lg_fedavg Dataset:  cic_ids Epoch:  8
+Overall Performance Metrics (Local)
+	train loss avg: 1.8018
+	test acc normal avg: 0.8316
+	test acc flipping avg: 0.0166
+Global Performance Metrics (Whole Test Set)
+	Global Acc avg: 0.4014
+	All Clients Global Acc: [0.6703, 0.0157, 0.0157, 0.2561, 0.4652, 0.0157, 0.7775, 0.8236, 0.2312, 0.0157, 0.0157, 0.8236, 0.6399, 0.7272, 0.7126, 0.0157, 0.7303, 0.0157, 0.6962, 0.3641]
+	All Clients Global F1:  [0.0859, 0.0028, 0.0028, 0.0442, 0.0609, 0.0028, 0.0969, 0.0821, 0.0373, 0.0028, 0.0028, 0.0821, 0.0776, 0.0825, 0.0813, 0.0028, 0.0789, 0.0028, 0.0775, 0.0515]
+[Client 15] Epoch 1/5 | TrainLoss=0.0031 | ValLoss=0.001380 | ValF1=0.9935
+[Client 15] Epoch 2/5 | TrainLoss=0.0027 | ValLoss=0.002228 | ValF1=0.9895
+[Client 15] Epoch 3/5 | TrainLoss=0.0026 | ValLoss=0.001189 | ValF1=0.9948
+[Client 15] Epoch 4/5 | TrainLoss=0.0024 | ValLoss=0.001073 | ValF1=0.9935
+[Client 15] Epoch 5/5 | TrainLoss=0.0025 | ValLoss=0.001127 | ValF1=0.9948
+[Client 5] Epoch 1/5 | TrainLoss=2.4416 | ValLoss=2.416764 | ValF1=0.0158
+[Client 5] Epoch 2/5 | TrainLoss=2.4164 | ValLoss=2.403361 | ValF1=0.0268
+[Client 5] Epoch 3/5 | TrainLoss=2.4126 | ValLoss=2.402212 | ValF1=0.0298
+[Client 5] Epoch 4/5 | TrainLoss=2.4116 | ValLoss=2.413393 | ValF1=0.0188
+[Client 5] Epoch 5/5 | TrainLoss=2.4116 | ValLoss=2.403309 | ValF1=0.0285
+[Client 4] Epoch 1/5 | TrainLoss=2.6278 | ValLoss=2.535012 | ValF1=0.0135
+[Client 4] Epoch 2/5 | TrainLoss=2.5621 | ValLoss=2.496133 | ValF1=0.0135
+[Client 4] Epoch 3/5 | TrainLoss=2.5261 | ValLoss=2.481868 | ValF1=0.0135
+[Client 4] Epoch 4/5 | TrainLoss=2.5072 | ValLoss=2.474375 | ValF1=0.0135
+[Client 4] Epoch 5/5 | TrainLoss=2.4966 | ValLoss=2.467320 | ValF1=0.0135
+[Client 0] Epoch 1/5 | TrainLoss=2.4442 | ValLoss=2.439006 | ValF1=0.0154
+[Client 0] Epoch 2/5 | TrainLoss=2.4248 | ValLoss=2.444041 | ValF1=0.0152
+[Client 0] Epoch 3/5 | TrainLoss=2.4206 | ValLoss=2.431949 | ValF1=0.0191
+[Client 0] Epoch 4/5 | TrainLoss=2.4191 | ValLoss=2.454602 | ValF1=0.0190
+[Client 0] Epoch 5/5 | TrainLoss=2.4194 | ValLoss=2.428670 | ValF1=0.0273
+[Client 12] Epoch 1/5 | TrainLoss=0.0216 | ValLoss=0.001726 | ValF1=1.0000
+[Client 12] Epoch 2/5 | TrainLoss=0.0010 | ValLoss=0.000695 | ValF1=1.0000
+[Client 12] Epoch 3/5 | TrainLoss=0.0005 | ValLoss=0.000428 | ValF1=1.0000
+[Client 12] Epoch 4/5 | TrainLoss=0.0003 | ValLoss=0.000298 | ValF1=1.0000
+[Client 12] Epoch 5/5 | TrainLoss=0.0002 | ValLoss=0.000228 | ValF1=1.0000
+[Client 3] Epoch 1/5 | TrainLoss=2.4071 | ValLoss=2.407090 | ValF1=0.0212
+[Client 3] Epoch 2/5 | TrainLoss=2.4063 | ValLoss=2.407640 | ValF1=0.0242
+[Client 3] Epoch 3/5 | TrainLoss=2.4063 | ValLoss=2.407453 | ValF1=0.0239
+[Client 3] Epoch 4/5 | TrainLoss=2.4063 | ValLoss=2.407413 | ValF1=0.0423
+[Client 3] Epoch 5/5 | TrainLoss=2.4063 | ValLoss=2.406582 | ValF1=0.0220
+[Client 9] Epoch 1/5 | TrainLoss=0.0059 | ValLoss=0.002197 | ValF1=0.9961
+[Client 9] Epoch 2/5 | TrainLoss=0.0053 | ValLoss=0.004256 | ValF1=0.9847
+[Client 9] Epoch 3/5 | TrainLoss=0.0055 | ValLoss=0.012904 | ValF1=0.9165
+[Client 9] Epoch 4/5 | TrainLoss=0.0051 | ValLoss=0.001403 | ValF1=0.9974
+[Client 9] Epoch 5/5 | TrainLoss=0.0043 | ValLoss=0.001896 | ValF1=0.9947
+[Client 16] Epoch 1/5 | TrainLoss=0.9683 | ValLoss=0.087998 | ValF1=1.0000
+[Client 16] Epoch 2/5 | TrainLoss=0.1003 | ValLoss=0.020081 | ValF1=1.0000
+[Client 16] Epoch 3/5 | TrainLoss=0.0829 | ValLoss=0.014173 | ValF1=1.0000
+[Client 16] Epoch 4/5 | TrainLoss=0.0780 | ValLoss=0.012285 | ValF1=1.0000
+[Client 16] Epoch 5/5 | TrainLoss=0.0743 | ValLoss=0.012443 | ValF1=1.0000
+[Client 18] Epoch 1/5 | TrainLoss=0.0198 | ValLoss=0.002016 | ValF1=1.0000
+[Client 18] Epoch 2/5 | TrainLoss=0.0010 | ValLoss=0.000901 | ValF1=1.0000
+[Client 18] Epoch 3/5 | TrainLoss=0.0005 | ValLoss=0.000491 | ValF1=1.0000
+[Client 18] Epoch 4/5 | TrainLoss=0.0003 | ValLoss=0.000345 | ValF1=1.0000
+[Client 18] Epoch 5/5 | TrainLoss=0.0002 | ValLoss=0.000261 | ValF1=1.0000
+[Client 14] Epoch 1/5 | TrainLoss=2.2851 | ValLoss=2.031943 | ValF1=0.0000
+[Client 14] Epoch 2/5 | TrainLoss=1.8244 | ValLoss=1.548697 | ValF1=1.0000
+[Client 14] Epoch 3/5 | TrainLoss=1.3342 | ValLoss=1.004638 | ValF1=1.0000
+[Client 14] Epoch 4/5 | TrainLoss=0.7660 | ValLoss=0.423883 | ValF1=1.0000
+[Client 14] Epoch 5/5 | TrainLoss=0.3647 | ValLoss=0.167334 | ValF1=1.0000
+[Client 2] Epoch 1/5 | TrainLoss=2.5560 | ValLoss=2.646864 | ValF1=0.0317
+[Client 2] Epoch 2/5 | TrainLoss=2.4979 | ValLoss=2.620366 | ValF1=0.0317
+[Client 2] Epoch 3/5 | TrainLoss=2.4631 | ValLoss=2.598248 | ValF1=0.0317
+[Client 2] Epoch 4/5 | TrainLoss=2.4465 | ValLoss=2.594215 | ValF1=0.0317
+[Client 2] Epoch 5/5 | TrainLoss=2.4297 | ValLoss=2.628956 | ValF1=0.0317
+[Client 10] Epoch 1/5 | TrainLoss=0.9476 | ValLoss=0.314635 | ValF1=0.4898
+[Client 10] Epoch 2/5 | TrainLoss=0.0689 | ValLoss=0.310671 | ValF1=0.4898
+[Client 10] Epoch 3/5 | TrainLoss=0.0512 | ValLoss=0.324515 | ValF1=0.4898
+[Client 10] Epoch 4/5 | TrainLoss=0.0485 | ValLoss=0.322293 | ValF1=0.4898
+[Client 10] Epoch 5/5 | TrainLoss=0.0468 | ValLoss=0.322438 | ValF1=0.4898
+[Client 19] Epoch 1/5 | TrainLoss=0.8868 | ValLoss=0.481242 | ValF1=0.7484
+[Client 19] Epoch 2/5 | TrainLoss=0.4788 | ValLoss=0.440415 | ValF1=0.7484
+[Client 19] Epoch 3/5 | TrainLoss=0.4309 | ValLoss=0.417616 | ValF1=0.7484
+[Client 19] Epoch 4/5 | TrainLoss=0.4615 | ValLoss=0.456797 | ValF1=0.6267
+[Client 19] Epoch 5/5 | TrainLoss=0.4266 | ValLoss=0.534122 | ValF1=0.6267
+[Client 11] Epoch 1/5 | TrainLoss=0.0197 | ValLoss=0.001126 | ValF1=1.0000
+[Client 11] Epoch 2/5 | TrainLoss=0.0007 | ValLoss=0.000415 | ValF1=1.0000
+[Client 11] Epoch 3/5 | TrainLoss=0.0003 | ValLoss=0.000239 | ValF1=1.0000
+[Client 11] Epoch 4/5 | TrainLoss=0.0002 | ValLoss=0.000164 | ValF1=1.0000
+[Client 11] Epoch 5/5 | TrainLoss=0.0001 | ValLoss=0.000123 | ValF1=1.0000
+[Client 17] Epoch 1/5 | TrainLoss=0.0214 | ValLoss=0.001564 | ValF1=1.0000
+[Client 17] Epoch 2/5 | TrainLoss=0.0013 | ValLoss=0.000600 | ValF1=1.0000
+[Client 17] Epoch 3/5 | TrainLoss=0.0009 | ValLoss=0.000437 | ValF1=1.0000
+[Client 17] Epoch 4/5 | TrainLoss=0.0008 | ValLoss=0.000252 | ValF1=1.0000
+[Client 17] Epoch 5/5 | TrainLoss=0.0008 | ValLoss=0.000220 | ValF1=1.0000
+[Client 1] Epoch 1/5 | TrainLoss=2.5499 | ValLoss=2.454429 | ValF1=0.0269
+[Client 1] Epoch 2/5 | TrainLoss=2.5026 | ValLoss=2.408209 | ValF1=0.0714
+[Client 1] Epoch 3/5 | TrainLoss=2.4946 | ValLoss=2.431308 | ValF1=0.0526
+[Client 1] Epoch 4/5 | TrainLoss=2.4805 | ValLoss=2.393379 | ValF1=0.0682
+[Client 1] Epoch 5/5 | TrainLoss=2.4771 | ValLoss=2.401525 | ValF1=0.0714
+[Client 7] Epoch 1/5 | TrainLoss=0.8232 | ValLoss=0.430270 | ValF1=0.7111
+[Client 7] Epoch 2/5 | TrainLoss=0.4265 | ValLoss=0.361593 | ValF1=0.8375
+[Client 7] Epoch 3/5 | TrainLoss=0.4014 | ValLoss=0.473821 | ValF1=0.7111
+[Client 7] Epoch 4/5 | TrainLoss=0.3829 | ValLoss=0.441792 | ValF1=0.7111
+[Client 7] Epoch 5/5 | TrainLoss=0.3895 | ValLoss=0.396338 | ValF1=0.7111
+[Client 8] Epoch 1/5 | TrainLoss=2.2683 | ValLoss=2.010626 | ValF1=0.0000
+[Client 8] Epoch 2/5 | TrainLoss=1.7719 | ValLoss=1.500968 | ValF1=1.0000
+[Client 8] Epoch 3/5 | TrainLoss=1.2255 | ValLoss=0.881341 | ValF1=1.0000
+[Client 8] Epoch 4/5 | TrainLoss=0.5865 | ValLoss=0.328624 | ValF1=1.0000
+[Client 8] Epoch 5/5 | TrainLoss=0.2118 | ValLoss=0.126825 | ValF1=1.0000
+[Client 13] Epoch 1/5 | TrainLoss=0.9383 | ValLoss=0.561269 | ValF1=0.7421
+[Client 13] Epoch 2/5 | TrainLoss=0.5909 | ValLoss=0.526626 | ValF1=0.7421
+[Client 13] Epoch 3/5 | TrainLoss=0.5467 | ValLoss=0.467005 | ValF1=0.7421
+[Client 13] Epoch 4/5 | TrainLoss=0.5418 | ValLoss=0.458726 | ValF1=0.7421
+[Client 13] Epoch 5/5 | TrainLoss=0.5227 | ValLoss=0.491076 | ValF1=0.7421
+[Client 6] Epoch 1/5 | TrainLoss=0.0187 | ValLoss=0.001677 | ValF1=1.0000
+[Client 6] Epoch 2/5 | TrainLoss=0.0009 | ValLoss=0.000731 | ValF1=1.0000
+[Client 6] Epoch 3/5 | TrainLoss=0.0005 | ValLoss=0.000433 | ValF1=1.0000
+[Client 6] Epoch 4/5 | TrainLoss=0.0003 | ValLoss=0.000303 | ValF1=1.0000
+[Client 6] Epoch 5/5 | TrainLoss=0.0002 | ValLoss=0.000229 | ValF1=1.0000
+Time: 2483.79105758667
+
+-------------Round number: 9-------------
+
+Evaluate global model
+Train Loss
+	Client 19: Train loss: 3.92
+	Client 13: Train loss: 3.56
+	Client 18: Train loss: 2.43
+	Client 14: Train loss: 2.49
+	Client 8: Train loss: 2.5
+	Client 1: Train loss: 2.56
+	Client 10: Train loss: 4.27
+	Client 11: Train loss: 13.86
+	Client 4: Train loss: 2.63
+	Client 9: Train loss: 0.02
+	Client 0: Train loss: 2.6
+	Client 6: Train loss: 2.45
+	Client 2: Train loss: 2.53
+	Client 3: Train loss: 2.43
+	Client 16: Train loss: 4.13
+	Client 15: Train loss: 0.0
+	Client 12: Train loss: 2.4
+	Client 17: Train loss: 13.95
+	Client 5: Train loss: 2.67
+	Client 7: Train loss: 4.2
+Performance Metrics
+	Client 19: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 13: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 18: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 14: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 8: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 1: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 10: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 11: acc 0.03, precision: 0.33, recall: 0.33, f1: 0.33
+	Client 4: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 9: acc 1.0, precision: 0.96, recall: 0.91, f1: 0.93
+	Client 0: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 6: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 2: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 3: acc 0.02, precision: 0.01, recall: 0.5, f1: 0.02
+	Client 16: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 15: acc 1.0, precision: 0.99, recall: 0.99, f1: 0.99
+	Client 12: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 17: acc 0.03, precision: 0.33, recall: 0.33, f1: 0.33
+	Client 5: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 7: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+
+Algorithm:  lg_fedavg Dataset:  cic_ids Epoch:  9
+Overall Performance Metrics (Local)
+	train loss avg: 1.7784
+	test acc normal avg: 0.8328
+	test acc flipping avg: 0.0166
+Global Performance Metrics (Whole Test Set)
+	Global Acc avg: 0.3993
+	All Clients Global Acc: [0.5497, 0.5454, 0.2299, 0.0157, 0.0157, 0.0346, 0.8236, 0.7074, 0.0157, 0.7796, 0.518, 0.3613, 0.0157, 0.0157, 0.8236, 0.6634, 0.4651, 0.6928, 0.0157, 0.697]
+	All Clients Global F1:  [0.0719, 0.0715, 0.037, 0.0028, 0.0028, 0.0069, 0.0821, 0.0809, 0.0028, 0.0987, 0.0723, 0.0511, 0.0028, 0.0028, 0.0821, 0.0852, 0.0608, 0.0798, 0.0028, 0.0784]
+[Client 19] Epoch 1/5 | TrainLoss=0.8230 | ValLoss=0.522805 | ValF1=0.7484
+[Client 19] Epoch 2/5 | TrainLoss=0.4857 | ValLoss=0.537045 | ValF1=0.6267
+[Client 19] Epoch 3/5 | TrainLoss=0.4352 | ValLoss=0.425320 | ValF1=0.5175
+[Client 19] Epoch 4/5 | TrainLoss=0.4349 | ValLoss=0.543808 | ValF1=0.6267
+[Client 19] Epoch 5/5 | TrainLoss=0.4234 | ValLoss=0.497310 | ValF1=0.6267
+[Client 13] Epoch 1/5 | TrainLoss=0.8805 | ValLoss=0.566831 | ValF1=0.6991
+[Client 13] Epoch 2/5 | TrainLoss=0.5714 | ValLoss=0.494305 | ValF1=0.7421
+[Client 13] Epoch 3/5 | TrainLoss=0.5755 | ValLoss=0.506347 | ValF1=0.7421
+[Client 13] Epoch 4/5 | TrainLoss=0.5408 | ValLoss=0.490152 | ValF1=0.6991
+[Client 13] Epoch 5/5 | TrainLoss=0.5349 | ValLoss=0.495574 | ValF1=0.6991
+[Client 18] Epoch 1/5 | TrainLoss=0.0165 | ValLoss=0.001829 | ValF1=1.0000
+[Client 18] Epoch 2/5 | TrainLoss=0.0009 | ValLoss=0.000725 | ValF1=1.0000
+[Client 18] Epoch 3/5 | TrainLoss=0.0005 | ValLoss=0.000443 | ValF1=1.0000
+[Client 18] Epoch 4/5 | TrainLoss=0.0003 | ValLoss=0.000314 | ValF1=1.0000
+[Client 18] Epoch 5/5 | TrainLoss=0.0002 | ValLoss=0.000242 | ValF1=1.0000
+[Client 14] Epoch 1/5 | TrainLoss=2.2697 | ValLoss=2.012194 | ValF1=1.0000
+[Client 14] Epoch 2/5 | TrainLoss=1.7996 | ValLoss=1.511301 | ValF1=1.0000
+[Client 14] Epoch 3/5 | TrainLoss=1.2453 | ValLoss=0.827545 | ValF1=1.0000
+[Client 14] Epoch 4/5 | TrainLoss=0.6078 | ValLoss=0.295581 | ValF1=1.0000
+[Client 14] Epoch 5/5 | TrainLoss=0.2919 | ValLoss=0.120753 | ValF1=1.0000
+[Client 8] Epoch 1/5 | TrainLoss=2.2531 | ValLoss=1.990169 | ValF1=1.0000
+[Client 8] Epoch 2/5 | TrainLoss=1.7438 | ValLoss=1.455785 | ValF1=1.0000
+[Client 8] Epoch 3/5 | TrainLoss=1.0957 | ValLoss=0.687404 | ValF1=1.0000
+[Client 8] Epoch 4/5 | TrainLoss=0.4188 | ValLoss=0.214658 | ValF1=1.0000
+[Client 8] Epoch 5/5 | TrainLoss=0.1391 | ValLoss=0.085888 | ValF1=1.0000
+[Client 1] Epoch 1/5 | TrainLoss=2.5398 | ValLoss=2.571408 | ValF1=0.0169
+[Client 1] Epoch 2/5 | TrainLoss=2.5049 | ValLoss=2.426813 | ValF1=0.0318
+[Client 1] Epoch 3/5 | TrainLoss=2.4843 | ValLoss=2.509946 | ValF1=0.0169
+[Client 1] Epoch 4/5 | TrainLoss=2.4752 | ValLoss=2.411069 | ValF1=0.0714
+[Client 1] Epoch 5/5 | TrainLoss=2.4640 | ValLoss=2.421346 | ValF1=0.0335
+[Client 10] Epoch 1/5 | TrainLoss=0.7058 | ValLoss=0.307809 | ValF1=0.4898
+[Client 10] Epoch 2/5 | TrainLoss=0.0588 | ValLoss=0.314837 | ValF1=0.4898
+[Client 10] Epoch 3/5 | TrainLoss=0.0507 | ValLoss=0.318961 | ValF1=0.4898
+[Client 10] Epoch 4/5 | TrainLoss=0.0478 | ValLoss=0.321861 | ValF1=0.4898
+[Client 10] Epoch 5/5 | TrainLoss=0.0464 | ValLoss=0.318664 | ValF1=0.4898
+[Client 11] Epoch 1/5 | TrainLoss=0.0161 | ValLoss=0.000929 | ValF1=1.0000
+[Client 11] Epoch 2/5 | TrainLoss=0.0006 | ValLoss=0.000367 | ValF1=1.0000
+[Client 11] Epoch 3/5 | TrainLoss=0.0003 | ValLoss=0.000215 | ValF1=1.0000
+[Client 11] Epoch 4/5 | TrainLoss=0.0002 | ValLoss=0.000149 | ValF1=1.0000
+[Client 11] Epoch 5/5 | TrainLoss=0.0001 | ValLoss=0.000112 | ValF1=1.0000
+[Client 4] Epoch 1/5 | TrainLoss=2.5897 | ValLoss=2.511423 | ValF1=0.0135
+[Client 4] Epoch 2/5 | TrainLoss=2.5375 | ValLoss=2.492187 | ValF1=0.0135
+[Client 4] Epoch 3/5 | TrainLoss=2.5169 | ValLoss=2.482505 | ValF1=0.0135
+[Client 4] Epoch 4/5 | TrainLoss=2.5050 | ValLoss=2.473614 | ValF1=0.0135
+[Client 4] Epoch 5/5 | TrainLoss=2.4970 | ValLoss=2.466487 | ValF1=0.0135
+[Client 9] Epoch 1/5 | TrainLoss=0.0041 | ValLoss=0.009878 | ValF1=0.9196
+[Client 9] Epoch 2/5 | TrainLoss=0.0037 | ValLoss=0.001385 | ValF1=0.9947
+[Client 9] Epoch 3/5 | TrainLoss=0.0038 | ValLoss=0.010202 | ValF1=0.9511
+[Client 9] Epoch 4/5 | TrainLoss=0.0038 | ValLoss=0.000723 | ValF1=0.9974
+[Client 9] Epoch 5/5 | TrainLoss=0.0035 | ValLoss=0.001729 | ValF1=0.9908
+[Client 0] Epoch 1/5 | TrainLoss=2.4437 | ValLoss=2.436068 | ValF1=0.0349
+[Client 0] Epoch 2/5 | TrainLoss=2.4233 | ValLoss=2.433555 | ValF1=0.0227
+[Client 0] Epoch 3/5 | TrainLoss=2.4209 | ValLoss=2.444587 | ValF1=0.0170
+[Client 0] Epoch 4/5 | TrainLoss=2.4205 | ValLoss=2.432318 | ValF1=0.0212
+[Client 0] Epoch 5/5 | TrainLoss=2.4193 | ValLoss=2.437994 | ValF1=0.0190
+[Client 6] Epoch 1/5 | TrainLoss=0.0170 | ValLoss=0.001441 | ValF1=1.0000
+[Client 6] Epoch 2/5 | TrainLoss=0.0008 | ValLoss=0.000622 | ValF1=1.0000
+[Client 6] Epoch 3/5 | TrainLoss=0.0004 | ValLoss=0.000384 | ValF1=1.0000
+[Client 6] Epoch 4/5 | TrainLoss=0.0003 | ValLoss=0.000267 | ValF1=1.0000
+[Client 6] Epoch 5/5 | TrainLoss=0.0002 | ValLoss=0.000202 | ValF1=1.0000
+[Client 2] Epoch 1/5 | TrainLoss=2.5249 | ValLoss=2.630609 | ValF1=0.0317
+[Client 2] Epoch 2/5 | TrainLoss=2.4742 | ValLoss=2.596466 | ValF1=0.0317
+[Client 2] Epoch 3/5 | TrainLoss=2.4450 | ValLoss=2.633108 | ValF1=0.0317
+[Client 2] Epoch 4/5 | TrainLoss=2.4420 | ValLoss=2.610963 | ValF1=0.0317
+[Client 2] Epoch 5/5 | TrainLoss=2.4231 | ValLoss=2.625727 | ValF1=0.0000
+[Client 3] Epoch 1/5 | TrainLoss=2.4067 | ValLoss=2.407163 | ValF1=0.0217
+[Client 3] Epoch 2/5 | TrainLoss=2.4063 | ValLoss=2.406940 | ValF1=0.0143
+[Client 3] Epoch 3/5 | TrainLoss=2.4063 | ValLoss=2.406612 | ValF1=0.0143
+[Client 3] Epoch 4/5 | TrainLoss=2.4062 | ValLoss=2.406732 | ValF1=0.0238
+[Client 3] Epoch 5/5 | TrainLoss=2.4061 | ValLoss=2.407124 | ValF1=0.0247
+[Client 16] Epoch 1/5 | TrainLoss=0.7408 | ValLoss=0.057018 | ValF1=1.0000
+[Client 16] Epoch 2/5 | TrainLoss=0.0902 | ValLoss=0.016258 | ValF1=1.0000
+[Client 16] Epoch 3/5 | TrainLoss=0.0794 | ValLoss=0.010832 | ValF1=1.0000
+[Client 16] Epoch 4/5 | TrainLoss=0.0756 | ValLoss=0.010684 | ValF1=1.0000
+[Client 16] Epoch 5/5 | TrainLoss=0.0717 | ValLoss=0.011287 | ValF1=1.0000
+[Client 15] Epoch 1/5 | TrainLoss=0.0025 | ValLoss=0.001343 | ValF1=0.9935
+[Client 15] Epoch 2/5 | TrainLoss=0.0027 | ValLoss=0.001125 | ValF1=0.9948
+[Client 15] Epoch 3/5 | TrainLoss=0.0024 | ValLoss=0.001234 | ValF1=0.9935
+[Client 15] Epoch 4/5 | TrainLoss=0.0024 | ValLoss=0.001071 | ValF1=0.9935
+[Client 15] Epoch 5/5 | TrainLoss=0.0025 | ValLoss=0.001609 | ValF1=0.9909
+[Client 12] Epoch 1/5 | TrainLoss=0.0159 | ValLoss=0.001677 | ValF1=1.0000
+[Client 12] Epoch 2/5 | TrainLoss=0.0009 | ValLoss=0.000654 | ValF1=1.0000
+[Client 12] Epoch 3/5 | TrainLoss=0.0005 | ValLoss=0.000383 | ValF1=1.0000
+[Client 12] Epoch 4/5 | TrainLoss=0.0003 | ValLoss=0.000277 | ValF1=1.0000
+[Client 12] Epoch 5/5 | TrainLoss=0.0002 | ValLoss=0.000208 | ValF1=1.0000
+[Client 17] Epoch 1/5 | TrainLoss=0.0175 | ValLoss=0.002880 | ValF1=1.0000
+[Client 17] Epoch 2/5 | TrainLoss=0.0012 | ValLoss=0.000572 | ValF1=1.0000
+[Client 17] Epoch 3/5 | TrainLoss=0.0009 | ValLoss=0.000626 | ValF1=1.0000
+[Client 17] Epoch 4/5 | TrainLoss=0.0008 | ValLoss=0.000246 | ValF1=1.0000
+[Client 17] Epoch 5/5 | TrainLoss=0.0008 | ValLoss=0.000197 | ValF1=1.0000
+[Client 5] Epoch 1/5 | TrainLoss=2.4414 | ValLoss=2.413455 | ValF1=0.0227
+[Client 5] Epoch 2/5 | TrainLoss=2.4152 | ValLoss=2.401920 | ValF1=0.0172
+[Client 5] Epoch 3/5 | TrainLoss=2.4133 | ValLoss=2.407236 | ValF1=0.0197
+[Client 5] Epoch 4/5 | TrainLoss=2.4117 | ValLoss=2.406076 | ValF1=0.0252
+[Client 5] Epoch 5/5 | TrainLoss=2.4111 | ValLoss=2.405241 | ValF1=0.0297
+[Client 7] Epoch 1/5 | TrainLoss=0.7751 | ValLoss=0.403978 | ValF1=0.6144
+[Client 7] Epoch 2/5 | TrainLoss=0.4105 | ValLoss=0.381453 | ValF1=0.7111
+[Client 7] Epoch 3/5 | TrainLoss=0.3886 | ValLoss=0.335639 | ValF1=0.8375
+[Client 7] Epoch 4/5 | TrainLoss=0.3992 | ValLoss=0.398467 | ValF1=0.7111
+[Client 7] Epoch 5/5 | TrainLoss=0.3789 | ValLoss=0.325621 | ValF1=0.8375
+Time: 2495.2432160377502
+
+-------------Round number: 10-------------
+
+Evaluate global model
+Train Loss
+	Client 2: Train loss: 2.5
+	Client 3: Train loss: 2.42
+	Client 1: Train loss: 2.54
+	Client 6: Train loss: 2.49
+	Client 11: Train loss: 13.36
+	Client 7: Train loss: 4.3
+	Client 0: Train loss: 2.53
+	Client 4: Train loss: 2.6
+	Client 13: Train loss: 3.53
+	Client 17: Train loss: 13.72
+	Client 18: Train loss: 2.47
+	Client 5: Train loss: 2.59
+	Client 9: Train loss: 0.01
+	Client 8: Train loss: 2.49
+	Client 16: Train loss: 3.69
+	Client 15: Train loss: 0.0
+	Client 19: Train loss: 3.74
+	Client 10: Train loss: 4.22
+	Client 12: Train loss: 2.46
+	Client 14: Train loss: 2.49
+Performance Metrics
+	Client 2: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 3: acc 0.02, precision: 0.01, recall: 0.33, f1: 0.01
+	Client 1: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 6: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 11: acc 0.03, precision: 0.33, recall: 0.33, f1: 0.33
+	Client 7: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 0: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 4: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 13: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 17: acc 0.03, precision: 0.33, recall: 0.33, f1: 0.33
+	Client 18: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 5: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 9: acc 1.0, precision: 0.99, recall: 0.92, f1: 0.95
+	Client 8: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 16: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 15: acc 1.0, precision: 0.99, recall: 1.0, f1: 0.99
+	Client 19: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 10: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 12: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 14: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+
+Algorithm:  lg_fedavg Dataset:  cic_ids Epoch:  10
+Overall Performance Metrics (Local)
+	train loss avg: 1.7503
+	test acc normal avg: 0.8334
+	test acc flipping avg: 0.0166
+Global Performance Metrics (Whole Test Set)
+	Global Acc avg: 0.3662
+	All Clients Global Acc: [0.0157, 0.0157, 0.058, 0.3082, 0.6931, 0.6721, 0.5224, 0.0157, 0.2631, 0.692, 0.2149, 0.0157, 0.7813, 0.0157, 0.8236, 0.6564, 0.265, 0.8236, 0.4567, 0.0157]
+	All Clients Global F1:  [0.0028, 0.0028, 0.0116, 0.048, 0.0798, 0.0771, 0.0708, 0.0028, 0.0433, 0.0797, 0.0354, 0.0028, 0.1001, 0.0028, 0.0821, 0.0845, 0.0438, 0.0821, 0.0602, 0.0028]
+[Client 2] Epoch 1/5 | TrainLoss=2.4901 | ValLoss=2.591691 | ValF1=0.0317
+[Client 2] Epoch 2/5 | TrainLoss=2.4604 | ValLoss=2.587528 | ValF1=0.0317
+[Client 2] Epoch 3/5 | TrainLoss=2.4486 | ValLoss=2.601205 | ValF1=0.0317
+[Client 2] Epoch 4/5 | TrainLoss=2.4259 | ValLoss=2.631577 | ValF1=0.0000
+[Client 2] Epoch 5/5 | TrainLoss=2.4273 | ValLoss=2.618014 | ValF1=0.0000
+[Client 3] Epoch 1/5 | TrainLoss=2.4065 | ValLoss=2.406596 | ValF1=0.0299
+[Client 3] Epoch 2/5 | TrainLoss=2.4062 | ValLoss=2.407593 | ValF1=0.0135
+[Client 3] Epoch 3/5 | TrainLoss=2.4064 | ValLoss=2.406058 | ValF1=0.0254
+[Client 3] Epoch 4/5 | TrainLoss=2.4061 | ValLoss=2.407124 | ValF1=0.0135
+[Client 3] Epoch 5/5 | TrainLoss=2.4060 | ValLoss=2.407950 | ValF1=0.0241
+[Client 1] Epoch 1/5 | TrainLoss=2.5362 | ValLoss=2.488095 | ValF1=0.0169
+[Client 1] Epoch 2/5 | TrainLoss=2.4901 | ValLoss=2.418572 | ValF1=0.0277
+[Client 1] Epoch 3/5 | TrainLoss=2.4841 | ValLoss=2.435095 | ValF1=0.0169
+[Client 1] Epoch 4/5 | TrainLoss=2.4670 | ValLoss=2.472014 | ValF1=0.0169
+[Client 1] Epoch 5/5 | TrainLoss=2.4673 | ValLoss=2.405138 | ValF1=0.0714
+[Client 6] Epoch 1/5 | TrainLoss=0.0138 | ValLoss=0.001266 | ValF1=1.0000
+[Client 6] Epoch 2/5 | TrainLoss=0.0007 | ValLoss=0.000545 | ValF1=1.0000
+[Client 6] Epoch 3/5 | TrainLoss=0.0004 | ValLoss=0.000340 | ValF1=1.0000
+[Client 6] Epoch 4/5 | TrainLoss=0.0002 | ValLoss=0.000240 | ValF1=1.0000
+[Client 6] Epoch 5/5 | TrainLoss=0.0002 | ValLoss=0.000185 | ValF1=1.0000
+[Client 11] Epoch 1/5 | TrainLoss=0.0153 | ValLoss=0.000814 | ValF1=1.0000
+[Client 11] Epoch 2/5 | TrainLoss=0.0005 | ValLoss=0.000327 | ValF1=1.0000
+[Client 11] Epoch 3/5 | TrainLoss=0.0003 | ValLoss=0.000195 | ValF1=1.0000
+[Client 11] Epoch 4/5 | TrainLoss=0.0002 | ValLoss=0.000137 | ValF1=1.0000
+[Client 11] Epoch 5/5 | TrainLoss=0.0001 | ValLoss=0.000103 | ValF1=1.0000
+[Client 7] Epoch 1/5 | TrainLoss=0.7359 | ValLoss=0.367284 | ValF1=0.8375
+[Client 7] Epoch 2/5 | TrainLoss=0.4073 | ValLoss=0.550781 | ValF1=0.7111
+[Client 7] Epoch 3/5 | TrainLoss=0.3934 | ValLoss=0.330526 | ValF1=0.8375
+[Client 7] Epoch 4/5 | TrainLoss=0.3914 | ValLoss=0.362312 | ValF1=0.8375
+[Client 7] Epoch 5/5 | TrainLoss=0.3758 | ValLoss=0.474107 | ValF1=0.7111
+[Client 0] Epoch 1/5 | TrainLoss=2.4407 | ValLoss=2.433010 | ValF1=0.0190
+[Client 0] Epoch 2/5 | TrainLoss=2.4242 | ValLoss=2.432137 | ValF1=0.0221
+[Client 0] Epoch 3/5 | TrainLoss=2.4202 | ValLoss=2.435088 | ValF1=0.0152
+[Client 0] Epoch 4/5 | TrainLoss=2.4208 | ValLoss=2.436185 | ValF1=0.0214
+[Client 0] Epoch 5/5 | TrainLoss=2.4194 | ValLoss=2.432029 | ValF1=0.0202
+[Client 4] Epoch 1/5 | TrainLoss=2.5656 | ValLoss=2.498768 | ValF1=0.0135
+[Client 4] Epoch 2/5 | TrainLoss=2.5320 | ValLoss=2.490174 | ValF1=0.0135
+[Client 4] Epoch 3/5 | TrainLoss=2.5189 | ValLoss=2.481342 | ValF1=0.0135
+[Client 4] Epoch 4/5 | TrainLoss=2.5086 | ValLoss=2.472662 | ValF1=0.0135
+[Client 4] Epoch 5/5 | TrainLoss=2.4987 | ValLoss=2.465802 | ValF1=0.0135
+[Client 13] Epoch 1/5 | TrainLoss=0.8586 | ValLoss=0.657667 | ValF1=0.7421
+[Client 13] Epoch 2/5 | TrainLoss=0.5790 | ValLoss=0.522904 | ValF1=0.7421
+[Client 13] Epoch 3/5 | TrainLoss=0.5650 | ValLoss=0.451955 | ValF1=0.7421
+[Client 13] Epoch 4/5 | TrainLoss=0.5399 | ValLoss=0.457847 | ValF1=0.7421
+[Client 13] Epoch 5/5 | TrainLoss=0.5182 | ValLoss=0.445798 | ValF1=0.6991
+[Client 17] Epoch 1/5 | TrainLoss=0.0156 | ValLoss=0.001141 | ValF1=1.0000
+[Client 17] Epoch 2/5 | TrainLoss=0.0011 | ValLoss=0.001272 | ValF1=1.0000
+[Client 17] Epoch 3/5 | TrainLoss=0.0009 | ValLoss=0.000628 | ValF1=1.0000
+[Client 17] Epoch 4/5 | TrainLoss=0.0007 | ValLoss=0.000212 | ValF1=1.0000
+[Client 17] Epoch 5/5 | TrainLoss=0.0008 | ValLoss=0.000176 | ValF1=1.0000
+[Client 18] Epoch 1/5 | TrainLoss=0.0137 | ValLoss=0.001439 | ValF1=1.0000
+[Client 18] Epoch 2/5 | TrainLoss=0.0008 | ValLoss=0.000670 | ValF1=1.0000
+[Client 18] Epoch 3/5 | TrainLoss=0.0004 | ValLoss=0.000405 | ValF1=1.0000
+[Client 18] Epoch 4/5 | TrainLoss=0.0003 | ValLoss=0.000295 | ValF1=1.0000
+[Client 18] Epoch 5/5 | TrainLoss=0.0002 | ValLoss=0.000216 | ValF1=1.0000
+[Client 5] Epoch 1/5 | TrainLoss=2.4402 | ValLoss=2.411529 | ValF1=0.0164
+[Client 5] Epoch 2/5 | TrainLoss=2.4146 | ValLoss=2.404231 | ValF1=0.0220
+[Client 5] Epoch 3/5 | TrainLoss=2.4129 | ValLoss=2.406709 | ValF1=0.0185
+[Client 5] Epoch 4/5 | TrainLoss=2.4122 | ValLoss=2.399981 | ValF1=0.0295
+[Client 5] Epoch 5/5 | TrainLoss=2.4122 | ValLoss=2.405277 | ValF1=0.0151
+[Client 9] Epoch 1/5 | TrainLoss=0.0030 | ValLoss=0.005006 | ValF1=0.9847
+[Client 9] Epoch 2/5 | TrainLoss=0.0030 | ValLoss=0.000959 | ValF1=0.9987
+[Client 9] Epoch 3/5 | TrainLoss=0.0031 | ValLoss=0.004898 | ValF1=0.9634
+[Client 9] Epoch 4/5 | TrainLoss=0.0030 | ValLoss=0.000999 | ValF1=0.9947
+[Client 9] Epoch 5/5 | TrainLoss=0.0028 | ValLoss=0.000488 | ValF1=1.0000
+[Client 8] Epoch 1/5 | TrainLoss=2.2485 | ValLoss=1.984188 | ValF1=1.0000
+[Client 8] Epoch 2/5 | TrainLoss=1.7307 | ValLoss=1.417769 | ValF1=1.0000
+[Client 8] Epoch 3/5 | TrainLoss=1.0241 | ValLoss=0.600981 | ValF1=1.0000
+[Client 8] Epoch 4/5 | TrainLoss=0.3540 | ValLoss=0.177385 | ValF1=1.0000
+[Client 8] Epoch 5/5 | TrainLoss=0.1160 | ValLoss=0.072991 | ValF1=1.0000
+[Client 16] Epoch 1/5 | TrainLoss=0.5728 | ValLoss=0.027136 | ValF1=1.0000
+[Client 16] Epoch 2/5 | TrainLoss=0.0857 | ValLoss=0.014269 | ValF1=1.0000
+[Client 16] Epoch 3/5 | TrainLoss=0.0783 | ValLoss=0.009734 | ValF1=1.0000
+[Client 16] Epoch 4/5 | TrainLoss=0.0744 | ValLoss=0.008995 | ValF1=1.0000
+[Client 16] Epoch 5/5 | TrainLoss=0.0705 | ValLoss=0.010156 | ValF1=1.0000
+[Client 15] Epoch 1/5 | TrainLoss=0.0029 | ValLoss=0.001466 | ValF1=0.9895
+[Client 15] Epoch 2/5 | TrainLoss=0.0024 | ValLoss=0.001054 | ValF1=0.9961
+[Client 15] Epoch 3/5 | TrainLoss=0.0023 | ValLoss=0.001094 | ValF1=0.9961
+[Client 15] Epoch 4/5 | TrainLoss=0.0024 | ValLoss=0.001122 | ValF1=0.9974
+[Client 15] Epoch 5/5 | TrainLoss=0.0022 | ValLoss=0.001273 | ValF1=0.9948
+[Client 19] Epoch 1/5 | TrainLoss=0.7758 | ValLoss=0.885801 | ValF1=0.4048
+[Client 19] Epoch 2/5 | TrainLoss=0.4781 | ValLoss=0.435714 | ValF1=0.7484
+[Client 19] Epoch 3/5 | TrainLoss=0.4606 | ValLoss=0.470012 | ValF1=0.7484
+[Client 19] Epoch 4/5 | TrainLoss=0.4269 | ValLoss=0.398342 | ValF1=0.7484
+[Client 19] Epoch 5/5 | TrainLoss=0.4463 | ValLoss=0.413954 | ValF1=0.7484
+[Client 10] Epoch 1/5 | TrainLoss=0.5578 | ValLoss=0.305054 | ValF1=0.4898
+[Client 10] Epoch 2/5 | TrainLoss=0.0543 | ValLoss=0.316464 | ValF1=0.4898
+[Client 10] Epoch 3/5 | TrainLoss=0.0493 | ValLoss=0.317085 | ValF1=0.4898
+[Client 10] Epoch 4/5 | TrainLoss=0.0472 | ValLoss=0.316953 | ValF1=0.4898
+[Client 10] Epoch 5/5 | TrainLoss=0.0458 | ValLoss=0.307477 | ValF1=0.4898
+[Client 12] Epoch 1/5 | TrainLoss=0.0143 | ValLoss=0.001321 | ValF1=1.0000
+[Client 12] Epoch 2/5 | TrainLoss=0.0008 | ValLoss=0.000581 | ValF1=1.0000
+[Client 12] Epoch 3/5 | TrainLoss=0.0004 | ValLoss=0.000359 | ValF1=1.0000
+[Client 12] Epoch 4/5 | TrainLoss=0.0003 | ValLoss=0.000250 | ValF1=1.0000
+[Client 12] Epoch 5/5 | TrainLoss=0.0002 | ValLoss=0.000190 | ValF1=1.0000
+[Client 14] Epoch 1/5 | TrainLoss=2.2627 | ValLoss=2.007066 | ValF1=1.0000
+[Client 14] Epoch 2/5 | TrainLoss=1.7902 | ValLoss=1.494467 | ValF1=1.0000
+[Client 14] Epoch 3/5 | TrainLoss=1.2038 | ValLoss=0.761688 | ValF1=1.0000
+[Client 14] Epoch 4/5 | TrainLoss=0.5480 | ValLoss=0.246180 | ValF1=1.0000
+[Client 14] Epoch 5/5 | TrainLoss=0.2655 | ValLoss=0.106147 | ValF1=1.0000
+Time: 2484.445645093918
+
+-------------Round number: 11-------------
+
+Evaluate global model
+Train Loss
+	Client 0: Train loss: 2.52
+	Client 8: Train loss: 2.49
+	Client 15: Train loss: 0.0
+	Client 1: Train loss: 2.53
+	Client 4: Train loss: 2.56
+	Client 13: Train loss: 3.1
+	Client 19: Train loss: 3.91
+	Client 14: Train loss: 2.48
+	Client 12: Train loss: 2.62
+	Client 16: Train loss: 3.61
+	Client 11: Train loss: 12.85
+	Client 9: Train loss: 0.01
+	Client 10: Train loss: 3.43
+	Client 17: Train loss: 12.78
+	Client 7: Train loss: 4.14
+	Client 3: Train loss: 2.41
+	Client 5: Train loss: 2.58
+	Client 18: Train loss: 2.65
+	Client 6: Train loss: 2.63
+	Client 2: Train loss: 2.47
+Performance Metrics
+	Client 0: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 8: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 15: acc 1.0, precision: 0.99, recall: 1.0, f1: 0.99
+	Client 1: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 4: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 13: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 19: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 14: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 12: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 16: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 11: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 9: acc 1.0, precision: 1.0, recall: 0.92, f1: 0.95
+	Client 10: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 17: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 7: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 3: acc 0.02, precision: 0.01, recall: 0.33, f1: 0.01
+	Client 5: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 18: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 6: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 2: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+
+Algorithm:  lg_fedavg Dataset:  cic_ids Epoch:  11
+Overall Performance Metrics (Local)
+	train loss avg: 1.7112
+	test acc normal avg: 0.8308
+	test acc flipping avg: 0.0166
+Global Performance Metrics (Whole Test Set)
+	Global Acc avg: 0.3726
+	All Clients Global Acc: [0.6421, 0.0028, 0.6551, 0.4123, 0.0157, 0.1335, 0.2408, 0.0028, 0.4419, 0.8236, 0.6776, 0.7808, 0.8236, 0.6659, 0.6154, 0.0157, 0.0229, 0.2037, 0.2602, 0.0157]
+	All Clients Global F1:  [0.0815, 0.0005, 0.0844, 0.0587, 0.0028, 0.0255, 0.0407, 0.0005, 0.0584, 0.0821, 0.0771, 0.1012, 0.0821, 0.0764, 0.0775, 0.003, 0.0045, 0.0333, 0.0402, 0.0028]
+[Client 0] Epoch 1/5 | TrainLoss=2.4431 | ValLoss=2.440832 | ValF1=0.0155
+[Client 0] Epoch 2/5 | TrainLoss=2.4237 | ValLoss=2.442319 | ValF1=0.0190
+[Client 0] Epoch 3/5 | TrainLoss=2.4215 | ValLoss=2.427066 | ValF1=0.0234
+[Client 0] Epoch 4/5 | TrainLoss=2.4203 | ValLoss=2.433050 | ValF1=0.0218
+[Client 0] Epoch 5/5 | TrainLoss=2.4202 | ValLoss=2.431216 | ValF1=0.0220
+[Client 8] Epoch 1/5 | TrainLoss=2.2397 | ValLoss=1.969789 | ValF1=1.0000
+[Client 8] Epoch 2/5 | TrainLoss=1.7043 | ValLoss=1.359438 | ValF1=1.0000
+[Client 8] Epoch 3/5 | TrainLoss=0.9459 | ValLoss=0.517689 | ValF1=1.0000
+[Client 8] Epoch 4/5 | TrainLoss=0.2973 | ValLoss=0.147962 | ValF1=1.0000
+[Client 8] Epoch 5/5 | TrainLoss=0.0981 | ValLoss=0.063007 | ValF1=1.0000
+[Client 15] Epoch 1/5 | TrainLoss=0.0025 | ValLoss=0.001310 | ValF1=0.9935
+[Client 15] Epoch 2/5 | TrainLoss=0.0024 | ValLoss=0.001205 | ValF1=0.9949
+[Client 15] Epoch 3/5 | TrainLoss=0.0022 | ValLoss=0.003974 | ValF1=0.9895
+[Client 15] Epoch 4/5 | TrainLoss=0.0023 | ValLoss=0.001339 | ValF1=0.9949
+[Client 15] Epoch 5/5 | TrainLoss=0.0020 | ValLoss=0.001010 | ValF1=0.9948
+[Client 1] Epoch 1/5 | TrainLoss=2.5267 | ValLoss=2.491384 | ValF1=0.0169
+[Client 1] Epoch 2/5 | TrainLoss=2.4905 | ValLoss=2.436282 | ValF1=0.0657
+[Client 1] Epoch 3/5 | TrainLoss=2.4781 | ValLoss=2.445193 | ValF1=0.0169
+[Client 1] Epoch 4/5 | TrainLoss=2.4720 | ValLoss=2.473006 | ValF1=0.0169
+[Client 1] Epoch 5/5 | TrainLoss=2.4668 | ValLoss=2.423970 | ValF1=0.0968
+[Client 4] Epoch 1/5 | TrainLoss=2.5479 | ValLoss=2.495805 | ValF1=0.0135
+[Client 4] Epoch 2/5 | TrainLoss=2.5274 | ValLoss=2.492111 | ValF1=0.0135
+[Client 4] Epoch 3/5 | TrainLoss=2.5182 | ValLoss=2.477490 | ValF1=0.0135
+[Client 4] Epoch 4/5 | TrainLoss=2.5057 | ValLoss=2.471262 | ValF1=0.0135
+[Client 4] Epoch 5/5 | TrainLoss=2.4968 | ValLoss=2.463852 | ValF1=0.0135
+[Client 13] Epoch 1/5 | TrainLoss=0.8209 | ValLoss=0.546127 | ValF1=0.6991
+[Client 13] Epoch 2/5 | TrainLoss=0.5886 | ValLoss=0.463696 | ValF1=0.7421
+[Client 13] Epoch 3/5 | TrainLoss=0.5657 | ValLoss=0.455543 | ValF1=0.7421
+[Client 13] Epoch 4/5 | TrainLoss=0.5353 | ValLoss=0.450246 | ValF1=0.6991
+[Client 13] Epoch 5/5 | TrainLoss=0.5263 | ValLoss=0.473708 | ValF1=0.6991
+[Client 19] Epoch 1/5 | TrainLoss=0.6989 | ValLoss=0.950682 | ValF1=0.4048
+[Client 19] Epoch 2/5 | TrainLoss=0.4857 | ValLoss=0.413888 | ValF1=0.7484
+[Client 19] Epoch 3/5 | TrainLoss=0.4404 | ValLoss=0.452557 | ValF1=0.7484
+[Client 19] Epoch 4/5 | TrainLoss=0.4446 | ValLoss=0.391026 | ValF1=0.7484
+[Client 19] Epoch 5/5 | TrainLoss=0.4236 | ValLoss=0.516186 | ValF1=0.6267
+[Client 14] Epoch 1/5 | TrainLoss=2.2538 | ValLoss=1.994845 | ValF1=1.0000
+[Client 14] Epoch 2/5 | TrainLoss=1.7702 | ValLoss=1.463153 | ValF1=1.0000
+[Client 14] Epoch 3/5 | TrainLoss=1.1162 | ValLoss=0.666845 | ValF1=1.0000
+[Client 14] Epoch 4/5 | TrainLoss=0.4878 | ValLoss=0.219250 | ValF1=1.0000
+[Client 14] Epoch 5/5 | TrainLoss=0.2502 | ValLoss=0.096124 | ValF1=1.0000
+[Client 12] Epoch 1/5 | TrainLoss=0.0126 | ValLoss=0.001290 | ValF1=1.0000
+[Client 12] Epoch 2/5 | TrainLoss=0.0007 | ValLoss=0.000561 | ValF1=1.0000
+[Client 12] Epoch 3/5 | TrainLoss=0.0004 | ValLoss=0.000329 | ValF1=1.0000
+[Client 12] Epoch 4/5 | TrainLoss=0.0003 | ValLoss=0.000232 | ValF1=1.0000
+[Client 12] Epoch 5/5 | TrainLoss=0.0002 | ValLoss=0.000183 | ValF1=1.0000
+[Client 16] Epoch 1/5 | TrainLoss=0.4451 | ValLoss=0.021188 | ValF1=1.0000
+[Client 16] Epoch 2/5 | TrainLoss=0.0824 | ValLoss=0.009764 | ValF1=1.0000
+[Client 16] Epoch 3/5 | TrainLoss=0.0782 | ValLoss=0.009787 | ValF1=1.0000
+[Client 16] Epoch 4/5 | TrainLoss=0.0734 | ValLoss=0.008116 | ValF1=1.0000
+[Client 16] Epoch 5/5 | TrainLoss=0.0698 | ValLoss=0.008442 | ValF1=1.0000
+[Client 11] Epoch 1/5 | TrainLoss=0.0118 | ValLoss=0.000708 | ValF1=1.0000
+[Client 11] Epoch 2/5 | TrainLoss=0.0005 | ValLoss=0.000293 | ValF1=1.0000
+[Client 11] Epoch 3/5 | TrainLoss=0.0002 | ValLoss=0.000177 | ValF1=1.0000
+[Client 11] Epoch 4/5 | TrainLoss=0.0002 | ValLoss=0.000124 | ValF1=1.0000
+[Client 11] Epoch 5/5 | TrainLoss=0.0001 | ValLoss=0.000095 | ValF1=1.0000
+[Client 9] Epoch 1/5 | TrainLoss=0.0020 | ValLoss=0.000707 | ValF1=1.0000
+[Client 9] Epoch 2/5 | TrainLoss=0.0023 | ValLoss=0.000733 | ValF1=0.9987
+[Client 9] Epoch 3/5 | TrainLoss=0.0018 | ValLoss=0.000353 | ValF1=1.0000
+[Client 9] Epoch 4/5 | TrainLoss=0.0020 | ValLoss=0.000381 | ValF1=1.0000
+[Client 9] Epoch 5/5 | TrainLoss=0.0026 | ValLoss=0.001035 | ValF1=0.9961
+[Client 10] Epoch 1/5 | TrainLoss=0.3982 | ValLoss=0.318368 | ValF1=0.4898
+[Client 10] Epoch 2/5 | TrainLoss=0.0524 | ValLoss=0.328427 | ValF1=0.4898
+[Client 10] Epoch 3/5 | TrainLoss=0.0493 | ValLoss=0.323707 | ValF1=0.4898
+[Client 10] Epoch 4/5 | TrainLoss=0.0473 | ValLoss=0.320487 | ValF1=0.4898
+[Client 10] Epoch 5/5 | TrainLoss=0.0457 | ValLoss=0.315936 | ValF1=0.4898
+[Client 17] Epoch 1/5 | TrainLoss=0.0151 | ValLoss=0.001056 | ValF1=1.0000
+[Client 17] Epoch 2/5 | TrainLoss=0.0010 | ValLoss=0.000439 | ValF1=1.0000
+[Client 17] Epoch 3/5 | TrainLoss=0.0008 | ValLoss=0.000615 | ValF1=1.0000
+[Client 17] Epoch 4/5 | TrainLoss=0.0008 | ValLoss=0.000206 | ValF1=1.0000
+[Client 17] Epoch 5/5 | TrainLoss=0.0007 | ValLoss=0.000202 | ValF1=1.0000
+[Client 7] Epoch 1/5 | TrainLoss=0.6798 | ValLoss=0.366131 | ValF1=0.8375
+[Client 7] Epoch 2/5 | TrainLoss=0.4190 | ValLoss=0.443165 | ValF1=0.7111
+[Client 7] Epoch 3/5 | TrainLoss=0.4087 | ValLoss=0.337760 | ValF1=0.8375
+[Client 7] Epoch 4/5 | TrainLoss=0.3814 | ValLoss=0.329900 | ValF1=0.8375
+[Client 7] Epoch 5/5 | TrainLoss=0.3692 | ValLoss=0.344969 | ValF1=0.8662
+[Client 3] Epoch 1/5 | TrainLoss=2.4064 | ValLoss=2.407177 | ValF1=0.0143
+[Client 3] Epoch 2/5 | TrainLoss=2.4062 | ValLoss=2.407111 | ValF1=0.0137
+[Client 3] Epoch 3/5 | TrainLoss=2.4061 | ValLoss=2.408836 | ValF1=0.0234
+[Client 3] Epoch 4/5 | TrainLoss=2.4061 | ValLoss=2.407050 | ValF1=0.0248
+[Client 3] Epoch 5/5 | TrainLoss=2.4060 | ValLoss=2.406263 | ValF1=0.0244
+[Client 5] Epoch 1/5 | TrainLoss=2.4390 | ValLoss=2.423310 | ValF1=0.0140
+[Client 5] Epoch 2/5 | TrainLoss=2.4156 | ValLoss=2.407701 | ValF1=0.0245
+[Client 5] Epoch 3/5 | TrainLoss=2.4129 | ValLoss=2.403639 | ValF1=0.0180
+[Client 5] Epoch 4/5 | TrainLoss=2.4124 | ValLoss=2.401242 | ValF1=0.0186
+[Client 5] Epoch 5/5 | TrainLoss=2.4118 | ValLoss=2.405134 | ValF1=0.0211
+[Client 18] Epoch 1/5 | TrainLoss=0.0127 | ValLoss=0.001297 | ValF1=1.0000
+[Client 18] Epoch 2/5 | TrainLoss=0.0007 | ValLoss=0.000577 | ValF1=1.0000
+[Client 18] Epoch 3/5 | TrainLoss=0.0004 | ValLoss=0.000363 | ValF1=1.0000
+[Client 18] Epoch 4/5 | TrainLoss=0.0002 | ValLoss=0.000280 | ValF1=1.0000
+[Client 18] Epoch 5/5 | TrainLoss=0.0002 | ValLoss=0.000205 | ValF1=1.0000
+[Client 6] Epoch 1/5 | TrainLoss=0.0145 | ValLoss=0.001137 | ValF1=1.0000
+[Client 6] Epoch 2/5 | TrainLoss=0.0007 | ValLoss=0.000516 | ValF1=1.0000
+[Client 6] Epoch 3/5 | TrainLoss=0.0003 | ValLoss=0.000314 | ValF1=1.0000
+[Client 6] Epoch 4/5 | TrainLoss=0.0002 | ValLoss=0.000222 | ValF1=1.0000
+[Client 6] Epoch 5/5 | TrainLoss=0.0002 | ValLoss=0.000171 | ValF1=1.0000
+[Client 2] Epoch 1/5 | TrainLoss=2.4695 | ValLoss=2.601120 | ValF1=0.0317
+[Client 2] Epoch 2/5 | TrainLoss=2.4550 | ValLoss=2.626682 | ValF1=0.0317
+[Client 2] Epoch 3/5 | TrainLoss=2.4400 | ValLoss=2.614886 | ValF1=0.0000
+[Client 2] Epoch 4/5 | TrainLoss=2.4259 | ValLoss=2.642792 | ValF1=0.0000
+[Client 2] Epoch 5/5 | TrainLoss=2.4131 | ValLoss=2.595989 | ValF1=0.0000
+Time: 2492.4530148506165
+
+-------------Round number: 12-------------
+
+Evaluate global model
+Train Loss
+	Client 16: Train loss: 3.53
+	Client 4: Train loss: 2.55
+	Client 1: Train loss: 2.51
+	Client 5: Train loss: 2.57
+	Client 0: Train loss: 2.5
+	Client 9: Train loss: 0.01
+	Client 10: Train loss: 3.56
+	Client 8: Train loss: 2.48
+	Client 13: Train loss: 3.25
+	Client 17: Train loss: 11.42
+	Client 11: Train loss: 11.87
+	Client 3: Train loss: 2.41
+	Client 6: Train loss: 2.6
+	Client 19: Train loss: 3.94
+	Client 15: Train loss: 0.01
+	Client 14: Train loss: 2.47
+	Client 7: Train loss: 4.24
+	Client 18: Train loss: 2.63
+	Client 2: Train loss: 2.46
+	Client 12: Train loss: 2.61
+Performance Metrics
+	Client 16: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 4: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 1: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 5: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 0: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 9: acc 1.0, precision: 1.0, recall: 0.92, f1: 0.95
+	Client 10: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 8: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 13: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 17: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 11: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 3: acc 0.02, precision: 0.01, recall: 0.33, f1: 0.01
+	Client 6: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 19: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 15: acc 1.0, precision: 0.99, recall: 1.0, f1: 0.99
+	Client 14: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 7: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 18: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 2: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 12: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+
+Algorithm:  lg_fedavg Dataset:  cic_ids Epoch:  12
+Overall Performance Metrics (Local)
+	train loss avg: 1.6404
+	test acc normal avg: 0.8307
+	test acc flipping avg: 0.0166
+Global Performance Metrics (Whole Test Set)
+	Global Acc avg: 0.3482
+	All Clients Global Acc: [0.7428, 0.0157, 0.0572, 0.017, 0.6076, 0.783, 0.7756, 0.0028, 0.142, 0.6593, 0.6713, 0.0157, 0.2628, 0.2456, 0.6587, 0.0028, 0.6461, 0.2044, 0.0157, 0.4375]
+	All Clients Global F1:  [0.0779, 0.0028, 0.0114, 0.0032, 0.0784, 0.1012, 0.0801, 0.0005, 0.0269, 0.076, 0.0767, 0.0029, 0.0405, 0.0414, 0.0847, 0.0005, 0.0783, 0.0334, 0.0028, 0.058]
+[Client 16] Epoch 1/5 | TrainLoss=0.3907 | ValLoss=0.022871 | ValF1=1.0000
+[Client 16] Epoch 2/5 | TrainLoss=0.0827 | ValLoss=0.010197 | ValF1=1.0000
+[Client 16] Epoch 3/5 | TrainLoss=0.0771 | ValLoss=0.009721 | ValF1=1.0000
+[Client 16] Epoch 4/5 | TrainLoss=0.0722 | ValLoss=0.008743 | ValF1=1.0000
+[Client 16] Epoch 5/5 | TrainLoss=0.0674 | ValLoss=0.006713 | ValF1=1.0000
+[Client 4] Epoch 1/5 | TrainLoss=2.5403 | ValLoss=2.496235 | ValF1=0.0135
+[Client 4] Epoch 2/5 | TrainLoss=2.5285 | ValLoss=2.484577 | ValF1=0.0135
+[Client 4] Epoch 3/5 | TrainLoss=2.5186 | ValLoss=2.476673 | ValF1=0.0135
+[Client 4] Epoch 4/5 | TrainLoss=2.5076 | ValLoss=2.470822 | ValF1=0.0135
+[Client 4] Epoch 5/5 | TrainLoss=2.4971 | ValLoss=2.462442 | ValF1=0.0135
+[Client 1] Epoch 1/5 | TrainLoss=2.5089 | ValLoss=2.486813 | ValF1=0.0169
+[Client 1] Epoch 2/5 | TrainLoss=2.4896 | ValLoss=2.447169 | ValF1=0.0169
+[Client 1] Epoch 3/5 | TrainLoss=2.4792 | ValLoss=2.451002 | ValF1=0.0195
+[Client 1] Epoch 4/5 | TrainLoss=2.4685 | ValLoss=2.393156 | ValF1=0.0722
+[Client 1] Epoch 5/5 | TrainLoss=2.4684 | ValLoss=2.396212 | ValF1=0.0512
+[Client 5] Epoch 1/5 | TrainLoss=2.4388 | ValLoss=2.412305 | ValF1=0.0150
+[Client 5] Epoch 2/5 | TrainLoss=2.4144 | ValLoss=2.402343 | ValF1=0.0166
+[Client 5] Epoch 3/5 | TrainLoss=2.4127 | ValLoss=2.405024 | ValF1=0.0172
+[Client 5] Epoch 4/5 | TrainLoss=2.4115 | ValLoss=2.408331 | ValF1=0.0165
+[Client 5] Epoch 5/5 | TrainLoss=2.4118 | ValLoss=2.405809 | ValF1=0.0165
+[Client 0] Epoch 1/5 | TrainLoss=2.4413 | ValLoss=2.434812 | ValF1=0.0209
+[Client 0] Epoch 2/5 | TrainLoss=2.4228 | ValLoss=2.435982 | ValF1=0.0108
+[Client 0] Epoch 3/5 | TrainLoss=2.4215 | ValLoss=2.430502 | ValF1=0.0188
+[Client 0] Epoch 4/5 | TrainLoss=2.4207 | ValLoss=2.443621 | ValF1=0.0174
+[Client 0] Epoch 5/5 | TrainLoss=2.4204 | ValLoss=2.434716 | ValF1=0.0256
+[Client 9] Epoch 1/5 | TrainLoss=0.0023 | ValLoss=0.000673 | ValF1=0.9974
+[Client 9] Epoch 2/5 | TrainLoss=0.0026 | ValLoss=0.000410 | ValF1=1.0000
+[Client 9] Epoch 3/5 | TrainLoss=0.0161 | ValLoss=0.017313 | ValF1=0.9364
+[Client 9] Epoch 4/5 | TrainLoss=0.0175 | ValLoss=0.017035 | ValF1=0.9431
+[Client 9] Epoch 5/5 | TrainLoss=0.0155 | ValLoss=0.015643 | ValF1=0.9357
+[Client 10] Epoch 1/5 | TrainLoss=0.3643 | ValLoss=0.315689 | ValF1=0.4898
+[Client 10] Epoch 2/5 | TrainLoss=0.0525 | ValLoss=0.317200 | ValF1=0.4898
+[Client 10] Epoch 3/5 | TrainLoss=0.0489 | ValLoss=0.317727 | ValF1=0.4898
+[Client 10] Epoch 4/5 | TrainLoss=0.0467 | ValLoss=0.312727 | ValF1=0.4898
+[Client 10] Epoch 5/5 | TrainLoss=0.0451 | ValLoss=0.305339 | ValF1=0.4898
+[Client 8] Epoch 1/5 | TrainLoss=2.2312 | ValLoss=1.968572 | ValF1=1.0000
+[Client 8] Epoch 2/5 | TrainLoss=1.7109 | ValLoss=1.377762 | ValF1=1.0000
+[Client 8] Epoch 3/5 | TrainLoss=0.9705 | ValLoss=0.542110 | ValF1=1.0000
+[Client 8] Epoch 4/5 | TrainLoss=0.3122 | ValLoss=0.154575 | ValF1=1.0000
+[Client 8] Epoch 5/5 | TrainLoss=0.1018 | ValLoss=0.064889 | ValF1=1.0000
+[Client 13] Epoch 1/5 | TrainLoss=0.7683 | ValLoss=0.520482 | ValF1=0.7421
+[Client 13] Epoch 2/5 | TrainLoss=0.5596 | ValLoss=0.473626 | ValF1=0.7421
+[Client 13] Epoch 3/5 | TrainLoss=0.5504 | ValLoss=0.581691 | ValF1=0.6991
+[Client 13] Epoch 4/5 | TrainLoss=0.5205 | ValLoss=0.448461 | ValF1=0.7421
+[Client 13] Epoch 5/5 | TrainLoss=0.5381 | ValLoss=0.521249 | ValF1=0.7421
+[Client 17] Epoch 1/5 | TrainLoss=0.0141 | ValLoss=0.001009 | ValF1=1.0000
+[Client 17] Epoch 2/5 | TrainLoss=0.0010 | ValLoss=0.000472 | ValF1=1.0000
+[Client 17] Epoch 3/5 | TrainLoss=0.0008 | ValLoss=0.000274 | ValF1=1.0000
+[Client 17] Epoch 4/5 | TrainLoss=0.0008 | ValLoss=0.000421 | ValF1=1.0000
+[Client 17] Epoch 5/5 | TrainLoss=0.0008 | ValLoss=0.000203 | ValF1=1.0000
+[Client 11] Epoch 1/5 | TrainLoss=0.0133 | ValLoss=0.000670 | ValF1=1.0000
+[Client 11] Epoch 2/5 | TrainLoss=0.0004 | ValLoss=0.000278 | ValF1=1.0000
+[Client 11] Epoch 3/5 | TrainLoss=0.0002 | ValLoss=0.000168 | ValF1=1.0000
+[Client 11] Epoch 4/5 | TrainLoss=0.0001 | ValLoss=0.000118 | ValF1=1.0000
+[Client 11] Epoch 5/5 | TrainLoss=0.0001 | ValLoss=0.000090 | ValF1=1.0000
+[Client 3] Epoch 1/5 | TrainLoss=2.4063 | ValLoss=2.407857 | ValF1=0.0235
+[Client 3] Epoch 2/5 | TrainLoss=2.4061 | ValLoss=2.408537 | ValF1=0.0295
+[Client 3] Epoch 3/5 | TrainLoss=2.4060 | ValLoss=2.407596 | ValF1=0.0226
+[Client 3] Epoch 4/5 | TrainLoss=2.4059 | ValLoss=2.406558 | ValF1=0.0135
+[Client 3] Epoch 5/5 | TrainLoss=2.4058 | ValLoss=2.406273 | ValF1=0.0322
+[Client 6] Epoch 1/5 | TrainLoss=0.0109 | ValLoss=0.001004 | ValF1=1.0000
+[Client 6] Epoch 2/5 | TrainLoss=0.0006 | ValLoss=0.000468 | ValF1=1.0000
+[Client 6] Epoch 3/5 | TrainLoss=0.0003 | ValLoss=0.000294 | ValF1=1.0000
+[Client 6] Epoch 4/5 | TrainLoss=0.0002 | ValLoss=0.000209 | ValF1=1.0000
+[Client 6] Epoch 5/5 | TrainLoss=0.0002 | ValLoss=0.000160 | ValF1=1.0000
+[Client 19] Epoch 1/5 | TrainLoss=0.6900 | ValLoss=0.435971 | ValF1=0.7484
+[Client 19] Epoch 2/5 | TrainLoss=0.4337 | ValLoss=0.443813 | ValF1=0.7484
+[Client 19] Epoch 3/5 | TrainLoss=0.4832 | ValLoss=0.423141 | ValF1=0.6267
+[Client 19] Epoch 4/5 | TrainLoss=0.4274 | ValLoss=0.392947 | ValF1=1.0000
+[Client 19] Epoch 5/5 | TrainLoss=0.4267 | ValLoss=0.377272 | ValF1=0.7484
+[Client 15] Epoch 1/5 | TrainLoss=0.0024 | ValLoss=0.004789 | ValF1=0.9869
+[Client 15] Epoch 2/5 | TrainLoss=0.0023 | ValLoss=0.001175 | ValF1=0.9948
+[Client 15] Epoch 3/5 | TrainLoss=0.0023 | ValLoss=0.001547 | ValF1=0.9922
+[Client 15] Epoch 4/5 | TrainLoss=0.0022 | ValLoss=0.001175 | ValF1=0.9935
+[Client 15] Epoch 5/5 | TrainLoss=0.0022 | ValLoss=0.000957 | ValF1=0.9936
+[Client 14] Epoch 1/5 | TrainLoss=2.2449 | ValLoss=1.993364 | ValF1=1.0000
+[Client 14] Epoch 2/5 | TrainLoss=1.7756 | ValLoss=1.478953 | ValF1=1.0000
+[Client 14] Epoch 3/5 | TrainLoss=1.1677 | ValLoss=0.712310 | ValF1=1.0000
+[Client 14] Epoch 4/5 | TrainLoss=0.5133 | ValLoss=0.227458 | ValF1=1.0000
+[Client 14] Epoch 5/5 | TrainLoss=0.2525 | ValLoss=0.097570 | ValF1=1.0000
+[Client 7] Epoch 1/5 | TrainLoss=0.6305 | ValLoss=0.342426 | ValF1=0.8375
+[Client 7] Epoch 2/5 | TrainLoss=0.4163 | ValLoss=0.313724 | ValF1=0.8375
+[Client 7] Epoch 3/5 | TrainLoss=0.3513 | ValLoss=0.334284 | ValF1=0.9479
+[Client 7] Epoch 4/5 | TrainLoss=0.3894 | ValLoss=0.292651 | ValF1=0.8375
+[Client 7] Epoch 5/5 | TrainLoss=0.3643 | ValLoss=0.282740 | ValF1=0.8375
+[Client 18] Epoch 1/5 | TrainLoss=0.0112 | ValLoss=0.001250 | ValF1=1.0000
+[Client 18] Epoch 2/5 | TrainLoss=0.0007 | ValLoss=0.000550 | ValF1=1.0000
+[Client 18] Epoch 3/5 | TrainLoss=0.0004 | ValLoss=0.000341 | ValF1=1.0000
+[Client 18] Epoch 4/5 | TrainLoss=0.0002 | ValLoss=0.000246 | ValF1=1.0000
+[Client 18] Epoch 5/5 | TrainLoss=0.0002 | ValLoss=0.000189 | ValF1=1.0000
+[Client 2] Epoch 1/5 | TrainLoss=2.4646 | ValLoss=2.585719 | ValF1=0.0317
+[Client 2] Epoch 2/5 | TrainLoss=2.4436 | ValLoss=2.642210 | ValF1=0.0000
+[Client 2] Epoch 3/5 | TrainLoss=2.4420 | ValLoss=2.593446 | ValF1=0.0000
+[Client 2] Epoch 4/5 | TrainLoss=2.4216 | ValLoss=2.613686 | ValF1=0.0000
+[Client 2] Epoch 5/5 | TrainLoss=2.4152 | ValLoss=2.624549 | ValF1=0.0000
+[Client 12] Epoch 1/5 | TrainLoss=0.0111 | ValLoss=0.001076 | ValF1=1.0000
+[Client 12] Epoch 2/5 | TrainLoss=0.0007 | ValLoss=0.000491 | ValF1=1.0000
+[Client 12] Epoch 3/5 | TrainLoss=0.0004 | ValLoss=0.000306 | ValF1=1.0000
+[Client 12] Epoch 4/5 | TrainLoss=0.0002 | ValLoss=0.000217 | ValF1=1.0000
+[Client 12] Epoch 5/5 | TrainLoss=0.0002 | ValLoss=0.000167 | ValF1=1.0000
+Time: 2487.0001244544983
+
+-------------Round number: 13-------------
+
+Evaluate global model
+Train Loss
+	Client 10: Train loss: 3.63
+	Client 16: Train loss: 3.56
+	Client 14: Train loss: 2.47
+	Client 15: Train loss: 0.0
+	Client 9: Train loss: 0.0
+	Client 19: Train loss: 4.0
+	Client 13: Train loss: 3.06
+	Client 11: Train loss: 10.33
+	Client 2: Train loss: 2.45
+	Client 5: Train loss: 2.55
+	Client 4: Train loss: 2.55
+	Client 8: Train loss: 2.48
+	Client 6: Train loss: 2.64
+	Client 17: Train loss: 10.03
+	Client 1: Train loss: 2.52
+	Client 3: Train loss: 2.41
+	Client 18: Train loss: 2.66
+	Client 7: Train loss: 4.08
+	Client 12: Train loss: 2.63
+	Client 0: Train loss: 2.48
+Performance Metrics
+	Client 10: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 16: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 14: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 15: acc 1.0, precision: 0.99, recall: 0.99, f1: 0.99
+	Client 9: acc 1.0, precision: 1.0, recall: 0.96, f1: 0.98
+	Client 19: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 13: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 11: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 2: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 5: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 4: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 8: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 6: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 17: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 1: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 3: acc 0.02, precision: 0.01, recall: 0.23, f1: 0.01
+	Client 18: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 7: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 12: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 0: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+
+Algorithm:  lg_fedavg Dataset:  cic_ids Epoch:  13
+Overall Performance Metrics (Local)
+	train loss avg: 1.5492
+	test acc normal avg: 0.8314
+	test acc flipping avg: 0.0153
+Global Performance Metrics (Whole Test Set)
+	Global Acc avg: 0.2852
+	All Clients Global Acc: [0.1353, 0.0041, 0.0028, 0.6641, 0.7835, 0.3295, 0.0957, 0.6532, 0.0157, 0.0178, 0.0157, 0.0028, 0.2446, 0.6568, 0.2894, 0.0149, 0.1984, 0.6467, 0.4249, 0.5084]
+	All Clients Global F1:  [0.0257, 0.0007, 0.0005, 0.0852, 0.1039, 0.0514, 0.019, 0.0755, 0.0028, 0.0033, 0.0028, 0.0005, 0.0383, 0.076, 0.0453, 0.0035, 0.0326, 0.0782, 0.0569, 0.0715]
+[Client 10] Epoch 1/5 | TrainLoss=0.3088 | ValLoss=0.324221 | ValF1=0.4898
+[Client 10] Epoch 2/5 | TrainLoss=0.0511 | ValLoss=0.329899 | ValF1=0.4898
+[Client 10] Epoch 3/5 | TrainLoss=0.0483 | ValLoss=0.325903 | ValF1=0.4898
+[Client 10] Epoch 4/5 | TrainLoss=0.0467 | ValLoss=0.315797 | ValF1=0.4898
+[Client 10] Epoch 5/5 | TrainLoss=0.0450 | ValLoss=0.304726 | ValF1=0.4898
+[Client 16] Epoch 1/5 | TrainLoss=0.3549 | ValLoss=0.018077 | ValF1=1.0000
+[Client 16] Epoch 2/5 | TrainLoss=0.0820 | ValLoss=0.012250 | ValF1=1.0000
+[Client 16] Epoch 3/5 | TrainLoss=0.0755 | ValLoss=0.008893 | ValF1=1.0000
+[Client 16] Epoch 4/5 | TrainLoss=0.0709 | ValLoss=0.008492 | ValF1=1.0000
+[Client 16] Epoch 5/5 | TrainLoss=0.0666 | ValLoss=0.008268 | ValF1=1.0000
+[Client 14] Epoch 1/5 | TrainLoss=2.2515 | ValLoss=2.004504 | ValF1=1.0000
+[Client 14] Epoch 2/5 | TrainLoss=1.7904 | ValLoss=1.498236 | ValF1=1.0000
+[Client 14] Epoch 3/5 | TrainLoss=1.1856 | ValLoss=0.727888 | ValF1=1.0000
+[Client 14] Epoch 4/5 | TrainLoss=0.5217 | ValLoss=0.234493 | ValF1=1.0000
+[Client 14] Epoch 5/5 | TrainLoss=0.2512 | ValLoss=0.092761 | ValF1=1.0000
+[Client 15] Epoch 1/5 | TrainLoss=0.0023 | ValLoss=0.000882 | ValF1=0.9961
+[Client 15] Epoch 2/5 | TrainLoss=0.0023 | ValLoss=0.001156 | ValF1=0.9935
+[Client 15] Epoch 3/5 | TrainLoss=0.0022 | ValLoss=0.001108 | ValF1=0.9948
+[Client 15] Epoch 4/5 | TrainLoss=0.0019 | ValLoss=0.001039 | ValF1=0.9948
+[Client 15] Epoch 5/5 | TrainLoss=0.0020 | ValLoss=0.000972 | ValF1=0.9948
+[Client 9] Epoch 1/5 | TrainLoss=0.0020 | ValLoss=0.000402 | ValF1=0.9987
+[Client 9] Epoch 2/5 | TrainLoss=0.0028 | ValLoss=0.000595 | ValF1=0.9987
+[Client 9] Epoch 3/5 | TrainLoss=0.0017 | ValLoss=0.000370 | ValF1=1.0000
+[Client 9] Epoch 4/5 | TrainLoss=0.0015 | ValLoss=0.000398 | ValF1=0.9987
+[Client 9] Epoch 5/5 | TrainLoss=0.0021 | ValLoss=0.040166 | ValF1=0.8727
+[Client 19] Epoch 1/5 | TrainLoss=0.6704 | ValLoss=0.413954 | ValF1=0.8107
+[Client 19] Epoch 2/5 | TrainLoss=0.4111 | ValLoss=0.380948 | ValF1=0.9488
+[Client 19] Epoch 3/5 | TrainLoss=0.4079 | ValLoss=0.356273 | ValF1=0.7484
+[Client 19] Epoch 4/5 | TrainLoss=0.4027 | ValLoss=0.345972 | ValF1=0.7484
+[Client 19] Epoch 5/5 | TrainLoss=0.3821 | ValLoss=0.328044 | ValF1=1.0000
+[Client 13] Epoch 1/5 | TrainLoss=0.7946 | ValLoss=0.492719 | ValF1=0.7421
+[Client 13] Epoch 2/5 | TrainLoss=0.5711 | ValLoss=0.608042 | ValF1=0.6991
+[Client 13] Epoch 3/5 | TrainLoss=0.5449 | ValLoss=0.471317 | ValF1=0.6991
+[Client 13] Epoch 4/5 | TrainLoss=0.5296 | ValLoss=0.529404 | ValF1=0.6991
+[Client 13] Epoch 5/5 | TrainLoss=0.5369 | ValLoss=0.524638 | ValF1=0.7421
+[Client 11] Epoch 1/5 | TrainLoss=0.0115 | ValLoss=0.000621 | ValF1=1.0000
+[Client 11] Epoch 2/5 | TrainLoss=0.0004 | ValLoss=0.000261 | ValF1=1.0000
+[Client 11] Epoch 3/5 | TrainLoss=0.0002 | ValLoss=0.000158 | ValF1=1.0000
+[Client 11] Epoch 4/5 | TrainLoss=0.0001 | ValLoss=0.000111 | ValF1=1.0000
+[Client 11] Epoch 5/5 | TrainLoss=0.0001 | ValLoss=0.000085 | ValF1=1.0000
+[Client 2] Epoch 1/5 | TrainLoss=2.4519 | ValLoss=2.580855 | ValF1=0.0317
+[Client 2] Epoch 2/5 | TrainLoss=2.4428 | ValLoss=2.587936 | ValF1=0.0000
+[Client 2] Epoch 3/5 | TrainLoss=2.4285 | ValLoss=2.637010 | ValF1=0.0000
+[Client 2] Epoch 4/5 | TrainLoss=2.4221 | ValLoss=2.649511 | ValF1=0.0000
+[Client 2] Epoch 5/5 | TrainLoss=2.4073 | ValLoss=2.713182 | ValF1=0.0000
+[Client 5] Epoch 1/5 | TrainLoss=2.4374 | ValLoss=2.412185 | ValF1=0.0244
+[Client 5] Epoch 2/5 | TrainLoss=2.4152 | ValLoss=2.407171 | ValF1=0.0150
+[Client 5] Epoch 3/5 | TrainLoss=2.4114 | ValLoss=2.404299 | ValF1=0.0150
+[Client 5] Epoch 4/5 | TrainLoss=2.4121 | ValLoss=2.405757 | ValF1=0.0285
+[Client 5] Epoch 5/5 | TrainLoss=2.4125 | ValLoss=2.399877 | ValF1=0.0251
+[Client 4] Epoch 1/5 | TrainLoss=2.5369 | ValLoss=2.494833 | ValF1=0.0135
+[Client 4] Epoch 2/5 | TrainLoss=2.5326 | ValLoss=2.491532 | ValF1=0.0135
+[Client 4] Epoch 3/5 | TrainLoss=2.5231 | ValLoss=2.478353 | ValF1=0.0135
+[Client 4] Epoch 4/5 | TrainLoss=2.5121 | ValLoss=2.471401 | ValF1=0.0135
+[Client 4] Epoch 5/5 | TrainLoss=2.5034 | ValLoss=2.465040 | ValF1=0.0135
+[Client 8] Epoch 1/5 | TrainLoss=2.2381 | ValLoss=1.979234 | ValF1=1.0000
+[Client 8] Epoch 2/5 | TrainLoss=1.7217 | ValLoss=1.376635 | ValF1=1.0000
+[Client 8] Epoch 3/5 | TrainLoss=0.9666 | ValLoss=0.534802 | ValF1=1.0000
+[Client 8] Epoch 4/5 | TrainLoss=0.3057 | ValLoss=0.150211 | ValF1=1.0000
+[Client 8] Epoch 5/5 | TrainLoss=0.0988 | ValLoss=0.062970 | ValF1=1.0000
+[Client 6] Epoch 1/5 | TrainLoss=0.0081 | ValLoss=0.000957 | ValF1=1.0000
+[Client 6] Epoch 2/5 | TrainLoss=0.0006 | ValLoss=0.000427 | ValF1=1.0000
+[Client 6] Epoch 3/5 | TrainLoss=0.0003 | ValLoss=0.000271 | ValF1=1.0000
+[Client 6] Epoch 4/5 | TrainLoss=0.0002 | ValLoss=0.000197 | ValF1=1.0000
+[Client 6] Epoch 5/5 | TrainLoss=0.0002 | ValLoss=0.000152 | ValF1=1.0000
+[Client 17] Epoch 1/5 | TrainLoss=0.0131 | ValLoss=0.000910 | ValF1=1.0000
+[Client 17] Epoch 2/5 | TrainLoss=0.0010 | ValLoss=0.000392 | ValF1=1.0000
+[Client 17] Epoch 3/5 | TrainLoss=0.0008 | ValLoss=0.000276 | ValF1=1.0000
+[Client 17] Epoch 4/5 | TrainLoss=0.0008 | ValLoss=0.000339 | ValF1=1.0000
+[Client 17] Epoch 5/5 | TrainLoss=0.0007 | ValLoss=0.000149 | ValF1=1.0000
+[Client 1] Epoch 1/5 | TrainLoss=2.5081 | ValLoss=2.466984 | ValF1=0.0169
+[Client 1] Epoch 2/5 | TrainLoss=2.4857 | ValLoss=2.429014 | ValF1=0.0771
+[Client 1] Epoch 3/5 | TrainLoss=2.4808 | ValLoss=2.436742 | ValF1=0.0403
+[Client 1] Epoch 4/5 | TrainLoss=2.4746 | ValLoss=2.420152 | ValF1=0.0875
+[Client 1] Epoch 5/5 | TrainLoss=2.4670 | ValLoss=2.412459 | ValF1=0.0730
+[Client 3] Epoch 1/5 | TrainLoss=2.4061 | ValLoss=2.405965 | ValF1=0.0144
+[Client 3] Epoch 2/5 | TrainLoss=2.4058 | ValLoss=2.405579 | ValF1=0.0240
+[Client 3] Epoch 3/5 | TrainLoss=2.4057 | ValLoss=2.406817 | ValF1=0.0232
+[Client 3] Epoch 4/5 | TrainLoss=2.4055 | ValLoss=2.408634 | ValF1=0.0135
+[Client 3] Epoch 5/5 | TrainLoss=2.4056 | ValLoss=2.406392 | ValF1=0.0232
+[Client 18] Epoch 1/5 | TrainLoss=0.0096 | ValLoss=0.001044 | ValF1=1.0000
+[Client 18] Epoch 2/5 | TrainLoss=0.0006 | ValLoss=0.000490 | ValF1=1.0000
+[Client 18] Epoch 3/5 | TrainLoss=0.0003 | ValLoss=0.000319 | ValF1=1.0000
+[Client 18] Epoch 4/5 | TrainLoss=0.0002 | ValLoss=0.000226 | ValF1=1.0000
+[Client 18] Epoch 5/5 | TrainLoss=0.0002 | ValLoss=0.000179 | ValF1=1.0000
+[Client 7] Epoch 1/5 | TrainLoss=0.6092 | ValLoss=0.353802 | ValF1=0.8968
+[Client 7] Epoch 2/5 | TrainLoss=0.3612 | ValLoss=0.568948 | ValF1=0.7111
+[Client 7] Epoch 3/5 | TrainLoss=0.3707 | ValLoss=0.282338 | ValF1=0.8375
+[Client 7] Epoch 4/5 | TrainLoss=0.3394 | ValLoss=0.411890 | ValF1=0.7111
+[Client 7] Epoch 5/5 | TrainLoss=0.3254 | ValLoss=0.271341 | ValF1=0.9479
+[Client 12] Epoch 1/5 | TrainLoss=0.0097 | ValLoss=0.001000 | ValF1=1.0000
+[Client 12] Epoch 2/5 | TrainLoss=0.0006 | ValLoss=0.000465 | ValF1=1.0000
+[Client 12] Epoch 3/5 | TrainLoss=0.0003 | ValLoss=0.000282 | ValF1=1.0000
+[Client 12] Epoch 4/5 | TrainLoss=0.0002 | ValLoss=0.000205 | ValF1=1.0000
+[Client 12] Epoch 5/5 | TrainLoss=0.0002 | ValLoss=0.000159 | ValF1=1.0000
+[Client 0] Epoch 1/5 | TrainLoss=2.4387 | ValLoss=2.437365 | ValF1=0.0227
+[Client 0] Epoch 2/5 | TrainLoss=2.4231 | ValLoss=2.426077 | ValF1=0.0257
+[Client 0] Epoch 3/5 | TrainLoss=2.4222 | ValLoss=2.448761 | ValF1=0.0191
+[Client 0] Epoch 4/5 | TrainLoss=2.4215 | ValLoss=2.441317 | ValF1=0.0189
+[Client 0] Epoch 5/5 | TrainLoss=2.4197 | ValLoss=2.435642 | ValF1=0.0282
+Time: 2482.1113064289093
+
+-------------Round number: 14-------------
+
+Evaluate global model
+Train Loss
+	Client 2: Train loss: 2.45
+	Client 1: Train loss: 2.51
+	Client 10: Train loss: 3.79
+	Client 19: Train loss: 4.12
+	Client 8: Train loss: 2.44
+	Client 9: Train loss: 0.0
+	Client 7: Train loss: 4.1
+	Client 12: Train loss: 2.77
+	Client 15: Train loss: 0.0
+	Client 17: Train loss: 9.09
+	Client 14: Train loss: 2.44
+	Client 4: Train loss: 2.55
+	Client 16: Train loss: 3.69
+	Client 18: Train loss: 2.83
+	Client 0: Train loss: 2.48
+	Client 3: Train loss: 2.41
+	Client 5: Train loss: 2.54
+	Client 6: Train loss: 2.8
+	Client 11: Train loss: 9.58
+	Client 13: Train loss: 3.03
+Performance Metrics
+	Client 2: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 1: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 10: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 19: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 8: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 9: acc 1.0, precision: 1.0, recall: 0.95, f1: 0.97
+	Client 7: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 12: acc 0.0, precision: 0.0, recall: 0.01, f1: 0.0
+	Client 15: acc 1.0, precision: 0.99, recall: 0.99, f1: 0.99
+	Client 17: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 14: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 4: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 16: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 18: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 0: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 3: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 5: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 6: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 11: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 13: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+
+Algorithm:  lg_fedavg Dataset:  cic_ids Epoch:  14
+Overall Performance Metrics (Local)
+	train loss avg: 1.5066
+	test acc normal avg: 0.8313
+	test acc flipping avg: 0.0002
+Global Performance Metrics (Whole Test Set)
+	Global Acc avg: 0.2651
+	All Clients Global Acc: [0.0157, 0.0191, 0.0039, 0.4417, 0.0028, 0.7832, 0.6651, 0.3961, 0.6622, 0.653, 0.0028, 0.0157, 0.0039, 0.1904, 0.5236, 0.0043, 0.0491, 0.2263, 0.5491, 0.0933]
+	All Clients Global F1:  [0.003, 0.0063, 0.0007, 0.0612, 0.0005, 0.103, 0.079, 0.0543, 0.085, 0.0758, 0.0005, 0.0028, 0.0007, 0.0315, 0.0714, 0.0013, 0.01, 0.0361, 0.0678, 0.0185]
+[Client 2] Epoch 1/5 | TrainLoss=2.4499 | ValLoss=2.568233 | ValF1=0.0000
+[Client 2] Epoch 2/5 | TrainLoss=2.4387 | ValLoss=2.623631 | ValF1=0.0000
+[Client 2] Epoch 3/5 | TrainLoss=2.4299 | ValLoss=2.629760 | ValF1=0.0000
+[Client 2] Epoch 4/5 | TrainLoss=2.4173 | ValLoss=2.664711 | ValF1=0.0000
+[Client 2] Epoch 5/5 | TrainLoss=2.4193 | ValLoss=2.693694 | ValF1=0.0000
+[Client 1] Epoch 1/5 | TrainLoss=2.5075 | ValLoss=2.493754 | ValF1=0.0456
+[Client 1] Epoch 2/5 | TrainLoss=2.4858 | ValLoss=2.467146 | ValF1=0.0548
+[Client 1] Epoch 3/5 | TrainLoss=2.4757 | ValLoss=2.468494 | ValF1=0.0548
+[Client 1] Epoch 4/5 | TrainLoss=2.4714 | ValLoss=2.480083 | ValF1=0.0482
+[Client 1] Epoch 5/5 | TrainLoss=2.4673 | ValLoss=2.441304 | ValF1=0.0601
+[Client 10] Epoch 1/5 | TrainLoss=0.2824 | ValLoss=0.324776 | ValF1=0.4898
+[Client 10] Epoch 2/5 | TrainLoss=0.0509 | ValLoss=0.326366 | ValF1=0.4898
+[Client 10] Epoch 3/5 | TrainLoss=0.0475 | ValLoss=0.323784 | ValF1=0.4898
+[Client 10] Epoch 4/5 | TrainLoss=0.0461 | ValLoss=0.310506 | ValF1=0.4898
+[Client 10] Epoch 5/5 | TrainLoss=0.0443 | ValLoss=0.299352 | ValF1=0.4898
+[Client 19] Epoch 1/5 | TrainLoss=0.6393 | ValLoss=0.433197 | ValF1=0.7484
+[Client 19] Epoch 2/5 | TrainLoss=0.3589 | ValLoss=0.350983 | ValF1=0.6267
+[Client 19] Epoch 3/5 | TrainLoss=0.3334 | ValLoss=0.274986 | ValF1=1.0000
+[Client 19] Epoch 4/5 | TrainLoss=0.2919 | ValLoss=0.212331 | ValF1=1.0000
+[Client 19] Epoch 5/5 | TrainLoss=0.2447 | ValLoss=0.151701 | ValF1=1.0000
+[Client 8] Epoch 1/5 | TrainLoss=2.2014 | ValLoss=1.938426 | ValF1=1.0000
+[Client 8] Epoch 2/5 | TrainLoss=1.6592 | ValLoss=1.273598 | ValF1=1.0000
+[Client 8] Epoch 3/5 | TrainLoss=0.8525 | ValLoss=0.436745 | ValF1=1.0000
+[Client 8] Epoch 4/5 | TrainLoss=0.2480 | ValLoss=0.124523 | ValF1=1.0000
+[Client 8] Epoch 5/5 | TrainLoss=0.0838 | ValLoss=0.055005 | ValF1=1.0000
+[Client 9] Epoch 1/5 | TrainLoss=0.0026 | ValLoss=0.001916 | ValF1=0.9907
+[Client 9] Epoch 2/5 | TrainLoss=0.0028 | ValLoss=0.006127 | ValF1=0.9786
+[Client 9] Epoch 3/5 | TrainLoss=0.0017 | ValLoss=0.000366 | ValF1=1.0000
+[Client 9] Epoch 4/5 | TrainLoss=0.0017 | ValLoss=0.000344 | ValF1=1.0000
+[Client 9] Epoch 5/5 | TrainLoss=0.0021 | ValLoss=0.000465 | ValF1=0.9987
+[Client 7] Epoch 1/5 | TrainLoss=0.6279 | ValLoss=0.277975 | ValF1=0.8375
+[Client 7] Epoch 2/5 | TrainLoss=0.3315 | ValLoss=0.388333 | ValF1=0.7111
+[Client 7] Epoch 3/5 | TrainLoss=0.2906 | ValLoss=0.217192 | ValF1=0.8375
+[Client 7] Epoch 4/5 | TrainLoss=0.2660 | ValLoss=0.190449 | ValF1=0.9212
+[Client 7] Epoch 5/5 | TrainLoss=0.2838 | ValLoss=0.191067 | ValF1=0.8628
+[Client 12] Epoch 1/5 | TrainLoss=0.0088 | ValLoss=0.000917 | ValF1=1.0000
+[Client 12] Epoch 2/5 | TrainLoss=0.0006 | ValLoss=0.000441 | ValF1=1.0000
+[Client 12] Epoch 3/5 | TrainLoss=0.0003 | ValLoss=0.000269 | ValF1=1.0000
+[Client 12] Epoch 4/5 | TrainLoss=0.0002 | ValLoss=0.000193 | ValF1=1.0000
+[Client 12] Epoch 5/5 | TrainLoss=0.0002 | ValLoss=0.000148 | ValF1=1.0000
+[Client 15] Epoch 1/5 | TrainLoss=0.0022 | ValLoss=0.001040 | ValF1=0.9936
+[Client 15] Epoch 2/5 | TrainLoss=0.0020 | ValLoss=0.001093 | ValF1=0.9948
+[Client 15] Epoch 3/5 | TrainLoss=0.0021 | ValLoss=0.000995 | ValF1=0.9961
+[Client 15] Epoch 4/5 | TrainLoss=0.0020 | ValLoss=0.001002 | ValF1=0.9949
+[Client 15] Epoch 5/5 | TrainLoss=0.0021 | ValLoss=0.001709 | ValF1=0.9910
+[Client 17] Epoch 1/5 | TrainLoss=0.0119 | ValLoss=0.000833 | ValF1=1.0000
+[Client 17] Epoch 2/5 | TrainLoss=0.0009 | ValLoss=0.000368 | ValF1=1.0000
+[Client 17] Epoch 3/5 | TrainLoss=0.0008 | ValLoss=0.000234 | ValF1=1.0000
+[Client 17] Epoch 4/5 | TrainLoss=0.0007 | ValLoss=0.000388 | ValF1=1.0000
+[Client 17] Epoch 5/5 | TrainLoss=0.0007 | ValLoss=0.000140 | ValF1=1.0000
+[Client 14] Epoch 1/5 | TrainLoss=2.2167 | ValLoss=1.966327 | ValF1=1.0000
+[Client 14] Epoch 2/5 | TrainLoss=1.7447 | ValLoss=1.419434 | ValF1=1.0000
+[Client 14] Epoch 3/5 | TrainLoss=1.0754 | ValLoss=0.608948 | ValF1=1.0000
+[Client 14] Epoch 4/5 | TrainLoss=0.4467 | ValLoss=0.190949 | ValF1=1.0000
+[Client 14] Epoch 5/5 | TrainLoss=0.2350 | ValLoss=0.085255 | ValF1=1.0000
+[Client 4] Epoch 1/5 | TrainLoss=2.5450 | ValLoss=2.493794 | ValF1=0.0135
+[Client 4] Epoch 2/5 | TrainLoss=2.5329 | ValLoss=2.487078 | ValF1=0.0135
+[Client 4] Epoch 3/5 | TrainLoss=2.5232 | ValLoss=2.478451 | ValF1=0.0135
+[Client 4] Epoch 4/5 | TrainLoss=2.5122 | ValLoss=2.470659 | ValF1=0.0135
+[Client 4] Epoch 5/5 | TrainLoss=2.5033 | ValLoss=2.464635 | ValF1=0.0135
+[Client 16] Epoch 1/5 | TrainLoss=0.3258 | ValLoss=0.018570 | ValF1=1.0000
+[Client 16] Epoch 2/5 | TrainLoss=0.0802 | ValLoss=0.009623 | ValF1=1.0000
+[Client 16] Epoch 3/5 | TrainLoss=0.0740 | ValLoss=0.008009 | ValF1=1.0000
+[Client 16] Epoch 4/5 | TrainLoss=0.0691 | ValLoss=0.008828 | ValF1=1.0000
+[Client 16] Epoch 5/5 | TrainLoss=0.0645 | ValLoss=0.007715 | ValF1=1.0000
+[Client 18] Epoch 1/5 | TrainLoss=0.0097 | ValLoss=0.001030 | ValF1=1.0000
+[Client 18] Epoch 2/5 | TrainLoss=0.0006 | ValLoss=0.000480 | ValF1=1.0000
+[Client 18] Epoch 3/5 | TrainLoss=0.0003 | ValLoss=0.000291 | ValF1=1.0000
+[Client 18] Epoch 4/5 | TrainLoss=0.0002 | ValLoss=0.000215 | ValF1=1.0000
+[Client 18] Epoch 5/5 | TrainLoss=0.0002 | ValLoss=0.000166 | ValF1=1.0000
+[Client 0] Epoch 1/5 | TrainLoss=2.4377 | ValLoss=2.432966 | ValF1=0.0192
+[Client 0] Epoch 2/5 | TrainLoss=2.4235 | ValLoss=2.444157 | ValF1=0.0234
+[Client 0] Epoch 3/5 | TrainLoss=2.4216 | ValLoss=2.437270 | ValF1=0.0180
+[Client 0] Epoch 4/5 | TrainLoss=2.4197 | ValLoss=2.433251 | ValF1=0.0245
+[Client 0] Epoch 5/5 | TrainLoss=2.4205 | ValLoss=2.431813 | ValF1=0.0184
+[Client 3] Epoch 1/5 | TrainLoss=2.4058 | ValLoss=2.407701 | ValF1=0.0313
+[Client 3] Epoch 2/5 | TrainLoss=2.4056 | ValLoss=2.406716 | ValF1=0.0241
+[Client 3] Epoch 3/5 | TrainLoss=2.4055 | ValLoss=2.407281 | ValF1=0.0132
+[Client 3] Epoch 4/5 | TrainLoss=2.4057 | ValLoss=2.407140 | ValF1=0.0132
+[Client 3] Epoch 5/5 | TrainLoss=2.4055 | ValLoss=2.406943 | ValF1=0.0297
+[Client 5] Epoch 1/5 | TrainLoss=2.4358 | ValLoss=2.409087 | ValF1=0.0216
+[Client 5] Epoch 2/5 | TrainLoss=2.4152 | ValLoss=2.403684 | ValF1=0.0218
+[Client 5] Epoch 3/5 | TrainLoss=2.4130 | ValLoss=2.405600 | ValF1=0.0150
+[Client 5] Epoch 4/5 | TrainLoss=2.4125 | ValLoss=2.400831 | ValF1=0.0233
+[Client 5] Epoch 5/5 | TrainLoss=2.4118 | ValLoss=2.404404 | ValF1=0.0185
+[Client 6] Epoch 1/5 | TrainLoss=0.0129 | ValLoss=0.000777 | ValF1=1.0000
+[Client 6] Epoch 2/5 | TrainLoss=0.0005 | ValLoss=0.000366 | ValF1=1.0000
+[Client 6] Epoch 3/5 | TrainLoss=0.0003 | ValLoss=0.000237 | ValF1=1.0000
+[Client 6] Epoch 4/5 | TrainLoss=0.0002 | ValLoss=0.000174 | ValF1=1.0000
+[Client 6] Epoch 5/5 | TrainLoss=0.0001 | ValLoss=0.000138 | ValF1=1.0000
+[Client 11] Epoch 1/5 | TrainLoss=0.0109 | ValLoss=0.000581 | ValF1=1.0000
+[Client 11] Epoch 2/5 | TrainLoss=0.0004 | ValLoss=0.000246 | ValF1=1.0000
+[Client 11] Epoch 3/5 | TrainLoss=0.0002 | ValLoss=0.000151 | ValF1=1.0000
+[Client 11] Epoch 4/5 | TrainLoss=0.0001 | ValLoss=0.000106 | ValF1=1.0000
+[Client 11] Epoch 5/5 | TrainLoss=0.0001 | ValLoss=0.000081 | ValF1=1.0000
+[Client 13] Epoch 1/5 | TrainLoss=0.7507 | ValLoss=0.476697 | ValF1=0.7421
+[Client 13] Epoch 2/5 | TrainLoss=0.5898 | ValLoss=0.601944 | ValF1=0.6991
+[Client 13] Epoch 3/5 | TrainLoss=0.5541 | ValLoss=0.465358 | ValF1=0.7421
+[Client 13] Epoch 4/5 | TrainLoss=0.5598 | ValLoss=0.509390 | ValF1=0.7421
+[Client 13] Epoch 5/5 | TrainLoss=0.5306 | ValLoss=0.433085 | ValF1=0.7421
+Time: 2474.0151817798615
+
+-------------Round number: 15-------------
+
+Evaluate global model
+Train Loss
+	Client 10: Train loss: 3.91
+	Client 11: Train loss: 9.1
+	Client 2: Train loss: 2.44
+	Client 13: Train loss: 3.06
+	Client 9: Train loss: 0.0
+	Client 17: Train loss: 8.6
+	Client 15: Train loss: 0.0
+	Client 18: Train loss: 2.81
+	Client 19: Train loss: 4.19
+	Client 3: Train loss: 2.41
+	Client 7: Train loss: 4.17
+	Client 1: Train loss: 2.5
+	Client 5: Train loss: 2.53
+	Client 0: Train loss: 2.48
+	Client 14: Train loss: 2.45
+	Client 4: Train loss: 2.55
+	Client 12: Train loss: 2.78
+	Client 6: Train loss: 2.8
+	Client 16: Train loss: 3.8
+	Client 8: Train loss: 2.45
+Performance Metrics
+	Client 10: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 11: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 2: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 13: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 9: acc 1.0, precision: 1.0, recall: 0.97, f1: 0.98
+	Client 17: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 15: acc 1.0, precision: 1.0, recall: 0.99, f1: 0.99
+	Client 18: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 19: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 3: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 7: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 1: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 5: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 0: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 14: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 4: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 12: acc 0.0, precision: 0.0, recall: 0.01, f1: 0.0
+	Client 6: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 16: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 8: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+
+Algorithm:  lg_fedavg Dataset:  cic_ids Epoch:  15
+Overall Performance Metrics (Local)
+	train loss avg: 1.4770
+	test acc normal avg: 0.8315
+	test acc flipping avg: 0.0002
+Global Performance Metrics (Whole Test Set)
+	Global Acc avg: 0.2608
+	All Clients Global Acc: [0.0039, 0.4655, 0.0156, 0.0926, 0.7853, 0.6498, 0.6663, 0.1752, 0.4327, 0.0037, 0.6916, 0.01, 0.0452, 0.5613, 0.0028, 0.0157, 0.3745, 0.217, 0.0039, 0.0028]
+	All Clients Global F1:  [0.0007, 0.061, 0.0033, 0.0184, 0.1047, 0.0755, 0.0855, 0.0295, 0.0599, 0.0014, 0.08, 0.0021, 0.0092, 0.0743, 0.0005, 0.0028, 0.0525, 0.0349, 0.0007, 0.0005]
+[Client 10] Epoch 1/5 | TrainLoss=0.2667 | ValLoss=0.313843 | ValF1=0.4898
+[Client 10] Epoch 2/5 | TrainLoss=0.0519 | ValLoss=0.313524 | ValF1=0.4898
+[Client 10] Epoch 3/5 | TrainLoss=0.0472 | ValLoss=0.315137 | ValF1=0.4898
+[Client 10] Epoch 4/5 | TrainLoss=0.0454 | ValLoss=0.302013 | ValF1=0.4898
+[Client 10] Epoch 5/5 | TrainLoss=0.0433 | ValLoss=0.285905 | ValF1=0.4898
+[Client 11] Epoch 1/5 | TrainLoss=0.0102 | ValLoss=0.000543 | ValF1=1.0000
+[Client 11] Epoch 2/5 | TrainLoss=0.0004 | ValLoss=0.000234 | ValF1=1.0000
+[Client 11] Epoch 3/5 | TrainLoss=0.0002 | ValLoss=0.000144 | ValF1=1.0000
+[Client 11] Epoch 4/5 | TrainLoss=0.0001 | ValLoss=0.000102 | ValF1=1.0000
+[Client 11] Epoch 5/5 | TrainLoss=0.0001 | ValLoss=0.000078 | ValF1=1.0000
+[Client 2] Epoch 1/5 | TrainLoss=2.4510 | ValLoss=2.612628 | ValF1=0.0000
+[Client 2] Epoch 2/5 | TrainLoss=2.4389 | ValLoss=2.635702 | ValF1=0.0000
+[Client 2] Epoch 3/5 | TrainLoss=2.4250 | ValLoss=2.588758 | ValF1=0.0000
+[Client 2] Epoch 4/5 | TrainLoss=2.4164 | ValLoss=2.675970 | ValF1=0.0000
+[Client 2] Epoch 5/5 | TrainLoss=2.4050 | ValLoss=2.742796 | ValF1=0.0000
+[Client 13] Epoch 1/5 | TrainLoss=0.7088 | ValLoss=0.627192 | ValF1=0.7421
+[Client 13] Epoch 2/5 | TrainLoss=0.5207 | ValLoss=1.109582 | ValF1=0.3036
+[Client 13] Epoch 3/5 | TrainLoss=0.5568 | ValLoss=0.460878 | ValF1=0.7421
+[Client 13] Epoch 4/5 | TrainLoss=0.5409 | ValLoss=0.438895 | ValF1=0.7947
+[Client 13] Epoch 5/5 | TrainLoss=0.5269 | ValLoss=0.726307 | ValF1=0.6991
+[Client 9] Epoch 1/5 | TrainLoss=0.0020 | ValLoss=0.000371 | ValF1=1.0000
+[Client 9] Epoch 2/5 | TrainLoss=0.0014 | ValLoss=0.000304 | ValF1=1.0000
+[Client 9] Epoch 3/5 | TrainLoss=0.0022 | ValLoss=0.000342 | ValF1=1.0000
+[Client 9] Epoch 4/5 | TrainLoss=0.0019 | ValLoss=0.000443 | ValF1=0.9987
+[Client 9] Epoch 5/5 | TrainLoss=0.0018 | ValLoss=0.000287 | ValF1=1.0000
+[Client 17] Epoch 1/5 | TrainLoss=0.0106 | ValLoss=0.000741 | ValF1=1.0000
+[Client 17] Epoch 2/5 | TrainLoss=0.0009 | ValLoss=0.000335 | ValF1=1.0000
+[Client 17] Epoch 3/5 | TrainLoss=0.0008 | ValLoss=0.000225 | ValF1=1.0000
+[Client 17] Epoch 4/5 | TrainLoss=0.0007 | ValLoss=0.000172 | ValF1=1.0000
+[Client 17] Epoch 5/5 | TrainLoss=0.0007 | ValLoss=0.000147 | ValF1=1.0000
+[Client 15] Epoch 1/5 | TrainLoss=0.0021 | ValLoss=0.000989 | ValF1=0.9948
+[Client 15] Epoch 2/5 | TrainLoss=0.0019 | ValLoss=0.000834 | ValF1=0.9961
+[Client 15] Epoch 3/5 | TrainLoss=0.0020 | ValLoss=0.000793 | ValF1=0.9949
+[Client 15] Epoch 4/5 | TrainLoss=0.0021 | ValLoss=0.000822 | ValF1=0.9974
+[Client 15] Epoch 5/5 | TrainLoss=0.0020 | ValLoss=0.001303 | ValF1=0.9948
+[Client 18] Epoch 1/5 | TrainLoss=0.0116 | ValLoss=0.000913 | ValF1=1.0000
+[Client 18] Epoch 2/5 | TrainLoss=0.0005 | ValLoss=0.000418 | ValF1=1.0000
+[Client 18] Epoch 3/5 | TrainLoss=0.0003 | ValLoss=0.000264 | ValF1=1.0000
+[Client 18] Epoch 4/5 | TrainLoss=0.0002 | ValLoss=0.000193 | ValF1=1.0000
+[Client 18] Epoch 5/5 | TrainLoss=0.0001 | ValLoss=0.000148 | ValF1=1.0000
+[Client 19] Epoch 1/5 | TrainLoss=0.5887 | ValLoss=0.506348 | ValF1=0.6267
+[Client 19] Epoch 2/5 | TrainLoss=0.3325 | ValLoss=0.489592 | ValF1=0.6267
+[Client 19] Epoch 3/5 | TrainLoss=0.2803 | ValLoss=0.178343 | ValF1=1.0000
+[Client 19] Epoch 4/5 | TrainLoss=0.2446 | ValLoss=0.138028 | ValF1=1.0000
+[Client 19] Epoch 5/5 | TrainLoss=0.1251 | ValLoss=0.070789 | ValF1=1.0000
+[Client 3] Epoch 1/5 | TrainLoss=2.4059 | ValLoss=2.405829 | ValF1=0.0239
+[Client 3] Epoch 2/5 | TrainLoss=2.4056 | ValLoss=2.406371 | ValF1=0.0239
+[Client 3] Epoch 3/5 | TrainLoss=2.4057 | ValLoss=2.407196 | ValF1=0.0136
+[Client 3] Epoch 4/5 | TrainLoss=2.4055 | ValLoss=2.405975 | ValF1=0.0135
+[Client 3] Epoch 5/5 | TrainLoss=2.4055 | ValLoss=2.407817 | ValF1=0.0241
+[Client 7] Epoch 1/5 | TrainLoss=0.5549 | ValLoss=0.327313 | ValF1=0.7111
+[Client 7] Epoch 2/5 | TrainLoss=0.2856 | ValLoss=0.542336 | ValF1=0.7111
+[Client 7] Epoch 3/5 | TrainLoss=0.2628 | ValLoss=0.152553 | ValF1=0.9737
+[Client 7] Epoch 4/5 | TrainLoss=0.2105 | ValLoss=0.170249 | ValF1=0.8628
+[Client 7] Epoch 5/5 | TrainLoss=0.1833 | ValLoss=0.136159 | ValF1=1.0000
+[Client 1] Epoch 1/5 | TrainLoss=2.5004 | ValLoss=2.479663 | ValF1=0.0045
+[Client 1] Epoch 2/5 | TrainLoss=2.4895 | ValLoss=2.469967 | ValF1=0.0195
+[Client 1] Epoch 3/5 | TrainLoss=2.4774 | ValLoss=2.430828 | ValF1=0.0326
+[Client 1] Epoch 4/5 | TrainLoss=2.4695 | ValLoss=2.440187 | ValF1=0.0045
+[Client 1] Epoch 5/5 | TrainLoss=2.4664 | ValLoss=2.424385 | ValF1=0.0169
+[Client 5] Epoch 1/5 | TrainLoss=2.4355 | ValLoss=2.408698 | ValF1=0.0239
+[Client 5] Epoch 2/5 | TrainLoss=2.4147 | ValLoss=2.416314 | ValF1=0.0151
+[Client 5] Epoch 3/5 | TrainLoss=2.4131 | ValLoss=2.400156 | ValF1=0.0370
+[Client 5] Epoch 4/5 | TrainLoss=2.4125 | ValLoss=2.402254 | ValF1=0.0273
+[Client 5] Epoch 5/5 | TrainLoss=2.4122 | ValLoss=2.405649 | ValF1=0.0317
+[Client 0] Epoch 1/5 | TrainLoss=2.4395 | ValLoss=2.439000 | ValF1=0.0190
+[Client 0] Epoch 2/5 | TrainLoss=2.4234 | ValLoss=2.429205 | ValF1=0.0184
+[Client 0] Epoch 3/5 | TrainLoss=2.4210 | ValLoss=2.431875 | ValF1=0.0191
+[Client 0] Epoch 4/5 | TrainLoss=2.4202 | ValLoss=2.439756 | ValF1=0.0194
+[Client 0] Epoch 5/5 | TrainLoss=2.4210 | ValLoss=2.430673 | ValF1=0.0178
+[Client 14] Epoch 1/5 | TrainLoss=2.2219 | ValLoss=1.968351 | ValF1=1.0000
+[Client 14] Epoch 2/5 | TrainLoss=1.7430 | ValLoss=1.408727 | ValF1=1.0000
+[Client 14] Epoch 3/5 | TrainLoss=1.0551 | ValLoss=0.579600 | ValF1=1.0000
+[Client 14] Epoch 4/5 | TrainLoss=0.4272 | ValLoss=0.180823 | ValF1=1.0000
+[Client 14] Epoch 5/5 | TrainLoss=0.2281 | ValLoss=0.081161 | ValF1=1.0000
+[Client 4] Epoch 1/5 | TrainLoss=2.5431 | ValLoss=2.493194 | ValF1=0.0135
+[Client 4] Epoch 2/5 | TrainLoss=2.5324 | ValLoss=2.484792 | ValF1=0.0135
+[Client 4] Epoch 3/5 | TrainLoss=2.5228 | ValLoss=2.477025 | ValF1=0.0135
+[Client 4] Epoch 4/5 | TrainLoss=2.5136 | ValLoss=2.470113 | ValF1=0.0135
+[Client 4] Epoch 5/5 | TrainLoss=2.5026 | ValLoss=2.463333 | ValF1=0.0135
+[Client 12] Epoch 1/5 | TrainLoss=0.0090 | ValLoss=0.000846 | ValF1=1.0000
+[Client 12] Epoch 2/5 | TrainLoss=0.0005 | ValLoss=0.000395 | ValF1=1.0000
+[Client 12] Epoch 3/5 | TrainLoss=0.0003 | ValLoss=0.000246 | ValF1=1.0000
+[Client 12] Epoch 4/5 | TrainLoss=0.0002 | ValLoss=0.000177 | ValF1=1.0000
+[Client 12] Epoch 5/5 | TrainLoss=0.0001 | ValLoss=0.000138 | ValF1=1.0000
+[Client 6] Epoch 1/5 | TrainLoss=0.0070 | ValLoss=0.000811 | ValF1=1.0000
+[Client 6] Epoch 2/5 | TrainLoss=0.0005 | ValLoss=0.000380 | ValF1=1.0000
+[Client 6] Epoch 3/5 | TrainLoss=0.0003 | ValLoss=0.000243 | ValF1=1.0000
+[Client 6] Epoch 4/5 | TrainLoss=0.0002 | ValLoss=0.000174 | ValF1=1.0000
+[Client 6] Epoch 5/5 | TrainLoss=0.0001 | ValLoss=0.000136 | ValF1=1.0000
+[Client 16] Epoch 1/5 | TrainLoss=0.2658 | ValLoss=0.011716 | ValF1=1.0000
+[Client 16] Epoch 2/5 | TrainLoss=0.0820 | ValLoss=0.009315 | ValF1=1.0000
+[Client 16] Epoch 3/5 | TrainLoss=0.0755 | ValLoss=0.008731 | ValF1=1.0000
+[Client 16] Epoch 4/5 | TrainLoss=0.0698 | ValLoss=0.008795 | ValF1=1.0000
+[Client 16] Epoch 5/5 | TrainLoss=0.0637 | ValLoss=0.006179 | ValF1=1.0000
+[Client 8] Epoch 1/5 | TrainLoss=2.2058 | ValLoss=1.938219 | ValF1=1.0000
+[Client 8] Epoch 2/5 | TrainLoss=1.6428 | ValLoss=1.234334 | ValF1=1.0000
+[Client 8] Epoch 3/5 | TrainLoss=0.8040 | ValLoss=0.393712 | ValF1=1.0000
+[Client 8] Epoch 4/5 | TrainLoss=0.2224 | ValLoss=0.112478 | ValF1=1.0000
+[Client 8] Epoch 5/5 | TrainLoss=0.0765 | ValLoss=0.050776 | ValF1=1.0000
+Time: 2487.01735496521
+
+-------------Round number: 16-------------
+
+Evaluate global model
+Train Loss
+	Client 12: Train loss: 3.02
+	Client 2: Train loss: 2.44
+	Client 9: Train loss: 0.0
+	Client 7: Train loss: 4.02
+	Client 0: Train loss: 2.48
+	Client 18: Train loss: 3.02
+	Client 6: Train loss: 3.02
+	Client 16: Train loss: 4.01
+	Client 17: Train loss: 8.67
+	Client 10: Train loss: 4.05
+	Client 15: Train loss: 0.0
+	Client 11: Train loss: 9.14
+	Client 3: Train loss: 2.41
+	Client 4: Train loss: 2.55
+	Client 19: Train loss: 4.19
+	Client 1: Train loss: 2.5
+	Client 13: Train loss: 3.46
+	Client 5: Train loss: 2.53
+	Client 14: Train loss: 2.45
+	Client 8: Train loss: 2.46
+Performance Metrics
+	Client 12: acc 0.0, precision: 0.0, recall: 0.01, f1: 0.0
+	Client 2: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 9: acc 1.0, precision: 1.0, recall: 0.98, f1: 0.99
+	Client 7: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 0: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 18: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 6: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 16: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 17: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 10: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 15: acc 1.0, precision: 0.99, recall: 0.99, f1: 0.99
+	Client 11: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
