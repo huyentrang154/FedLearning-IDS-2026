@@ -1,0 +1,19 @@
+# Ablation FedPURE trên CIC-IDS2017 (Phong, nhận từ Ly 15/11/2026). 4 biến thể x 4 cấu hình (pat, exDir, flip r_c=0.3, 0.5), seed 0.
+# FedPURE ablation code: --ablation {exchange_all, head_only, joint_loss, single_phase}; --head_init mặc định none (bản gốc).
+# <job_name> | <priority = phút ước tính trên máy Ly khi chạy 10 job, dài nhất trước> | <main.py args>
+cic_ids_abl_pat_joint_loss_s0 | 2220 | -algo fedus -data cic_ids -dt noniid -nt none -npw 0 -psr 0 -dev cpu --seed 0 --ablation joint_loss --exp_name r2_abl_joint_loss
+cic_ids_abl_exdir_joint_loss_s0 | 2220 | -algo fedus -data cic_ids -dt exdir -nt none -npw 0 -psr 0 -dev cpu --seed 0 --ablation joint_loss --exp_name r2_abl_joint_loss
+cic_ids_abl_rc0.3_joint_loss_s0 | 2220 | -algo fedus -data cic_ids -dt noniid -nt label_flipping -npw 0.3 -psr 1.0 -dev cpu --seed 0 --ablation joint_loss --exp_name r2_abl_joint_loss
+cic_ids_abl_rc0.5_joint_loss_s0 | 2220 | -algo fedus -data cic_ids -dt noniid -nt label_flipping -npw 0.5 -psr 1.0 -dev cpu --seed 0 --ablation joint_loss --exp_name r2_abl_joint_loss
+cic_ids_abl_pat_exchange_all_s0 | 1740 | -algo fedus -data cic_ids -dt noniid -nt none -npw 0 -psr 0 -dev cpu --seed 0 --ablation exchange_all --exp_name r2_abl_exchange_all
+cic_ids_abl_pat_head_only_s0 | 1740 | -algo fedus -data cic_ids -dt noniid -nt none -npw 0 -psr 0 -dev cpu --seed 0 --ablation head_only --exp_name r2_abl_head_only
+cic_ids_abl_exdir_exchange_all_s0 | 1740 | -algo fedus -data cic_ids -dt exdir -nt none -npw 0 -psr 0 -dev cpu --seed 0 --ablation exchange_all --exp_name r2_abl_exchange_all
+cic_ids_abl_exdir_head_only_s0 | 1740 | -algo fedus -data cic_ids -dt exdir -nt none -npw 0 -psr 0 -dev cpu --seed 0 --ablation head_only --exp_name r2_abl_head_only
+cic_ids_abl_rc0.3_exchange_all_s0 | 1740 | -algo fedus -data cic_ids -dt noniid -nt label_flipping -npw 0.3 -psr 1.0 -dev cpu --seed 0 --ablation exchange_all --exp_name r2_abl_exchange_all
+cic_ids_abl_rc0.3_head_only_s0 | 1740 | -algo fedus -data cic_ids -dt noniid -nt label_flipping -npw 0.3 -psr 1.0 -dev cpu --seed 0 --ablation head_only --exp_name r2_abl_head_only
+cic_ids_abl_rc0.5_exchange_all_s0 | 1740 | -algo fedus -data cic_ids -dt noniid -nt label_flipping -npw 0.5 -psr 1.0 -dev cpu --seed 0 --ablation exchange_all --exp_name r2_abl_exchange_all
+cic_ids_abl_rc0.5_head_only_s0 | 1740 | -algo fedus -data cic_ids -dt noniid -nt label_flipping -npw 0.5 -psr 1.0 -dev cpu --seed 0 --ablation head_only --exp_name r2_abl_head_only
+cic_ids_abl_pat_single_phase_s0 | 220 | -algo fedus -data cic_ids -dt noniid -nt none -npw 0 -psr 0 -dev cpu --seed 0 --ablation single_phase --exp_name r2_abl_single_phase
+cic_ids_abl_exdir_single_phase_s0 | 220 | -algo fedus -data cic_ids -dt exdir -nt none -npw 0 -psr 0 -dev cpu --seed 0 --ablation single_phase --exp_name r2_abl_single_phase
+cic_ids_abl_rc0.3_single_phase_s0 | 220 | -algo fedus -data cic_ids -dt noniid -nt label_flipping -npw 0.3 -psr 1.0 -dev cpu --seed 0 --ablation single_phase --exp_name r2_abl_single_phase
+cic_ids_abl_rc0.5_single_phase_s0 | 220 | -algo fedus -data cic_ids -dt noniid -nt label_flipping -npw 0.5 -psr 1.0 -dev cpu --seed 0 --ablation single_phase --exp_name r2_abl_single_phase

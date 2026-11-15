@@ -20,6 +20,7 @@ class FedUS(object):
         self.dataset = args.dataset
         self.global_rounds = args.global_rounds
         self.round_to_add_clients = args.round_to_add_clients
+        self.ablation = getattr(args, 'ablation', 'none')
         self.global_model = copy.deepcopy(args.model)
         self.num_clients = args.num_clients
         self.join_ratio = args.join_ratio
@@ -47,6 +48,7 @@ class FedUS(object):
 
         self.times = times
         self.seed = args.seed
+        self.resume_from = getattr(args, 'resume_from', '')
         self.exp_name = args.exp_name
         self.data_type = resolve_data_type(args.data_type, self.num_clients)
         args.data_type = self.data_type
@@ -90,8 +92,57 @@ class FedUS(object):
         print(f"Noise Type: {self.noise_type}")
         print(f"Poisoned Worker IDs (fixed): {self.poisoned_worker_ids}")
 
+    def load_phase1(self, run_dir):
+        """Reuse rounds 0..R-2 (phase 1) of an earlier run with identical settings and return the
+        round to continue from. Phase 1 never touches the classifier head, so changing only the
+        phase-2 options (head_init, phase2_epochs) leaves these rounds unchanged."""
+        last = self.global_rounds - 2
+        old = pickle.load(open(os.path.join(run_dir, 'metrics_results.pkl'), 'rb'))
+        for key, mine in (('dataset', self.dataset), ('data_type', self.data_type), ('seed', self.seed),
+                          ('noise_type', self.noise_type),
+                          ('num_of_poisoned_workers', self.num_of_poisoned_workers),
+                          ('poisoned_sample_ratio', self.poisoned_sample_ratio),
+                          ('poisoned_worker_ids', self.poisoned_worker_ids)):
+            if old.get(key) != mine:
+                raise ValueError(f"resume_from mismatch on {key}: {old.get(key)!r} != {mine!r}")
+        if len(old['f1-normal']) != self.global_rounds:
+            raise ValueError(f"resume_from has {len(old['f1-normal'])} rounds, expected {self.global_rounds}")
+        old_models = pickle.load(open(os.path.join(run_dir, 'models.pkl'), 'rb'))
+        sd = lambda m: m.state_dict() if hasattr(m, 'state_dict') else m
+        self.global_model.load_state_dict(sd(old_models[last][0]))
+        for c in self.clients:
+            c.model.load_state_dict(sd(old_models[last][1 + c.id]))
+        self.model_list = {r: old_models[r] for r in range(last + 1)}
+        for attr, key in (('rs_test_acc_normal', 'acc-normal'), ('rs_test_acc_flipping', 'acc-flipping'),
+                          ('rs_test_f1_normal', 'f1-normal'), ('rs_test_f1_flipping', 'f1-flipping'),
+                          ('rs_test_precision_normal', 'precision-normal'),
+                          ('rs_test_precision_flipping', 'precision-flipping'),
+                          ('rs_test_recall_normal', 'recall-normal'),
+                          ('rs_test_recall_flipping', 'recall-flipping'), ('rs_train_loss', 'train-loss')):
+            setattr(self, attr, list(old[key][:last + 1]))
+        self.selected_history = {r: old['selected_clients'][r] for r in range(last + 1)}
+        f1 = self.rs_test_f1_normal
+        self.best_round = int(np.argmax(f1))
+        self.best_score = f1[self.best_round]
+        # copy the phase-1 part of the old log so the new tracking.log is complete
+        lines, keep = open(os.path.join(run_dir, 'tracking.log')).readlines(), []
+        started = False
+        for line in lines:
+            if 'Train loss-ce' in line:
+                break
+            if line.startswith('-------------Round number: 0-'):
+                started = True
+            if started:
+                keep.append(line)
+        with open(self.log_file, 'a') as f:
+            f.write(f"[resumed: rounds 0-{last} (phase 1) copied from {os.path.abspath(run_dir)}]\n")
+            f.writelines(keep)
+        print(f"Resumed phase 1 (rounds 0-{last}) from {run_dir}")
+        return last + 1
+
     def train(self):
-        for epoch in range(self.global_rounds):
+        start_round = self.load_phase1(self.resume_from) if self.resume_from else 0
+        for epoch in range(start_round, self.global_rounds):
             s_t = time.time()
             self.selected_clients = self.select_clients(epoch)
             self.send_models(epoch)
@@ -104,8 +155,14 @@ class FedUS(object):
                     with open(self.log_file, 'a') as f:
                         f.write(f'\tClient {client.id}: Train loss-ce: {ce_losses}\n')
 
+            if epoch == self.global_rounds - 1:
+                self.log_l2_milestones()
             self.receive_models()
             self.aggregate_parameters()
+            if self.ablation in ('exchange_all', 'head_only'):
+                # the shared part is aggregated and deployed: clients keep the aggregated version
+                for client in self.selected_clients:
+                    self.copy_shared(client)
 
             # save checkpoint: bản sao CPU (trước đây lưu tham chiếu -> mọi round giống hệt nhau)
             # [global sau aggregate, client 0, client 1, ...]
@@ -125,6 +182,25 @@ class FedUS(object):
 
         write_final_summary(self)
         self.save_results()
+
+    def log_l2_milestones(self):
+        """f1-normal (sample-weighted mean of per-client macro-F1 over benign clients) after each
+        phase-2 milestone epoch; only for the L2 sensitivity curve."""
+        ms = sorted(set().union(*[c.l2_metrics.keys() for c in self.selected_clients]))
+        self.l2_curve = {}
+        for m in ms:
+            num = den = 0.0
+            for c in self.selected_clients:
+                if c.id in self.poisoned_worker_ids or m not in c.l2_metrics:
+                    continue
+                acc, prec, rec, f1, ns = c.l2_metrics[m]
+                num += f1 * ns
+                den += ns
+            self.l2_curve[m] = num / den if den else 0.0
+            line = f"L2 milestone {m}: f1-normal {self.l2_curve[m]:.4f}"
+            print(line)
+            with open(self.log_file, 'a') as f:
+                f.write(line + "\n")
 
     def set_clients(self, args, clientObj):
         for i in range(self.num_clients):
@@ -154,8 +230,25 @@ class FedUS(object):
         selected_clients = list(np.random.choice(candidate_clients, join_clients, replace=False))
         return selected_clients
 
+    # ablation: which parts of the model the server shares (None = the whole model)
+    SHARED = {'head_only': ('predictor',), 'single_phase': ('encoder', 'decoder')}
+
+    def copy_shared(self, client):
+        parts = self.SHARED.get(self.ablation)
+        if parts is None:
+            client.set_parameters(self.global_model)
+            return
+        for part in parts:
+            for new_param, old_param in zip(getattr(self.global_model, part).parameters(),
+                                            getattr(client.model, part).parameters()):
+                old_param.data = new_param.data.clone()
+
     def send_models(self, epoch):
         assert len(self.clients) > 0
+        if self.ablation != 'none':
+            for client in self.selected_clients:
+                self.copy_shared(client)
+            return
         if epoch < self.round_to_add_clients:
             for client in self.selected_clients:
                 client.set_parameters(self.global_model)
@@ -163,7 +256,8 @@ class FedUS(object):
             for client in self.selected_clients:
 
                 # Client mới (client cuối) chỉ nhận encoder
-                if client.id == self.num_clients - 1:
+                # Late-joining client (only when --round_to_add_clients > 0) receives the encoder only
+                if self.round_to_add_clients > 0 and client.id == self.num_clients - 1:
                     for new_param, old_param in zip(
                             self.global_model.encoder.parameters(),
                             client.model.encoder.parameters()):
@@ -531,6 +625,7 @@ class FedUS(object):
             'acc-normal': self.rs_test_acc_normal,
             'f1-flipping': self.rs_test_f1_flipping,
             'f1-normal': self.rs_test_f1_normal,
+            'l2_curve': getattr(self, 'l2_curve', {}),
             'recall-flipping': self.rs_test_recall_flipping,
             'precision-flipping': self.rs_test_precision_flipping,
             'precision-normal': self.rs_test_precision_normal,
