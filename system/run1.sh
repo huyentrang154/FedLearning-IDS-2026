@@ -115,7 +115,7 @@ mkdir -p logs
 # 3. Datasets & Data Type
 #########################################
 DATASETS=(
-    "unsw"
+    "toniot"
 )
 
 DATA_TYPE="noniid20"
@@ -124,12 +124,6 @@ DATA_TYPE="noniid20"
 # 4. 8 Thuật toán FL
 #########################################
 ALGOS=(
-    "fedavg"
-    "fedrep"
-    "fedgh"
-    "fedhome"
-    "lg_fedavg"
-    "fednoro"
     "fedus"
 )
 
@@ -137,7 +131,7 @@ ALGOS=(
 # 5. Seeds (có thể thêm nhiều seed: (0 1 2))
 #########################################
 SEEDS=(
-    0 1 2
+     0 1 2
 )
 
 
@@ -147,7 +141,7 @@ SEEDS=(
 # Bỏ comment các dòng bên dưới nếu muốn chạy luôn các kịch bản Poisoning trên noniid.
 #########################################
 SCENARIOS=(
-     "label_flipping|0.3|1.0"      # Kịch bản 2a: Label flipping (npw=0.3, psr=1.0)
+     "label_flipping|0.5|1.0"      # Kịch bản 2a: Label flipping (npw=0.3, psr=1.0)
 )
 
 #########################################
