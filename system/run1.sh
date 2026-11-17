@@ -124,12 +124,6 @@ DATA_TYPE="noniid20"
 # 4. 8 Thuật toán FL
 #########################################
 ALGOS=(
-    "fedavg"
-    "fedrep"
-    "fedgh"
-    "fedhome"
-    "lg_fedavg"
-    "fednoro"
     "fedus"
 )
 
@@ -137,7 +131,7 @@ ALGOS=(
 # 5. Seeds (có thể thêm nhiều seed: (0 1 2))
 #########################################
 SEEDS=(
-    0 1 2
+     0 1 2
 )
 
 
