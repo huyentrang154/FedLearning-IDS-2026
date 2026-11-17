@@ -286,10 +286,30 @@ if __name__ == "__main__":
     parser.add_argument('-ans', '--attack_noise_std', type=float, default=0,
                         help="Standard deviation for Gaussian noise.")
     parser.add_argument("--exp_name", type=str, default="", help="Experiment name")
+    # FedPURE (fedus) phase 2
+    parser.add_argument("--head_init", type=str, default="none", choices=["kaiming", "none"],
+                        help="fedus: re-initialise the classifier head at the start of phase 2 "
+                             "(Kaiming-normal weights, bias 0.01) to avoid dead-ReLU heads; "
+                             "'none' keeps the original construction-time initialisation")
+    parser.add_argument("--phase2_epochs", type=int, default=2500,
+                        help="fedus: number of supervised epochs in the final round (phase 2)")
+    parser.add_argument("--l2_milestones", type=str, default="",
+                        help="fedus: comma-separated phase-2 epochs at which to also log test F1 (sensitivity "
+                             "curve only, e.g. 50,100,250,500,1000,2500); the reported result is unchanged")
+    parser.add_argument("--resume_from", type=str, default="",
+                        help="fedus: result dir of an earlier run with the same settings; reuse its "
+                             "phase-1 rounds (models.pkl / metrics) and run only the final round")
+    parser.add_argument("--ablation", type=str, default="none",
+                        choices=["none", "exchange_all", "head_only", "single_phase", "joint_loss"],
+                        help="fedus ablation (Section 6.5). exchange_all: share encoder+decoder+head, head "
+                             "trained by CE on the detached latent in Phase 1, shared part re-aggregated "
+                             "after Phase 2 and deployed; head_only: share the head only (encoder/decoder "
+                             "local), same training; joint_loss: Phase 2 loss = CE + MSE (1:1); "
+                             "single_phase: all rounds train MSE + CE (1:1), no Phase 2, encoder+decoder "
+                             "shared, head private")
     parser.add_argument("--timing_out", type=str, default="",
                         help="write a JSON with the run's wall-clock time (sequential and as if clients "
                              "ran in parallel, evaluation excluded); measurement only")
-
     args = parser.parse_args()
 
     # Chuẩn hóa algorithm, data_type (noniid -> noniid20, exdir -> noniidexdir20) và noise_type

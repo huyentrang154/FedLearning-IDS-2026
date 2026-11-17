@@ -45,9 +45,16 @@ class ClientUS(object):
         self.eta = args.eta
         self.rand_percent = args.rand_percent
         self.layer_idx = args.layer_idx
+        self.seed = getattr(args, 'seed', 0)
+        self.head_init = getattr(args, 'head_init', 'none')
+        self.phase2_epochs = getattr(args, 'phase2_epochs', 2500)
+        self.ablation = getattr(args, 'ablation', 'none')
+        ms = getattr(args, 'l2_milestones', '') or ''
+        self.l2_milestones = {int(m) for m in str(ms).split(',') if m.strip()}
+        self.l2_metrics = {}   # phase-2 epoch -> (acc, precision, recall, f1, n_test)
         self.train_data = read_client_data(self.dataset, self.id, self.num_clients,data_type='train', type=self.data_type)
         if self.id in self.poisoned_worker_ids:
-            print("client nay bi label flipping")
+            print("client này bị label flipping")
             self.train_data = self.apply_poisoning(train_data=self.train_data,
                         noise_type=self.noise_type,
                         poisoned_sample_ratio=self.poisoned_sample_ratio,
@@ -165,7 +172,86 @@ class ClientUS(object):
 
         return acc, precision, recall, f1, test_num
     
+    def reinit_head(self):
+        """Kaiming-normal weights + small positive bias for the classifier head (phase 2).
+
+        The head is frozen during phase 1, so every client otherwise starts phase 2 from the same
+        construction-time head; for some seeds that head has all ReLU units of a layer inactive on
+        a client's data (dead ReLU) and the client can only predict its majority class.
+        A per-client generator keeps the result independent of client order and of the global RNG.
+        """
+        gen = torch.Generator().manual_seed(self.seed * 1000 + self.id)
+        with torch.no_grad():
+            for m in self.model.predictor:
+                if isinstance(m, nn.Linear):
+                    w = torch.empty_like(m.weight, device='cpu')
+                    nn.init.kaiming_normal_(w, nonlinearity='relu', generator=gen)
+                    m.weight.copy_(w)
+                    m.bias.fill_(0.01)
+
+    def _xy(self, x, y):
+        x = x[0].to(self.device) if type(x) == type([]) else x.to(self.device)
+        return x, y.to(self.device)
+
+    def train_ablation(self, R):
+        """Ablation variants (args.ablation != 'none'); see the --ablation help in main.py.
+
+        exchange_all / head_only, Phase 1: encoder+decoder by MSE (as FedPURE) and the head by CE on
+          the detached latent, so the encoder stays label-free; the server shares all parameters
+          (exchange_all) or the head only (head_only). Final round: CE fine-tuning of the whole
+          model for phase2_epochs, as FedPURE; the server then aggregates the shared part again
+          and the deployed client model uses it.
+        joint_loss: Phase 1 as FedPURE; final round uses CE + MSE (1:1) instead of CE.
+        single_phase: every round (no Phase 2) trains the whole model with MSE + CE (1:1) for
+          local_steps epochs; encoder+decoder shared, head private.
+        """
+        self.model.train()
+        last = R == self.global_rounds - 1
+        a = self.ablation
+        for p in self.model.parameters():
+            p.requires_grad = True
+        opt = self.optimizer   # SGD over all parameters, same lr
+        ce_losses = []
+        if a == 'single_phase' or not last:
+            for epoch in range(self.local_steps):
+                for x, y in self.train_loader:
+                    x, y = self._xy(x, y)
+                    if a == 'single_phase':
+                        out, rec = self.model(x)
+                        loss = self.ce_loss(out, y) + self.re_loss(rec, x)
+                    elif a in ('exchange_all', 'head_only'):
+                        z = self.model.encoder(x)
+                        rec = self.model.decoder(z)
+                        out = self.model.predictor(torch.flatten(z.detach(), 1))
+                        loss = self.re_loss(rec, x) + self.ce_loss(out, y)
+                    else:   # joint_loss, Phase 1 = FedPURE Phase 1 (head unchanged)
+                        _, rec = self.model(x)
+                        loss = self.re_loss(rec, x)
+                    opt.zero_grad()
+                    loss.backward()
+                    if a == 'joint_loss':
+                        for p in self.model.predictor.parameters():
+                            p.grad = None
+                    opt.step()
+            return ce_losses
+        # final round (Phase 2) for exchange_all / head_only / joint_loss
+        for epoch in range(self.phase2_epochs):
+            ep = []
+            for x, y in self.train_loader:
+                x, y = self._xy(x, y)
+                out, rec = self.model(x)
+                ce = self.ce_loss(out, y)
+                ep.append(ce.item())
+                loss = ce + self.re_loss(rec, x) if a == 'joint_loss' else ce
+                opt.zero_grad()
+                loss.backward()
+                opt.step()
+            ce_losses.append(round(sum(ep) / len(ep), 9))
+        return ce_losses
+
     def train(self, R):
+        if getattr(self, 'ablation', 'none') != 'none':
+            return self.train_ablation(R)
         self.model.train()
         ce_losses = []
         if R < self.global_rounds - 1:
@@ -190,7 +276,9 @@ class ClientUS(object):
                     self.optimizer_encoder.step()
                     self.optimizer_decoder.step()
         if R == self.global_rounds - 1:
-            for epoch in range(2500):
+            if self.head_init == 'kaiming':
+                self.reinit_head()
+            for epoch in range(self.phase2_epochs):
                 epoch_loss_ce = []
                 for i, (x, y) in enumerate(self.train_loader):
                     if type(x) == type([]):
@@ -209,7 +297,12 @@ class ClientUS(object):
                     self.optimizer_predictor.step()
                     self.optimizer_encoder.step()
                     self.optimizer_decoder.step()
-                ce_losses.append(round(sum(epoch_loss_ce) / len(epoch_loss_ce), 9))          
+                ce_losses.append(round(sum(epoch_loss_ce) / len(epoch_loss_ce), 9))
+                if epoch + 1 in self.l2_milestones:
+                    # sensitivity curve only: test metrics after epoch+1 phase-2 epochs. Evaluation is
+                    # side-effect free (no RNG, no parameter change), so training continues unchanged.
+                    self.l2_metrics[epoch + 1] = self.test_metrics()
+                    self.model.train()
         return ce_losses
     
     def train_metrics(self, model=None, epoch=1):
