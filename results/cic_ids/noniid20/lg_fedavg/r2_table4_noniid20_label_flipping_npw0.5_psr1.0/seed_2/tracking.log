@@ -1,0 +1,317 @@
+============================================================
+Timestamp: 2026-11-17 07:18:03
+Experiment: r2_table4_noniid20_label_flipping_npw0.5_psr1.0
+Scenario: noniid20_label_flipping_npw0.5_psr1.0
+Algorithm: lg_fedavg
+Dataset: cic_ids
+Data type: noniid20
+Seed: 2
+Num clients: 20 | Join ratio: 1.0
+Global rounds: 50 | Local steps: 5 | Batch size: 4 | LR: 0.01
+Noise type: label_flipping | num_of_poisoned_workers: 0.5 | ratio: 1.0
+Poisoned Worker IDs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Result path: ../results/cic_ids/noniid20/lg_fedavg/r2_table4_noniid20_label_flipping_npw0.5_psr1.0/seed_2
+============================================================
+-------------Round number: 0-------------
+Train Loss
+	Client 16: Train loss: 2.51
+	Client 2: Train loss: 2.46
+	Client 7: Train loss: 2.5
+	Client 8: Train loss: 2.5
+	Client 0: Train loss: 2.51
+	Client 18: Train loss: 2.34
+	Client 17: Train loss: 2.38
+	Client 1: Train loss: 2.51
+	Client 14: Train loss: 2.53
+	Client 19: Train loss: 2.36
+	Client 3: Train loss: 2.49
+	Client 15: Train loss: 2.59
+	Client 4: Train loss: 2.5
+	Client 5: Train loss: 2.5
+	Client 6: Train loss: 2.51
+	Client 13: Train loss: 2.36
+	Client 11: Train loss: 2.38
+	Client 10: Train loss: 2.51
+	Client 9: Train loss: 2.49
+	Client 12: Train loss: 2.34
+Performance Metrics
+	Client 16: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 2: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 7: acc 0.55, precision: 0.28, recall: 0.5, f1: 0.35
+	Client 8: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 0: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 18: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 17: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 1: acc 0.51, precision: 0.26, recall: 0.5, f1: 0.34
+	Client 14: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 19: acc 0.44, precision: 0.22, recall: 0.5, f1: 0.3
+	Client 3: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 15: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 4: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 5: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 6: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 13: acc 0.43, precision: 0.21, recall: 0.5, f1: 0.3
+	Client 11: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 10: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 9: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 12: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+
+Epoch: 0, Algorithm: lg_fedavg, Dataset: cic_ids
+Overall Performance Metrics
+	train loss avg: 2.5074
+	test acc normal avg: 0.0026
+	test acc flipping avg: 0.0019
+	test acc GLOBAL avg: 0.0021
+	test acc GLOBAL detail: [0.0021, 0.0021, 0.0021, 0.0021, 0.0021, 0.0021, 0.0021, 0.0021, 0.0021, 0.0021, 0.0021, 0.0021, 0.0021, 0.0021, 0.0021, 0.0021, 0.0021, 0.0021, 0.0021, 0.0021]
+	test f1 GLOBAL detail: [0.0004, 0.0004, 0.0004, 0.0004, 0.0004, 0.0004, 0.0004, 0.0004, 0.0004, 0.0004, 0.0004, 0.0004, 0.0004, 0.0004, 0.0004, 0.0004, 0.0004, 0.0004, 0.0004, 0.0004]
+-------------Round number: 1-------------
+Train Loss
+	Client 13: Train loss: 2.6
+	Client 1: Train loss: 2.52
+	Client 2: Train loss: 2.47
+	Client 0: Train loss: 2.52
+	Client 5: Train loss: 2.53
+	Client 8: Train loss: 2.51
+	Client 15: Train loss: 2.46
+	Client 9: Train loss: 2.52
+	Client 19: Train loss: 2.6
+	Client 10: Train loss: 2.63
+	Client 3: Train loss: 2.52
+	Client 12: Train loss: 2.49
+	Client 7: Train loss: 2.5
+	Client 11: Train loss: 2.34
+	Client 16: Train loss: 2.63
+	Client 17: Train loss: 2.34
+	Client 6: Train loss: 2.51
+	Client 18: Train loss: 2.49
+	Client 4: Train loss: 2.52
+	Client 14: Train loss: 2.67
+Performance Metrics
+	Client 13: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 1: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 2: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 0: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 5: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 8: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 15: acc 0.02, precision: 0.01, recall: 0.5, f1: 0.02
+	Client 9: acc 0.02, precision: 0.01, recall: 0.5, f1: 0.02
+	Client 19: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 10: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 3: acc 0.02, precision: 0.01, recall: 0.5, f1: 0.02
+	Client 12: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 7: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 11: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 16: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 17: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 6: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 18: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 4: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 14: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+
+Epoch: 1, Algorithm: lg_fedavg, Dataset: cic_ids
+Overall Performance Metrics
+	train loss avg: 2.4916
+	test acc normal avg: 0.0139
+	test acc flipping avg: 0.0168
+	test acc GLOBAL avg: 0.0157
+	test acc GLOBAL detail: [0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157]
+	test f1 GLOBAL detail: [0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028]
+-------------Round number: 2-------------
+Train Loss
+	Client 4: Train loss: 2.52
+	Client 6: Train loss: 2.51
+	Client 7: Train loss: 2.5
+	Client 15: Train loss: 2.53
+	Client 17: Train loss: 2.29
+	Client 9: Train loss: 2.52
+	Client 0: Train loss: 2.52
+	Client 18: Train loss: 2.53
+	Client 11: Train loss: 2.29
+	Client 2: Train loss: 2.48
+	Client 1: Train loss: 2.52
+	Client 13: Train loss: 2.64
+	Client 19: Train loss: 2.64
+	Client 12: Train loss: 2.53
+	Client 14: Train loss: 2.65
+	Client 16: Train loss: 2.64
+	Client 10: Train loss: 2.64
+	Client 8: Train loss: 2.52
+	Client 3: Train loss: 2.52
+	Client 5: Train loss: 2.54
+Performance Metrics
+	Client 4: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 6: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 7: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 15: acc 0.02, precision: 0.01, recall: 0.5, f1: 0.02
+	Client 17: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 9: acc 0.02, precision: 0.01, recall: 0.5, f1: 0.02
+	Client 0: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 18: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 11: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 2: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 1: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 13: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 19: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 12: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 14: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 16: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 10: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 8: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 3: acc 0.02, precision: 0.01, recall: 0.5, f1: 0.02
+	Client 5: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+
+Epoch: 2, Algorithm: lg_fedavg, Dataset: cic_ids
+Overall Performance Metrics
+	train loss avg: 2.5077
+	test acc normal avg: 0.0139
+	test acc flipping avg: 0.0168
+	test acc GLOBAL avg: 0.0157
+	test acc GLOBAL detail: [0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157]
+	test f1 GLOBAL detail: [0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028]
+-------------Round number: 3-------------
+Train Loss
+	Client 0: Train loss: 2.52
+	Client 13: Train loss: 2.64
+	Client 4: Train loss: 2.52
+	Client 8: Train loss: 2.51
+	Client 7: Train loss: 2.5
+	Client 2: Train loss: 2.48
+	Client 19: Train loss: 2.64
+	Client 3: Train loss: 2.53
+	Client 14: Train loss: 2.67
+	Client 16: Train loss: 2.68
+	Client 6: Train loss: 2.52
+	Client 15: Train loss: 2.43
+	Client 1: Train loss: 2.52
+	Client 9: Train loss: 2.53
+	Client 5: Train loss: 2.53
+	Client 18: Train loss: 2.52
+	Client 17: Train loss: 2.32
+	Client 10: Train loss: 2.68
+	Client 12: Train loss: 2.52
+	Client 11: Train loss: 2.32
+Performance Metrics
+	Client 0: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 13: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 4: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 8: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 7: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 2: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 19: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 3: acc 0.02, precision: 0.01, recall: 0.5, f1: 0.02
+	Client 14: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 16: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 6: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 15: acc 0.02, precision: 0.01, recall: 0.5, f1: 0.02
+	Client 1: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 9: acc 0.02, precision: 0.01, recall: 0.5, f1: 0.02
+	Client 5: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 18: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 17: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 10: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 12: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 11: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+
+Epoch: 3, Algorithm: lg_fedavg, Dataset: cic_ids
+Overall Performance Metrics
+	train loss avg: 2.4874
+	test acc normal avg: 0.0139
+	test acc flipping avg: 0.0168
+	test acc GLOBAL avg: 0.0157
+	test acc GLOBAL detail: [0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157]
+	test f1 GLOBAL detail: [0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028]
+-------------Round number: 4-------------
+Train Loss
+	Client 2: Train loss: 2.49
+	Client 0: Train loss: 2.52
+	Client 6: Train loss: 2.52
+	Client 11: Train loss: 2.3
+	Client 9: Train loss: 2.52
+	Client 5: Train loss: 2.54
+	Client 7: Train loss: 2.5
+	Client 4: Train loss: 2.52
+	Client 8: Train loss: 2.52
+	Client 17: Train loss: 2.3
+	Client 13: Train loss: 2.65
+	Client 3: Train loss: 2.52
+	Client 15: Train loss: 2.49
+	Client 14: Train loss: 2.66
+	Client 1: Train loss: 2.52
+	Client 10: Train loss: 2.66
+	Client 19: Train loss: 2.65
+	Client 16: Train loss: 2.66
+	Client 12: Train loss: 2.51
+	Client 18: Train loss: 2.52
+Performance Metrics
+	Client 2: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 0: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 6: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 11: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 9: acc 0.02, precision: 0.01, recall: 0.5, f1: 0.02
+	Client 5: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 7: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 4: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 8: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 17: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 13: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 3: acc 0.02, precision: 0.01, recall: 0.5, f1: 0.02
+	Client 15: acc 0.02, precision: 0.01, recall: 0.5, f1: 0.02
+	Client 14: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 1: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 10: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 19: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 16: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 12: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 18: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+
+Epoch: 4, Algorithm: lg_fedavg, Dataset: cic_ids
+Overall Performance Metrics
+	train loss avg: 2.4995
+	test acc normal avg: 0.0139
+	test acc flipping avg: 0.0168
+	test acc GLOBAL avg: 0.0157
+	test acc GLOBAL detail: [0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157, 0.0157]
+	test f1 GLOBAL detail: [0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028, 0.0028]
+-------------Round number: 5-------------
+Train Loss
+	Client 19: Train loss: 2.67
+	Client 11: Train loss: 2.34
+	Client 17: Train loss: 2.34
+	Client 18: Train loss: 2.54
+	Client 12: Train loss: 2.54
+	Client 1: Train loss: 2.52
+	Client 9: Train loss: 2.54
+	Client 7: Train loss: 2.5
+	Client 4: Train loss: 2.52
+	Client 5: Train loss: 2.53
+	Client 3: Train loss: 2.54
+	Client 6: Train loss: 2.52
+	Client 8: Train loss: 2.51
+	Client 2: Train loss: 2.48
+	Client 16: Train loss: 2.66
+	Client 13: Train loss: 2.67
+	Client 0: Train loss: 2.52
+	Client 14: Train loss: 2.67
+	Client 10: Train loss: 2.66
+	Client 15: Train loss: 2.31
+Performance Metrics
+	Client 19: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 11: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 17: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 18: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 12: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 1: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 9: acc 0.02, precision: 0.01, recall: 0.5, f1: 0.02
+	Client 7: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 4: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 5: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 3: acc 0.02, precision: 0.01, recall: 0.5, f1: 0.02
+	Client 6: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 8: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 2: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 16: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 13: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 0: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 14: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 10: acc 0.0, precision: 0.0, recall: 0.0, f1: 0.0
+	Client 15: acc 0.02, precision: 0.01, recall: 0.5, f1: 0.02
