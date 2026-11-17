@@ -116,6 +116,7 @@ mkdir -p logs
 #########################################
 DATASETS=(
     "unsw"
+    "cic_ids"
 
 )
 
@@ -126,12 +127,6 @@ DATA_TYPDATA_TYPE="noniid20"
 #########################################
 ALGOS=(
     "fedus"
-    "fedavg"
-    "fedrep"
-    "lg_fedavg"
-    "fedgh"
-    "fedhome"
-    "fednoro"
 )
 
 #########################################
