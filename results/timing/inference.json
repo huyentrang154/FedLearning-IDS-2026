@@ -1,0 +1,165 @@
+{
+  "machine": {
+    "cpu": "AMD Ryzen Threadripper 7960X 24-Cores",
+    "cpu_cores": 48,
+    "ram_gb": 125.3,
+    "os": "Ubuntu 24.04.3 LTS",
+    "device": "cpu",
+    "threads": 1,
+    "python": "/opt/miniconda/bin/python",
+    "torch": "2.11.0+cu130"
+  },
+  "dataset": "nslkdd",
+  "data_type": "noniid20",
+  "seed": 0,
+  "noise": "clean",
+  "client_id": 0,
+  "batch_size": 1,
+  "timed": "model forward only, torch.inference_mode, median of repeats",
+  "runs": [
+    {
+      "algorithm": "fedavg",
+      "model": "AE",
+      "checkpoint": "/home/lyvt/FedLearning-IDS-2026/results/nslkdd/noniid20/fedavg/timing_noniid20_clean/seed_0/best_model.pt",
+      "best_round": 32,
+      "client_id": 0,
+      "batch_size": 1,
+      "n_samples": 2278,
+      "warmup_passes": 1,
+      "repeats": 3,
+      "forward_s_repeats": [
+        0.09675211715511978,
+        0.09344860189594328,
+        0.09547012485563755
+      ],
+      "forward_s": 0.09547012485563755,
+      "ms_per_sample": 0.04190962460739138
+    },
+    {
+      "algorithm": "fedgh",
+      "model": "AE",
+      "checkpoint": "/home/lyvt/FedLearning-IDS-2026/results/nslkdd/noniid20/fedgh/timing_noniid20_clean/seed_0/best_model.pt",
+      "best_round": 0,
+      "client_id": 0,
+      "batch_size": 1,
+      "n_samples": 2278,
+      "warmup_passes": 1,
+      "repeats": 3,
+      "forward_s_repeats": [
+        0.09465085109695792,
+        0.09449225920252502,
+        0.0947685909923166
+      ],
+      "forward_s": 0.09465085109695792,
+      "ms_per_sample": 0.04154997853246616
+    },
+    {
+      "algorithm": "fedrep",
+      "model": "AE",
+      "checkpoint": "/home/lyvt/FedLearning-IDS-2026/results/nslkdd/noniid20/fedrep/timing_noniid20_clean/seed_0/best_model.pt",
+      "best_round": 48,
+      "client_id": 0,
+      "batch_size": 1,
+      "n_samples": 2278,
+      "warmup_passes": 1,
+      "repeats": 3,
+      "forward_s_repeats": [
+        0.09504053904674947,
+        0.09483506507240236,
+        0.09487751987762749
+      ],
+      "forward_s": 0.09487751987762749,
+      "ms_per_sample": 0.04164948194803665
+    },
+    {
+      "algorithm": "fedhome",
+      "model": "AE",
+      "checkpoint": "/home/lyvt/FedLearning-IDS-2026/results/nslkdd/noniid20/fedhome/timing_noniid20_clean/seed_0/best_model.pt",
+      "best_round": 10,
+      "client_id": 0,
+      "batch_size": 1,
+      "n_samples": 2278,
+      "warmup_passes": 1,
+      "repeats": 3,
+      "forward_s_repeats": [
+        0.09419109020382166,
+        0.09599675214849412,
+        0.09403868694789708
+      ],
+      "forward_s": 0.09419109020382166,
+      "ms_per_sample": 0.04134815197709467
+    },
+    {
+      "algorithm": "lg_fedavg",
+      "model": "AE",
+      "checkpoint": "/home/lyvt/FedLearning-IDS-2026/results/nslkdd/noniid20/lg_fedavg/timing_noniid20_clean/seed_0/best_model.pt",
+      "best_round": 47,
+      "client_id": 0,
+      "batch_size": 1,
+      "n_samples": 2278,
+      "warmup_passes": 1,
+      "repeats": 3,
+      "forward_s_repeats": [
+        0.09463762305676937,
+        0.09415106009691954,
+        0.09480188600718975
+      ],
+      "forward_s": 0.09463762305676937,
+      "ms_per_sample": 0.04154417166671175
+    },
+    {
+      "algorithm": "fednoro",
+      "model": "MLP",
+      "checkpoint": "/home/lyvt/FedLearning-IDS-2026/results/nslkdd/noniid20/fednoro/timing_noniid20_clean/seed_0/best_model.pt",
+      "best_round": 39,
+      "client_id": 0,
+      "batch_size": 1,
+      "n_samples": 2278,
+      "warmup_passes": 1,
+      "repeats": 3,
+      "forward_s_repeats": [
+        0.053216409869492054,
+        0.05312170507386327,
+        0.053039730060845613
+      ],
+      "forward_s": 0.05312170507386327,
+      "ms_per_sample": 0.023319449110563332
+    },
+    {
+      "algorithm": "fedcorr",
+      "model": "MLP",
+      "checkpoint": "/home/lyvt/FedLearning-IDS-2026/results/nslkdd/noniid20/fedcorr/timing_noniid20_clean/seed_0/best_model.pt",
+      "best_round": 0,
+      "client_id": 0,
+      "batch_size": 1,
+      "n_samples": 2278,
+      "warmup_passes": 1,
+      "repeats": 3,
+      "forward_s_repeats": [
+        0.05485733086243272,
+        0.0539361119735986,
+        0.05213070893660188
+      ],
+      "forward_s": 0.0539361119735986,
+      "ms_per_sample": 0.023676958724143368
+    },
+    {
+      "algorithm": "fedus",
+      "model": "AE",
+      "checkpoint": "/home/lyvt/FedLearning-IDS-2026/results/nslkdd/noniid20/fedus/timing_noniid20_clean/seed_0/best_model.pt",
+      "best_round": 49,
+      "client_id": 0,
+      "batch_size": 1,
+      "n_samples": 2278,
+      "warmup_passes": 1,
+      "repeats": 3,
+      "forward_s_repeats": [
+        0.09512215596623719,
+        0.101272416068241,
+        0.09576571988873184
+      ],
+      "forward_s": 0.09576571988873184,
+      "ms_per_sample": 0.04203938537696744
+    }
+  ]
+}
