@@ -1,0 +1,5 @@
+# Bảng 4: FedPURE trên UNSW-NB15, label flipping r_c=0.5, seed 0, 1, 2 (Ly chạy 17/11/2026). Bản gốc, --head_init mặc định none.
+# <job_name> | <priority> | <main.py args>
+unsw_t4_rc0.5_fedus_s0 | 1 | -algo fedus -data unsw -dt noniid -dev cpu -nt label_flipping -npw 0.5 -psr 1.0 --seed 0 --exp_name r2_table4
+unsw_t4_rc0.5_fedus_s1 | 1 | -algo fedus -data unsw -dt noniid -dev cpu -nt label_flipping -npw 0.5 -psr 1.0 --seed 1 --exp_name r2_table4
+unsw_t4_rc0.5_fedus_s2 | 1 | -algo fedus -data unsw -dt noniid -dev cpu -nt label_flipping -npw 0.5 -psr 1.0 --seed 2 --exp_name r2_table4
