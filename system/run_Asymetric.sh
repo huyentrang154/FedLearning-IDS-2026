@@ -106,7 +106,7 @@ mkdir -p logs
 # 3. Datasets & Data Type
 #########################################
 DATASETS=(
-    "unsw"
+    "toniot"
 )
 
 DATA_TYPE="noniid20"
@@ -115,14 +115,17 @@ DATA_TYPE="noniid20"
 # 4. 8 Thuật toán FL
 #########################################
 ALGOS=(
-    "fedus"
+    "fedhome"
+    "fednoro"
+    "fedrep"
+    "lg_fedavg"
 )
 
 #########################################
 # 5. Seeds (có thể thêm nhiều seed: (0 1 2))
 #########################################
 SEEDS=(
-    2
+    0
 )
 
 #########################################

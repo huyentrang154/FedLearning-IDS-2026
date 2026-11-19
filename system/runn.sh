@@ -115,7 +115,7 @@ mkdir -p logs
 # 3. Datasets & Data Type
 #########################################
 DATASETS=(
-    "cic_ids"
+    "toniot"
 )
 
 # "noniid" (tự động map sang noniid20) hoặc "exdir" (tự động map sang noniidexdir20)
@@ -125,16 +125,14 @@ DATA_TYPE="noniid20"
 # 4. 8 Thuật toán FL
 #########################################
 ALGOS=(
-    "fedrep"
-    "fedus"
-    "fedcorr"
+    "fednoro"
 )
 
 #########################################
 # 5. Seeds (có thể thêm nhiều seed: (0 1 2))
 #########################################
 SEEDS=(
-    0
+    0 1 2
 )
 
 #########################################
@@ -142,9 +140,8 @@ SEEDS=(
 # Mặc định bật kịch bản Clean (noniid).
 # Bỏ comment các dòng bên dưới nếu muốn chạy luôn các kịch bản Poisoning trên noniid.
 #########################################
-SCENARIOS=(
-    "None|0.0|0.0"                  # Kịch bản 1: Clean với noniid (noniid20)
-    # "label_flipping|0.3|1.0"      # Kịch bản 2a: Label flipping (npw=0.3, psr=1.0)
+SCENARIOS=(              # Kịch bản 1: Clean với noniid (noniid20)
+    "label_flipping|0.3|1.0"      # Kịch bản 2a: Label flipping (npw=0.3, psr=1.0)
     # "label_flipping|0.5|1.0"      # Kịch bản 2b: Label flipping (npw=0.5, psr=1.0)
     # "Asymmetric|0.3|0.4"          # Kịch bản 3a: Asymmetric (npw=0.3, psr=0.4)
     # "Symmetric|0.3|0.4"           # Kịch bản 3b: Symmetric (npw=0.3, psr=0.4)
