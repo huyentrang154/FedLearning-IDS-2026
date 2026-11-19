@@ -115,12 +115,11 @@ mkdir -p logs
 # 3. Datasets & Data Type
 #########################################
 DATASETS=(
-    "unsw"
+    "cic_ids"
 
 )
 
 # "noniid" (tự động map sang noniid20) hoặc "exdir" (tự động map sang noniidexdir20)
-
 DATA_TYPE="noniid20"
 
 #########################################

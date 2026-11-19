@@ -115,10 +115,8 @@ DATA_TYPE="noniid20"
 # 4. 8 Thuật toán FL
 #########################################
 ALGOS=(
-    "fedhome"
-    "fednoro"
-    "fedrep"
-    "lg_fedavg"
+    "fedavg"
+    "fedgh"
 )
 
 #########################################

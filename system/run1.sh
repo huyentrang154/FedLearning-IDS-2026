@@ -116,8 +116,10 @@ mkdir -p logs
 #########################################
 DATASETS=(
     "unsw"
+
 )
 
+# "noniid" (tự động map sang noniid20) hoặc "exdir" (tự động map sang noniidexdir20)
 DATA_TYPE="noniid20"
 
 #########################################
@@ -125,19 +127,16 @@ DATA_TYPE="noniid20"
 #########################################
 ALGOS=(
     "fedavg"
-    "fedrep"
-    "fedgh"
     "fedhome"
+    "fedrep"
     "lg_fedavg"
-    "fednoro"
-    "fedus"
 )
 
 #########################################
 # 5. Seeds (có thể thêm nhiều seed: (0 1 2))
 #########################################
 SEEDS=(
-    0 1 2
+2
 )
 
 #########################################
