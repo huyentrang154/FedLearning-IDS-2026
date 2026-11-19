@@ -657,6 +657,7 @@ class FedCorr(object):
         self.clean_set_thres = args.clean_set_thres    # max noise level to be "clean" in Stage 2
         self.correction = args.correction          # enable label correction
         self.fine_tuning = args.fine_tuning        # enable Stage 2 fine-tuning
+        self.eval_mode = getattr(args, 'fedcorr_eval', 'global')  # 'global' (original) or 'local'
 
         # ── Metrics ───────────────────────────────────────────────────
         self.rs_train_loss = []
@@ -702,7 +703,7 @@ class FedCorr(object):
             self,
             args,
             extra_lines=[
-                f"FedCorr params: iteration1={self.iteration1}, rounds1={self.rounds1}, rounds2={self.rounds2}, beta={self.beta}, relabel_ratio={self.relabel_ratio}, confidence_thres={self.confidence_thres}, clean_set_thres={self.clean_set_thres}, correction={self.correction}, fine_tuning={self.fine_tuning}"
+                f"FedCorr eval={self.eval_mode} | params: iteration1={self.iteration1}, rounds1={self.rounds1}, rounds2={self.rounds2}, beta={self.beta}, relabel_ratio={self.relabel_ratio}, confidence_thres={self.confidence_thres}, clean_set_thres={self.clean_set_thres}, correction={self.correction}, fine_tuning={self.fine_tuning}"
             ],
         )
         self.budget = []
@@ -1011,7 +1012,11 @@ class FedCorr(object):
         loss_all = []
 
         for c in self.clients:
-            acc, pre, rec, f1, ns = c.test_metrics()
+            # Evaluate the global model on every client, as the original FedCorr reports the
+            # accuracy of the global model; --fedcorr_eval local reproduces the earlier behaviour
+            # (each client's own model after its last local update).
+            eval_model = self.global_model if self.eval_mode == 'global' else None
+            acc, pre, rec, f1, ns = c.test_metrics(model=eval_model)
             ns = int(ns)
 
             # Metric tổng thể trên tất cả client
@@ -1029,7 +1034,7 @@ class FedCorr(object):
             groups[group_name]["recall"].append(rec * ns)
             groups[group_name]["n"] += ns
 
-            tl = c.train_metrics()
+            tl = c.train_metrics(model=eval_model)
             if tl:
                 loss_all.extend(tl)
                 self.train_losses[c.id].append(float(np.mean(tl)))

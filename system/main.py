@@ -250,6 +250,8 @@ if __name__ == "__main__":
                         help="Max noise level to classify a client as clean in Stage 2")
     parser.add_argument('--correction', type=int, default=1,
                         help="1 = enable label correction (original default: on, argparse store_false); 0 = ablation")
+    parser.add_argument('--fedcorr_eval', type=str, default='global', choices=['global', 'local'],
+                        help="FedCorr: evaluate the global model on every client (as the original) or each client's model after its last local update")
     parser.add_argument('--fine_tuning', type=int, default=1,
                         help="1 = enable Stage 2 fine-tuning (original default: on, argparse store_false); 0 = ablation")
 
