@@ -1,0 +1,232 @@
+============================================================
+Timestamp: 2026-11-20 08:39:00
+Experiment: r2g_table5_noniid20_Symmetric_npw0.3_psr0.4
+Scenario: noniid20_Symmetric_npw0.3_psr0.4
+Algorithm: fedcorr
+Dataset: cic_ids
+Data type: noniid20
+Seed: 0
+Num clients: 20 | Join ratio: 1.0
+Global rounds: 50 | Local steps: 5 | Batch size: 4 | LR: 0.01
+Noise type: Symmetric | num_of_poisoned_workers: 0.3 | ratio: 0.4
+Poisoned Worker IDs: [0, 1, 2, 3, 4, 5]
+Result path: ../results/cic_ids/noniid20/fedcorr/r2g_table5_noniid20_Symmetric_npw0.3_psr0.4/seed_0
+FedCorr eval=global | params: iteration1=5, rounds1=10, rounds2=40, beta=5.0, relabel_ratio=0.5, confidence_thres=0.5, clean_set_thres=0.1, correction=True, fine_tuning=True
+============================================================
+===== Stage 1: Noise Detection =====
+--- Stage 1 iter 1/5 ---
+Clean: [0, 1, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+Noisy: [2, 8]
+Noise levels: [0.0, 0.0, 0.375, 0.0, 0.0, 0.0, 0.0, 0.0, 0.034, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+  [Correction] client 2: relabelled 16/88 samples
+  [Correction] client 8: relabelled 1/88 samples
+[Stage 1 iter 1] [normal] acc=0.0077 f1=0.0675 prec=0.1982 rec=0.0438 n=60764
+[Stage 1 iter 1] [flipping] acc=0.0035 f1=0.0040 prec=0.0037 rec=0.0055 n=29611
+[Stage 1 iter 1] [all] acc=0.0063 f1=0.0467 prec=0.1345 rec=0.0313 loss=7.7373
+--- Stage 1 iter 2/5 ---
+Clean: [0, 1, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+Noisy: [2, 8]
+Noise levels: [0.0, 0.0, 0.375, 0.0, 0.0, 0.0, 0.0, 0.0, 0.011, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+  [Correction] client 2: relabelled 16/88 samples
+[Stage 1 iter 2] [normal] acc=0.0008 f1=0.0008 prec=0.0008 rec=0.0008 n=60764
+[Stage 1 iter 2] [flipping] acc=0.0008 f1=0.0008 prec=0.0008 rec=0.0008 n=29611
+[Stage 1 iter 2] [all] acc=0.0008 f1=0.0008 prec=0.0008 rec=0.0008 loss=6.8488
+--- Stage 1 iter 3/5 ---
+Clean: [0, 1, 3, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+Noisy: [2, 4, 8]
+Noise levels: [0.0, 0.0, 0.216, 0.0, 0.416, 0.0, 0.0, 0.0, 0.011, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+  [Correction] client 2: relabelled 9/88 samples
+  [Correction] client 4: relabelled 52/250 samples
+[Stage 1 iter 3] [normal] acc=0.0274 f1=0.1071 prec=0.2521 rec=0.1850 n=60764
+[Stage 1 iter 3] [flipping] acc=0.0228 f1=0.0246 prec=0.1828 rec=0.1737 n=29611
+[Stage 1 iter 3] [all] acc=0.0259 f1=0.0801 prec=0.2294 rec=0.1813 loss=7.5547
+--- Stage 1 iter 4/5 ---
+Clean: [0, 1, 3, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+Noisy: [2, 4, 8]
+Noise levels: [0.0, 0.0, 0.182, 0.0, 0.428, 0.0, 0.0, 0.0, 0.011, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+  [Correction] client 2: relabelled 8/88 samples
+  [Correction] client 4: relabelled 49/250 samples
+[Stage 1 iter 4] [normal] acc=0.0359 f1=0.1328 prec=0.2604 rec=0.1307 n=60764
+[Stage 1 iter 4] [flipping] acc=0.0859 f1=0.0433 prec=0.1555 rec=0.1395 n=29611
+[Stage 1 iter 4] [all] acc=0.0523 f1=0.1035 prec=0.2260 rec=0.1336 loss=7.1180
+--- Stage 1 iter 5/5 ---
+Clean: [0, 1, 3, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+Noisy: [2, 4, 8]
+Noise levels: [0.0, 0.0, 0.125, 0.0, 0.608, 0.0, 0.0, 0.0, 0.011, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+  [Correction] client 2: relabelled 5/88 samples
+  [Correction] client 4: relabelled 76/250 samples
+[Stage 1 iter 5] [normal] acc=0.0974 f1=0.0927 prec=0.1062 rec=0.0912 n=60764
+[Stage 1 iter 5] [flipping] acc=0.0914 f1=0.0906 prec=0.1033 rec=0.0898 n=29611
+[Stage 1 iter 5] [all] acc=0.0954 f1=0.0920 prec=0.1053 rec=0.0907 loss=11.2077
+===== Stage 2: Fine-tuning =====
+[Stage 2 rnd 1] [normal] acc=0.8246 f1=0.5904 prec=0.6460 rec=0.6161 n=60764
+[Stage 2 rnd 1] [flipping] acc=0.7144 f1=0.3232 prec=0.3598 rec=0.5037 n=29611
+[Stage 2 rnd 1] [all] acc=0.7885 f1=0.5028 prec=0.5522 rec=0.5792 loss=1.4476
+[Stage 2 rnd 2] [normal] acc=0.8281 f1=0.7567 prec=0.8157 rec=0.7280 n=60764
+[Stage 2 rnd 2] [flipping] acc=0.7681 f1=0.5226 prec=0.4959 rec=0.8076 n=29611
+[Stage 2 rnd 2] [all] acc=0.8084 f1=0.6800 prec=0.7109 rec=0.7541 loss=1.6291
+[Stage 2 rnd 3] [normal] acc=0.8301 f1=0.8034 prec=0.7989 rec=0.8111 n=60764
+[Stage 2 rnd 3] [flipping] acc=0.7415 f1=0.4932 prec=0.4816 rec=0.7941 n=29611
+[Stage 2 rnd 3] [all] acc=0.8011 f1=0.7018 prec=0.6950 rec=0.8055 loss=1.6426
+[Stage 2 rnd 4] [normal] acc=0.8310 f1=0.8143 prec=0.8264 rec=0.8036 n=60764
+[Stage 2 rnd 4] [flipping] acc=0.7689 f1=0.5236 prec=0.4964 rec=0.8080 n=29611
+[Stage 2 rnd 4] [all] acc=0.8107 f1=0.7190 prec=0.7183 rec=0.8050 loss=1.8073
+[Stage 2 rnd 5] [normal] acc=0.8300 f1=0.7969 prec=0.8294 rec=0.7736 n=60764
+[Stage 2 rnd 5] [flipping] acc=0.7771 f1=0.5348 prec=0.5025 rec=0.8122 n=29611
+[Stage 2 rnd 5] [all] acc=0.8127 f1=0.7110 prec=0.7223 rec=0.7863 loss=1.7350
+[Stage 2 rnd 6] [normal] acc=0.8298 f1=0.7962 prec=0.8149 rec=0.7842 n=60764
+[Stage 2 rnd 6] [flipping] acc=0.7757 f1=0.5328 prec=0.5014 rec=0.8115 n=29611
+[Stage 2 rnd 6] [all] acc=0.8121 f1=0.7099 prec=0.7122 rec=0.7931 loss=1.7193
+[Stage 2 rnd 7] [normal] acc=0.8307 f1=0.8129 prec=0.8022 rec=0.8257 n=60764
+[Stage 2 rnd 7] [flipping] acc=0.7606 f1=0.5134 prec=0.4912 rec=0.8038 n=29611
+[Stage 2 rnd 7] [all] acc=0.8078 f1=0.7147 prec=0.7003 rec=0.8185 loss=1.7268
+[Stage 2 rnd 8] [normal] acc=0.8304 f1=0.8049 prec=0.8241 rec=0.7903 n=60764
+[Stage 2 rnd 8] [flipping] acc=0.7777 f1=0.5357 prec=0.5030 rec=0.8125 n=29611
+[Stage 2 rnd 8] [all] acc=0.8132 f1=0.7167 prec=0.7189 rec=0.7976 loss=1.6987
+[Stage 2 rnd 9] [normal] acc=0.8304 f1=0.8049 prec=0.8242 rec=0.7903 n=60764
+[Stage 2 rnd 9] [flipping] acc=0.7863 f1=0.5492 prec=0.5108 rec=0.8169 n=29611
+[Stage 2 rnd 9] [all] acc=0.8160 f1=0.7211 prec=0.7216 rec=0.7990 loss=1.6689
+[Stage 2 rnd 10] [normal] acc=0.8299 f1=0.7953 prec=0.8283 rec=0.7714 n=60764
+[Stage 2 rnd 10] [flipping] acc=0.7988 f1=0.5724 prec=0.5255 rec=0.8232 n=29611
+[Stage 2 rnd 10] [all] acc=0.8197 f1=0.7223 prec=0.7291 rec=0.7884 loss=1.6567
+===== Stage 3: Final Training =====
+[Stage 3 rnd 1] [normal] acc=0.8304 f1=0.8037 prec=0.8267 rec=0.7855 n=60764
+[Stage 3 rnd 1] [flipping] acc=0.7976 f1=0.5702 prec=0.5240 rec=0.8235 n=29611
+[Stage 3 rnd 1] [all] acc=0.8197 f1=0.7272 prec=0.7275 rec=0.7979 loss=1.7050
+[Stage 3 rnd 2] [normal] acc=0.8295 f1=0.7848 prec=0.8295 rec=0.7568 n=60764
+[Stage 3 rnd 2] [flipping] acc=0.7942 f1=0.5632 prec=0.5195 rec=0.8209 n=29611
+[Stage 3 rnd 2] [all] acc=0.8179 f1=0.7122 prec=0.7280 rec=0.7778 loss=1.7318
+[Stage 3 rnd 3] [normal] acc=0.8296 f1=0.7874 prec=0.8285 rec=0.7609 n=60764
+[Stage 3 rnd 3] [flipping] acc=0.7988 f1=0.5724 prec=0.5255 rec=0.8232 n=29611
+[Stage 3 rnd 3] [all] acc=0.8195 f1=0.7170 prec=0.7292 rec=0.7813 loss=1.7013
+[Stage 3 rnd 4] [normal] acc=0.8304 f1=0.8061 prec=0.8159 rec=0.7993 n=60764
+[Stage 3 rnd 4] [flipping] acc=0.7921 f1=0.5594 prec=0.5171 rec=0.8199 n=29611
+[Stage 3 rnd 4] [all] acc=0.8179 f1=0.7253 prec=0.7180 rec=0.8060 loss=1.7734
+[Stage 3 rnd 5] [normal] acc=0.8305 f1=0.8051 prec=0.8300 rec=0.7855 n=60764
+[Stage 3 rnd 5] [flipping] acc=0.7976 f1=0.5700 prec=0.5239 rec=0.8226 n=29611
+[Stage 3 rnd 5] [all] acc=0.8197 f1=0.7281 prec=0.7297 rec=0.7977 loss=1.7549
+[Stage 3 rnd 6] [normal] acc=0.8299 f1=0.7955 prec=0.8276 rec=0.7723 n=60764
+[Stage 3 rnd 6] [flipping] acc=0.8033 f1=0.5822 prec=0.5321 rec=0.8255 n=29611
+[Stage 3 rnd 6] [all] acc=0.8212 f1=0.7256 prec=0.7308 rec=0.7897 loss=1.7648
+[Stage 3 rnd 7] [normal] acc=0.8285 f1=0.7729 prec=0.8082 rec=0.7538 n=60764
+[Stage 3 rnd 7] [flipping] acc=0.8067 f1=0.5904 prec=0.5378 rec=0.8281 n=29611
+[Stage 3 rnd 7] [all] acc=0.8213 f1=0.7131 prec=0.7196 rec=0.7781 loss=1.6819
+[Stage 3 rnd 8] [normal] acc=0.8281 f1=0.7733 prec=0.7895 rec=0.7709 n=60764
+[Stage 3 rnd 8] [flipping] acc=0.8016 f1=0.5786 prec=0.5296 rec=0.8255 n=29611
+[Stage 3 rnd 8] [all] acc=0.8194 f1=0.7095 prec=0.7043 rec=0.7888 loss=1.7459
+[Stage 3 rnd 9] [normal] acc=0.8285 f1=0.7806 prec=0.7887 rec=0.7831 n=60764
+[Stage 3 rnd 9] [flipping] acc=0.7951 f1=0.5653 prec=0.5208 rec=0.8222 n=29611
+[Stage 3 rnd 9] [all] acc=0.8176 f1=0.7101 prec=0.7009 rec=0.7959 loss=1.8654
+[Stage 3 rnd 10] [normal] acc=0.8287 f1=0.7825 prec=0.7945 rec=0.7805 n=60764
+[Stage 3 rnd 10] [flipping] acc=0.7882 f1=0.5524 prec=0.5128 rec=0.8179 n=29611
+[Stage 3 rnd 10] [all] acc=0.8155 f1=0.7071 prec=0.7022 rec=0.7928 loss=1.7840
+[Stage 3 rnd 11] [normal] acc=0.8296 f1=0.7891 prec=0.8212 rec=0.7684 n=60764
+[Stage 3 rnd 11] [flipping] acc=0.7967 f1=0.5681 prec=0.5226 rec=0.8222 n=29611
+[Stage 3 rnd 11] [all] acc=0.8188 f1=0.7166 prec=0.7233 rec=0.7860 loss=1.7652
+[Stage 3 rnd 12] [normal] acc=0.8297 f1=0.7897 prec=0.8290 rec=0.7632 n=60764
+[Stage 3 rnd 12] [flipping] acc=0.8042 f1=0.5842 prec=0.5335 rec=0.8260 n=29611
+[Stage 3 rnd 12] [all] acc=0.8213 f1=0.7224 prec=0.7322 rec=0.7838 loss=1.7145
+[Stage 3 rnd 13] [normal] acc=0.8293 f1=0.7889 prec=0.8045 rec=0.7817 n=60764
+[Stage 3 rnd 13] [flipping] acc=0.7959 f1=0.5664 prec=0.5216 rec=0.8218 n=29611
+[Stage 3 rnd 13] [all] acc=0.8183 f1=0.7160 prec=0.7118 rec=0.7948 loss=1.7652
+[Stage 3 rnd 14] [normal] acc=0.8316 f1=0.8235 prec=0.8302 rec=0.8172 n=60764
+[Stage 3 rnd 14] [flipping] acc=0.7885 f1=0.5529 prec=0.5131 rec=0.8180 n=29611
+[Stage 3 rnd 14] [all] acc=0.8175 f1=0.7348 prec=0.7263 rec=0.8175 loss=1.8014
+[Stage 3 rnd 15] [normal] acc=0.8306 f1=0.8071 prec=0.8280 rec=0.7908 n=60764
+[Stage 3 rnd 15] [flipping] acc=0.7997 f1=0.5745 prec=0.5269 rec=0.8246 n=29611
+[Stage 3 rnd 15] [all] acc=0.8205 f1=0.7309 prec=0.7293 rec=0.8019 loss=1.7752
+[Stage 3 rnd 16] [normal] acc=0.8301 f1=0.7988 prec=0.8282 rec=0.7773 n=60764
+[Stage 3 rnd 16] [flipping] acc=0.8045 f1=0.5850 prec=0.5340 rec=0.8262 n=29611
+[Stage 3 rnd 16] [all] acc=0.8217 f1=0.7288 prec=0.7318 rec=0.7933 loss=1.7720
+[Stage 3 rnd 17] [normal] acc=0.8305 f1=0.8095 prec=0.8027 rec=0.8189 n=60764
+[Stage 3 rnd 17] [flipping] acc=0.7873 f1=0.5510 prec=0.5119 rec=0.8182 n=29611
+[Stage 3 rnd 17] [all] acc=0.8163 f1=0.7248 prec=0.7074 rec=0.8187 loss=1.8155
+[Stage 3 rnd 18] [normal] acc=0.8316 f1=0.8234 prec=0.8292 rec=0.8178 n=60764
+[Stage 3 rnd 18] [flipping] acc=0.7935 f1=0.5621 prec=0.5188 rec=0.8214 n=29611
+[Stage 3 rnd 18] [all] acc=0.8191 f1=0.7378 prec=0.7275 rec=0.8190 loss=1.9498
+[Stage 3 rnd 19] [normal] acc=0.8305 f1=0.8045 prec=0.8301 rec=0.7850 n=60764
+[Stage 3 rnd 19] [flipping] acc=0.7952 f1=0.5653 prec=0.5209 rec=0.8223 n=29611
+[Stage 3 rnd 19] [all] acc=0.8189 f1=0.7261 prec=0.7287 rec=0.7972 loss=1.9410
+[Stage 3 rnd 20] [normal] acc=0.8314 f1=0.8207 prec=0.8305 rec=0.8118 n=60764
+[Stage 3 rnd 20] [flipping] acc=0.7947 f1=0.5643 prec=0.5202 rec=0.8212 n=29611
+[Stage 3 rnd 20] [all] acc=0.8194 f1=0.7367 prec=0.7289 rec=0.8149 loss=1.8088
+[Stage 3 rnd 21] [normal] acc=0.8293 f1=0.7910 prec=0.7985 rec=0.7906 n=60764
+[Stage 3 rnd 21] [flipping] acc=0.7934 f1=0.5620 prec=0.5187 rec=0.8214 n=29611
+[Stage 3 rnd 21] [all] acc=0.8175 f1=0.7160 prec=0.7069 rec=0.8007 loss=1.7644
+[Stage 3 rnd 22] [normal] acc=0.8315 f1=0.8211 prec=0.8305 rec=0.8123 n=60764
+[Stage 3 rnd 22] [flipping] acc=0.7988 f1=0.5726 prec=0.5256 rec=0.8241 n=29611
+[Stage 3 rnd 22] [all] acc=0.8208 f1=0.7397 prec=0.7306 rec=0.8162 loss=1.8098
+[Stage 3 rnd 23] [normal] acc=0.8296 f1=0.7925 prec=0.8125 rec=0.7801 n=60764
+[Stage 3 rnd 23] [flipping] acc=0.8001 f1=0.5754 prec=0.5274 rec=0.8248 n=29611
+[Stage 3 rnd 23] [all] acc=0.8199 f1=0.7213 prec=0.7191 rec=0.7947 loss=1.7544
+[Stage 3 rnd 24] [normal] acc=0.8301 f1=0.7999 prec=0.8237 rec=0.7822 n=60764
+[Stage 3 rnd 24] [flipping] acc=0.7983 f1=0.5716 prec=0.5250 rec=0.8239 n=29611
+[Stage 3 rnd 24] [all] acc=0.8197 f1=0.7251 prec=0.7258 rec=0.7958 loss=1.8847
+[Stage 3 rnd 25] [normal] acc=0.8312 f1=0.8168 prec=0.8275 rec=0.8076 n=60764
+[Stage 3 rnd 25] [flipping] acc=0.7974 f1=0.5697 prec=0.5237 rec=0.8234 n=29611
+[Stage 3 rnd 25] [all] acc=0.8201 f1=0.7358 prec=0.7279 rec=0.8128 loss=1.9147
+[Stage 3 rnd 26] [normal] acc=0.8279 f1=0.7683 prec=0.7913 rec=0.7627 n=60764
+[Stage 3 rnd 26] [flipping] acc=0.7970 f1=0.5689 prec=0.5232 rec=0.8232 n=29611
+[Stage 3 rnd 26] [all] acc=0.8178 f1=0.7030 prec=0.7034 rec=0.7825 loss=1.7265
+[Stage 3 rnd 27] [normal] acc=0.8302 f1=0.8061 prec=0.7982 rec=0.8174 n=60764
+[Stage 3 rnd 27] [flipping] acc=0.7931 f1=0.5613 prec=0.5183 rec=0.8212 n=29611
+[Stage 3 rnd 27] [all] acc=0.8181 f1=0.7259 prec=0.7065 rec=0.8186 loss=1.7033
+[Stage 3 rnd 28] [normal] acc=0.8313 f1=0.8200 prec=0.8114 rec=0.8295 n=60764
+[Stage 3 rnd 28] [flipping] acc=0.7867 f1=0.5499 prec=0.5113 rec=0.8179 n=29611
+[Stage 3 rnd 28] [all] acc=0.8167 f1=0.7315 prec=0.7131 rec=0.8257 loss=2.0131
+[Stage 3 rnd 29] [normal] acc=0.8320 f1=0.8291 prec=0.8274 rec=0.8308 n=60764
+[Stage 3 rnd 29] [flipping] acc=0.7764 f1=0.5339 prec=0.5021 rec=0.8127 n=29611
+[Stage 3 rnd 29] [all] acc=0.8138 f1=0.7324 prec=0.7208 rec=0.8248 loss=1.7451
+[Stage 3 rnd 30] [normal] acc=0.8321 f1=0.8302 prec=0.8309 rec=0.8295 n=60764
+[Stage 3 rnd 30] [flipping] acc=0.7924 f1=0.5600 prec=0.5175 rec=0.8208 n=29611
+[Stage 3 rnd 30] [all] acc=0.8191 f1=0.7416 prec=0.7282 rec=0.8266 loss=1.7977
+[Stage 3 rnd 31] [normal] acc=0.8318 f1=0.8269 prec=0.8233 rec=0.8307 n=60764
+[Stage 3 rnd 31] [flipping] acc=0.7795 f1=0.5386 prec=0.5047 rec=0.8143 n=29611
+[Stage 3 rnd 31] [all] acc=0.8147 f1=0.7324 prec=0.7189 rec=0.8253 loss=1.8099
+[Stage 3 rnd 32] [normal] acc=0.8314 f1=0.8217 prec=0.8136 rec=0.8305 n=60764
+[Stage 3 rnd 32] [flipping] acc=0.7865 f1=0.5496 prec=0.5111 rec=0.8178 n=29611
+[Stage 3 rnd 32] [all] acc=0.8167 f1=0.7325 prec=0.7145 rec=0.8263 loss=1.9035
+[Stage 3 rnd 33] [normal] acc=0.8303 f1=0.8013 prec=0.8294 rec=0.7804 n=60764
+[Stage 3 rnd 33] [flipping] acc=0.8015 f1=0.5779 prec=0.5519 rec=0.8246 n=29611
+[Stage 3 rnd 33] [all] acc=0.8208 f1=0.7281 prec=0.7385 rec=0.7949 loss=1.6837
+[Stage 3 rnd 34] [normal] acc=0.8321 f1=0.8297 prec=0.8292 rec=0.8304 n=60764
+[Stage 3 rnd 34] [flipping] acc=0.7948 f1=0.5645 prec=0.5431 rec=0.8221 n=29611
+[Stage 3 rnd 34] [all] acc=0.8199 f1=0.7428 prec=0.7354 rec=0.8276 loss=1.8467
+[Stage 3 rnd 35] [normal] acc=0.8312 f1=0.6802 prec=0.6812 rec=0.6918 n=60764
+[Stage 3 rnd 35] [flipping] acc=0.7929 f1=0.5610 prec=0.5409 rec=0.8219 n=29611
+[Stage 3 rnd 35] [all] acc=0.8186 f1=0.6412 prec=0.6352 rec=0.7344 loss=1.8660
+[Stage 3 rnd 36] [normal] acc=0.8321 f1=0.6919 prec=0.7144 rec=0.6917 n=60764
+[Stage 3 rnd 36] [flipping] acc=0.7999 f1=0.5741 prec=0.5492 rec=0.8245 n=29611
+[Stage 3 rnd 36] [all] acc=0.8215 f1=0.6533 prec=0.6603 rec=0.7352 loss=1.7678
+[Stage 3 rnd 37] [normal] acc=0.8307 f1=0.8119 prec=0.8184 rec=0.8283 n=60764
+[Stage 3 rnd 37] [flipping] acc=0.7931 f1=0.5602 prec=0.5401 rec=0.8210 n=29611
+[Stage 3 rnd 37] [all] acc=0.8184 f1=0.7294 prec=0.7272 rec=0.8259 loss=1.8851
+[Stage 3 rnd 38] [normal] acc=0.8313 f1=0.8166 prec=0.8246 rec=0.8303 n=60764
+[Stage 3 rnd 38] [flipping] acc=0.7835 f1=0.5425 prec=0.5292 rec=0.8158 n=29611
+[Stage 3 rnd 38] [all] acc=0.8156 f1=0.7268 prec=0.7278 rec=0.8256 loss=1.6910
+[Stage 3 rnd 39] [normal] acc=0.8310 f1=0.8088 prec=0.8547 rec=0.7927 n=60764
+[Stage 3 rnd 39] [flipping] acc=0.8009 f1=0.5759 prec=0.5504 rec=0.8250 n=29611
+[Stage 3 rnd 39] [all] acc=0.8211 f1=0.7325 prec=0.7550 rec=0.8033 loss=2.0060
+[Stage 3 rnd 40] [normal] acc=0.8320 f1=0.8280 prec=0.8480 rec=0.8303 n=60764
+[Stage 3 rnd 40] [flipping] acc=0.7918 f1=0.5579 prec=0.5387 rec=0.8203 n=29611
+[Stage 3 rnd 40] [all] acc=0.8188 f1=0.7395 prec=0.7467 rec=0.8270 loss=2.0455
+
+============================================================
+Timestamp: 2026-11-20 13:29:53
+Experiment: r2g_table5_noniid20_Symmetric_npw0.3_psr0.4
+Scenario: noniid20_Symmetric_npw0.3_psr0.4
+Algorithm: fedcorr | Dataset: cic_ids | Data type: noniid20 | Seed: 0
+Noise type: Symmetric | num_of_poisoned_workers: 0.3 | ratio: 0.4
+Poisoned Worker IDs: [0, 1, 2, 3, 4, 5]
+
+Best performance metrics
+	acc-flipping: 0.8067
+	acc-normal: 0.8321
+	f1-flipping: 0.5904
+	f1-normal: 0.8302
+	recall-flipping: 0.8281
+	recall-normal: 0.8308
+	precision-flipping: 0.5519
+	precision-normal: 0.8547
+	Avg Time/Round: 285.9722 sec
+============================================================
